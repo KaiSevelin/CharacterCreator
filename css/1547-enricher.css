@@ -1,0 +1,70 @@
+/* ----------------------------- */
+/* @1547 enricher link in text   */
+/* ----------------------------- */
+
+a.enricher-1547 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  padding: 0.05em 0.4em;
+  border-radius: 0.6em;
+
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--color-border-light-tertiary);
+
+  color: var(--color-text-hyperlink);
+  font-weight: 600;
+  text-decoration: none;
+
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+a.enricher-1547:hover {
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px var(--color-border-highlight);
+  text-decoration: none;
+}
+
+a.enricher-1547:active {
+  transform: translateY(1px);
+}
+
+/* Optional little dice icon before text */
+a.enricher-1547::before {
+  content: "🎲";
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+/* ----------------------------- */
+/* Dialog styling                */
+/* ----------------------------- */
+
+.dialog-1547 .form-group {
+  margin-bottom: 0.35rem;
+}
+
+.dialog-1547 input[type="text"] {
+  height: 28px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.dialog-1547 button.roll-one {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slight emphasis for the Roll All button (Foundry already styles it, this just nudges it) */
+.dialog-1547 .dialog-buttons button:first-child {
+  font-weight: 600;
+}
