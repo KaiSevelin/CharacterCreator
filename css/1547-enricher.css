@@ -68,3 +68,39 @@ a.enricher-1547::before {
 .dialog-1547 .dialog-buttons button:first-child {
   font-weight: 600;
 }
+.dialog-1547 .dice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.dialog-1547 .dice-row {
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.dialog-1547 .dice-term {
+    height: 28px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.dialog-1547 .dice-plus,
+.dialog-1547 .dice-minus {
+    width: 32px;
+    height: 28px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+    .dialog-1547 .dice-plus:disabled,
+    .dialog-1547 .dice-minus:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
