@@ -1,0 +1,32 @@
+{
+	"id": "1547charactercreator",
+	"title": "character creator",
+	"description": "character creation",
+	"version": "0.0.1",
+	"compatibility": {
+		"minimum": "11",
+		"verified": "13.350"
+	},
+	"authors": [
+		{
+			"name": "Kai"
+		}
+	],
+	"relationships": {
+		"requires": [
+			{
+				"id": "skilltree-helper",
+				"type": "module",
+				"compatibility": {
+					"minimum": "0.1.0"
+				}
+			}
+		],
+		"esmodules": [
+			"scripts/init.js",
+			"./scripts/chargen.js"
+		],
+		"url": "https://github.com/KaiSevelin/chargen1547",
+		"manifest": "https://raw.githubusercontent.com/KaiSevelin/chargen1547/master/module.json",
+		"download": "https://raw.githubusercontent.com/KaiSevelin/chargen1547/master/enricher1547.zip"
+	}
