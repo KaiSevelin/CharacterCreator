@@ -79,37 +79,95 @@ export class SkillTreeChargenApp extends FormApplication {
     return n;
   }
 
-  _parseJSONResultText(text, tableName = "RollTable") {
-    try {
-      const obj = JSON.parse(String(text ?? "").trim());
-      if (!obj || typeof obj !== "object") throw new Error("JSON root must be an object.");
-      if (!obj.choice?.title) throw new Error("Missing choice.title");
-      if (!Array.isArray(obj.rewards) || obj.rewards.length === 0) throw new Error("Missing rewards[]");
-      return obj;
-    } catch (e) {
-      throw new Error(
-        `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${String(text ?? "").slice(0, 500)}`
-      );
+_parseJSONResultText(text, tableName = "RollTable") {
+  const raw = String(text ?? "").trim();
+
+  try {
+    const obj = JSON.parse(raw);
+
+    if (!obj || typeof obj !== "object" || Array.isArray(obj)) {
+      throw new Error("JSON root must be an object.");
     }
-  }
 
-  _pickWeightedReward(rewards) {
-    const list = (rewards ?? [])
-      .filter(r => r && typeof r === "object")
-      .map(r => ({ ...r, weight: Number(r.weight ?? 1) }));
-
-    if (!list.length) return null;
-
-    const total = list.reduce((s, r) => s + Math.max(0, r.weight), 0);
-    if (total <= 0) return list[0];
-
-    let roll = Math.random() * total;
-    for (const r of list) {
-      roll -= Math.max(0, r.weight);
-      if (roll <= 0) return r;
+    // ---- choice ----
+    if (!obj.choice || typeof obj.choice !== "object") {
+      throw new Error("Missing choice object.");
     }
-    return list[list.length - 1];
+    if (!obj.choice.title || typeof obj.choice.title !== "string") {
+      throw new Error("Missing choice.title");
+    }
+
+    // ---- rewards ----
+    if (!Array.isArray(obj.rewards) || obj.rewards.length === 0) {
+      throw new Error("Missing rewards[]");
+    }
+
+    // Normalize into plain objects (important: keep next!)
+    const normalized = {
+      choice: {
+        title: String(obj.choice.title),
+        text: obj.choice.text != null ? String(obj.choice.text) : "",
+        icon: obj.choice.icon != null ? String(obj.choice.icon) : ""
+      },
+      bio: obj.bio != null ? String(obj.bio) : "",
+      rewards: obj.rewards.map((r, idx) => {
+        if (!r || typeof r !== "object") {
+          throw new Error(`rewards[${idx}] must be an object`);
+        }
+
+        const weight = Number(r.weight ?? 1);
+        const safeWeight = Number.isFinite(weight) ? weight : 1;
+
+        const changes = Array.isArray(r.changes) ? r.changes : [];
+
+        // next is optional, but if present normalize shape
+        let next = null;
+        if (r.next && typeof r.next === "object") {
+          const tableUuid = String(r.next.tableUuid ?? "").trim();
+          const rolls = Number(r.next.rolls ?? 0);
+          next = {
+            tableUuid,
+            rolls: Number.isFinite(rolls) ? rolls : 0
+          };
+        }
+
+        return {
+          weight: safeWeight,
+          changes,
+          next
+        };
+      })
+    };
+
+    return normalized;
+  } catch (e) {
+    throw new Error(
+      `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${raw.slice(0, 500)}`
+    );
   }
+}
+
+
+ _pickWeightedReward(rewards) {
+  const list = Array.isArray(rewards) ? rewards.filter(r => r && typeof r === "object") : [];
+  if (!list.length) return null;
+
+  const weightOf = (r) => {
+    const w = Number(r.weight ?? 1);
+    return Number.isFinite(w) ? Math.max(0, w) : 0;
+  };
+
+  const total = list.reduce((s, r) => s + weightOf(r), 0);
+  if (total <= 0) return list[0];
+
+  let roll = Math.random() * total;
+  for (const r of list) {
+    roll -= weightOf(r);
+    if (roll <= 0) return r;          // ✅ returns ORIGINAL object (keeps next)
+  }
+  return list[list.length - 1];
+}
+
 
   /* ---------------- Biography helpers ---------------- */
 
@@ -375,68 +433,81 @@ export class SkillTreeChargenApp extends FormApplication {
   }
 
   async _onChoose(index) {
-    const state = this._getState();
-    if (!state.run) return;
+  const state = this._getState();
+  if (!state.run) return;
 
-    const run = state.run;
-    const picked = run.cards?.[index];
-    if (!picked) return;
+  const run = state.run;
+  const picked = run.cards?.[index];
+  if (!picked) return;
 
-    try {
-      const data = picked.data;
+  try {
+    const data = picked.data;
 
-      await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
-      if (data.bio) await this._addBio(run, String(data.bio));
+    await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
+    if (data.bio) await this._addBio(run, String(data.bio));
 
-      const rewards = Array.isArray(data.rewards) ? data.rewards : [];
-      if (!rewards.length) throw new Error("No rewards defined for this choice.");
+    const rewards = Array.isArray(data.rewards) ? data.rewards : [];
+    if (!rewards.length) throw new Error("No rewards defined for this choice.");
 
-      // Pick ONE reward by weight
-      const reward = this._pickWeightedReward(rewards);
-      if (!reward) throw new Error("No valid reward could be selected.");
+    // Pick ONE reward by weight (keep original objects if possible)
+    const reward = this._pickWeightedReward(rewards);
+    if (!reward) throw new Error("No valid reward could be selected.");
 
-      await this._applyChanges(run, reward.changes ?? []);
+    // Apply changes for the chosen reward
+    await this._applyChanges(run, reward.changes ?? []);
 
-      run.history.push({
-        tableUuid: run.tableUuid,
-        choiceTitle: data.choice?.title ?? "",
-        rewardApplied: reward
-      });
+    // --- Robust NEXT extraction ---
+    // Prefer next from chosen reward, but if missing, use the first reward that has next.
+    const nextObj =
+      (reward?.next?.tableUuid ? reward.next : null) ??
+      rewards.find(r => r?.next?.tableUuid)?.next ??
+      null;
 
-      run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
-      run.remainingHere = Math.max(0, Number(run.remainingHere ?? 0) - 1);
+    const nextUuid = String(nextObj?.tableUuid ?? "").trim();
+    const nextRolls = Number(nextObj?.rolls ?? 0);
 
-      const nextUuid = String(reward.next?.tableUuid ?? "").trim();
-      const nextRolls = Number(reward.next?.rolls ?? 0);
+    // Debug that actually tells you what's happening
+    console.log("Chargen pick:", {
+      pickedTitle: data.choice?.title,
+      chosenReward: reward,
+      nextUuid,
+      nextRolls,
+      remainingBefore: run.remainingGlobal
+    });
 
-      console.log("Chargen next:", {
-        current: run.tableUuid,
-        nextUuid,
-        nextRolls,
-        remainingGlobal: run.remainingGlobal
-      });
+    // Decrement AFTER we decide next (keeps logic clearer)
+    run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
+    run.remainingHere = Math.max(0, Number(run.remainingHere ?? 0) - 1);
 
-      // Stop if global exhausted OR no next table
-      if (run.remainingGlobal <= 0 || !nextUuid) {
-        await this._setState({ ...state, run });
-        await this._finishWithSummary(run);
-        return;
-      }
+    run.history.push({
+      tableUuid: run.tableUuid,
+      choiceTitle: data.choice?.title ?? "",
+      rewardApplied: reward
+    });
 
-      // Switch table
-      run.tableUuid = nextUuid;
-      run.remainingHere = nextRolls > 0 ? nextRolls : run.remainingHere;
-
-      // Roll new cards from next table
-      run.cards = await this._rollCards(run);
-
+    // If there's no next table, finish.
+    if (!nextUuid) {
       await this._setState({ ...state, run });
-      this.render(true);
-    } catch (e) {
-      ui.notifications.error(e.message);
-      console.error(e);
+      await this._finishWithSummary(run);
+      return;
     }
+
+    // Switch table regardless of remainingGlobal (you can still stop later)
+    run.tableUuid = nextUuid;
+    if (nextRolls > 0) run.remainingHere = nextRolls;
+
+    // Roll new cards from next table
+    run.cards = await this._rollCards(run);
+
+    await this._setState({ ...state, run });
+    this.render(true);
+
+  } catch (e) {
+    ui.notifications.error(e.message);
+    console.error(e);
   }
+}
+
 
   async _finishWithSummary(run) {
     const actor = this.actor;
