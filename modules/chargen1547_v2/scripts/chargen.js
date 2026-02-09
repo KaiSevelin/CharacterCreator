@@ -1,11 +1,12 @@
 ﻿// scripts/chargen.js
+console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
 export class SkillTreeChargenApp extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id: "skilltree-chargen",
       title: "Character Generation",
-      template: "modules/chargen1547/templates/chargen.hbs",
+      template: "modules/chargen1547_v2/templates/chargen.hbs",
       width: 900,
       height: "auto",
       closeOnSubmit: false,
@@ -18,15 +19,14 @@ export class SkillTreeChargenApp extends FormApplication {
     this.actor = actor;
   }
 
-  // ---------------- State helpers ----------------
+  /* ---------------- State helpers ---------------- */
+
   _flagPath() {
-    // Use your own module id so you don't collide with skilltree-helper flags
     return "flags.1547charactercreator.chargen";
   }
 
   _getState() {
-    const st = foundry.utils.getProperty(this.actor, this._flagPath());
-    return st ?? {
+    return foundry.utils.getProperty(this.actor, this._flagPath()) ?? {
       setup: { tableUuid: "", choices: 2, maxRolls: 10 },
       run: null
     };
@@ -40,29 +40,25 @@ export class SkillTreeChargenApp extends FormApplication {
     return !state.run;
   }
 
-  // ---------------- RollTable helpers ----------------
+  /* ---------------- RollTable helpers ---------------- */
+
   async _getRollTable(uuidOrId) {
     if (!uuidOrId) return null;
     const ref = String(uuidOrId);
 
-    // UUID-ish
     if (ref.includes(".")) {
       const doc = await fromUuid(ref).catch(() => null);
       if (doc?.documentName === "RollTable") return doc;
     }
-
-    // World table id
     return game.tables.get(ref) ?? null;
   }
 
   _pickDistinct(arr, n) {
     const pool = arr.slice();
     const out = [];
-    const count = Math.min(n, pool.length);
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < Math.min(n, pool.length); i++) {
       const idx = Math.floor(Math.random() * pool.length);
-      out.push(pool[idx]);
-      pool.splice(idx, 1);
+      out.push(pool.splice(idx, 1)[0]);
     }
     return out;
   }
@@ -72,7 +68,7 @@ export class SkillTreeChargenApp extends FormApplication {
       const obj = JSON.parse(String(text ?? "").trim());
       if (!obj || typeof obj !== "object") throw new Error("JSON root must be an object.");
       if (!obj.choice?.title) throw new Error("Missing choice.title");
-      if (!obj.rewards || !Array.isArray(obj.rewards) || obj.rewards.length === 0) throw new Error("Missing rewards[]");
+      if (!Array.isArray(obj.rewards) || obj.rewards.length === 0) throw new Error("Missing rewards[]");
       return obj;
     } catch (e) {
       throw new Error(
@@ -99,7 +95,8 @@ export class SkillTreeChargenApp extends FormApplication {
     return list[list.length - 1];
   }
 
-  // ---------------- Props helpers ----------------
+  /* ---------------- Props helpers ---------------- */
+
   _asNumber(v) {
     const n = Number(v);
     return Number.isFinite(n) ? n : 0;
@@ -120,48 +117,24 @@ export class SkillTreeChargenApp extends FormApplication {
     await this.actor.update({ [`system.props.${key}`]: String(next) });
   }
 
-  async _grantSkillToward(runState, targetKey, targetLevel, fallback) {
-    const st = globalThis.SkillTree;
-
-    // If skilltree not available, fallback (optional)
-    if (!st?.nextStepToward || !st?.NODES) {
-      console.warn("SkillTree.nextStepToward or SkillTree.NODES not available.");
-      if (fallback?.type === "stat") {
-        await this._applyStatDelta(fallback.key, fallback.delta);
-      }
-      return;
-    }
-
-    const step = st.nextStepToward(this.actor, targetKey, targetLevel, st.NODES, null);
-
-    // If already available (or dead end), fallback
-    if (step === true) {
-      if (fallback?.type === "stat") {
-        await this._applyStatDelta(fallback.key, fallback.delta);
-      }
-      return;
-    }
-
-    const nodeName = step.nodeName;
-    const nodeLevel = Number(step.nodeLevel) || 0;
-
-    // Grant: set skill to at least nodeLevel
-    const props = this.actor.system?.props ?? {};
-    const cur = this._getPropNumber(props, nodeName);
-    const next = Math.max(cur, nodeLevel);
-
-    await this.actor.update({ [`system.props.${nodeName}`]: String(next) });
-    await this._addBio(runState, `Learned ${nodeName} ${next}`);
+  async _appendListProp(key, value) {
+    const raw = String(this.actor.system?.props?.[key] ?? "");
+    const list = raw ? raw.split("\n").filter(Boolean) : [];
+    list.push(value);
+    await this.actor.update({ [`system.props.${key}`]: list.join("\n") });
   }
 
-  // ---------------- Biography helpers ----------------
+  /* ---------------- Biography helpers ---------------- */
+
   _getBioLines() {
-    const raw = this.actor.system?.props?.Biography ?? "";
-    return String(raw).split("\n").map(s => s.trim()).filter(Boolean);
+    return String(this.actor.system?.props?.Biography ?? "")
+      .split("\n")
+      .map(s => s.trim())
+      .filter(Boolean);
   }
 
-  async _appendBiography(lines) {
-    const add = Array.isArray(lines) ? lines : [lines];
+  async _appendBiography(lineOrLines) {
+    const add = Array.isArray(lineOrLines) ? lineOrLines : [lineOrLines];
     const cur = this._getBioLines();
 
     for (const line of add) {
@@ -179,19 +152,46 @@ export class SkillTreeChargenApp extends FormApplication {
     await this._appendBiography(line);
   }
 
-  // ---------------- Reward helpers ----------------
-  async _rollOnce(tableUuidOrId) {
-    const table = await fromUuid(tableUuidOrId).catch(() => game.tables.get(tableUuidOrId));
-    if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
-    const draw = await table.draw({ displayChat: false });
-    return draw.results?.[0];
+  /* ---------------- SkillTree hook ---------------- */
+
+  async _grantSkillToward(runState, targetKey, targetLevel, fallback) {
+    const st = globalThis.SkillTree;
+
+    if (!st?.nextStepToward || !st?.NODES) {
+      if (fallback?.type === "stat") await this._applyStatDelta(fallback.key, fallback.delta);
+      return;
+    }
+
+    const step = st.nextStepToward(this.actor, targetKey, targetLevel, st.NODES, null);
+
+    if (step === true) {
+      if (fallback?.type === "stat") await this._applyStatDelta(fallback.key, fallback.delta);
+      return;
+    }
+
+    const nodeName = step.nodeName;
+    const nodeLevel = Number(step.nodeLevel) || 0;
+
+    const props = this.actor.system?.props ?? {};
+    const cur = this._getPropNumber(props, nodeName);
+    const next = Math.max(cur, nodeLevel);
+
+    await this.actor.update({ [`system.props.${nodeName}`]: String(next) });
+    await this._addBio(runState, `Learned ${nodeName} ${next}`);
   }
 
-  async _appendListProp(key, value) {
-    const raw = this.actor.system?.props?.[key] ?? "";
-    const list = raw ? String(raw).split("\n").filter(Boolean) : [];
-    list.push(value);
-    await this.actor.update({ [`system.props.${key}`]: list.join("\n") });
+  /* ---------------- Reward helpers ---------------- */
+
+  async _rollOnce(tableUuidOrId) {
+    const table = await this._getRollTable(tableUuidOrId);
+    if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
+
+    const draw = await table.draw({ displayChat: false });
+    const r = draw.results?.[0];
+    if (!r) return null;
+
+    // normalize text content
+    return { ...r, _text: (r.description ?? r.text ?? "").trim() };
   }
 
   async _addMoney(amount) {
@@ -205,71 +205,40 @@ export class SkillTreeChargenApp extends FormApplication {
     for (const ch of changes) {
       if (!ch || typeof ch !== "object") continue;
 
-      // ---------- MONEY ----------
       if (ch.type === "money") {
         const { before, after } = await this._addMoney(ch.amount ?? 0);
         await this._addBio(runState, `Received ${after - before} silver`);
         continue;
       }
 
-      // ---------- CONTACT ----------
       if (ch.type === "contact") {
         const prof = await this._rollOnce(ch.professionTable);
         const reg = await this._rollOnce(ch.regionTable);
         const rel = await this._rollOnce(ch.connectionTable);
 
-        const contact = `${prof?.text ?? "Unknown"} from ${reg?.text ?? "Unknown"} (${rel?.text ?? "Unknown"})`;
+        const contact = `${prof?._text ?? "Unknown"} from ${reg?._text ?? "Unknown"} (${rel?._text ?? "Unknown"})`;
         await this._appendListProp("Contacts", contact);
         await this._addBio(runState, `Gained a contact: ${contact}`);
         continue;
       }
 
-      // ---------- BODY ----------
       if (ch.type === "body") {
         const res = await this._rollOnce(ch.tableUuid);
-        if (res?.text) {
-          await this._appendListProp("BodilyChanges", res.text);
-          await this._addBio(runState, `Bodily change: ${res.text}`);
+        const t = res?._text;
+        if (t) {
+          await this._appendListProp("BodilyChanges", t);
+          await this._addBio(runState, `Bodily change: ${t}`);
         }
         continue;
       }
 
-      // ---------- MISC ----------
       if (ch.type === "misc") {
         const res = await this._rollOnce(ch.tableUuid);
-        if (res?.text) {
-          await this._appendListProp("MiscRewards", res.text);
-          await this._addBio(runState, `Misc: ${res.text}`);
-        }
+        const t = res?._text;
+        if (t) await this._addBio(runState, `Misc: ${t}`);
         continue;
       }
 
-      // ---------- ITEM ----------
-      if (ch.type === "item") {
-        const res = await this._rollOnce(ch.tableUuid);
-
-        // If the table result is a compendium/world document link, Foundry will often provide uuid
-        // Prefer uuid if present.
-        let itemDoc = null;
-
-        if (res?.uuid) {
-          itemDoc = await fromUuid(res.uuid).catch(() => null);
-        } else if (res?.documentCollection && res?.documentId) {
-          // fallback (older shape)
-          itemDoc = await fromUuid(`Item.${res.documentId}`).catch(() => null);
-        }
-
-        if (itemDoc) {
-          const qty = Number(ch.qty ?? 1);
-          const obj = itemDoc.toObject();
-          obj.system = foundry.utils.mergeObject(obj.system ?? {}, { quantity: qty });
-          await this.actor.createEmbeddedDocuments("Item", [obj]);
-          await this._addBio(runState, `Acquired item: ${itemDoc.name}${qty > 1 ? ` (x${qty})` : ""}`);
-        }
-        continue;
-      }
-
-      // ---------- STAT (your dice/mod ladder) ----------
       if (ch.type === "stat") {
         const steps = Number(ch.steps ?? 1);
         const characteristic = String(ch.characteristic ?? "").trim();
@@ -288,7 +257,6 @@ export class SkillTreeChargenApp extends FormApplication {
         continue;
       }
 
-      // ---------- SKILL ----------
       if (ch.type === "skill") {
         await this._grantSkillToward(runState, ch.targetKey, ch.targetLevel, ch.fallback);
         continue;
@@ -296,7 +264,8 @@ export class SkillTreeChargenApp extends FormApplication {
     }
   }
 
-  // ---------------- Flow helpers ----------------
+  /* ---------------- Flow ---------------- */
+
   async _rollCards(runState) {
     const table = await this._getRollTable(runState.tableUuid);
     if (!table) throw new Error(`RollTable not found: ${runState.tableUuid}`);
@@ -304,14 +273,18 @@ export class SkillTreeChargenApp extends FormApplication {
     const picked = this._pickDistinct(table.results.contents, runState.choices);
     if (!picked.length) throw new Error(`RollTable "${table.name}" has no results.`);
 
-    return picked.map(r => ({
-      resultId: r.id,
-      rawText: r.text,
-      data: this._parseJSONResultText(r.text, table.name)
-    }));
+    return picked.map(r => {
+      const raw = (r.description ?? r.text ?? "").trim();
+      return {
+        resultId: r.id,
+        rawText: raw,
+        data: this._parseJSONResultText(raw, table.name)
+      };
+    });
   }
 
-  // ---------------- FormApplication ----------------
+  /* ---------------- FormApplication ---------------- */
+
   async getData() {
     const state = this._getState();
 
@@ -326,8 +299,8 @@ export class SkillTreeChargenApp extends FormApplication {
 
     return {
       isSetup: false,
-      state: state.run,
-      cards: state.run.cards.map(c => ({
+      state: state.run, // <-- keeps your HBS {{state.remainingGlobal}} working
+      cards: (state.run.cards ?? []).map(c => ({
         title: c.data.choice.title,
         text: c.data.choice.text ?? ""
       })),
@@ -407,22 +380,17 @@ export class SkillTreeChargenApp extends FormApplication {
     try {
       const data = picked.data;
 
-      // Always show progression in bio
       await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
-
-      // Optional extra bio from table JSON
       if (data.bio) await this._addBio(run, String(data.bio));
 
       const rewards = Array.isArray(data.rewards) ? data.rewards : [];
       if (!rewards.length) throw new Error("No rewards defined for this choice.");
 
-      // Pick exactly ONE reward by weight
       const reward = this._pickWeightedReward(rewards);
       if (!reward) throw new Error("No valid reward could be selected.");
 
       await this._applyChanges(run, reward.changes ?? []);
 
-      // record history
       run.history.push({
         tableUuid: run.tableUuid,
         choiceTitle: data.choice?.title ?? "",
@@ -431,17 +399,13 @@ export class SkillTreeChargenApp extends FormApplication {
         rewardApplied: reward
       });
 
-      // decrement rolls
       run.remainingGlobal = Math.max(0, (run.remainingGlobal ?? 0) - 1);
       run.remainingHere = Math.max(0, (run.remainingHere ?? 0) - 1);
 
-      // Next table logic (branch) — driven by the chosen reward
       const nextUuid = String(reward.next?.tableUuid ?? "").trim();
       const nextRolls = Number(reward.next?.rolls ?? 0);
 
-      const doneByGlobal = run.remainingGlobal <= 0;
-
-      if (doneByGlobal || !nextUuid) {
+      if (run.remainingGlobal <= 0 || !nextUuid) {
         await this._setState({ ...state, run });
         await this._finishWithSummary(run);
         return;
@@ -485,7 +449,7 @@ export class SkillTreeChargenApp extends FormApplication {
   }
 }
 
-// ---------------- Outside-class helpers ----------------
+/* ---------------- Stat helper ---------------- */
 
 function getNumberProp(props, key, fallback = 0) {
   const v = props?.[key];
@@ -503,9 +467,8 @@ async function advanceStat(actor, characteristic, steps = 1) {
   let mod = Math.max(0, getNumberProp(props, modKey, 0));
 
   for (let i = 0; i < steps; i++) {
-    if (mod < 3) {
-      mod += 1;
-    } else {
+    if (mod < 3) mod += 1;
+    else {
       dice += 1;
       mod = 0;
     }
