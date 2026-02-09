@@ -182,17 +182,23 @@ export class SkillTreeChargenApp extends FormApplication {
 
   /* ---------------- Reward helpers ---------------- */
 
-  async _rollOnce(tableUuidOrId) {
-    const table = await this._getRollTable(tableUuidOrId);
-    if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
+async _rollOnce(tableUuid) {
+  const table = await this._getRollTable(tableUuid);
+  const draw = await table.draw({ displayChat: false });
+  const r = draw.results[0];
 
-    const draw = await table.draw({ displayChat: false });
-    const r = draw.results?.[0];
-    if (!r) return null;
+  const raw = (r.description ?? r.text ?? "").trim();
 
-    // normalize text content
-    return { ...r, _text: (r.description ?? r.text ?? "").trim() };
-  }
+  // If the result is JSON in the same format as horoscope/bodily/misc
+  let shown = raw;
+  try {
+    const obj = JSON.parse(raw);
+    if (obj?.choice?.title) shown = String(obj.choice.title);
+  } catch (_) {}
+
+  return { ...r, _text: shown };
+}
+
 
   async _addMoney(amount) {
     const cur = Number(this.actor.system?.props?.Inventory_Money ?? 0);
@@ -369,60 +375,70 @@ export class SkillTreeChargenApp extends FormApplication {
     }
   }
 
-  async _onChoose(index) {
-    const state = this._getState();
-    if (!state.run) return;
+async _onChoose(index) {
+  const state = this._getState();
+  if (!state.run) return;
 
-    const run = state.run;
-    const picked = run.cards?.[index];
-    if (!picked) return;
+  const run = state.run;
+  const picked = run.cards?.[index];
+  if (!picked) return;
 
-    try {
-      const data = picked.data;
+  try {
+    const data = picked.data;
 
-      await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
-      if (data.bio) await this._addBio(run, String(data.bio));
+    // Always log the choice
+    await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
+    if (data.bio) await this._addBio(run, String(data.bio));
 
-      const rewards = Array.isArray(data.rewards) ? data.rewards : [];
-      if (!rewards.length) throw new Error("No rewards defined for this choice.");
+    const rewards = Array.isArray(data.rewards) ? data.rewards : [];
+    if (!rewards.length) throw new Error("No rewards defined for this choice.");
 
-      const reward = this._pickWeightedReward(rewards);
-      if (!reward) throw new Error("No valid reward could be selected.");
+    // ✅ PICK EXACTLY ONE REWARD
+    const reward = this._pickWeightedReward(rewards);
+    if (!reward) throw new Error("No valid reward could be selected.");
 
-      await this._applyChanges(run, reward.changes ?? []);
+    // Apply changes
+    await this._applyChanges(run, reward.changes ?? []);
 
-      run.history.push({
-        tableUuid: run.tableUuid,
-        choiceTitle: data.choice?.title ?? "",
-        choiceText: data.choice?.text ?? "",
-        bio: data.bio ?? "",
-        rewardApplied: reward
-      });
+    // Record history
+    run.history.push({
+      tableUuid: run.tableUuid,
+      choiceTitle: data.choice?.title ?? "",
+      rewardApplied: reward
+    });
 
-      run.remainingGlobal = Math.max(0, (run.remainingGlobal ?? 0) - 1);
-      run.remainingHere = Math.max(0, (run.remainingHere ?? 0) - 1);
+    // Decrement global counter
+    run.remainingGlobal = Math.max(0, run.remainingGlobal - 1);
 
-      const nextUuid = String(reward.next?.tableUuid ?? "").trim();
-      const nextRolls = Number(reward.next?.rolls ?? 0);
+    // ✅ NEXT TABLE MUST COME FROM *reward*
+    const nextUuid = String(reward.next?.tableUuid ?? "").trim();
+    const nextRolls = Number(reward.next?.rolls ?? 0);
 
-      if (run.remainingGlobal <= 0 || !nextUuid) {
-        await this._setState({ ...state, run });
-        await this._finishWithSummary(run);
-        return;
-      }
+    // DEBUG (you can remove later)
+    console.log("Chargen next:", { nextUuid, remaining: run.remainingGlobal });
 
-      run.tableUuid = nextUuid;
-      run.remainingHere = nextRolls > 0 ? nextRolls : run.remainingHere;
-
-      run.cards = await this._rollCards(run);
-
+    // Finish only if no next table
+    if (!nextUuid) {
       await this._setState({ ...state, run });
-      this.render(true);
-    } catch (e) {
-      ui.notifications.error(e.message);
-      console.error(e);
+      await this._finishWithSummary(run);
+      return;
     }
+
+    // Switch table
+    run.tableUuid = nextUuid;
+    if (nextRolls > 0) run.remainingHere = nextRolls;
+
+    // Roll next cards
+    run.cards = await this._rollCards(run);
+
+    await this._setState({ ...state, run });
+    this.render(true);
+
+  } catch (e) {
+    ui.notifications.error(e.message);
+    console.error(e);
   }
+}
 
   async _finishWithSummary(run) {
     const actor = this.actor;

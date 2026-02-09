@@ -1,71 +1,115 @@
 <form class="skilltree-chargen flexcol" autocomplete="off">
 
+    {{!-- ================= SETUP MODE ================= --}}
     {{#if isSetup}}
-    <div class="form-group">
-        <label>Starting RollTable UUID</label>
-        <input type="text" name="tableUuid" value="{{tableUuid}}" placeholder="RollTable.xxxxx or Compendium....RollTable...." />
-        <p class="notes">Must resolve via UUID (recommended) or world table id.</p>
-    </div>
 
-    <div class="form-group">
-        <label>Choices shown per step</label>
-        <input type="number" name="choices" value="{{choices}}" min="1" max="10" />
-    </div>
+    <section class="chargen-setup">
+        <div class="form-group">
+            <label>Starting RollTable UUID</label>
+            <input type="text"
+                   name="tableUuid"
+                   value="{{tableUuid}}"
+                   placeholder="RollTable.xxxxx or Compendium....RollTable...." />
+            <p class="notes">
+                Use a RollTable UUID or world table ID.
+            </p>
+        </div>
 
-    <div class="form-group">
-        <label>Maximum rolls (global)</label>
-        <input type="number" name="maxRolls" value="{{maxRolls}}" min="1" max="200" />
-    </div>
+        <div class="form-group">
+            <label>Choices shown per step</label>
+            <input type="number" name="choices" value="{{choices}}" min="1" max="10" />
+        </div>
 
-    <footer class="sheet-footer flexrow">
-        <button type="button" data-action="start"><i class="fas fa-play"></i> Start</button>
-        <button type="button" data-action="reset"><i class="fas fa-undo"></i> Reset</button>
-    </footer>
+        <div class="form-group">
+            <label>Maximum rolls (global)</label>
+            <input type="number" name="maxRolls" value="{{maxRolls}}" min="1" max="200" />
+        </div>
 
+        <footer class="sheet-footer flexrow">
+            <button type="button" data-action="start">
+                <i class="fas fa-play"></i> Start
+            </button>
+            <button type="button" data-action="reset">
+                <i class="fas fa-undo"></i> Reset
+            </button>
+        </footer>
+    </section>
+
+    {{!-- ================= RUN MODE ================= --}}
     {{else}}
 
-    <div class="cg-header">
-        <div>
-            <h3 class="cg-title">Character Generation</h3>
-            <p class="cg-subtitle">Pick one option. A reward will be rolled and applied.</p>
-        </div>
+    <header class="chargen-header flexrow">
+        <h2 class="chargen-title">
+            <i class="fas fa-scroll"></i>
+            Character Generation
+        </h2>
 
-        <div class="cg-badges">
-            <span class="cg-badge">
-                <i class="fas fa-globe"></i> Remaining (global): {{state.remainingGlobal}}
+        <div class="chargen-counters">
+            <span class="tag">
+                <i class="fas fa-hourglass-half"></i>
+                Global: {{state.remainingGlobal}}
             </span>
-            <span class="cg-badge">
-                <i class="fas fa-list"></i> Remaining (this table): {{state.remainingHere}}
+            <span class="tag">
+                <i class="fas fa-layer-group"></i>
+                This Table: {{state.remainingHere}}
             </span>
         </div>
-    </div>
+    </header>
 
-    <div class="cg-grid">
+    <p class="chargen-instructions">
+        Pick one option. A reward will be rolled and applied.
+    </p>
+
+    <section class="chargen-cards">
         {{#each cards}}
-        <div class="cg-card">
-            <h4>{{this.title}}</h4>
-            <p>{{this.text}}</p>
-            <div class="cg-actions">
-                <button type="button" data-action="choose" data-index="{{@index}}">
-                    <i class="fas fa-check"></i> Choose
-                </button>
-            </div>
-        </div>
+        <article class="chargen-card">
+
+            <header class="card-header">
+                {{#if this.icon}}
+                <i class="card-icon {{this.icon}}"></i>
+                {{else}}
+                <i class="card-icon fas fa-star"></i>
+                {{/if}}
+
+                <h3 class="card-title">{{this.title}}</h3>
+            </header>
+
+            {{#if this.text}}
+            <p class="card-text">{{this.text}}</p>
+            {{/if}}
+
+            <button type="button"
+                    class="card-choose"
+                    data-action="choose"
+                    data-index="{{@index}}">
+                <i class="fas fa-check-circle"></i>
+                Choose
+            </button>
+        </article>
         {{/each}}
-    </div>
+    </section>
 
-    <details>
-        <summary><i class="fas fa-book"></i> Biography so far</summary>
-        <ul>
-            {{#each bio}}
-            <li>{{this}}</li>
-            {{/each}}
-        </ul>
-    </details>
+    <section class="chargen-bio">
+        <details>
+            <summary>
+                <i class="fas fa-book-open"></i>
+                Biography so far
+            </summary>
+            <ul>
+                {{#each bio}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </details>
+    </section>
 
-    <footer class="cg-footer">
-        <button type="button" data-action="reroll"><i class="fas fa-dice"></i> Reroll Options</button>
-        <button type="button" data-action="finish"><i class="fas fa-flag-checkered"></i> Finish</button>
+    <footer class="sheet-footer flexrow chargen-footer">
+        <button type="button" data-action="reroll">
+            <i class="fas fa-dice"></i> Reroll Options
+        </button>
+        <button type="button" data-action="finish">
+            <i class="fas fa-flag-checkered"></i> Finish
+        </button>
     </footer>
 
     {{/if}}
