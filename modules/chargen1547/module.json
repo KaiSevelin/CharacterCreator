@@ -2,7 +2,7 @@
   "id": "1547charactercreator",
   "title": "Character Creator (1547)",
   "description": "Character creation system with careers, roll tables, and skill tree integration.",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "compatibility": {
     "minimum": "11",
     "verified": "13.350"

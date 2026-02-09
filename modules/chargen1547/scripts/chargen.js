@@ -1,10 +1,11 @@
 ﻿// scripts/chargen.js
+
 export class SkillTreeChargenApp extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id: "skilltree-chargen",
       title: "Character Generation",
-      template: "modules/skilltree-helper/templates/chargen.hbs",
+      template: "modules/chargen1547/templates/chargen.hbs",
       width: 900,
       height: "auto",
       closeOnSubmit: false,
@@ -18,7 +19,10 @@ export class SkillTreeChargenApp extends FormApplication {
   }
 
   // ---------------- State helpers ----------------
-  _flagPath() { return "flags.skilltree-helper.chargen"; }
+  _flagPath() {
+    // Use your own module id so you don't collide with skilltree-helper flags
+    return "flags.1547charactercreator.chargen";
+  }
 
   _getState() {
     const st = foundry.utils.getProperty(this.actor, this._flagPath());
@@ -71,11 +75,31 @@ export class SkillTreeChargenApp extends FormApplication {
       if (!obj.rewards || !Array.isArray(obj.rewards) || obj.rewards.length === 0) throw new Error("Missing rewards[]");
       return obj;
     } catch (e) {
-      throw new Error(`Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${String(text ?? "").slice(0, 500)}`);
+      throw new Error(
+        `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${String(text ?? "").slice(0, 500)}`
+      );
     }
   }
 
+  _pickWeightedReward(rewards) {
+    const list = (rewards ?? [])
+      .filter(r => r && typeof r === "object")
+      .map(r => ({ ...r, weight: Number(r.weight ?? 1) }));
 
+    if (!list.length) return null;
+
+    const total = list.reduce((s, r) => s + Math.max(0, r.weight), 0);
+    if (total <= 0) return list[0];
+
+    let roll = Math.random() * total;
+    for (const r of list) {
+      roll -= Math.max(0, r.weight);
+      if (roll <= 0) return r;
+    }
+    return list[list.length - 1];
+  }
+
+  // ---------------- Props helpers ----------------
   _asNumber(v) {
     const n = Number(v);
     return Number.isFinite(n) ? n : 0;
@@ -96,22 +120,25 @@ export class SkillTreeChargenApp extends FormApplication {
     await this.actor.update({ [`system.props.${key}`]: String(next) });
   }
 
-  async _grantSkillToward(targetKey, targetLevel, fallback) {
-    // Uses your existing function:
-    // SkillTree.nextStepToward(actor, targetKey, targetLevel, SkillTree.NODES, item?)
+  async _grantSkillToward(runState, targetKey, targetLevel, fallback) {
     const st = globalThis.SkillTree;
+
+    // If skilltree not available, fallback (optional)
     if (!st?.nextStepToward || !st?.NODES) {
       console.warn("SkillTree.nextStepToward or SkillTree.NODES not available.");
-      // fallback
-      if (fallback?.type === "stat") return this._applyStatDelta(fallback.key, fallback.delta);
+      if (fallback?.type === "stat") {
+        await this._applyStatDelta(fallback.key, fallback.delta);
+      }
       return;
     }
 
     const step = st.nextStepToward(this.actor, targetKey, targetLevel, st.NODES, null);
 
-    // If dead-end (or only Traits_ missing), fallback
+    // If already available (or dead end), fallback
     if (step === true) {
-      if (fallback?.type === "stat") return this._applyStatDelta(fallback.key, fallback.delta);
+      if (fallback?.type === "stat") {
+        await this._applyStatDelta(fallback.key, fallback.delta);
+      }
       return;
     }
 
@@ -122,144 +149,166 @@ export class SkillTreeChargenApp extends FormApplication {
     const props = this.actor.system?.props ?? {};
     const cur = this._getPropNumber(props, nodeName);
     const next = Math.max(cur, nodeLevel);
+
     await this.actor.update({ [`system.props.${nodeName}`]: String(next) });
-    await addBio(
-      this.actor,
-      this._getState().run,
-      `Learned ${nodeName} ${next}`
-    );
+    await this._addBio(runState, `Learned ${nodeName} ${next}`);
   }
 
-  async _applyChanges(changes = []) {
+  // ---------------- Biography helpers ----------------
+  _getBioLines() {
+    const raw = this.actor.system?.props?.Biography ?? "";
+    return String(raw).split("\n").map(s => s.trim()).filter(Boolean);
+  }
+
+  async _appendBiography(lines) {
+    const add = Array.isArray(lines) ? lines : [lines];
+    const cur = this._getBioLines();
+
+    for (const line of add) {
+      const t = String(line ?? "").trim();
+      if (t) cur.push(t);
+    }
+
+    await this.actor.update({ "system.props.Biography": cur.join("\n") });
+  }
+
+  async _addBio(runState, text) {
+    if (!text) return;
+    const line = String(text);
+    runState.bio.push(line);
+    await this._appendBiography(line);
+  }
+
+  // ---------------- Reward helpers ----------------
+  async _rollOnce(tableUuidOrId) {
+    const table = await fromUuid(tableUuidOrId).catch(() => game.tables.get(tableUuidOrId));
+    if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
+    const draw = await table.draw({ displayChat: false });
+    return draw.results?.[0];
+  }
+
+  async _appendListProp(key, value) {
+    const raw = this.actor.system?.props?.[key] ?? "";
+    const list = raw ? String(raw).split("\n").filter(Boolean) : [];
+    list.push(value);
+    await this.actor.update({ [`system.props.${key}`]: list.join("\n") });
+  }
+
+  async _addMoney(amount) {
+    const cur = Number(this.actor.system?.props?.Inventory_Money ?? 0);
+    const next = cur + Number(amount ?? 0);
+    await this.actor.update({ "system.props.Inventory_Money": String(next) });
+    return { before: cur, after: next };
+  }
+
+  async _applyChanges(runState, changes = []) {
     for (const ch of changes) {
       if (!ch || typeof ch !== "object") continue;
-          /* ---------- MONEY ---------- */
-if (ch.type === "money") {
-  const before = Number(this.actor.system?.props?.Inventory_Money ?? 0);
-  await addMoney(this.actor, ch.amount ?? 0);
-  const after = before + Number(ch.amount ?? 0);
 
-  await addBio(this.actor, this._getState().run, `Received ${after - before} silver`);
-}
-
-    /* ---------- CONTACT ---------- */
-    if (ch.type === "contact") {
-      const prof = await rollOnce(ch.professionTable);
-      const reg  = await rollOnce(ch.regionTable);
-      const rel  = await rollOnce(ch.connectionTable);
-
-      const contact = `${prof.text} from ${reg.text} (${rel.text})`;
-      await appendListProp(actor, "Contacts", contact);
-      await addBio(
-          this.actor,
-          this._getState().run,
-          `Gained a contact: ${contact}`
-        );
-    }
-
-    /* ---------- BODY ---------- */
-    if (ch.type === "body") {
-      const res = await rollOnce(ch.tableUuid);
-      if (res?.text) {
-        await appendListProp(this.actor, "BodilyChanges", res.text);
-      await addBio(
-          this.actor,
-          this._getState().run,
-          `Bodily change: ${res.text}`
-        );
+      // ---------- MONEY ----------
+      if (ch.type === "money") {
+        const { before, after } = await this._addMoney(ch.amount ?? 0);
+        await this._addBio(runState, `Received ${after - before} silver`);
+        continue;
       }
-    }
 
-    /* ---------- MISC ---------- */
-    if (ch.type === "misc") {
-      const res = await rollOnce(ch.tableUuid);
-      if (res?.text) {
-        await appendListProp(this.actor, "MiscRewards", res.text);
+      // ---------- CONTACT ----------
+      if (ch.type === "contact") {
+        const prof = await this._rollOnce(ch.professionTable);
+        const reg = await this._rollOnce(ch.regionTable);
+        const rel = await this._rollOnce(ch.connectionTable);
+
+        const contact = `${prof?.text ?? "Unknown"} from ${reg?.text ?? "Unknown"} (${rel?.text ?? "Unknown"})`;
+        await this._appendListProp("Contacts", contact);
+        await this._addBio(runState, `Gained a contact: ${contact}`);
+        continue;
       }
-    }
 
-    /* ---------- ITEM ---------- */
-    if (ch.type === "item") {
-      const res = await rollOnce(ch.tableUuid);
-      if (res?.documentCollection && res?.documentId) {
-        const item = await fromUuid(`Item.${res.documentId}`);
-        if (item) {
-          await actor.createEmbeddedDocuments("Item", [{
-            ...item.toObject(),
-            system: foundry.utils.mergeObject(item.system, { quantity: ch.qty ?? 1 })
-          }]);
-          await addBio(
-              this.actor,
-              this._getState().run,
-              `Acquired item: ${item.name}`
-            );
+      // ---------- BODY ----------
+      if (ch.type === "body") {
+        const res = await this._rollOnce(ch.tableUuid);
+        if (res?.text) {
+          await this._appendListProp("BodilyChanges", res.text);
+          await this._addBio(runState, `Bodily change: ${res.text}`);
         }
+        continue;
       }
-    }
-    if (ch.type === "stat") {
-      const steps = Number(ch.steps ?? 1);
-      if (!ch.characteristic || steps <= 0) continue;
+
+      // ---------- MISC ----------
+      if (ch.type === "misc") {
+        const res = await this._rollOnce(ch.tableUuid);
+        if (res?.text) {
+          await this._appendListProp("MiscRewards", res.text);
+          await this._addBio(runState, `Misc: ${res.text}`);
+        }
+        continue;
+      }
+
+      // ---------- ITEM ----------
+      if (ch.type === "item") {
+        const res = await this._rollOnce(ch.tableUuid);
+
+        // If the table result is a compendium/world document link, Foundry will often provide uuid
+        // Prefer uuid if present.
+        let itemDoc = null;
+
+        if (res?.uuid) {
+          itemDoc = await fromUuid(res.uuid).catch(() => null);
+        } else if (res?.documentCollection && res?.documentId) {
+          // fallback (older shape)
+          itemDoc = await fromUuid(`Item.${res.documentId}`).catch(() => null);
+        }
+
+        if (itemDoc) {
+          const qty = Number(ch.qty ?? 1);
+          const obj = itemDoc.toObject();
+          obj.system = foundry.utils.mergeObject(obj.system ?? {}, { quantity: qty });
+          await this.actor.createEmbeddedDocuments("Item", [obj]);
+          await this._addBio(runState, `Acquired item: ${itemDoc.name}${qty > 1 ? ` (x${qty})` : ""}`);
+        }
+        continue;
+      }
+
+      // ---------- STAT (your dice/mod ladder) ----------
+      if (ch.type === "stat") {
+        const steps = Number(ch.steps ?? 1);
+        const characteristic = String(ch.characteristic ?? "").trim();
+        if (!characteristic || steps <= 0) continue;
 
         const props = this.actor.system?.props ?? {};
-        const diceKey = `Stats_${ch.characteristic}Dice`;
-        const modKey  = `Stats_${ch.characteristic}Mod`;
+        const diceKey = `Stats_${characteristic}Dice`;
+        const modKey = `Stats_${characteristic}Mod`;
 
-        const before = `${props[diceKey] ?? 1}d6+${props[modKey] ?? 0}`;
+        const beforeDice = Number(props[diceKey] ?? 1);
+        const beforeMod = Number(props[modKey] ?? 0);
+        const before = `${beforeDice}d6+${beforeMod}`;
 
-        const { dice, mod } = await advanceStat(this.actor, ch.characteristic, steps);
+        const { dice, mod } = await advanceStat(this.actor, characteristic, steps);
+        await this._addBio(runState, `Improved ${characteristic} (${before} → ${dice}d6+${mod})`);
+        continue;
+      }
 
-        await addBio(
-          this.actor,
-          this._getState().run,
-          `Improved ${ch.characteristic} (${before} → ${dice}d6+${mod})`
-        );
-    }
-
+      // ---------- SKILL ----------
       if (ch.type === "skill") {
-        await this._grantSkillToward(ch.targetKey, ch.targetLevel, ch.fallback);
+        await this._grantSkillToward(runState, ch.targetKey, ch.targetLevel, ch.fallback);
+        continue;
       }
     }
   }
 
-function formatStatRoll(props, characteristic) {
-  const dice = getNumberProp(props, `Stats_${characteristic}Dice`, 1);
-  const mod  = getNumberProp(props, `Stats_${characteristic}Mod`, 0);
-  return `${dice}d6${mod ? (mod > 0 ? "+" + mod : mod) : ""}`;
-}
-async function rollOnce(tableUuidOrId) {
-  const table = await fromUuid(tableUuidOrId).catch(() => game.tables.get(tableUuidOrId));
-  if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
-
-  const draw = await table.draw({ displayChat: false });
-  return draw.results?.[0];
-}
-async function appendListProp(actor, key, value) {
-  const raw = actor.system?.props?.[key] ?? "";
-  const list = raw ? raw.split("\n").filter(Boolean) : [];
-  list.push(value);
-  await actor.update({ [`system.props.${key}`]: list.join("\n") });
-}
-async function addMoney(actor, amount) {
-  const cur = Number(actor.system?.props?.Inventory_Money ?? 0);
-  const next = cur + Number(amount ?? 0);
-  await actor.update({ "system.props.Inventory_Money": String(next) });
-}
   // ---------------- Flow helpers ----------------
   async _rollCards(runState) {
     const table = await this._getRollTable(runState.tableUuid);
     if (!table) throw new Error(`RollTable not found: ${runState.tableUuid}`);
 
-    // Pick X distinct results without consuming the table
     const picked = this._pickDistinct(table.results.contents, runState.choices);
     if (!picked.length) throw new Error(`RollTable "${table.name}" has no results.`);
 
-    const parsed = picked.map(r => ({
+    return picked.map(r => ({
       resultId: r.id,
       rawText: r.text,
       data: this._parseJSONResultText(r.text, table.name)
     }));
-
-    return parsed;
   }
 
   // ---------------- FormApplication ----------------
@@ -301,7 +350,6 @@ async function addMoney(actor, amount) {
   }
 
   async _onStart(html) {
-    const state = this._getState();
     const tableUuid = String(html.find("input[name='tableUuid']").val() ?? "").trim();
     const choices = Math.max(1, Number(html.find("input[name='choices']").val() ?? 2));
     const maxRolls = Math.max(1, Number(html.find("input[name='maxRolls']").val() ?? 10));
@@ -313,7 +361,7 @@ async function addMoney(actor, amount) {
       tableUuid,
       choices,
       remainingGlobal: maxRolls,
-      remainingHere: maxRolls, // initial table's allowed rolls = max unless you want separate; you can change later by reward.next.rolls
+      remainingHere: maxRolls,
       bio: [],
       history: [],
       cards: []
@@ -359,19 +407,20 @@ async function addMoney(actor, amount) {
     try {
       const data = picked.data;
 
-      // add biography line
-      if (data.bio) run.bio.push(String(data.bio));
+      // Always show progression in bio
+      await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
 
-        const rewards = Array.isArray(data.rewards) ? data.rewards : [];
+      // Optional extra bio from table JSON
+      if (data.bio) await this._addBio(run, String(data.bio));
 
-        if (!rewards.length) {
-            throw new Error("No rewards defined for this choice.");
-        }
+      const rewards = Array.isArray(data.rewards) ? data.rewards : [];
+      if (!rewards.length) throw new Error("No rewards defined for this choice.");
 
-        for (const reward of rewards) {
-            await this._applyChanges(reward.changes ?? []);
-        }
+      // Pick exactly ONE reward by weight
+      const reward = this._pickWeightedReward(rewards);
+      if (!reward) throw new Error("No valid reward could be selected.");
 
+      await this._applyChanges(run, reward.changes ?? []);
 
       // record history
       run.history.push({
@@ -379,73 +428,43 @@ async function addMoney(actor, amount) {
         choiceTitle: data.choice?.title ?? "",
         choiceText: data.choice?.text ?? "",
         bio: data.bio ?? "",
-        rewardApplied: rewards
+        rewardApplied: reward
       });
 
       // decrement rolls
       run.remainingGlobal = Math.max(0, (run.remainingGlobal ?? 0) - 1);
       run.remainingHere = Math.max(0, (run.remainingHere ?? 0) - 1);
 
-      // Next table logic (branch)
+      // Next table logic (branch) — driven by the chosen reward
       const nextUuid = String(reward.next?.tableUuid ?? "").trim();
       const nextRolls = Number(reward.next?.rolls ?? 0);
 
       const doneByGlobal = run.remainingGlobal <= 0;
-      const doneByHere = run.remainingHere <= 0;
 
-      // Finish if:
-      // - global cap hit, OR
-      // - next is empty AND current table rolls exhausted (or you can finish immediately when next empty)
       if (doneByGlobal || !nextUuid) {
         await this._setState({ ...state, run });
         await this._finishWithSummary(run);
         return;
       }
 
-      // Switch to next table and set remainingHere to nextRolls (if provided), otherwise keep remainingHere as-is
       run.tableUuid = nextUuid;
       run.remainingHere = nextRolls > 0 ? nextRolls : run.remainingHere;
 
-      // roll next set of cards
       run.cards = await this._rollCards(run);
 
       await this._setState({ ...state, run });
       this.render(true);
-
     } catch (e) {
       ui.notifications.error(e.message);
       console.error(e);
     }
   }
-  function getBioLines(actor) {
-  const raw = actor.system?.props?.Biography ?? "";
-  return String(raw).split("\n").map(s => s.trim()).filter(Boolean);
-}
 
-async function appendBiography(actor, lines) {
-  const add = Array.isArray(lines) ? lines : [lines];
-  const cur = getBioLines(actor);
-
-  for (const line of add) {
-    const t = String(line ?? "").trim();
-    if (t) cur.push(t);
-  }
-
-  await actor.update({
-    "system.props.Biography": cur.join("\n")
-  });
-}
-async function addBio(actor, runState, text) {
-  if (!text) return;
-  const line = String(text);
-
-  runState.bio.push(line);
-  await appendBiography(actor, line);
-}
   async _finishWithSummary(run) {
-    // Write bio into chat (and keep in flags)
     const actor = this.actor;
-    const bioHtml = (run.bio ?? []).map(s => `<li>${foundry.utils.escapeHTML(String(s))}</li>`).join("");
+    const bioHtml = (run.bio ?? [])
+      .map(s => `<li>${foundry.utils.escapeHTML(String(s))}</li>`)
+      .join("");
 
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor }),
@@ -457,8 +476,6 @@ async function addBio(actor, runState, text) {
     });
 
     ui.notifications.info("Character generation finished.");
-    // keep state.run as-is (history preserved), but you can also clear it if you prefer:
-    // await this._setState({ setup: state.setup, run: null });
   }
 
   async _onFinish() {
@@ -467,6 +484,9 @@ async function addBio(actor, runState, text) {
     await this._finishWithSummary(state.run);
   }
 }
+
+// ---------------- Outside-class helpers ----------------
+
 function getNumberProp(props, key, fallback = 0) {
   const v = props?.[key];
   const n = Number(v);
@@ -475,12 +495,12 @@ function getNumberProp(props, key, fallback = 0) {
 
 async function advanceStat(actor, characteristic, steps = 1) {
   const diceKey = `Stats_${characteristic}Dice`;
-  const modKey  = `Stats_${characteristic}Mod`;
+  const modKey = `Stats_${characteristic}Mod`;
 
   const props = actor.system?.props ?? {};
 
   let dice = Math.max(1, getNumberProp(props, diceKey, 1));
-  let mod  = Math.max(0, getNumberProp(props, modKey, 0));
+  let mod = Math.max(0, getNumberProp(props, modKey, 0));
 
   for (let i = 0; i < steps; i++) {
     if (mod < 3) {
