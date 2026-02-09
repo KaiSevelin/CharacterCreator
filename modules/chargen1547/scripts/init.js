@@ -1,8 +1,13 @@
+// scripts/init.js
 import { SkillTreeChargenApp } from "./chargen.js";
 
 Hooks.once("ready", () => {
-  // Expose for macros/testing
   globalThis.SkillTreeChargen = {
-    open: (actor) => new SkillTreeChargenApp(actor).render(true)
+    open: (actor) => {
+      if (!actor) return ui.notifications.warn("No actor provided.");
+      new SkillTreeChargenApp(actor).render(true);
+    }
   };
+
+  console.log("SkillTreeChargen ready:", globalThis.SkillTreeChargen);
 });
