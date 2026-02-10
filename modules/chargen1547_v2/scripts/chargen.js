@@ -102,50 +102,49 @@ _parseJSONResultText(text, tableName = "RollTable") {
       throw new Error("Missing rewards[]");
     }
 
-    // Normalize into plain objects (important: keep next!)
-    const normalized = {
+    // Normalize into plain objects and *preserve next*
+    const normalizedRewards = obj.rewards.map((r, idx) => {
+      if (!r || typeof r !== "object") {
+        throw new Error(`rewards[${idx}] must be an object`);
+      }
+
+      // Clone first so we keep any extra fields (and avoid odd enumerability issues)
+      const rr = foundry.utils.deepClone(r);
+
+      const weight = Number(rr.weight ?? 1);
+      rr.weight = Number.isFinite(weight) ? weight : 1;
+
+      rr.changes = Array.isArray(rr.changes) ? rr.changes : [];
+
+      // Force next into a predictable shape (or null)
+      if (rr.next && typeof rr.next === "object") {
+        rr.next = {
+          tableUuid: String(rr.next.tableUuid ?? "").trim(),
+          rolls: Number.isFinite(Number(rr.next.rolls ?? 0)) ? Number(rr.next.rolls ?? 0) : 0
+        };
+      } else {
+        rr.next = null;
+      }
+
+      return rr;
+    });
+
+    return {
       choice: {
         title: String(obj.choice.title),
         text: obj.choice.text != null ? String(obj.choice.text) : "",
         icon: obj.choice.icon != null ? String(obj.choice.icon) : ""
       },
       bio: obj.bio != null ? String(obj.bio) : "",
-      rewards: obj.rewards.map((r, idx) => {
-        if (!r || typeof r !== "object") {
-          throw new Error(`rewards[${idx}] must be an object`);
-        }
-
-        const weight = Number(r.weight ?? 1);
-        const safeWeight = Number.isFinite(weight) ? weight : 1;
-
-        const changes = Array.isArray(r.changes) ? r.changes : [];
-
-        // next is optional, but if present normalize shape
-        let next = null;
-        if (r.next && typeof r.next === "object") {
-          const tableUuid = String(r.next.tableUuid ?? "").trim();
-          const rolls = Number(r.next.rolls ?? 0);
-          next = {
-            tableUuid,
-            rolls: Number.isFinite(rolls) ? rolls : 0
-          };
-        }
-
-        return {
-          weight: safeWeight,
-          changes,
-          next
-        };
-      })
+      rewards: normalizedRewards
     };
-
-    return normalized;
   } catch (e) {
     throw new Error(
       `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${raw.slice(0, 500)}`
     );
   }
 }
+
 
 
  _pickWeightedReward(rewards) {
