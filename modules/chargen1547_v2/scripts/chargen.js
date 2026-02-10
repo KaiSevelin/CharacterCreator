@@ -1,5 +1,4 @@
-﻿// scripts/chargen.js
-console.log("CHARGEN.JS LOADED FROM", import.meta.url);
+﻿console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
 export class SkillTreeChargenApp extends FormApplication {
   static get defaultOptions() {
@@ -21,9 +20,8 @@ export class SkillTreeChargenApp extends FormApplication {
 
   /* ---------------- State helpers ---------------- */
 
-  _flagPath() {
-    return "flags.1547charactercreator.chargen";
-  }
+_flagPath() { return "flags.chargen1547_v2.chargen"; }
+
 
   _getState() {
     return foundry.utils.getProperty(this.actor, this._flagPath()) ?? {
@@ -82,72 +80,58 @@ export class SkillTreeChargenApp extends FormApplication {
 _parseJSONResultText(text, tableName = "RollTable") {
   const raw = String(text ?? "").trim();
 
+  console.warn("PARSE ENTER", { tableName, rawStart: raw.slice(0, 80) });
+
+  let obj;
   try {
-    const obj = JSON.parse(raw);
-
-    if (!obj || typeof obj !== "object" || Array.isArray(obj)) {
-      throw new Error("JSON root must be an object.");
-    }
-
-    // ---- choice ----
-    if (!obj.choice || typeof obj.choice !== "object") {
-      throw new Error("Missing choice object.");
-    }
-    if (!obj.choice.title || typeof obj.choice.title !== "string") {
-      throw new Error("Missing choice.title");
-    }
-
-    // ---- rewards ----
-    if (!Array.isArray(obj.rewards) || obj.rewards.length === 0) {
-      throw new Error("Missing rewards[]");
-    }
-
-    // Normalize into plain objects and *preserve next*
-    const normalizedRewards = obj.rewards.map((r, idx) => {
-      if (!r || typeof r !== "object") {
-        throw new Error(`rewards[${idx}] must be an object`);
-      }
-
-      // Clone first so we keep any extra fields (and avoid odd enumerability issues)
-      const rr = foundry.utils.deepClone(r);
-
-      const weight = Number(rr.weight ?? 1);
-      rr.weight = Number.isFinite(weight) ? weight : 1;
-
-      rr.changes = Array.isArray(rr.changes) ? rr.changes : [];
-
-      // Force next into a predictable shape (or null)
-      if (rr.next && typeof rr.next === "object") {
-        rr.next = {
-          tableUuid: String(rr.next.tableUuid ?? "").trim(),
-          rolls: Number.isFinite(Number(rr.next.rolls ?? 0)) ? Number(rr.next.rolls ?? 0) : 0
-        };
-      } else {
-        rr.next = null;
-      }
-
-      return rr;
-    });
-
-    return {
-      choice: {
-        title: String(obj.choice.title),
-        text: obj.choice.text != null ? String(obj.choice.text) : "",
-        icon: obj.choice.icon != null ? String(obj.choice.icon) : ""
-      },
-      bio: obj.bio != null ? String(obj.bio) : "",
-      rewards: normalizedRewards
-    };
+    obj = JSON.parse(raw);
   } catch (e) {
+    console.error("PARSE JSON ERROR", e, raw);
     throw new Error(
       `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${raw.slice(0, 500)}`
     );
   }
+
+  console.warn("PARSE OBJ reward[0] (raw JSON)", obj?.rewards?.[0]);
+
+  if (!obj?.choice?.title) throw new Error("Missing choice.title");
+  if (!Array.isArray(obj.rewards) || !obj.rewards.length) throw new Error("Missing rewards[]");
+
+  const rewards = obj.rewards.map((r, i) => {
+    if (!r || typeof r !== "object") throw new Error(`rewards[${i}] must be an object`);
+
+    const rr = foundry.utils.deepClone(r);
+
+    const out = {
+      ...rr, // ✅ keep anything else
+      weight: Number.isFinite(Number(rr.weight)) ? Number(rr.weight) : 1,
+      changes: Array.isArray(rr.changes) ? rr.changes : [],
+      next: (rr.next && typeof rr.next === "object")
+        ? {
+            tableUuid: String(rr.next.tableUuid ?? "").trim(),
+            rolls: Number.isFinite(Number(rr.next.rolls)) ? Number(rr.next.rolls) : 0
+          }
+        : null
+    };
+
+    console.warn("PARSE OUT reward keys", Object.keys(out), out.next);
+    return out;
+  });
+
+  return {
+    choice: {
+      title: String(obj.choice.title),
+      text: obj.choice.text != null ? String(obj.choice.text) : "",
+      icon: obj.choice.icon != null ? String(obj.choice.icon) : ""
+    },
+    bio: obj.bio != null ? String(obj.bio) : "",
+    rewards
+  };
 }
 
 
 
- _pickWeightedReward(rewards) {
+_pickWeightedReward(rewards) {
   const list = Array.isArray(rewards) ? rewards.filter(r => r && typeof r === "object") : [];
   if (!list.length) return null;
 
@@ -162,10 +146,11 @@ _parseJSONResultText(text, tableName = "RollTable") {
   let roll = Math.random() * total;
   for (const r of list) {
     roll -= weightOf(r);
-    if (roll <= 0) return r;          // ✅ returns ORIGINAL object (keeps next)
+    if (roll <= 0) return r;          // ✅ returns the ORIGINAL reward object
   }
   return list[list.length - 1];
 }
+
 
 
   /* ---------------- Biography helpers ---------------- */
@@ -326,23 +311,39 @@ _parseJSONResultText(text, tableName = "RollTable") {
   }
 
   /* ---------------- Flow ---------------- */
+async _rollCards(run) {
+  const table = await this._getRollTable(run.tableUuid);
+  if (!table) throw new Error(`RollTable not found: ${run.tableUuid}`);
 
-  async _rollCards(run) {
-    const table = await this._getRollTable(run.tableUuid);
-    if (!table) throw new Error(`RollTable not found: ${run.tableUuid}`);
+  const picked = this._pickDistinct(table.results.contents, run.choices);
 
-    const picked = this._pickDistinct(table.results.contents, run.choices);
-    if (!picked.length) throw new Error(`RollTable "${table.name}" has no results.`);
+  return picked.map(r => {
+    const raw = String(r.description ?? r.name ?? "").trim(); // v13
+    const data = this._parseJSONResultText(raw, table.name);
 
-    return picked.map(r => {
-      const raw = this._resultRawJSON(r);
-      return {
-        resultId: r.id,
-        rawText: raw,
-        data: this._parseJSONResultText(raw, table.name)
-      };
-    });
-  }
+    console.warn("ROLLCARDS parsed reward keys", data.rewards.map(x => Object.keys(x)));
+
+    return {
+      resultId: r.id,
+      rawText: raw,
+      data
+    };
+  });
+}
+
+
+    const data = this._parseJSONResultText(raw, table.name);
+    console.log("ROLLCARDS parsed rewards keys", data.rewards.map(r => Object.keys(r)));
+console.log("ROLLCARDS parsed rewards", data.rewards);
+
+    return {
+      resultId: r.id,
+      data
+    };
+  });
+}
+
+
 
   /* ---------------- FormApplication ---------------- */
 
@@ -450,6 +451,10 @@ _parseJSONResultText(text, tableName = "RollTable") {
 
     // Pick ONE reward by weight (keep original objects if possible)
     const reward = this._pickWeightedReward(rewards);
+
+    console.log("DEBUG chosenReward keys:", Object.keys(reward ?? {}));
+    console.log("DEBUG chosenReward.next:", reward?.next);
+    console.log("DEBUG all rewards:", rewards);
     if (!reward) throw new Error("No valid reward could be selected.");
 
     // Apply changes for the chosen reward

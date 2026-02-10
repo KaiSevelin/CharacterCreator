@@ -2,7 +2,7 @@
   "id": "chargen1547_v2",
   "title": "Character Creator (1547)",
   "description": "Character creation system with careers, roll tables, and skill tree integration.",
-  "version": "0.0.25",
+  "version": "0.0.101",
   "compatibility": {
     "minimum": "11",
     "verified": "13.350"
@@ -19,7 +19,7 @@
       }
     ]
   },
-  "url": "https://github.com/KaiSevelin/chargen1547",
-  "manifest": "https://raw.githubusercontent.com/KaiSevelin/chargen1547/master/module.json",
-  "download": "https://raw.githubusercontent.com/KaiSevelin/chargen1547/master/chargen1547.zip"
+  "url": "https://github.com/KaiSevelin/chargen1547_v2",
+  "manifest": "https://raw.githubusercontent.com/KaiSevelin/chargen1547_v2/master/module.json",
+  "download": "https://raw.githubusercontent.com/KaiSevelin/chargen1547_v2/master/chargen1547_v2.zip"
 }
