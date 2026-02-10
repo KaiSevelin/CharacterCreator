@@ -332,18 +332,6 @@ async _rollCards(run) {
 }
 
 
-    const data = this._parseJSONResultText(raw, table.name);
-    console.log("ROLLCARDS parsed rewards keys", data.rewards.map(r => Object.keys(r)));
-console.log("ROLLCARDS parsed rewards", data.rewards);
-
-    return {
-      resultId: r.id,
-      data
-    };
-  });
-}
-
-
 
   /* ---------------- FormApplication ---------------- */
 

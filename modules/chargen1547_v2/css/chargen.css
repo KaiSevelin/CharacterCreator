@@ -1,9 +1,11 @@
-/* styles/chargen.css */
+/* styles/chargen.css - DROP-IN (image card version) */
+
 .skilltree-chargen {
 	gap: 0.75rem;
 }
 
-	.skilltree-chargen .cg-header {
+	/* --- Header / counters (kept compatible with your current markup) --- */
+	.skilltree-chargen .chargen-header {
 		display: flex;
 		align-items: baseline;
 		justify-content: space-between;
@@ -11,80 +13,128 @@
 		flex-wrap: wrap;
 	}
 
-	.skilltree-chargen .cg-title {
+	.skilltree-chargen .chargen-title {
 		font-size: 1.6rem;
 		font-weight: 800;
 		letter-spacing: 0.5px;
 		margin: 0;
 	}
 
-	.skilltree-chargen .cg-subtitle {
+	.skilltree-chargen .chargen-instructions {
 		margin: 0;
-		opacity: 0.75;
+		opacity: 0.8;
 	}
 
-	.skilltree-chargen .cg-badges {
+	.skilltree-chargen .chargen-counters {
 		display: flex;
 		gap: 0.5rem;
 		flex-wrap: wrap;
 	}
 
-	.skilltree-chargen .cg-badge {
-		display: inline-flex;
-		gap: 0.35rem;
-		align-items: center;
-		padding: 0.25rem 0.55rem;
-		border-radius: 999px;
-		border: 1px solid var(--color-border-light-primary);
-		background: rgba(0,0,0,0.04);
-		font-weight: 700;
-	}
+		.skilltree-chargen .chargen-counters .tag {
+			display: inline-flex;
+			gap: 0.35rem;
+			align-items: center;
+			padding: 0.25rem 0.55rem;
+			border-radius: 999px;
+			border: 1px solid var(--color-border-light-primary);
+			background: rgba(0,0,0,0.04);
+			font-weight: 700;
+		}
 
-	.skilltree-chargen .cg-grid {
+	/* --- Cards grid (option 2) --- */
+	.skilltree-chargen .chargen-cards {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 		gap: 0.85rem;
 	}
 
-	.skilltree-chargen .cg-card {
+	/* Card shell */
+	.skilltree-chargen .chargen-card {
 		border: 1px solid var(--color-border-light-primary);
 		border-radius: 14px;
-		padding: 0.9rem;
+		overflow: hidden; /* makes the cover clip to rounded corners */
 		background: rgba(255,255,255,0.55);
 		box-shadow: 0 6px 18px rgba(0,0,0,0.10);
 		transition: transform 120ms ease, box-shadow 120ms ease;
+		display: flex;
+		flex-direction: column;
 	}
 
-		.skilltree-chargen .cg-card:hover {
+		.skilltree-chargen .chargen-card:hover {
 			transform: translateY(-2px);
 			box-shadow: 0 10px 26px rgba(0,0,0,0.14);
 		}
 
-		.skilltree-chargen .cg-card h4 {
-			margin: 0 0 0.35rem 0;
-			font-size: 1.1rem;
-			font-weight: 800;
+		/* Cover image area
+   Uses the inline style: --cg-cover: url("...") */
+		.skilltree-chargen .chargen-card .card-cover {
+			height: 120px;
+			background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.25)), var(--cg-cover, linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)));
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			border-bottom: 1px solid rgba(0,0,0,0.08);
 		}
 
-		.skilltree-chargen .cg-card p {
-			margin: 0 0 0.85rem 0;
-			opacity: 0.85;
+		/* Text content */
+		.skilltree-chargen .chargen-card .card-header {
+			padding: 0.8rem 0.9rem 0.35rem;
+		}
+
+		.skilltree-chargen .chargen-card .card-title {
+			margin: 0;
+			font-size: 1.15rem;
+			font-weight: 900;
+			letter-spacing: 0.2px;
+			line-height: 1.2;
+		}
+
+		.skilltree-chargen .chargen-card .card-text {
+			margin: 0;
+			padding: 0 0.9rem 0.85rem;
+			opacity: 0.88;
 			line-height: 1.25rem;
 			min-height: 2.5rem;
 		}
 
-		.skilltree-chargen .cg-card .cg-actions {
-			display: flex;
-			gap: 0.5rem;
-		}
-
-		.skilltree-chargen .cg-card button {
-			width: 100%;
+		/* Push button to bottom if text is short */
+		.skilltree-chargen .chargen-card .card-choose {
+			margin: auto 0.9rem 0.9rem;
+			width: calc(100% - 1.8rem);
 			border-radius: 10px;
 			font-weight: 800;
 		}
+	/* --- Make entire card clickable --- */
+	.skilltree-chargen .chargen-card {
+		cursor: pointer;
+		position: relative;
+	}
 
-	.skilltree-chargen .cg-footer {
+		/* Visual hover feedback */
+		.skilltree-chargen .chargen-card:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+		}
+
+		/* Ensure the button still looks like a button */
+		.skilltree-chargen .chargen-card .card-choose {
+			pointer-events: none; /* click goes to card instead */
+		}
+
+		/* Keyboard accessibility */
+		.skilltree-chargen .chargen-card:focus-within {
+			outline: 2px solid var(--color-border-highlight);
+			outline-offset: 2px;
+		}
+
+	/* --- Bio / footer (compatible with your current markup) --- */
+	.skilltree-chargen .chargen-bio summary {
+		cursor: pointer;
+	}
+
+	.skilltree-chargen .sheet-footer.chargen-footer,
+	.skilltree-chargen .sheet-footer {
 		display: flex;
 		gap: 0.5rem;
 		justify-content: flex-end;

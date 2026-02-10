@@ -62,15 +62,11 @@
 
     <section class="chargen-cards">
         {{#each cards}}
-        <article class="chargen-card">
+        <article class="chargen-card" style="--cg-cover: url('{{this.img}}');">
+
+            <div class="card-cover" role="img" aria-label="{{this.title}}"></div>
 
             <header class="card-header">
-                {{#if this.icon}}
-                <i class="card-icon {{this.icon}}"></i>
-                {{else}}
-                <i class="card-icon fas fa-star"></i>
-                {{/if}}
-
                 <h3 class="card-title">{{this.title}}</h3>
             </header>
 
@@ -82,12 +78,13 @@
                     class="card-choose"
                     data-action="choose"
                     data-index="{{@index}}">
-                <i class="fas fa-check-circle"></i>
                 Choose
             </button>
+
         </article>
         {{/each}}
     </section>
+
 
     <section class="chargen-bio">
         <details>
