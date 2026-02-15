@@ -33,9 +33,41 @@ export class SkillTreeChargenApp extends FormApplication {
             resizable: true
         });
     }
+    static async _requireRollTable(uuid, label) {
+        if (!uuid || typeof uuid !== "string") {
+            throw new Error(`Missing required RollTable: ${label}`);
+        }
+
+        const doc = uuid.includes(".")
+            ? await fromUuid(uuid).catch(() => null)
+            : game.tables.get(uuid);
+
+        if (!doc || doc.documentName !== "RollTable") {
+            throw new Error(`Invalid RollTable for ${label}: ${uuid}`);
+        }
+
+        return uuid;
+    }
 
     // ---- NEW: prompt for a name, create an actor, and start chargen ----
     static async open(opts = {}) {
+        await this._requireRollTable(opts.startingTable, "Starting Table");
+
+        await this._requireRollTable(
+            opts.contactTables?.professionTable,
+            "Contact Profession Table"
+        );
+        await this._requireRollTable(
+            opts.contactTables?.regionTable,
+            "Contact Region Table"
+        );
+        await this._requireRollTable(
+            opts.contactTables?.connectionTable,
+            "Contact Connection Table"
+        );
+
+        await this._requireRollTable(opts.bodyTable, "Body Table");
+        await this._requireRollTable(opts.miscTable, "Misc Table");
         const name = await this._promptForName();
         if (!name) return;
 
@@ -62,12 +94,12 @@ export class SkillTreeChargenApp extends FormApplication {
         const maxRolls = opts.maxRolls ?? 10;
 
         const contactTables = {
-            professionTable: opts.contactTables?.professionTable ?? null,
-            regionTable: opts.contactTables?.regionTable ?? null,
-            connectionTable: opts.contactTables?.connectionTable ?? null
+            professionTable: opts.contactTables?.professionTable,
+            regionTable: opts.contactTables?.regionTable,
+            connectionTable: opts.contactTables?.connectionTable
         };
-        const bodyTable = opts.bodyTable ?? null;
-        const miscTable = opts.miscTable ?? null;
+        const bodyTable = opts.bodyTable;
+        const miscTable = opts.miscTable;
 
         const run = {
             tableUuid,
@@ -374,13 +406,14 @@ export class SkillTreeChargenApp extends FormApplication {
                 continue;
             }
             if (ch.type === "contact") {
-                const profTable = ch.professionTable ?? run.contactTables?.professionTable ?? run.setup?.contactTables?.professionTable;
-                const regionTable = ch.regionTable ?? run.contactTables?.regionTable ?? run.setup?.contactTables?.regionTable;
-                const connTable = ch.connectionTable ?? run.contactTables?.connectionTable ?? run.setup?.contactTables?.connectionTable;
+                const p = await this._rollOnce(run.contactTables.professionTable);
+                const r = await this._rollOnce(run.contactTables.regionTable);
+                const c = await this._rollOnce(run.contactTables.connectionTable);
 
                 const pTxt = p.result?.name ?? p.raw ?? "Unknown";
                 const rTxt = r.result?.name ?? r.raw ?? "Unknown";
                 const cTxt = c.result?.name ?? c.raw ?? "Unknown";
+
                 const txt = `${pTxt} from ${rTxt} (${cTxt})`;
 
                 await this._appendListProp("Contacts", txt);
