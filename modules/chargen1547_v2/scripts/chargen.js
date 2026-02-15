@@ -55,10 +55,8 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const app = new SkillTreeChargenApp(actor);
 
-        // ✅ starting table is now configurable
         const tableUuid =
-            opts.startingTable ??
-            "RollTable.BI0oL2A7UmceHMSB";
+            opts.startingTable;
 
         const choices = opts.choices ?? 2;
         const maxRolls = opts.maxRolls ?? 10;
@@ -68,6 +66,8 @@ export class SkillTreeChargenApp extends FormApplication {
             regionTable: opts.contactTables?.regionTable ?? null,
             connectionTable: opts.contactTables?.connectionTable ?? null
         };
+        const bodyTable = opts.bodyTable ?? null;
+        const miscTable = opts.miscTable ?? null;
 
         const run = {
             tableUuid,
@@ -78,6 +78,8 @@ export class SkillTreeChargenApp extends FormApplication {
             history: [],
             luckyStreak: false,
             contactTables,
+            bodyTable,
+            miscTable,
             cards: []
         };
 
@@ -376,18 +378,18 @@ export class SkillTreeChargenApp extends FormApplication {
                 const regionTable = ch.regionTable ?? run.contactTables?.regionTable ?? run.setup?.contactTables?.regionTable;
                 const connTable = ch.connectionTable ?? run.contactTables?.connectionTable ?? run.setup?.contactTables?.connectionTable;
 
-                const p = await this._rollOnce(profTable);
-                const r = await this._rollOnce(regionTable);
-                const c = await this._rollOnce(connTable);
+                const pTxt = p.result?.name ?? p.raw ?? "Unknown";
+                const rTxt = r.result?.name ?? r.raw ?? "Unknown";
+                const cTxt = c.result?.name ?? c.raw ?? "Unknown";
+                const txt = `${pTxt} from ${rTxt} (${cTxt})`;
 
-                const txt = `${p} from ${r} (${c})`;
                 await this._appendListProp("Contacts", txt);
                 await this._addBio(run, `Gained a contact: ${txt}`);
                 continue;
             }
 
             if (ch.type === "body") {
-                const rr = await this._rollOnce(ch.tableUuid);
+                const rr = await this._rollOnce(run.bodyTable);
                 const txt = rr.result?.name ?? rr.raw ?? "Unknown";
                 await this._appendListProp("BodilyChanges", txt);
                 await this._addBio(run, `Bodily change: ${txt}`);
@@ -395,7 +397,7 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             if (ch.type === "misc") {
-                const rr = await this._rollOnce(ch.tableUuid);
+                const rr = await this._rollOnce(run.miscTable);
                 const txt = rr.result?.name ?? rr.raw ?? "Unknown";
                 await this._addBio(run, `Misc: ${txt}`);
                 continue;
