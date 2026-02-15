@@ -35,7 +35,7 @@ export class SkillTreeChargenApp extends FormApplication {
     }
 
     // ---- NEW: prompt for a name, create an actor, and start chargen ----
-    static async open() {
+    static async open(opts = {}) {
         const name = await this._promptForName();
         if (!name) return;
 
@@ -55,10 +55,19 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const app = new SkillTreeChargenApp(actor);
 
-        // Always start from this table
-        const tableUuid = "RollTable.BI0oL2A7UmceHMSB";
-        const choices = 2;
-        const maxRolls = 10;
+        // ✅ starting table is now configurable
+        const tableUuid =
+            opts.startingTable ??
+            "RollTable.BI0oL2A7UmceHMSB";
+
+        const choices = opts.choices ?? 2;
+        const maxRolls = opts.maxRolls ?? 10;
+
+        const contactTables = {
+            professionTable: opts.contactTables?.professionTable ?? null,
+            regionTable: opts.contactTables?.regionTable ?? null,
+            connectionTable: opts.contactTables?.connectionTable ?? null
+        };
 
         const run = {
             tableUuid,
@@ -68,18 +77,20 @@ export class SkillTreeChargenApp extends FormApplication {
             bio: [],
             history: [],
             luckyStreak: false,
+            contactTables,
             cards: []
         };
 
         run.cards = await app._rollCards(run);
 
         await app._setState({
-            setup: { tableUuid, choices, maxRolls },
+            setup: { tableUuid, choices, maxRolls, contactTables },
             run
         });
 
         app.render(true);
     }
+
 
     static async _promptForName() {
         return new Promise((resolve) => {
@@ -361,15 +372,15 @@ export class SkillTreeChargenApp extends FormApplication {
                 continue;
             }
             if (ch.type === "contact") {
-                const p = await this._rollOnce(ch.professionTable);
-                const r = await this._rollOnce(ch.regionTable);
-                const c = await this._rollOnce(ch.connectionTable);
+                const profTable = ch.professionTable ?? run.contactTables?.professionTable ?? run.setup?.contactTables?.professionTable;
+                const regionTable = ch.regionTable ?? run.contactTables?.regionTable ?? run.setup?.contactTables?.regionTable;
+                const connTable = ch.connectionTable ?? run.contactTables?.connectionTable ?? run.setup?.contactTables?.connectionTable;
 
-                const prof = p.result?.name ?? p.raw ?? "Unknown";
-                const reg = r.result?.name ?? r.raw ?? "Unknown";
-                const rel = c.result?.name ?? c.raw ?? "Unknown";
+                const p = await this._rollOnce(profTable);
+                const r = await this._rollOnce(regionTable);
+                const c = await this._rollOnce(connTable);
 
-                const txt = `${prof} from ${reg} (${rel})`;
+                const txt = `${p} from ${r} (${c})`;
                 await this._appendListProp("Contacts", txt);
                 await this._addBio(run, `Gained a contact: ${txt}`);
                 continue;
@@ -465,7 +476,8 @@ export class SkillTreeChargenApp extends FormApplication {
             const idx = Math.floor(Math.random() * pool.length);
             const r = pool.splice(idx, 1)[0];
 
-            const raw = String(r.description ?? r.name ?? "").trim();
+            const raw = this._resultRawJSON(r);
+
             const data = this._parseJSONResultText(raw, table.name);
 
             // If this is a Status-gated choice, do the extra roll
@@ -600,6 +612,11 @@ export class SkillTreeChargenApp extends FormApplication {
         if (!state.run) return;
 
         const run = state.run;
+        if (run.remainingGlobal <= 0) {
+            await this._finishWithSummary(run);
+            return;
+        }
+
         const picked = run.cards?.[index];
         if (!picked) return;
 
