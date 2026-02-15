@@ -233,7 +233,8 @@ export class SkillTreeChargenApp extends FormApplication {
             choice: {
                 title: String(obj.choice.title),
                 text: obj.choice.text != null ? String(obj.choice.text) : "",
-                icon: obj.choice.icon != null ? String(obj.choice.icon) : ""
+                icon: obj.choice.icon != null ? String(obj.choice.icon) : "",
+                tags: Array.isArray(obj.choice.tags) ? obj.choice.tags.map(String) : []   // <-- add this
             },
             bio: obj.bio != null ? String(obj.bio) : "",
             rewards
@@ -565,6 +566,7 @@ export class SkillTreeChargenApp extends FormApplication {
             remainingHere: maxRolls,
             bio: [],
             history: [],
+            luckyStreak: false, 
             cards: []
         };
 
