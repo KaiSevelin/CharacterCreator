@@ -118,7 +118,7 @@ export class SkillTreeChargenApp extends FormApplication {
         run.cards = await app._rollCards(run);
 
         await app._setState({
-            setup: { tableUuid, choices, maxRolls, contactTables },
+            setup: { tableUuid, choices, maxRolls, contactTables, bodyTable, miscTable },
             run
         });
 
@@ -554,32 +554,23 @@ export class SkillTreeChargenApp extends FormApplication {
 
     async getData() {
         const state = this._getState();
-
-        if (this._isSetupMode(state)) {
-            return {
-                isSetup: true,
-                tableUuid: state.setup.tableUuid ?? "",
-                choices: state.setup.choices ?? 2,
-                maxRolls: state.setup.maxRolls ?? 10
-            };
-        }
+        const run = state.run;
 
         return {
-            isSetup: false,
-            state: state.run,
-            cards: (state.run.cards ?? []).map(c => ({
+            state: run ?? { remainingGlobal: 0, remainingHere: 0 },
+            cards: (run?.cards ?? []).map(c => ({
                 title: c.data.choice.title,
                 text: c.data.choice.text ?? "",
                 img: c.img ?? ""
             })),
-            bio: state.run.bio ?? []
+            bio: run?.bio ?? []
         };
     }
+
 
     activateListeners(html) {
         super.activateListeners(html);
 
-        html.find("[data-action='start']").on("click", () => this._onStart(html));
         html.find("[data-action='reset']").on("click", () => this._onReset());
         html.find("[data-action='reroll']").on("click", () => this._onReroll());
         html.find("[data-action='finish']").on("click", () => this._onFinish());
@@ -598,34 +589,18 @@ export class SkillTreeChargenApp extends FormApplication {
         });
     }
 
-    async _onStart(html) {
-        const tableUuid = String(html.find("input[name='tableUuid']").val() ?? "").trim();
-        const choices = Math.max(1, Number(html.find("input[name='choices']").val() ?? 2));
-        const maxRolls = Math.max(1, Number(html.find("input[name='maxRolls']").val() ?? 10));
-
-        const table = await this._getRollTable(tableUuid);
-        if (!table) return ui.notifications.error(`RollTable not found: ${tableUuid}`);
-
-        const run = {
-            tableUuid,
-            choices,
-            remainingGlobal: maxRolls,
-            remainingHere: maxRolls,
-            bio: [],
-            history: [],
-            luckyStreak: false, 
-            cards: []
-        };
-
-        run.cards = await this._rollCards(run);
-
-        await this._setState({ setup: { tableUuid, choices, maxRolls }, run });
-        this.render(true);
-    }
-
     async _onReset() {
+        const state = this._getState();
+        const setup = state.setup ?? {};
         this.close();
-        await SkillTreeChargenApp.open();
+        await SkillTreeChargenApp.open({
+            startingTable: setup.tableUuid,
+            choices: setup.choices,
+            maxRolls: setup.maxRolls,
+            contactTables: setup.contactTables,
+            bodyTable: setup.bodyTable,
+            miscTable: setup.miscTable
+        });
     }
 
     async _onReroll() {

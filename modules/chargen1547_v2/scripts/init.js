@@ -8,7 +8,7 @@ Hooks.once("ready", () => {
                 await SkillTreeChargenApp.open(opts);
             } catch (err) {
                 console.error("SkillTreeChargen.open failed:", err);
-                ui.notifications.error("Chargen failed to load. See console (F12).");
+                ui.notifications.error(err?.message ?? "Chargen failed to load. See console (F12).");
             }
         }
     };

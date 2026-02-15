@@ -1,43 +1,5 @@
 <form class="skilltree-chargen flexcol" autocomplete="off">
 
-    {{!-- ================= SETUP MODE ================= --}}
-    {{#if isSetup}}
-
-    <section class="chargen-setup">
-        <div class="form-group">
-            <label>Starting RollTable UUID</label>
-            <input type="text"
-                   name="tableUuid"
-                   value="{{tableUuid}}"
-                   placeholder="RollTable.xxxxx or Compendium....RollTable...." />
-            <p class="notes">
-                Use a RollTable UUID or world table ID.
-            </p>
-        </div>
-
-        <div class="form-group">
-            <label>Choices shown per step</label>
-            <input type="number" name="choices" value="{{choices}}" min="1" max="10" />
-        </div>
-
-        <div class="form-group">
-            <label>Maximum rolls (global)</label>
-            <input type="number" name="maxRolls" value="{{maxRolls}}" min="1" max="200" />
-        </div>
-
-        <footer class="sheet-footer flexrow">
-            <button type="button" data-action="start">
-                <i class="fas fa-play"></i> Start
-            </button>
-            <button type="button" data-action="reset">
-                <i class="fas fa-undo"></i> Reset
-            </button>
-        </footer>
-    </section>
-
-    {{!-- ================= RUN MODE ================= --}}
-    {{else}}
-
     <header class="chargen-header flexrow">
         <h2 class="chargen-title">
             <i class="fas fa-scroll"></i>
@@ -63,8 +25,6 @@
     <section class="chargen-cards">
         {{#each cards}}
         <article class="chargen-card" style='--cg-cover: url("{{this.img}}");'>
-
-
             <div class="card-cover" role="img" aria-label="{{this.title}}"></div>
 
             <header class="card-header">
@@ -81,11 +41,9 @@
                     data-index="{{@index}}">
                 Choose
             </button>
-
         </article>
         {{/each}}
     </section>
-
 
     <section class="chargen-bio">
         <details>
@@ -105,11 +63,12 @@
         <button type="button" data-action="reroll">
             <i class="fas fa-dice"></i> Reroll Options
         </button>
+        <button type="button" data-action="reset">
+            <i class="fas fa-undo"></i> Reset
+        </button>
         <button type="button" data-action="finish">
             <i class="fas fa-flag-checkered"></i> Finish
         </button>
     </footer>
-
-    {{/if}}
 
 </form>
