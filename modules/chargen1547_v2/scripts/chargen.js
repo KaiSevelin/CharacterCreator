@@ -105,7 +105,6 @@ export class SkillTreeChargenApp extends FormApplication {
             tableUuid,
             choices,
             remainingGlobal: maxRolls,
-            remainingHere: maxRolls,
             bio: [],
             history: [],
             luckyStreak: false,
@@ -557,7 +556,7 @@ export class SkillTreeChargenApp extends FormApplication {
         const run = state.run;
 
         return {
-            state: run ?? { remainingGlobal: 0, remainingHere: 0 },
+            state: run ?? { remainingGlobal: 0},
             cards: (run?.cards ?? []).map(c => ({
                 title: c.data.choice.title,
                 text: c.data.choice.text ?? "",
@@ -653,7 +652,6 @@ export class SkillTreeChargenApp extends FormApplication {
             const nextRolls = Number(nextObj?.rolls ?? 0);
 
             run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
-            run.remainingHere = Math.max(0, Number(run.remainingHere ?? 0) - 1);
 
             run.history.push({
                 tableUuid: run.tableUuid,
@@ -668,7 +666,6 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             run.tableUuid = nextUuid;
-            if (nextRolls > 0) run.remainingHere = nextRolls;
 
             run.cards = await this._rollCards(run);
 
