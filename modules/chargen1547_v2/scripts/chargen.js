@@ -123,6 +123,66 @@ export class SkillTreeChargenApp extends FormApplication {
 
         app.render(true);
     }
+    static async validateTableJSON(tableUuid) {
+        const doc = await fromUuid(tableUuid);
+        if (!doc) throw new Error(`No document found for UUID: ${tableUuid}`);
+        if (doc.documentName !== "RollTable") {
+            throw new Error(`UUID is ${doc.documentName}, expected RollTable`);
+        }
+
+        const table = doc;
+        const bad = [];
+        const skipped = [];
+
+        for (const r of table.results.contents) {
+            const raw = this._resultRawJSON(r);
+
+            if (!raw) {
+                skipped.push({
+                    id: r.id,
+                    range: r.range,
+                    reason: "Empty or non-text result",
+                });
+                continue;
+            }
+
+            try {
+                this._parseJSONResultText(raw, table.name);
+            } catch (e) {
+                bad.push({
+                    id: r.id,
+                    range: r.range,
+                    error: e?.message ?? String(e),
+                    raw,
+                });
+            }
+        }
+
+        const report = {
+            ok: bad.length === 0,
+            tableName: table.name,
+            uuid: table.uuid,
+            total: table.results.size,
+            bad,
+            skipped,
+        };
+
+        // Console output for devs / GMs
+        console.group(`Chargen table validation: ${table.name}`);
+        console.log(`Total: ${report.total}`);
+        console.log(`Bad JSON: ${bad.length}`);
+        if (bad.length) {
+            console.table(bad.map(b => ({
+                id: b.id,
+                range: JSON.stringify(b.range),
+                error: b.error,
+                rawPreview: b.raw.slice(0, 80),
+            })));
+        }
+        console.groupEnd();
+
+        return report;
+    }
 
 
     static async _promptForName() {
