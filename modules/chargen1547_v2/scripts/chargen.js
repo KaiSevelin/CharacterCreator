@@ -1,5 +1,40 @@
 ﻿console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
+// -------- Optional helpers (safe even if you skip images) --------
+function isPlaceholderImg(p) {
+  const s = String(p ?? "");
+  return !s || s.startsWith("icons/svg/");
+}
+
+function resolveImgPath(p) {
+  const s = String(p ?? "").trim();
+  return s ? foundry.utils.getRoute(s) : "";
+}
+
+function normalizeTableKey(name) {
+  return String(name ?? "")
+    .toLowerCase()
+    .replace(/[–—]/g, "-")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+const TABLE_BANNERS = {
+  "bodily-changes": "bodily-changes.webp",
+  "body-fluids-humors": "body-fluids-humors.webp",
+  "career-horoscope": "career-horoscope.webp",
+  "contacts-connection": "contacts-connection.webp",
+  "contacts-region": "contacts-region.webp",
+  "misc-rewards": "misc-rewards.webp"
+};
+
+function bannerForTableName(tableName) {
+  const key = normalizeTableKey(tableName);
+  const file = TABLE_BANNERS[key] ?? "default.webp";
+  return foundry.utils.getRoute(`modules/chargen1547_v2/assets/table-banners/${file}`);
+}
+
+// ===================== APP =====================
 export class SkillTreeChargenApp extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -13,6 +48,82 @@ export class SkillTreeChargenApp extends FormApplication {
     });
   }
 
+  // ---- NEW: prompt for a name, create an actor, and start chargen ----
+  static async open() {
+    const name = await this._promptForName();
+    if (!name) return;
+
+    const type =
+      game.system?.documentTypes?.Actor?.[0] ??
+      Object.keys(game.system?.model?.Actor ?? {})[0] ??
+      "character";
+
+    const actor = await Actor.create({
+      name,
+      type,
+      ownership: {
+        default: 0,
+        [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
+      }
+    });
+
+    const app = new SkillTreeChargenApp(actor);
+
+    // Always start from this table
+    const tableUuid = "RollTable.BI0oL2A7UmceHMSB";
+    const choices = 2;
+    const maxRolls = 10;
+
+    const run = {
+      tableUuid,
+      choices,
+      remainingGlobal: maxRolls,
+      remainingHere: maxRolls,
+      bio: [],
+      history: [],
+      cards: []
+    };
+
+    run.cards = await app._rollCards(run);
+
+    await app._setState({
+      setup: { tableUuid, choices, maxRolls },
+      run
+    });
+
+    app.render(true);
+  }
+
+  static async _promptForName() {
+    return new Promise((resolve) => {
+      const content = `
+        <form>
+          <div class="form-group">
+            <label>Character Name</label>
+            <input type="text" name="name" placeholder="Enter a name..." autofocus />
+          </div>
+        </form>
+      `;
+
+      new Dialog({
+        title: "Create New Character",
+        content,
+        buttons: {
+          create: {
+            label: "Create",
+            callback: (html) => {
+              const name = String(html.find("input[name='name']").val() ?? "").trim();
+              resolve(name || null);
+            }
+          },
+          cancel: { label: "Cancel", callback: () => resolve(null) }
+        },
+        default: "create",
+        close: () => resolve(null)
+      }, { width: 420 }).render(true);
+    });
+  }
+
   constructor(actor, options = {}) {
     super({}, options);
     this.actor = actor;
@@ -20,8 +131,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
   /* ---------------- State helpers ---------------- */
 
-_flagPath() { return "flags.chargen1547_v2.chargen"; }
-
+  _flagPath() { return "flags.chargen1547_v2.chargen"; }
 
   _getState() {
     return foundry.utils.getProperty(this.actor, this._flagPath()) ?? {
@@ -65,45 +175,62 @@ _flagPath() { return "flags.chargen1547_v2.chargen"; }
   }
 
   _resultRawJSON(result) {
-    // FVTT v13: prefer description (TableResult#text is deprecated)
     const d = (result?.description ?? "").trim();
     if (d) return d;
 
     const t = (result?.text ?? "").trim(); // deprecated fallback
     if (t) return t;
 
-    // Some imports may store JSON in name
     const n = (result?.name ?? "").trim();
     return n;
   }
 
 _parseJSONResultText(text, tableName = "RollTable") {
-  const raw = String(text ?? "").trim();
+  const rawIn = String(text ?? "").trim();
 
-  console.warn("PARSE ENTER", { tableName, rawStart: raw.slice(0, 80) });
+  // 1) Strip HTML if the description was saved as rich text (<p>...</p>, <br>, etc.)
+  //    and decode entities (&quot; etc.) using Foundry's helper.
+  let raw = rawIn;
+
+  // If it looks like HTML, convert to plain text
+  if (raw.startsWith("<")) {
+    const div = document.createElement("div");
+    div.innerHTML = raw;
+    raw = (div.textContent ?? "").trim();
+  }
+
+  // Decode HTML entities if present (safe even if none)
+  raw = foundry.utils.unescapeHTML(raw).trim();
+
+  // 2) Sometimes there's leading/trailing junk; try to extract the first JSON object.
+  //    This helps if there are stray newlines or formatting around it.
+  if (!raw.startsWith("{")) {
+    const start = raw.indexOf("{");
+    const end = raw.lastIndexOf("}");
+    if (start !== -1 && end !== -1 && end > start) {
+      raw = raw.slice(start, end + 1).trim();
+    }
+  }
 
   let obj;
   try {
     obj = JSON.parse(raw);
   } catch (e) {
-    console.error("PARSE JSON ERROR", e, raw);
+    console.error("PARSE JSON ERROR", e, { tableName, rawIn, rawAfter: raw });
     throw new Error(
-      `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${raw.slice(0, 500)}`
+      `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${rawIn.slice(0, 500)}`
     );
   }
-
-  console.warn("PARSE OBJ reward[0] (raw JSON)", obj?.rewards?.[0]);
 
   if (!obj?.choice?.title) throw new Error("Missing choice.title");
   if (!Array.isArray(obj.rewards) || !obj.rewards.length) throw new Error("Missing rewards[]");
 
   const rewards = obj.rewards.map((r, i) => {
     if (!r || typeof r !== "object") throw new Error(`rewards[${i}] must be an object`);
-
     const rr = foundry.utils.deepClone(r);
 
-    const out = {
-      ...rr, // ✅ keep anything else
+    return {
+      ...rr,
       weight: Number.isFinite(Number(rr.weight)) ? Number(rr.weight) : 1,
       changes: Array.isArray(rr.changes) ? rr.changes : [],
       next: (rr.next && typeof rr.next === "object")
@@ -113,9 +240,6 @@ _parseJSONResultText(text, tableName = "RollTable") {
           }
         : null
     };
-
-    console.warn("PARSE OUT reward keys", Object.keys(out), out.next);
-    return out;
   });
 
   return {
@@ -130,28 +254,25 @@ _parseJSONResultText(text, tableName = "RollTable") {
 }
 
 
+  _pickWeightedReward(rewards) {
+    const list = Array.isArray(rewards) ? rewards.filter(r => r && typeof r === "object") : [];
+    if (!list.length) return null;
 
-_pickWeightedReward(rewards) {
-  const list = Array.isArray(rewards) ? rewards.filter(r => r && typeof r === "object") : [];
-  if (!list.length) return null;
+    const weightOf = (r) => {
+      const w = Number(r.weight ?? 1);
+      return Number.isFinite(w) ? Math.max(0, w) : 0;
+    };
 
-  const weightOf = (r) => {
-    const w = Number(r.weight ?? 1);
-    return Number.isFinite(w) ? Math.max(0, w) : 0;
-  };
+    const total = list.reduce((s, r) => s + weightOf(r), 0);
+    if (total <= 0) return list[0];
 
-  const total = list.reduce((s, r) => s + weightOf(r), 0);
-  if (total <= 0) return list[0];
-
-  let roll = Math.random() * total;
-  for (const r of list) {
-    roll -= weightOf(r);
-    if (roll <= 0) return r;          // ✅ returns the ORIGINAL reward object
+    let roll = Math.random() * total;
+    for (const r of list) {
+      roll -= weightOf(r);
+      if (roll <= 0) return r;
+    }
+    return list[list.length - 1];
   }
-  return list[list.length - 1];
-}
-
-
 
   /* ---------------- Biography helpers ---------------- */
 
@@ -192,7 +313,6 @@ _pickWeightedReward(rewards) {
   async _grantSkillToward(run, targetKey, targetLevel, fallback) {
     const st = globalThis.SkillTree;
     if (!st?.nextStepToward || !st?.NODES) {
-      // optional fallback
       if (fallback?.type === "stat") {
         await advanceStat(this.actor, fallback.characteristic, Number(fallback.steps ?? 1));
       }
@@ -200,13 +320,8 @@ _pickWeightedReward(rewards) {
     }
 
     const step = st.nextStepToward(this.actor, targetKey, targetLevel, st.NODES, null);
-
-    // If already available, your SkillTree function returns {nodeName,targetLevel} OR true depending on your version.
-    // Handle both:
     if (step === true) return;
     if (!step?.nodeName) return;
-
-    // Never grant Traits_
     if (String(step.nodeName).startsWith("Traits_")) return;
 
     const cur = this._getPropNumber(step.nodeName);
@@ -224,10 +339,7 @@ _pickWeightedReward(rewards) {
 
     const draw = await table.draw({ displayChat: false });
     const r = draw.results?.[0];
-    return {
-      result: r,
-      raw: this._resultRawJSON(r)
-    };
+    return { result: r, raw: this._resultRawJSON(r) };
   }
 
   async _appendListProp(key, value) {
@@ -271,7 +383,6 @@ _pickWeightedReward(rewards) {
 
       if (ch.type === "body") {
         const rr = await this._rollOnce(ch.tableUuid);
-        // bodily table: usually the text is plain, not JSON
         const txt = rr.result?.name ?? rr.raw ?? "Unknown";
         await this._appendListProp("BodilyChanges", txt);
         await this._addBio(run, `Bodily change: ${txt}`);
@@ -305,12 +416,12 @@ _pickWeightedReward(rewards) {
 
       if (ch.type === "skill") {
         await this._grantSkillToward(run, ch.targetKey, ch.targetLevel, ch.fallback);
-        continue;
       }
     }
   }
 
   /* ---------------- Flow ---------------- */
+
 async _rollCards(run) {
   const table = await this._getRollTable(run.tableUuid);
   if (!table) throw new Error(`RollTable not found: ${run.tableUuid}`);
@@ -318,19 +429,21 @@ async _rollCards(run) {
   const picked = this._pickDistinct(table.results.contents, run.choices);
 
   return picked.map(r => {
-    const raw = String(r.description ?? r.name ?? "").trim(); // v13
+    const raw = String(r.description ?? r.name ?? "").trim();
     const data = this._parseJSONResultText(raw, table.name);
 
-    console.warn("ROLLCARDS parsed reward keys", data.rewards.map(x => Object.keys(x)));
+    // Prefer row image, otherwise table image, otherwise empty
+    const chosen = !isPlaceholderImg(r.img) ? r.img : table.img;
+    const img = resolveImgPath(chosen);
 
     return {
       resultId: r.id,
       rawText: raw,
+      img,
       data
     };
   });
 }
-
 
 
   /* ---------------- FormApplication ---------------- */
@@ -353,7 +466,7 @@ async _rollCards(run) {
       cards: (state.run.cards ?? []).map(c => ({
         title: c.data.choice.title,
         text: c.data.choice.text ?? "",
-        icon: c.data.choice.icon ?? "" // if your template uses it
+        img: c.img ?? ""
       })),
       bio: state.run.bio ?? []
     };
@@ -367,9 +480,17 @@ async _rollCards(run) {
     html.find("[data-action='reroll']").on("click", () => this._onReroll());
     html.find("[data-action='finish']").on("click", () => this._onFinish());
 
-    html.find("[data-action='choose']").on("click", (ev) => {
-      const idx = Number(ev.currentTarget.dataset.index);
+    html.on("click", ".chargen-card", (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const idx = Number(ev.currentTarget.querySelector(".card-choose")?.dataset.index);
+      if (Number.isNaN(idx)) return;
       this._onChoose(idx);
+    });
+
+    html.on("click", ".card-choose", (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
     });
   }
 
@@ -398,12 +519,8 @@ async _rollCards(run) {
   }
 
   async _onReset() {
-    await this._setState({
-      setup: { tableUuid: "", choices: 2, maxRolls: 10 },
-      run: null
-    });
-    ui.notifications.info("Character generation reset.");
-    this.render(true);
+    this.close();
+    await SkillTreeChargenApp.open();
   }
 
   async _onReroll() {
@@ -421,85 +538,63 @@ async _rollCards(run) {
   }
 
   async _onChoose(index) {
-  const state = this._getState();
-  if (!state.run) return;
+    const state = this._getState();
+    if (!state.run) return;
 
-  const run = state.run;
-  const picked = run.cards?.[index];
-  if (!picked) return;
+    const run = state.run;
+    const picked = run.cards?.[index];
+    if (!picked) return;
 
-  try {
-    const data = picked.data;
+    try {
+      const data = picked.data;
 
-    await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
-    if (data.bio) await this._addBio(run, String(data.bio));
+      await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
+      if (data.bio) await this._addBio(run, String(data.bio));
 
-    const rewards = Array.isArray(data.rewards) ? data.rewards : [];
-    if (!rewards.length) throw new Error("No rewards defined for this choice.");
+      const rewards = Array.isArray(data.rewards) ? data.rewards : [];
+      if (!rewards.length) throw new Error("No rewards defined for this choice.");
 
-    // Pick ONE reward by weight (keep original objects if possible)
-    const reward = this._pickWeightedReward(rewards);
+      const reward = this._pickWeightedReward(rewards);
+      if (!reward) throw new Error("No valid reward could be selected.");
 
-    console.log("DEBUG chosenReward keys:", Object.keys(reward ?? {}));
-    console.log("DEBUG chosenReward.next:", reward?.next);
-    console.log("DEBUG all rewards:", rewards);
-    if (!reward) throw new Error("No valid reward could be selected.");
+      await this._applyChanges(run, reward.changes ?? []);
 
-    // Apply changes for the chosen reward
-    await this._applyChanges(run, reward.changes ?? []);
+      const nextObj =
+        (reward?.next?.tableUuid ? reward.next : null) ??
+        rewards.find(r => r?.next?.tableUuid)?.next ??
+        null;
 
-    // --- Robust NEXT extraction ---
-    // Prefer next from chosen reward, but if missing, use the first reward that has next.
-    const nextObj =
-      (reward?.next?.tableUuid ? reward.next : null) ??
-      rewards.find(r => r?.next?.tableUuid)?.next ??
-      null;
+      const nextUuid = String(nextObj?.tableUuid ?? "").trim();
+      const nextRolls = Number(nextObj?.rolls ?? 0);
 
-    const nextUuid = String(nextObj?.tableUuid ?? "").trim();
-    const nextRolls = Number(nextObj?.rolls ?? 0);
+      run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
+      run.remainingHere = Math.max(0, Number(run.remainingHere ?? 0) - 1);
 
-    // Debug that actually tells you what's happening
-    console.log("Chargen pick:", {
-      pickedTitle: data.choice?.title,
-      chosenReward: reward,
-      nextUuid,
-      nextRolls,
-      remainingBefore: run.remainingGlobal
-    });
+      run.history.push({
+        tableUuid: run.tableUuid,
+        choiceTitle: data.choice?.title ?? "",
+        rewardApplied: reward
+      });
 
-    // Decrement AFTER we decide next (keeps logic clearer)
-    run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
-    run.remainingHere = Math.max(0, Number(run.remainingHere ?? 0) - 1);
+      if (!nextUuid) {
+        await this._setState({ ...state, run });
+        await this._finishWithSummary(run);
+        return;
+      }
 
-    run.history.push({
-      tableUuid: run.tableUuid,
-      choiceTitle: data.choice?.title ?? "",
-      rewardApplied: reward
-    });
+      run.tableUuid = nextUuid;
+      if (nextRolls > 0) run.remainingHere = nextRolls;
 
-    // If there's no next table, finish.
-    if (!nextUuid) {
+      run.cards = await this._rollCards(run);
+
       await this._setState({ ...state, run });
-      await this._finishWithSummary(run);
-      return;
+      this.render(true);
+
+    } catch (e) {
+      ui.notifications.error(e.message);
+      console.error(e);
     }
-
-    // Switch table regardless of remainingGlobal (you can still stop later)
-    run.tableUuid = nextUuid;
-    if (nextRolls > 0) run.remainingHere = nextRolls;
-
-    // Roll new cards from next table
-    run.cards = await this._rollCards(run);
-
-    await this._setState({ ...state, run });
-    this.render(true);
-
-  } catch (e) {
-    ui.notifications.error(e.message);
-    console.error(e);
   }
-}
-
 
   async _finishWithSummary(run) {
     const actor = this.actor;
