@@ -1,4 +1,5 @@
 ﻿import { promptAddDrive, promptRemoveDrive } from "./drive-prompts.js";
+import { SKILL_KEYS, STAT_KEYS } from "modules/skilltree-helper/scripts/keys.js";
 console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
 // -------- Optional helpers (safe even if you skip images) --------
@@ -92,20 +93,8 @@ export class SkillTreeChargenApp extends FormApplication {
                 [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
             }
         });
-        // Run once per actor at the start of chargen
-        if (!this.actor.getFlag("world", "baselineStatsApplied")) {
-            const stats = ["Strength", "Stamina", "Dexterity", "Faith", "Charisma", "Intelligence"];
-
-            for (const s of stats) {
-                await advanceStat(this.actor, s, 1); // +1 step: 1d6+0 → 1d6+1
-            }
-
-            await this.actor.setFlag("world", "baselineStatsApplied", true);
-            await this._addBio(run, "Baseline: all stats increased by 1 step (starting package).");
-        }
-
         const app = new SkillTreeChargenApp(actor);
-
+       // Run once per actor at the start of chargen
         const startingTable =
             opts.startingTable;
 
@@ -135,7 +124,16 @@ export class SkillTreeChargenApp extends FormApplication {
             miscTable,
             cards: []
         };
+        if (!actor.getFlag("world", "baselineStatsApplied")) {
+            const stats = ["Strength", "Stamina", "Dexterity", "Faith", "Charisma", "Intelligence"];
 
+            for (const s of stats) {
+                await advanceStat(actor, s, 1); // +1 step: 1d6+0 → 1d6+1
+            }
+
+            await actor.setFlag("world", "baselineStatsApplied", true);
+            await app._addBio(run, "Baseline: all stats increased by 1 step (starting package).");
+        }
         run.cards = await app._rollCards(run);
 
         await app._setState({
@@ -145,6 +143,131 @@ export class SkillTreeChargenApp extends FormApplication {
 
         app.render(true);
     }
+
+    static async validateTablesInFolder(folderUuid, { recursive = true } = {}) {
+        const folder = await fromUuid(folderUuid);
+        if (!folder) throw new Error(`No document found for UUID: ${folderUuid}`);
+
+        // Folder documents are "Folder"
+        if (folder.documentName !== "Folder") {
+            throw new Error(`UUID is ${folder.documentName}, expected Folder`);
+        }
+
+        // Make sure this folder is intended for RollTables (Foundry folders can be typed)
+        // Some setups may have folder.type undefined; handle permissively.
+        if (folder.type && folder.type !== "RollTable") {
+            console.warn(`Folder type is "${folder.type}", not "RollTable". Validating tables anyway.`);
+        }
+
+        // Collect folder ids (optionally recursive)
+        const folderIds = new Set([folder.id]);
+
+        if (recursive) {
+            // Foundry stores world folders in game.folders; iterate to gather descendants
+            let added = true;
+            while (added) {
+                added = false;
+                for (const f of game.folders.contents) {
+                    if (f.type !== "RollTable") continue; // only follow RollTable folder trees
+                    if (f.folder && folderIds.has(f.folder.id) && !folderIds.has(f.id)) {
+                        folderIds.add(f.id);
+                        added = true;
+                    }
+                }
+            }
+        }
+
+        // All world RollTables (not compendiums) in those folders
+        const tables = game.tables.contents.filter(t => t.folder && folderIds.has(t.folder.id));
+
+        const perTable = [];
+        for (const t of tables) {
+            try {
+                const rep = await SkillTreeChargenApp.validateTableJSON(t.uuid);
+                perTable.push(rep);
+            } catch (e) {
+                perTable.push({
+                    ok: false,
+                    tableName: t.name,
+                    uuid: t.uuid,
+                    total: t.results?.size ?? 0,
+                    bad: [{ id: "(table)", range: null, error: e?.message ?? String(e), raw: "" }],
+                    skipped: []
+                });
+            }
+        }
+
+        // Summary
+        const summary = {
+            ok: perTable.every(r => r.ok),
+            folderName: folder.name,
+            folderUuid: folder.uuid,
+            recursive,
+            tableCount: perTable.length,
+            totalResults: perTable.reduce((a, r) => a + (r.total ?? 0), 0),
+            badTables: perTable.filter(r => !r.ok).length,
+            badResults: perTable.reduce((a, r) => a + (r.bad?.length ?? 0), 0),
+            reports: perTable
+        };
+
+        // Console output
+        console.group(`Chargen folder validation: ${folder.name} (${perTable.length} tables)`);
+        console.log(`Recursive: ${recursive}`);
+        console.log(`Bad tables: ${summary.badTables}`);
+        console.log(`Bad results: ${summary.badResults}`);
+
+        if (summary.badTables > 0) {
+            console.table(
+                perTable
+                    .filter(r => !r.ok)
+                    .map(r => ({
+                        tableName: r.tableName,
+                        uuid: r.uuid,
+                        total: r.total,
+                        badResults: r.bad?.length ?? 0
+                    }))
+            );
+        }
+        console.groupEnd();
+
+        return summary;
+    }
+    // Case-insensitive sets (matches your Skill Tree behavior)
+    static VALID_SKILLS_LOWER = new Set(SKILL_KEYS.map(k => k.toLowerCase()));
+
+    static VALID_STATS = new Set(
+        STAT_KEYS
+            .filter(k => k.endsWith("Dice"))
+            .map(k => k.replace(/^Stats_/, "").replace(/Dice$/, ""))
+    );
+
+    static _validateParsedResultKeys(parsed, tableName) {
+        const rewards = Array.isArray(parsed?.rewards) ? parsed.rewards : [];
+        for (const rw of rewards) {
+            const changes = Array.isArray(rw?.changes) ? rw.changes : [];
+            for (const ch of changes) {
+                if (!ch || typeof ch !== "object") continue;
+
+                if (ch.type === "stat") {
+                    const characteristic = String(ch.characteristic ?? "").trim();
+                    if (!SkillTreeChargenApp.VALID_STATS.has(characteristic)) {
+                        throw new Error(`Invalid stat "${characteristic}" in table "${tableName}".`);
+                    }
+                }
+
+                if (ch.type === "skill") {
+                    const key = String(ch.skill ?? ch.targetKey ?? "").trim();
+                    if (!key) {
+                        throw new Error(`Skill change missing skill key in table "${tableName}".`);
+                    }
+                    if (!SkillTreeChargenApp.VALID_SKILLS_LOWER.has(key.toLowerCase())) {
+                        throw new Error(`Invalid skill "${key}" in table "${tableName}".`);
+                    }
+                }
+            }
+        }
+    }
+
     static async validateTableJSON(tableUuid) {
         const doc = await fromUuid(tableUuid);
         if (!doc) throw new Error(`No document found for UUID: ${tableUuid}`);
@@ -170,6 +293,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
             try {
                 SkillTreeChargenApp._parseJSONResultText(raw, table.name);
+                SkillTreeChargenApp._validateParsedResultKeys(parsed, table.name);
             } catch (e) {
                 bad.push({
                     id: r.id,
@@ -511,7 +635,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 const tone = SkillTreeChargenApp._resultRawJSON(toneRoll.result).trim();
                 const quirk = SkillTreeChargenApp._resultRawJSON(quirkRoll.result).trim();
 
-                // Hardcoded hook distribution: 70% 1, 25% 2, 5% 3
+                // Hardcoded hook distribution: 90% 1, 10% 2
                 const d100 = (new Roll("1d100")).evaluate({ async: false }).total;
                 const hookCount = (d100 <= 90) ? 1 : 2;
 
@@ -598,7 +722,8 @@ export class SkillTreeChargenApp extends FormApplication {
                 const before = `${beforeDice}d6+${beforeMod}`;
 
                 const { dice, mod } = await advanceStat(this.actor, characteristic, steps);
-                await this._addBio(run, `Improved ${characteristic} (${before} → ${dice}d6+${mod})`);
+                const verb = steps > 0 ? "Improved" : "Reduced";
+                await this._addBio(run, `${verb} ${characteristic} (${before} → ${dice}d6+${mod})`);
                 continue;
             }
             if (ch.type === "bio") {
