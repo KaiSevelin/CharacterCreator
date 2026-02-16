@@ -139,7 +139,7 @@ export class SkillTreeChargenApp extends FormApplication {
         const skipped = [];
 
         for (const r of table.results.contents) {
-            const raw = this._resultRawJSON(r);
+            const raw = SkillTreeChargenApp._resultRawJSON(r);
 
             if (!raw) {
                 skipped.push({
@@ -151,7 +151,7 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             try {
-                this._parseJSONResultText(raw, table.name);
+                SkillTreeChargenApp._parseJSONResultText(raw, table.name);
             } catch (e) {
                 bad.push({
                     id: r.id,
@@ -269,7 +269,7 @@ export class SkillTreeChargenApp extends FormApplication {
         return out;
     }
 
-    _resultRawJSON(result) {
+    static _resultRawJSON(result) {
         const d = (result?.description ?? "").trim();
         if (d) return d;
 
@@ -280,7 +280,7 @@ export class SkillTreeChargenApp extends FormApplication {
         return n;
     }
 
-    _parseJSONResultText(text, tableName = "RollTable") {
+    static _parseJSONResultText(text, tableName = "RollTable") {
         const rawIn = String(text ?? "").trim();
 
         // 1) Strip HTML if the description was saved as rich text (<p>...</p>, <br>, etc.)
@@ -433,10 +433,24 @@ export class SkillTreeChargenApp extends FormApplication {
         const table = await this._getRollTable(tableUuidOrId);
         if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
 
-        const draw = await table.draw({ displayChat: false });
-        const r = draw.results?.[0];
-        return { result: r, raw: this._resultRawJSON(r) };
+        // Roll using the table's formula (e.g. "1d100")
+        const roll = await (new Roll(table.formula)).evaluate({ async: true });
+
+        // Get results for that roll WITHOUT drawing/consuming
+        const results = table.getResultsForRoll?.(roll.total) ?? [];
+
+        // If multiple results match (overlapping ranges), pick one
+        const r = results.length ? results[Math.floor(Math.random() * results.length)] : null;
+
+        if (!r) {
+            throw new Error(
+                `RollTable "${table.name}" produced no result for roll ${roll.total} (${table.formula}).`
+            );
+        }
+
+        return { result: r, raw: SkillTreeChargenApp._resultRawJSON(r) };
     }
+
 
     async _appendListProp(key, value) {
         const raw = String(this.actor.system?.props?.[key] ?? "");
@@ -607,9 +621,9 @@ export class SkillTreeChargenApp extends FormApplication {
             const idx = Math.floor(Math.random() * pool.length);
             const r = pool.splice(idx, 1)[0];
 
-            const raw = this._resultRawJSON(r);
+            const raw = SkillTreeChargenApp._resultRawJSON(r);
 
-            const data = this._parseJSONResultText(raw, table.name);
+            const data = SkillTreeChargenApp._parseJSONResultText(raw, table.name);
 
             // If this is a Status-gated choice, do the extra roll
             if (hasStatusTag(data)) {
