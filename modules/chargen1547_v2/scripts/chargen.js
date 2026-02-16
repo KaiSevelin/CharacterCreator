@@ -1,4 +1,5 @@
-﻿console.log("CHARGEN.JS LOADED FROM", import.meta.url);
+﻿import { promptAddDrive, promptRemoveDrive } from "./drive-prompts.js";
+console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
 // -------- Optional helpers (safe even if you skip images) --------
 function isPlaceholderImg(p) {
@@ -91,6 +92,17 @@ export class SkillTreeChargenApp extends FormApplication {
                 [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
             }
         });
+        // Run once per actor at the start of chargen
+        if (!this.actor.getFlag("world", "baselineStatsApplied")) {
+            const stats = ["Strength", "Stamina", "Dexterity", "Faith", "Charisma", "Intelligence"];
+
+            for (const s of stats) {
+                await advanceStat(this.actor, s, 1); // +1 step: 1d6+0 → 1d6+1
+            }
+
+            await this.actor.setFlag("world", "baselineStatsApplied", true);
+            await this._addBio(run, "Baseline: all stats increased by 1 step (starting package).");
+        }
 
         const app = new SkillTreeChargenApp(actor);
 
@@ -563,11 +575,19 @@ export class SkillTreeChargenApp extends FormApplication {
                 await this._addBio(run, `Social Status ${before} → ${after}${reason}`);
                 continue;
             }
-
+            if (ch.type === "drive") {
+                if (ch.action === "add") {
+                    await promptAddDrive(this.actor, ch.category);
+                }
+                if (ch.action === "remove") {
+                    await promptRemoveDrive(this.actor);
+                }
+                continue;
+            }
             if (ch.type === "stat") {
                 const steps = Number(ch.steps ?? 1);
                 const characteristic = String(ch.characteristic ?? "").trim();
-                if (!characteristic || steps <= 0) continue;
+                if (!characteristic || steps === 0) continue;
 
                 const dKey = `Stats_${characteristic}Dice`;
                 const mKey = `Stats_${characteristic}Mod`;
@@ -832,23 +852,35 @@ function getNumberProp(props, key, fallback = 0) {
     const n = Number(v);
     return Number.isFinite(n) ? n : fallback;
 }
+function statIndex(dice, mod) {
+    return (dice - 1) * 4 + mod;
+}
 
-async function advanceStat(actor, characteristic, steps = 1) {
-    const diceKey = `Stats_${characteristic}Dice`;
-    const modKey = `Stats_${characteristic}Mod`;
+function indexToStat(index) {
+    const clamped = Math.max(0, index);
+    return {
+        dice: Math.floor(clamped / 4) + 1,
+        mod: clamped % 4
+    };
+}
+export async function advanceStat(actor, characteristic, steps) {
+    const dKey = `Stats_${characteristic}Dice`;
+    const mKey = `Stats_${characteristic}Mod`;
 
     const props = actor.system?.props ?? {};
-    let dice = Math.max(1, getNumberProp(props, diceKey, 1));
-    let mod = Math.max(0, getNumberProp(props, modKey, 0));
+    const beforeDice = Number(props[dKey] ?? 1);
+    const beforeMod = Number(props[mKey] ?? 0);
 
-    for (let i = 0; i < steps; i++) {
-        if (mod < 3) mod += 1;
-        else { dice += 1; mod = 0; }
-    }
+    const beforeIndex = statIndex(beforeDice, beforeMod);
+
+    // ✅ allow negative steps, but clamp to minimum
+    const afterIndex = Math.max(0, beforeIndex + Number(steps ?? 0));
+
+    const { dice, mod } = indexToStat(afterIndex);
 
     await actor.update({
-        [`system.props.${diceKey}`]: String(dice),
-        [`system.props.${modKey}`]: String(mod)
+        [`system.props.${dKey}`]: dice,
+        [`system.props.${mKey}`]: mod
     });
 
     return { dice, mod };
