@@ -54,18 +54,21 @@ export class SkillTreeChargenApp extends FormApplication {
         await this._requireRollTable(opts.startingTable, "Starting Table");
 
         await this._requireRollTable(
-            opts.contactTables?.professionTable,
-            "Contact Profession Table"
+            opts.contactTables?.roleTable,
+            "Contact Role Table"
         );
         await this._requireRollTable(
-            opts.contactTables?.regionTable,
-            "Contact Region Table"
+            opts.contactTables?.flavorTable,
+            "Contact Flavor Table"
         );
         await this._requireRollTable(
-            opts.contactTables?.connectionTable,
-            "Contact Connection Table"
+            opts.contactTables?.toneTable,
+            "Contact Tone Table"
         );
-
+        await this._requireRollTable(
+            opts.contactTables?.hookTable,
+            "Contact Hook Table"
+        );
         await this._requireRollTable(opts.bodyTable, "Body Table");
         await this._requireRollTable(opts.miscTable, "Misc Table");
         const name = await this._promptForName();
@@ -94,9 +97,10 @@ export class SkillTreeChargenApp extends FormApplication {
         const maxRolls = opts.maxRolls ?? 10;
 
         const contactTables = {
-            professionTable: opts.contactTables?.professionTable,
-            regionTable: opts.contactTables?.regionTable,
-            connectionTable: opts.contactTables?.connectionTable
+            roleTable: opts.contactTables?.roleTable,
+            flavorTable: opts.contactTables?.flavorTable,
+            toneTable: opts.contactTables?.toneTable,
+            hookTable: opts.contactTables?.hookTable
         };
         const bodyTable = opts.bodyTable;
         const miscTable = opts.miscTable;
@@ -465,20 +469,48 @@ export class SkillTreeChargenApp extends FormApplication {
                 continue;
             }
             if (ch.type === "contact") {
-                const p = await this._rollOnce(run.contactTables.professionTable);
-                const r = await this._rollOnce(run.contactTables.regionTable);
-                const c = await this._rollOnce(run.contactTables.connectionTable);
+                // Roll the independent components
+                const roleRoll = await this._rollOnce(run.contactTables.roleTable);
+                const flavorRoll = await this._rollOnce(run.contactTables.flavorTable);
+                const toneRoll = await this._rollOnce(run.contactTables.toneTable);
 
-                const pTxt = p.result?.name ?? p.raw ?? "Unknown";
-                const rTxt = r.result?.name ?? r.raw ?? "Unknown";
-                const cTxt = c.result?.name ?? c.raw ?? "Unknown";
+                const role = (roleRoll.result?.name ?? roleRoll.raw ?? "Unknown").trim();
+                const flavor = (flavorRoll.result?.name ?? flavorRoll.raw ?? "").trim();
+                const tone = (toneRoll.result?.name ?? toneRoll.raw ?? "").trim();
 
-                const txt = `${pTxt} from ${rTxt} (${cTxt})`;
+                // Hardcoded hook distribution: 70% 1, 25% 2, 5% 3
+                const d100 = (new Roll("1d100")).evaluate({ async: false }).total;
+                const hookCount = (d100 <= 70) ? 1 : (d100 <= 95) ? 2 : 3;
 
-                await this._appendListProp("Contacts", txt);
-                await this._addBio(run, `Gained a contact: ${txt}`);
+                // Roll hooks (distinct)
+                const hooks = [];
+                const seen = new Set();
+                const maxAttempts = hookCount * 6;
+
+                for (let i = 0; i < maxAttempts && hooks.length < hookCount; i++) {
+                    const h = await this._rollOnce(run.contactTables.hookTable);
+                    const hook = (h.result?.name ?? h.raw ?? "").trim();
+                    if (!hook) continue;
+
+                    const key = hook.toLowerCase();
+                    if (seen.has(key)) continue;
+                    seen.add(key);
+                    hooks.push(hook);
+                }
+
+                // Compose final contact line
+                const parts = [role];
+                if (flavor) parts.push(`— ${flavor}`);
+                if (tone) parts.push(`Tone: ${tone}`);
+                if (hooks.length) parts.push(`Hooks: ${hooks.join(", ")}`);
+
+                const contactLine = parts.join(" ");
+
+                await this._appendListProp("Contacts", contactLine);
+                await this._addBio(run, `Gained a contact: ${contactLine}`);
                 continue;
             }
+
 
             if (ch.type === "body") {
                 const rr = await this._rollOnce(run.bodyTable);
@@ -525,6 +557,11 @@ export class SkillTreeChargenApp extends FormApplication {
 
                 const { dice, mod } = await advanceStat(this.actor, characteristic, steps);
                 await this._addBio(run, `Improved ${characteristic} (${before} → ${dice}d6+${mod})`);
+                continue;
+            }
+            if (ch.type === "bio") {
+                const txt = String(ch.text ?? "").trim();
+                if (txt) await this._addBio(run, txt);
                 continue;
             }
 
