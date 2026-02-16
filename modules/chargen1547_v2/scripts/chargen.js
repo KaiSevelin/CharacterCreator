@@ -622,7 +622,7 @@ export class SkillTreeChargenApp extends FormApplication {
             const r = pool.splice(idx, 1)[0];
 
             const raw = SkillTreeChargenApp._resultRawJSON(r);
-
+            if (!raw) continue;
             const data = SkillTreeChargenApp._parseJSONResultText(raw, table.name);
 
             // If this is a Status-gated choice, do the extra roll
@@ -637,7 +637,7 @@ export class SkillTreeChargenApp extends FormApplication {
                     const luckyTxt = run.luckyStreak ? " + Lucky" : "";
                     await this._addBio(
                         run,
-                        `Missed: ${data.choice?.title ?? "Unknown"} (Status check failed: rolled ${roll} vs ≤${target}; Social ${s}${luckyTxt})`
+                        `Missed: ${data.choice?.title ?? "Unknown"} (Status check failed: rolled ${roll} vs ${target}; Social ${s}${luckyTxt})`
                     );
                     continue;
                 }
@@ -667,7 +667,7 @@ export class SkillTreeChargenApp extends FormApplication {
         const run = state.run;
 
         return {
-            state: run ?? { remainingGlobal: 0},
+            state: run ?? { remainingGlobal: 0 },
             cards: (run?.cards ?? []).map(c => ({
                 title: c.data.choice.title,
                 text: c.data.choice.text ?? "",
