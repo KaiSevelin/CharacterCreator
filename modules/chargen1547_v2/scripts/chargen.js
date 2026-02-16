@@ -90,7 +90,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const app = new SkillTreeChargenApp(actor);
 
-        const tableUuid =
+        const startingTable =
             opts.startingTable;
 
         const choices = opts.choices ?? 2;
@@ -106,7 +106,7 @@ export class SkillTreeChargenApp extends FormApplication {
         const miscTable = opts.miscTable;
 
         const run = {
-            tableUuid,
+            startingTable,
             choices,
             remainingGlobal: maxRolls,
             bio: [],
@@ -121,7 +121,7 @@ export class SkillTreeChargenApp extends FormApplication {
         run.cards = await app._rollCards(run);
 
         await app._setState({
-            setup: { tableUuid, choices, maxRolls, contactTables, bodyTable, miscTable },
+            setup: { startingTable, choices, maxRolls, contactTables, bodyTable, miscTable },
             run
         });
 
@@ -230,7 +230,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
     _getState() {
         return foundry.utils.getProperty(this.actor, this._flagPath()) ?? {
-            setup: { tableUuid: "", choices: 2, maxRolls: 10 },
+            setup: { startingTable: "", choices: 2, maxRolls: 10 },
             run: null
         };
     }
@@ -704,7 +704,7 @@ export class SkillTreeChargenApp extends FormApplication {
         const setup = state.setup ?? {};
         this.close();
         await SkillTreeChargenApp.open({
-            startingTable: setup.tableUuid,
+            startingTable: setup.startingTable,
             choices: setup.choices,
             maxRolls: setup.maxRolls,
             contactTables: setup.contactTables,
@@ -803,6 +803,8 @@ export class SkillTreeChargenApp extends FormApplication {
         });
 
         ui.notifications.info("Character generation finished.");
+        await this._setState({ ...this._getState(), run: null });
+        this.close();
     }
 
     async _onFinish() {
