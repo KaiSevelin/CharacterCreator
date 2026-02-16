@@ -69,6 +69,10 @@ export class SkillTreeChargenApp extends FormApplication {
             opts.contactTables?.hookTable,
             "Contact Hook Table"
         );
+        await this._requireRollTable(
+            opts.contactTables?.quirkTable,
+            "Contact Quirk Table"
+        );
         await this._requireRollTable(opts.bodyTable, "Body Table");
         await this._requireRollTable(opts.miscTable, "Misc Table");
         const name = await this._promptForName();
@@ -100,7 +104,8 @@ export class SkillTreeChargenApp extends FormApplication {
             roleTable: opts.contactTables?.roleTable,
             flavorTable: opts.contactTables?.flavorTable,
             toneTable: opts.contactTables?.toneTable,
-            hookTable: opts.contactTables?.hookTable
+            hookTable: opts.contactTables?.hookTable,
+            quirkTable: opts.contactTables?.quirkTable
         };
         const bodyTable = opts.bodyTable;
         const miscTable = opts.miscTable;
@@ -487,14 +492,16 @@ export class SkillTreeChargenApp extends FormApplication {
                 const roleRoll = await this._rollOnce(run.contactTables.roleTable);
                 const flavorRoll = await this._rollOnce(run.contactTables.flavorTable);
                 const toneRoll = await this._rollOnce(run.contactTables.toneTable);
+                const quirkRoll = await this._rollOnce(run.contactTables.quirkTable);
 
                 const role = SkillTreeChargenApp._resultRawJSON(roleRoll.result).trim();
                 const flavor = SkillTreeChargenApp._resultRawJSON(flavorRoll.result).trim();
                 const tone = SkillTreeChargenApp._resultRawJSON(toneRoll.result).trim();
+                const quirk = SkillTreeChargenApp._resultRawJSON(quirkRoll.result).trim();
 
                 // Hardcoded hook distribution: 70% 1, 25% 2, 5% 3
                 const d100 = (new Roll("1d100")).evaluate({ async: false }).total;
-                const hookCount = (d100 <= 70) ? 1 : (d100 <= 95) ? 2 : 3;
+                const hookCount = (d100 <= 90) ? 1 : 2;
 
                 // Roll hooks (distinct)
                 const hooks = [];
@@ -516,6 +523,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 const parts = [role];
                 if (flavor) parts.push(`— ${flavor}`);
                 if (tone) parts.push(`Tone: ${tone}`);
+                if (quirk) parts.push(`Quirk: ${quirk}`);
                 if (hooks.length) parts.push(`Hooks: ${hooks.join(", ")}`);
 
                 const contactLine = parts.join(" ");
