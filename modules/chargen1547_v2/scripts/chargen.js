@@ -588,8 +588,8 @@ export class SkillTreeChargenApp extends FormApplication {
     /* ---------------- Flow ---------------- */
 
     async _rollCards(run) {
-        const table = await this._getRollTable(run.tableUuid);
-        if (!table) throw new Error(`RollTable not found: ${run.tableUuid}`);
+        const table = await this._getRollTable(run.startingTable);
+        if (!table) throw new Error(`RollTable not found: ${run.startingTable}`);
 
         const pool = table.results.contents.slice();
         const out = [];
@@ -760,7 +760,6 @@ export class SkillTreeChargenApp extends FormApplication {
                 null;
 
             const nextUuid = String(nextObj?.tableUuid ?? "").trim();
-            const nextRolls = Number(nextObj?.rolls ?? 0);
 
             run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
 
