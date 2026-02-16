@@ -107,6 +107,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const run = {
             startingTable,
+            tableUuid: startingTable,
             choices,
             remainingGlobal: maxRolls,
             bio: [],
@@ -488,7 +489,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 const flavorRoll = await this._rollOnce(run.contactTables.flavorTable);
                 const toneRoll = await this._rollOnce(run.contactTables.toneTable);
 
-                const role = (roleRoll.result?.name ?? roleRoll.raw ?? "Unknown").trim();
+                const role = SkillTreeChargenApp._resultRawJSON(roleRoll.result).trim();
                 const flavor = (flavorRoll.result?.name ?? flavorRoll.raw ?? "").trim();
                 const tone = (toneRoll.result?.name ?? toneRoll.raw ?? "").trim();
 
@@ -588,8 +589,8 @@ export class SkillTreeChargenApp extends FormApplication {
     /* ---------------- Flow ---------------- */
 
     async _rollCards(run) {
-        const table = await this._getRollTable(run.startingTable);
-        if (!table) throw new Error(`RollTable not found: ${run.startingTable}`);
+        const table = await this._getRollTable(run.tableUuid);
+        if (!table) throw new Error(`RollTable not found: ${run.tableUuid}`);
 
         const pool = table.results.contents.slice();
         const out = [];
