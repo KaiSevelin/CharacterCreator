@@ -332,7 +332,6 @@ export class SkillTreeChargenApp extends FormApplication {
                 next: (rr.next && typeof rr.next === "object")
                     ? {
                         tableUuid: String(rr.next.tableUuid ?? "").trim(),
-                        rolls: Number.isFinite(Number(rr.next.rolls)) ? Number(rr.next.rolls) : 0
                     }
                     : null
             };
@@ -490,8 +489,8 @@ export class SkillTreeChargenApp extends FormApplication {
                 const toneRoll = await this._rollOnce(run.contactTables.toneTable);
 
                 const role = SkillTreeChargenApp._resultRawJSON(roleRoll.result).trim();
-                const flavor = (flavorRoll.result?.name ?? flavorRoll.raw ?? "").trim();
-                const tone = (toneRoll.result?.name ?? toneRoll.raw ?? "").trim();
+                const flavor = SkillTreeChargenApp._resultRawJSON(flavorRoll.result).trim();
+                const tone = SkillTreeChargenApp._resultRawJSON(toneRoll.result).trim();
 
                 // Hardcoded hook distribution: 70% 1, 25% 2, 5% 3
                 const d100 = (new Roll("1d100")).evaluate({ async: false }).total;
@@ -504,7 +503,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
                 for (let i = 0; i < maxAttempts && hooks.length < hookCount; i++) {
                     const h = await this._rollOnce(run.contactTables.hookTable);
-                    const hook = (h.result?.name ?? h.raw ?? "").trim();
+                    const hook = SkillTreeChargenApp._resultRawJSON(h.result).trim();
                     if (!hook) continue;
 
                     const key = hook.toLowerCase();
@@ -529,7 +528,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
             if (ch.type === "body") {
                 const rr = await this._rollOnce(run.bodyTable);
-                const txt = rr.result?.name ?? rr.raw ?? "Unknown";
+                const txt = SkillTreeChargenApp._resultRawJSON(rr.result).trim() || "Unknown";
                 await this._appendListProp("BodilyChanges", txt);
                 await this._addBio(run, `Bodily change: ${txt}`);
                 continue;
@@ -537,7 +536,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
             if (ch.type === "misc") {
                 const rr = await this._rollOnce(run.miscTable);
-                const txt = rr.result?.name ?? rr.raw ?? "Unknown";
+                const txt = SkillTreeChargenApp._resultRawJSON(rr.result).trim() || "Unknown";
                 await this._addBio(run, `Misc: ${txt}`);
                 continue;
             }
@@ -763,7 +762,11 @@ export class SkillTreeChargenApp extends FormApplication {
             const nextUuid = String(nextObj?.tableUuid ?? "").trim();
 
             run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
-
+            if (run.remainingGlobal <= 0) {
+                await this._setState({ ...state, run });
+                await this._finishWithSummary(run);
+                return;
+            }
             run.history.push({
                 tableUuid: run.tableUuid,
                 choiceTitle: data.choice?.title ?? "",
