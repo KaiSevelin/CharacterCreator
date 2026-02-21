@@ -1,4 +1,4 @@
-export async function promptAddDrive(actor, category) {
+export async function (actor, category) {
     return new Promise(resolve => {
         new Dialog({
             title: "Define a Drive",

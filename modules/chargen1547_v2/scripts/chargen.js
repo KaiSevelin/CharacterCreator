@@ -293,7 +293,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
             try {
                 SkillTreeChargenApp._parseJSONResultText(raw, table.name);
-                SkillTreeChargenApp._validateParsedResultKeys(parsed, table.name);
+                SkillTreeChargenApp._validateParsedResultKeys(parsed, table.name);  
             } catch (e) {
                 bad.push({
                     id: r.id,
@@ -567,7 +567,20 @@ export class SkillTreeChargenApp extends FormApplication {
         await this.actor.update({ [`system.props.${step.nodeName}`]: String(next) });
         await this._addBio(run, `Learned ${step.nodeName} ${next}`);
     }
+    async _getTableName(uuidOrId) {
+        this._tableNameCache ??= new Map();
 
+        const key = String(uuidOrId ?? "").trim();
+        if (!key) return "Unknown";
+
+        if (this._tableNameCache.has(key)) return this._tableNameCache.get(key);
+
+        const t = await this._getRollTable(key);
+        const name = t?.name ?? key;
+
+        this._tableNameCache.set(key, name);
+        return name;
+    }
     /* ---------------- Reward helpers ---------------- */
 
     async _rollOnce(tableUuidOrId) {
@@ -612,8 +625,20 @@ export class SkillTreeChargenApp extends FormApplication {
             if (!ch || typeof ch !== "object") continue;
 
             if (ch.type === "money") {
-                const { before, after } = await this._addMoney(ch.amount ?? 0);
-                await this._addBio(run, `Received ${after - before} silver`);
+                let amount = 0;
+
+                if (ch.formula) {
+                    const roll = await (new Roll(String(ch.formula))).evaluate({ async: true });
+                    amount = roll.total;
+                } else if (Number.isFinite(Number(ch.amount))) {
+                    amount = Number(ch.amount);
+                }
+
+                if (amount !== 0) {
+                    const { before, after } = await this._addMoney(amount);
+                    await this._addBio(run, `Received ${amount} reales`);
+                }
+
                 continue;
             }
             if (ch.type === "luck") {
@@ -673,17 +698,14 @@ export class SkillTreeChargenApp extends FormApplication {
             if (ch.type === "body") {
                 const rr = await this._rollOnce(run.bodyTable);
                 const txt = SkillTreeChargenApp._resultRawJSON(rr.result).trim() || "Unknown";
-                await this._appendListProp("BodilyChanges", txt);
-                await this._addBio(run, `Bodily change: ${txt}`);
-                continue;
-            }
 
-            if (ch.type === "misc") {
-                const rr = await this._rollOnce(run.miscTable);
-                const txt = SkillTreeChargenApp._resultRawJSON(rr.result).trim() || "Unknown";
-                await this._addBio(run, `Misc: ${txt}`);
+                // Store under Appearance instead of BodilyChanges
+                await this._appendListProp("Appearance", txt);
+
+                await this._addBio(run, `Appearance: ${txt}`);
                 continue;
-            }
+            }   
+
             if (ch.type === "social") {
                 const amt = Number(ch.amount ?? 0);
                 if (!Number.isFinite(amt) || amt === 0) continue;
@@ -727,14 +749,58 @@ export class SkillTreeChargenApp extends FormApplication {
                 continue;
             }
             if (ch.type === "bio") {
-                const txt = String(ch.text ?? "").trim();
-                if (txt) await this._addBio(run, txt);
+                if (ch.text) await this._addBio(run, ch.text);
+
+                if (ch.roll?.tableUuid) {
+                    const rr = await this._rollOnce(ch.roll.tableUuid);
+                    const txt = SkillTreeChargenApp._resultRawJSON(rr.result);
+                    if (txt) await this._addBio(run, txt);
+                }
                 continue;
             }
+
 
             if (ch.type === "skill") {
                 await this._grantSkillToward(run, ch.targetKey, ch.targetLevel, ch.fallback);
             }
+            if (ch.type === "item") {
+                const qty = Number(ch.qty ?? 1);
+                const stack = Boolean(ch.stack ?? false);
+
+                // A) Roll from an item rewards table
+                if (ch.tableUuid) {
+                    const rr = await this._rollOnce(ch.tableUuid);
+                    const spec = SkillTreeChargenApp._resultRawJSON(rr.result).trim();
+                    const doc = await this._getItemDocFromSpec(spec);
+
+                    if (!doc) {
+                        await this._addBio(run, `Item reward failed: could not resolve "${spec}"`);
+                        continue;
+                    }
+
+                    await this._grantItemToActor(run, doc, qty, { stack });
+                    continue;
+                }
+
+                // B) Fixed item by UUID (or name fallback)
+                if (ch.itemUuid || ch.name) {
+                    const spec = ch.itemUuid ?? ch.name;
+                    const doc = await this._getItemDocFromSpec(spec);
+
+                    if (!doc) {
+                        await this._addBio(run, `Item reward failed: could not resolve "${spec}"`);
+                        continue;
+                    }
+
+                    await this._grantItemToActor(run, doc, qty, { stack });
+                    continue;
+                }
+
+                // Nothing usable
+                await this._addBio(run, `Item reward failed: missing itemUuid/name or tableUuid`);
+                continue;
+            }
+
         }
     }
 
@@ -927,13 +993,21 @@ export class SkillTreeChargenApp extends FormApplication {
             });
 
             if (!nextUuid) {
+                await this._addBio(run, `Career ended with ${fromName}`);
                 await this._setState({ ...state, run });
                 await this._finishWithSummary(run);
                 return;
             }
 
-            run.tableUuid = nextUuid;
+            const fromUuid = run.tableUuid;
+            const toUuid = nextUuid;
 
+            const fromName = await this._getTableName(fromUuid);
+            const toName = await this._getTableName(toUuid);
+
+            await this._addBio(run, `${toName}`);
+
+            run.tableUuid = toUuid;
             run.cards = await this._rollCards(run);
 
             await this._setState({ ...state, run });
@@ -943,6 +1017,60 @@ export class SkillTreeChargenApp extends FormApplication {
             ui.notifications.error(e.message);
             console.error(e);
         }
+    }
+    async _findItemByName(name) {
+        const n = String(name ?? "").trim().toLowerCase();
+        if (!n) return null;
+
+        // World items only (compendium names cannot be searched without loading packs)
+        return game.items.contents.find(i => i.name?.trim().toLowerCase() === n) ?? null;
+    }
+
+    async _getItemDocFromSpec(spec) {
+        // spec can be: uuid string OR name string
+        const s = String(spec ?? "").trim();
+        if (!s) return null;
+
+        // UUID-ish: contains "." and usually starts with Item./Compendium.
+        if (s.includes(".")) {
+            const doc = await fromUuid(s).catch(() => null);
+            if (doc?.documentName === "Item") return doc;
+        }
+
+        // Fallback: treat as world item name
+        return await this._findItemByName(s);
+    }
+
+    /**
+     * Grant an Item to the actor.
+     * - If stack=true and an existing item with same name exists, tries to increment quantity.
+     * - Otherwise creates a new embedded Item copy.
+     */
+    async _grantItemToActor(run, itemDoc, qty = 1, { stack = false, qtyPath = "system.props.Quantity" } = {}) {
+        qty = Number(qty ?? 1);
+        if (!Number.isFinite(qty) || qty === 0) return;
+
+        const name = itemDoc?.name ?? "Unknown Item";
+
+        // Try stacking (optional, depends on your system having a quantity field)
+        if (stack) {
+            const existing = this.actor.items.find(i => i.name === name);
+            if (existing) {
+                const cur = Number(foundry.utils.getProperty(existing, qtyPath) ?? 1);
+                const next = Math.max(0, cur + qty);
+                await existing.update({ [qtyPath]: next });
+                await this._addBio(run, `Item: ${name} (${cur} → ${next})`);
+                return;
+            }
+        }
+
+        // Create embedded copy
+        const data = itemDoc.toObject();
+        // If your CSB item template uses a quantity field, set it
+        foundry.utils.setProperty(data, "system.props.Quantity", Number.isFinite(qty) ? qty : 1);
+
+        await this.actor.createEmbeddedDocuments("Item", [data]);
+        await this._addBio(run, `Item: ${name}${qty !== 1 ? ` ×${qty}` : ""}`);
     }
 
     async _finishWithSummary(run) {

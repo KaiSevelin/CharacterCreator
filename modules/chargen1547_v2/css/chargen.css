@@ -1,4 +1,4 @@
-/* styles/chargen.css - DROP-IN (image card version) */
+﻿/* styles/chargen.css - DROP-IN (image card version) */
 
 .skilltree-chargen {
 	gap: 0.75rem;
@@ -44,9 +44,7 @@
 
 	/* --- Cards grid (option 2) --- */
 	.skilltree-chargen .chargen-cards {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-		gap: 0.85rem;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 	}
 
 	/* Card shell */
@@ -69,12 +67,15 @@
 		/* Cover image area
    Uses the inline style: --cg-cover: url("...") */
 		.skilltree-chargen .chargen-card .card-cover {
-			height: 120px;
-			background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.25)), var(--cg-cover, linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)));
-			background-size: cover;
-			background-position: center;
+			aspect-ratio: 2 / 3; /* tarot / zodiac poster ratio */
+			width: 100%;
+			height: auto;
+			background-image: var(--cg-cover);
 			background-repeat: no-repeat;
-			border-bottom: 1px solid rgba(0,0,0,0.08);
+			background-position: center;
+			background-size: cover; /* ← OPTION 2: fills frame, crops edges */
+
+			border-bottom: 1px solid rgba(0,0,0,0.12);
 		}
 
 		/* Text content */
