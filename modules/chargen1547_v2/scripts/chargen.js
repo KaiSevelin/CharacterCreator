@@ -292,8 +292,8 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             try {
-                SkillTreeChargenApp._parseJSONResultText(raw, table.name);
-                SkillTreeChargenApp._validateParsedResultKeys(parsed, table.name);  
+                const parsed = SkillTreeChargenApp._parseJSONResultText(raw, table.name);
+                SkillTreeChargenApp._validateParsedResultKeys(parsed, table.name);
             } catch (e) {
                 bad.push({
                     id: r.id,
@@ -467,7 +467,7 @@ export class SkillTreeChargenApp extends FormApplication {
             const rr = foundry.utils.deepClone(r);
 
             return {
-                ...rr,
+                rr,
                 weight: Number.isFinite(Number(rr.weight)) ? Number(rr.weight) : 1,
                 changes: Array.isArray(rr.changes) ? rr.changes : [],
                 next: (rr.next && typeof rr.next === "object")
@@ -642,10 +642,17 @@ export class SkillTreeChargenApp extends FormApplication {
                 continue;
             }
             if (ch.type === "luck") {
-                run.luckyStreak = Boolean(ch.on);
+                run.luckyStreak = Boolean(ch.on);  // Set the lucky streak status
 
                 const reason = ch.reason ? ` (${String(ch.reason)})` : "";
                 await this._addBio(run, `Lucky streak: ${run.luckyStreak ? "ON" : "OFF"}${reason}`);
+
+                // Trigger a roll on the **Fortune/Luck Table** using its fixed UUID
+                if (run.luckyStreak) {
+                    const luckResult = await this._rollLuckTable(run);  // Function to roll and handle luck-based consequences
+                    await this._addBio(run, luckResult);  // Add the luck-related bio entry
+                }
+
                 continue;
             }
             if (ch.type === "contact") {
@@ -803,7 +810,19 @@ export class SkillTreeChargenApp extends FormApplication {
 
         }
     }
+    async _rollLuckTable(run) {
+        // Use the fixed UUID of the **Fortune/Luck roll table** in Foundry
+        const luckTableUuid = "your-fixed-luck-roll-table-uuid";  // Replace with the actual UUID of your luck table
 
+        // Roll on the luck table
+        const rollResult = await this._rollOnce(luckTableUuid);
+
+        // Extract the result from the roll
+        const luckOutcome = SkillTreeChargenApp._resultRawJSON(rollResult.result).trim();
+
+        // Return the narrative luck outcome for bio
+        return `A lucky turn of events occurred: ${luckOutcome}`;
+    }
     /* ---------------- Flow ---------------- */
 
     async _rollCards(run) {
