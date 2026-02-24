@@ -65,19 +65,68 @@
 		}
 
 		/* Cover image area
-   Uses the inline style: --cg-cover: url("...") */
+/* Cover becomes the 3D viewport */
 		.skilltree-chargen .chargen-card .card-cover {
-			aspect-ratio: 2 / 3; /* tarot / zodiac poster ratio */
+			aspect-ratio: 2 / 3;
 			width: 100%;
-			height: auto;
-			background-image: var(--cg-cover);
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover; /* ← OPTION 2: fills frame, crops edges */
-
 			border-bottom: 1px solid rgba(0,0,0,0.12);
+			position: relative;
+			overflow: hidden;
+			/* 3D settings */
+			perspective: 1000px;
+			transform-style: preserve-3d;
 		}
 
+		/* Inner flipping layer */
+		.skilltree-chargen .chargen-card .card-flip {
+			position: absolute;
+			inset: 0;
+			transform-style: preserve-3d;
+			transition: transform 520ms cubic-bezier(.2,.8,.2,1);
+			/* ensure faces render nicely */
+			will-change: transform;
+		}
+
+		/* Faces */
+		.skilltree-chargen .chargen-card .card-face {
+			position: absolute;
+			inset: 0;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+
+		.skilltree-chargen .chargen-card .card-front {
+			background-image: var(--cg-cover);
+		}
+
+		/* Back face */
+		.skilltree-chargen .chargen-card .card-back {
+			background-image: var(--cg-back);
+			transform: rotateY(180deg);
+		}
+		.skilltree-chargen .chargen-card.is-flipped {
+			box-shadow: 0 0 0 1px rgba(212,175,55,0.4), 0 0 18px rgba(212,175,55,0.25);
+		}
+		/* Flip when chosen */
+		.skilltree-chargen .chargen-card.is-flipped .card-flip {
+			transform: rotateY(180deg);
+		}
+		@media (prefers-reduced-motion: reduce) {
+		.skilltree-chargen .chargen-card .card-flip {
+			transition: none;
+		}
+}
+		/* Optional: tactile hover tilt (only if not picked) */
+		.skilltree-chargen .chargen-card:not(.is-flipped):hover .card-flip {
+			transform: rotateY(-8deg) rotateX(3deg);
+		}
+		/* Optional: disable your old hover translate while flipping (prevents weird combined transforms) */
+		.skilltree-chargen .chargen-card.is-flipped:hover {
+			transform: none;
+		}
 		/* Text content */
 		.skilltree-chargen .chargen-card .card-header {
 			padding: 0.8rem 0.9rem 0.35rem;
@@ -111,12 +160,6 @@
 		cursor: pointer;
 		position: relative;
 	}
-
-		/* Visual hover feedback */
-		.skilltree-chargen .chargen-card:hover {
-			transform: translateY(-2px);
-			box-shadow: 0 10px 26px rgba(0,0,0,0.14);
-		}
 
 		/* Ensure the button still looks like a button */
 		.skilltree-chargen .chargen-card .card-choose {

@@ -926,9 +926,12 @@ export class SkillTreeChargenApp extends FormApplication {
         html.on("click", ".chargen-card", (ev) => {
             ev.preventDefault();
             ev.stopPropagation();
-            const idx = Number(ev.currentTarget.querySelector(".card-choose")?.dataset.index);
+
+            const cardEl = ev.currentTarget;
+            const idx = Number(cardEl.querySelector(".card-choose")?.dataset.index);
             if (Number.isNaN(idx)) return;
-            this._onChoose(idx);
+
+            this._onChoose(idx, cardEl);
         });
 
         html.on("click", ".card-choose", (ev) => {
@@ -965,7 +968,7 @@ export class SkillTreeChargenApp extends FormApplication {
         }
     }
 
-    async _onChoose(index) {
+    async _onChoose(index, cardEl) {
         const state = this._getState();
         if (!state.run) return;
 
@@ -977,7 +980,14 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const picked = run.cards?.[index];
         if (!picked) return;
+        // Flip only the clicked card (visual feedback)
+        if (cardEl) {
+            // prevent double-clicks during animation
+            cardEl.classList.add("is-flipped");
 
+            // optional: block clicks on other cards while resolving
+            // this.element?.find(".chargen-card").addClass("is-locked");
+        }
         try {
             const data = picked.data;
 
@@ -1030,6 +1040,9 @@ export class SkillTreeChargenApp extends FormApplication {
             run.cards = await this._rollCards(run);
 
             await this._setState({ ...state, run });
+            // Let the flip animation play before the UI changes
+            await new Promise(r => setTimeout(r, 450));
+            this.element?.find(".chargen-card").removeClass("is-flipped");
             this.render(true);
 
         } catch (e) {
