@@ -1,0 +1,259 @@
+﻿{
+    "folder":  "dA5kRoToREvCP9hn",
+    "name":  "Birth - Humors",
+    "img":  "icons/svg/daze.svg",
+    "description":  "",
+    "results":  [
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      3,
+                                      4
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsA1q2W3e4X",
+                        "name":  "Blood",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorBloodQ7mX"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      5,
+                                      6
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsB1q2W3e4X",
+                        "name":  "Phlegm",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorPhlegQ7mX"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      7,
+                                      8
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsC1q2W3e4X",
+                        "name":  "Yellow bile",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorYBileQ7X9"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      9,
+                                      10
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsD1q2W3e4X",
+                        "name":  "Black bile",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorBBileQ7X9"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      11,
+                                      12
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsE1q2W3e4X",
+                        "name":  "Balanced humors",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorBalanQ7X9"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      13,
+                                      14
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsF1q2W3e4X",
+                        "name":  "Mixed humors",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorMixedQ7X9"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      15,
+                                      16
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsG1q2W3e4X",
+                        "name":  "Unbalanced humors",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorUnbalQ7X9"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      17,
+                                      18
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773640000000,
+                                       "modifiedTime":  1773640000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHumRsH1q2W3e4X",
+                        "name":  "Mystery humors",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhHumorMystQ7mX9"
+                    }
+                ],
+    "replacement":  true,
+    "displayRoll":  true,
+    "flags":  {
+
+              },
+    "_stats":  {
+                   "compendiumSource":  null,
+                   "duplicateSource":  null,
+                   "exportSource":  {
+                                        "worldId":  "labgame-0940e6bc",
+                                        "uuid":  "RollTable.BhHumors1d8Q7mRX",
+                                        "coreVersion":  "13.351",
+                                        "systemId":  "custom-system-builder",
+                                        "systemVersion":  "5.2.0"
+                                    },
+                   "coreVersion":  "13.351",
+                   "systemId":  "custom-system-builder",
+                   "systemVersion":  "5.1.0",
+                   "createdTime":  1771921464462,
+                   "modifiedTime":  1773640000000,
+                   "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+               },
+    "formula":  "3d6",
+    "ownership":  {
+                      "default":  0
+                  },
+    "_id":  "BhHumors1d8Q7mRX"
+}

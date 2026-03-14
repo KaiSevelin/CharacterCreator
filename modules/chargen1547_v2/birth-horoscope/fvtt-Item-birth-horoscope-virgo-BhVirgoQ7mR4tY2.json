@@ -1,0 +1,887 @@
+﻿{
+    "folder":  "RUXVfLU7KC7rU4jQ",
+    "name":  "Virgo",
+    "type":  "equippableItem",
+    "img":  "icons/svg/item-bag.svg",
+    "system":  {
+                   "body":  {
+                                "contents":  [
+
+                                             ],
+                                "key":  "custom_body",
+                                "type":  "panel"
+                            },
+                   "display":  {
+                                   "width":  820,
+                                   "height":  980,
+                                   "fix_size":  false,
+                                   "pp_width":  64,
+                                   "pp_height":  64
+                               },
+                   "header":  {
+                                  "contents":  [
+                                                   {
+                                                       "key":  "ChoiceTitle",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "textField",
+                                                       "size":  "full-size",
+                                                       "label":  "Choice Title:",
+                                                       "defaultValue":  "",
+                                                       "charList":  "",
+                                                       "maxLength":  null,
+                                                       "autocomplete":  ""
+                                                   },
+                                                   {
+                                                       "key":  "ChoiceText",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "textField",
+                                                       "size":  "full-size",
+                                                       "label":  "Choice Text:",
+                                                       "defaultValue":  "",
+                                                       "charList":  "",
+                                                       "maxLength":  null,
+                                                       "autocomplete":  ""
+                                                   },
+                                                   {
+                                                       "key":  "ChoiceCard",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "textField",
+                                                       "size":  "full-size",
+                                                       "label":  "Choice Card Path:",
+                                                       "defaultValue":  "",
+                                                       "charList":  "",
+                                                       "maxLength":  null,
+                                                       "autocomplete":  ""
+                                                   },
+                                                   {
+                                                       "key":  "ChoiceTags",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "textField",
+                                                       "size":  "full-size",
+                                                       "label":  "Tags (comma-separated):",
+                                                       "defaultValue":  "",
+                                                       "charList":  "",
+                                                       "maxLength":  null,
+                                                       "autocomplete":  ""
+                                                   },
+                                                   {
+                                                       "key":  "ChoiceBio",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "textField",
+                                                       "size":  "full-size",
+                                                       "label":  "Bio (optional):",
+                                                       "defaultValue":  "",
+                                                       "charList":  "",
+                                                       "maxLength":  null,
+                                                       "autocomplete":  ""
+                                                   },
+                                                   {
+                                                       "key":  "Effects1Label",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "label",
+                                                       "size":  "full-size",
+                                                       "icon":  "",
+                                                       "value":  "Effects 1",
+                                                       "prefix":  "",
+                                                       "suffix":  "",
+                                                       "rollMessage":  "",
+                                                       "altRollMessage":  "",
+                                                       "rollMessageToChat":  true,
+                                                       "altRollMessageToChat":  true,
+                                                       "style":  "label"
+                                                   },
+                                                   {
+                                                       "key":  "Effects1",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "dynamicTable",
+                                                       "contents":  [
+
+                                                                    ],
+                                                       "rowLayout":  [
+                                                                         {
+                                                                             "key":  "Weight",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "numberField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "2",
+                                                                             "allowDecimal":  false,
+                                                                             "minVal":  "1",
+                                                                             "maxVal":  "6",
+                                                                             "allowRelative":  false,
+                                                                             "showControls":  true,
+                                                                             "controlsStyle":  "hover",
+                                                                             "controlsCustomIncrements":  "",
+                                                                             "inputStyle":  "text",
+                                                                             "align":  "left",
+                                                                             "colName":  "Weight",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "Type",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "select",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "Nothing",
+                                                                             "selectedOptionType":  "custom",
+                                                                             "options":  [
+                                                                                             {
+                                                                                                 "key":  "Stat",
+                                                                                                 "value":  "Stat"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Skill",
+                                                                                                 "value":  "Skill"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Money",
+                                                                                                 "value":  "Money"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Luck",
+                                                                                                 "value":  "Luck"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Contact",
+                                                                                                 "value":  "Contact"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Body",
+                                                                                                 "value":  "Body"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Social",
+                                                                                                 "value":  "Social"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Drive",
+                                                                                                 "value":  "Drive"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Bio",
+                                                                                                 "value":  "Bio"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Item",
+                                                                                                 "value":  "Item"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Language",
+                                                                                                 "value":  "Language"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Nothing",
+                                                                                                 "value":  "Nothing"
+                                                                                             }
+                                                                                         ],
+                                                                             "align":  "left",
+                                                                             "colName":  "Type",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "TargetKey",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "K:",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Key",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "Amount",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Amount",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "NextTable",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Next table",
+                                                                             "readonlyPredefined":  false
+                                                                         }
+                                                                     ],
+                                                       "head":  false,
+                                                       "deleteWarning":  false,
+                                                       "labelWhenEmpty":  "",
+                                                       "predefinedLines":  [
+
+                                                                           ],
+                                                       "canPlayerAdd":  true,
+                                                       "hiddenColumns":  [
+
+                                                                         ],
+                                                       "sortOption":  "manual",
+                                                       "sortPredicates":  [
+
+                                                                          ]
+                                                   },
+                                                   {
+                                                       "key":  "Effects2Label",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "label",
+                                                       "size":  "full-size",
+                                                       "icon":  "",
+                                                       "value":  "Effects 2",
+                                                       "prefix":  "",
+                                                       "suffix":  "",
+                                                       "rollMessage":  "",
+                                                       "altRollMessage":  "",
+                                                       "rollMessageToChat":  true,
+                                                       "altRollMessageToChat":  true,
+                                                       "style":  "label"
+                                                   },
+                                                   {
+                                                       "key":  "Effects2",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "dynamicTable",
+                                                       "contents":  [
+
+                                                                    ],
+                                                       "rowLayout":  [
+                                                                         {
+                                                                             "key":  "Weight",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "numberField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "2",
+                                                                             "allowDecimal":  false,
+                                                                             "minVal":  "1",
+                                                                             "maxVal":  "6",
+                                                                             "allowRelative":  false,
+                                                                             "showControls":  true,
+                                                                             "controlsStyle":  "hover",
+                                                                             "controlsCustomIncrements":  "",
+                                                                             "inputStyle":  "text",
+                                                                             "align":  "left",
+                                                                             "colName":  "Weight",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "Type",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "select",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "Nothing",
+                                                                             "selectedOptionType":  "custom",
+                                                                             "options":  [
+                                                                                             {
+                                                                                                 "key":  "Stat",
+                                                                                                 "value":  "Stat"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Skill",
+                                                                                                 "value":  "Skill"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Money",
+                                                                                                 "value":  "Money"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Luck",
+                                                                                                 "value":  "Luck"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Contact",
+                                                                                                 "value":  "Contact"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Body",
+                                                                                                 "value":  "Body"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Social",
+                                                                                                 "value":  "Social"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Drive",
+                                                                                                 "value":  "Drive"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Bio",
+                                                                                                 "value":  "Bio"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Item",
+                                                                                                 "value":  "Item"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Language",
+                                                                                                 "value":  "Language"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Nothing",
+                                                                                                 "value":  "Nothing"
+                                                                                             }
+                                                                                         ],
+                                                                             "align":  "left",
+                                                                             "colName":  "Type",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "TargetKey",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Key",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "Amount",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Amount",
+                                                                             "readonlyPredefined":  false
+                                                                         }
+                                                                     ],
+                                                       "head":  false,
+                                                       "deleteWarning":  false,
+                                                       "labelWhenEmpty":  "",
+                                                       "predefinedLines":  [
+
+                                                                           ],
+                                                       "canPlayerAdd":  true,
+                                                       "hiddenColumns":  [
+
+                                                                         ],
+                                                       "sortOption":  "manual",
+                                                       "sortPredicates":  [
+
+                                                                          ]
+                                                   },
+                                                   {
+                                                       "key":  "Effects3Label",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "label",
+                                                       "size":  "full-size",
+                                                       "icon":  "",
+                                                       "value":  "Effects 3",
+                                                       "prefix":  "",
+                                                       "suffix":  "",
+                                                       "rollMessage":  "",
+                                                       "altRollMessage":  "",
+                                                       "rollMessageToChat":  true,
+                                                       "altRollMessageToChat":  true,
+                                                       "style":  "label"
+                                                   },
+                                                   {
+                                                       "key":  "Effects3",
+                                                       "colSpan":  1,
+                                                       "rowSpan":  1,
+                                                       "cssClass":  "",
+                                                       "role":  0,
+                                                       "editRole":  0,
+                                                       "permission":  0,
+                                                       "tooltip":  "",
+                                                       "visibilityFormula":  "",
+                                                       "editableFormula":  "",
+                                                       "escapeHTML":  false,
+                                                       "type":  "dynamicTable",
+                                                       "contents":  [
+
+                                                                    ],
+                                                       "rowLayout":  [
+                                                                         {
+                                                                             "key":  "Weight",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "numberField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "2",
+                                                                             "allowDecimal":  false,
+                                                                             "minVal":  "1",
+                                                                             "maxVal":  "6",
+                                                                             "allowRelative":  false,
+                                                                             "showControls":  true,
+                                                                             "controlsStyle":  "hover",
+                                                                             "controlsCustomIncrements":  "",
+                                                                             "inputStyle":  "text",
+                                                                             "align":  "left",
+                                                                             "colName":  "Weight",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "Type",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "select",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "Nothing",
+                                                                             "selectedOptionType":  "custom",
+                                                                             "options":  [
+                                                                                             {
+                                                                                                 "key":  "Stat",
+                                                                                                 "value":  "Stat"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Skill",
+                                                                                                 "value":  "Skill"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Money",
+                                                                                                 "value":  "Money"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Luck",
+                                                                                                 "value":  "Luck"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Contact",
+                                                                                                 "value":  "Contact"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Body",
+                                                                                                 "value":  "Body"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Social",
+                                                                                                 "value":  "Social"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Drive",
+                                                                                                 "value":  "Drive"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Bio",
+                                                                                                 "value":  "Bio"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Item",
+                                                                                                 "value":  "Item"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Language",
+                                                                                                 "value":  "Language"
+                                                                                             },
+                                                                                             {
+                                                                                                 "key":  "Nothing",
+                                                                                                 "value":  "Nothing"
+                                                                                             }
+                                                                                         ],
+                                                                             "align":  "left",
+                                                                             "colName":  "Type",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "TargetKey",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Key",
+                                                                             "readonlyPredefined":  false
+                                                                         },
+                                                                         {
+                                                                             "key":  "Amount",
+                                                                             "colSpan":  1,
+                                                                             "rowSpan":  1,
+                                                                             "cssClass":  "",
+                                                                             "role":  0,
+                                                                             "editRole":  0,
+                                                                             "permission":  0,
+                                                                             "tooltip":  "",
+                                                                             "visibilityFormula":  "",
+                                                                             "editableFormula":  "",
+                                                                             "escapeHTML":  false,
+                                                                             "type":  "textField",
+                                                                             "size":  "full-size",
+                                                                             "label":  "",
+                                                                             "defaultValue":  "",
+                                                                             "charList":  "",
+                                                                             "maxLength":  null,
+                                                                             "autocomplete":  "",
+                                                                             "align":  "left",
+                                                                             "colName":  "Amount",
+                                                                             "readonlyPredefined":  false
+                                                                         }
+                                                                     ],
+                                                       "head":  false,
+                                                       "deleteWarning":  false,
+                                                       "labelWhenEmpty":  "",
+                                                       "predefinedLines":  [
+
+                                                                           ],
+                                                       "canPlayerAdd":  true,
+                                                       "hiddenColumns":  [
+
+                                                                         ],
+                                                       "sortOption":  "manual",
+                                                       "sortPredicates":  [
+
+                                                                          ]
+                                                   }
+                                               ],
+                                  "key":  "custom_header",
+                                  "type":  "panel"
+                              },
+                   "hidden":  [
+
+                              ],
+                   "modifiers":  [
+
+                                 ],
+                   "props":  {
+                                 "ChoiceTitle":  "Virgo",
+                                 "ChoiceText":  "Virgo favors keen eyes, tidy hands, and the patient reading of hidden causes. You are made for study, precision, and careful judgment.",
+                                 "ChoiceTags":  "",
+                                 "ChoiceBio":  "You were born under Virgo, the sign of precision.",
+                                 "ChoiceCard":  "media/home/games/1547/Cards/Horoscope Virgo.webp",
+                                 "Effects1":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Intelligence",
+                                                            "Amount":  "0",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.DeL6AoYlpbZdonNB"
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "4",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Intelligence",
+                                                            "Amount":  "1",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.DeL6AoYlpbZdonNB"
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Intelligence",
+                                                            "Amount":  "2",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.DeL6AoYlpbZdonNB"
+                                                        }
+                                              },
+                                 "Effects2":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Dexterity",
+                                                            "Amount":  "0",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "4",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Dexterity",
+                                                            "Amount":  "1",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Dexterity",
+                                                            "Amount":  "2",
+                                                            "TargetText":  ""
+                                                        }
+                                              },
+                                 "Effects3":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Faith",
+                                                            "Amount":  "0",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "4",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Faith",
+                                                            "Amount":  "1",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Faith",
+                                                            "Amount":  "2",
+                                                            "TargetText":  ""
+                                                        }
+                                              }
+                             },
+                   "unique":  false,
+                   "templateSystemUniqueVersion":  4241488775,
+                   "uniqueId":  "BhVirgoQ7mR4tY2Z",
+                   "template":  "CGRwEfTpl9K2P7rQ"
+               },
+    "effects":  [
+
+                ],
+    "flags":  {
+                  "custom-system-builder":  {
+                                                "version":  "5.2.0"
+                                            }
+              },
+    "_stats":  {
+                   "compendiumSource":  null,
+                   "duplicateSource":  "Item.46mmGYETmuFzafoq",
+                   "exportSource":  {
+                                        "worldId":  "labgame-0940e6bc",
+                                        "uuid":  "Item.BhVirgoQ7mR4tY2Z",
+                                        "coreVersion":  "13.351",
+                                        "systemId":  "custom-system-builder",
+                                        "systemVersion":  "5.2.0"
+                                    },
+                   "coreVersion":  "13.351",
+                   "systemId":  "custom-system-builder",
+                   "systemVersion":  "5.2.0",
+                   "createdTime":  1773470000000,
+                   "modifiedTime":  1773470000000,
+                   "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+               },
+    "_id":  "BhVirgoQ7mR4tY2Z",
+    "items":  [
+
+              ],
+    "ownership":  {
+                      "default":  0
+                  }
+}

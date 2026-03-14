@@ -1,0 +1,371 @@
+﻿{
+    "folder":  "dA5kRoToREvCP9hn",
+    "name":  "Birth - Horoscope (3d6)",
+    "img":  "icons/svg/daze.svg",
+    "description":  "",
+    "results":  [
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      3,
+                                      3
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslA1q2W3e4X",
+                        "name":  "Aries",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhAriesQ7mR4tY2Z"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      4,
+                                      4
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslB1q2W3e4X",
+                        "name":  "Taurus",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhTaurusQ7mR4tY2"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      5,
+                                      5
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslC1q2W3e4X",
+                        "name":  "Gemini",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhGeminiQ7mR4tY2"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      6,
+                                      6
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslD1q2W3e4X",
+                        "name":  "Cancer",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhCancerQ7mR4tY2"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      7,
+                                      7
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslE1q2W3e4X",
+                        "name":  "Leo",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhLeoQ7mR4tY2pL9"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      8,
+                                      9
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslF1q2W3e4X",
+                        "name":  "Virgo",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhVirgoQ7mR4tY2Z"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      10,
+                                      11
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslG1q2W3e4X",
+                        "name":  "Libra",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhLibraQ7mR4tY2Z"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      12,
+                                      13
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslH1q2W3e4X",
+                        "name":  "Scorpio",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhScorpioQ7mR4tY"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  2,
+                        "range":  [
+                                      14,
+                                      15
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslI1q2W3e4X",
+                        "name":  "Sagittarius",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhSagittarQ7mR4X"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      16,
+                                      16
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslJ1q2W3e4X",
+                        "name":  "Capricorn",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhCapricorQ7mR4X"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      17,
+                                      17
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslK1q2W3e4X",
+                        "name":  "Aquarius",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhAquariusQ7mR4X"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      18,
+                                      18
+                                  ],
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.2.0",
+                                       "createdTime":  1773470000000,
+                                       "modifiedTime":  1773470000000,
+                                       "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+                                   },
+                        "description":  "",
+                        "_id":  "BhHsRslL1q2W3e4X",
+                        "name":  "Pisces",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.BhPiscesQ7mR4tY2"
+                    }
+                ],
+    "replacement":  true,
+    "displayRoll":  true,
+    "flags":  {
+
+              },
+    "_stats":  {
+                   "compendiumSource":  null,
+                   "duplicateSource":  null,
+                   "exportSource":  {
+                                        "worldId":  "labgame-0940e6bc",
+                                        "uuid":  "RollTable.BhHorosc3d6Q7mR4",
+                                        "coreVersion":  "13.351",
+                                        "systemId":  "custom-system-builder",
+                                        "systemVersion":  "5.2.0"
+                                    },
+                   "coreVersion":  "13.351",
+                   "systemId":  "custom-system-builder",
+                   "systemVersion":  "5.1.0",
+                   "createdTime":  1771921464462,
+                   "modifiedTime":  1773470000000,
+                   "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+               },
+    "formula":  "3d6",
+    "ownership":  {
+                      "default":  0
+                  },
+    "_id":  "BhHorosc3d6Q7mR4"
+}
