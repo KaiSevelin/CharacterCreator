@@ -1,0 +1,30 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Story - Family Resolution",
+  "img": "icons/svg/book.svg",
+  "description": "<p>Parallel family-story resolutions for character generation. Results are filtered by thread key in code.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [3,3], "description": "[money 1d6*100] The inheritance was settled by an ugly division that let each side leave offended and still take something home.", "_id": "StFaRe01Q7mR16A3", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [4,4], "description": "[money 1d3*100] The inheritance question ended not with clarity but exhaustion, as the family took what could be secured and ceased speaking of the rest.", "_id": "StFaRe02Q7mR16A3", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [5,5], "description": "[money 2d6*100] The family kept a narrowed share of the inheritance, enough to matter but not enough to satisfy anyone who remembered the original promise.", "_id": "StFaRe03Q7mR16A3", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [6,6], "description": "[money 1d6*100][social -1] The inheritance was never proved cleanly, only worn down into a compromise that future generations would call final out of fatigue.", "_id": "StFaRe04Q7mR16A3", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [7,7], "description": "The feud lost its heat after one side overreached, leaving resentment behind but no longer giving daily shape to household life.", "_id": "StFaRe05Q7mR16A3", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [8,8], "description": "[contact] A marriage tie, negotiated peace, or simple mutual inconvenience dulled the feud into habit rather than open hostility.", "_id": "StFaRe06Q7mR16A3", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [9,9], "description": "[social 1] The quarrel survived in tone rather than deed, which was peace enough for everyone who still needed to trade and worship nearby.", "_id": "StFaRe07Q7mR16A3", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [10,10], "description": "The feud survived only in retellings by the elders, who spoke of it more fondly than anyone else had suffered it.", "_id": "StFaRe08Q7mR16A3", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [11,11], "description": "[contact] Your household discharged the old obligation in full, and the relief proved almost as unsettling as the debt had been.", "_id": "StFaRe09Q7mR16A3", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [12,12], "description": "The patron's hold slackened when power changed hands, leaving your family grateful for the break and suspicious of the price.", "_id": "StFaRe10Q7mR16A3", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [13,13], "description": "[contact] The old obligation was discharged with gifts, service, and careful words, none of which made the dependence feel noble in hindsight.", "_id": "StFaRe11Q7mR16A3", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [14,14], "description": "Distance, misfortune, and altered loyalties wore the patron's claim down until it became a matter of history instead of instruction.", "_id": "StFaRe12Q7mR16A3", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [15,15], "description": "[bio RollTable.ogCUBgf4giALU7XZ] The household scandal was contained again, not by innocence, but by time, caution, and the appearance of better subjects to discuss.", "_id": "StFaRe13Q7mR16A3", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [16,16], "description": "[social 1] In the end the scandal remained known in outline and forgotten in detail, which is often the nearest thing families get to victory.", "_id": "StFaRe14Q7mR16A3", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [17,17], "description": "The shame lost its hold not because it was disproved, but because too few now cared enough to preserve the sharper version.", "_id": "StFaRe15Q7mR16A3", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [18,18], "description": "What remained of the scandal was reduced to a family flinch and a warning tone, no longer ruinous but never wholly dead.", "_id": "StFaRe16Q7mR16A3", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": { "default": 0 },
+  "_id": "StFamResoQ7mR1603"
+}

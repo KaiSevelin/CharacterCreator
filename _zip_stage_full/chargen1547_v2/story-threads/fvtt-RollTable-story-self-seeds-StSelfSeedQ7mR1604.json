@@ -1,0 +1,30 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Story - Self Seeds",
+  "img": "icons/svg/book.svg",
+  "description": "<p>Parallel personal-story seeds for character generation. Used as a secondary narrative thread from adolescence onward.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [3,3], "description": "A family inheritance dispute fastened itself to your own future, until your name began appearing wherever the claim was discussed.", "_id": "StSeSe01Q7mR16A4", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [4,4], "description": "An inheritance matter stopped being something older relatives argued over and became a question of what might one day be yours.", "_id": "StSeSe02Q7mR16A4", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [5,5], "description": "You came to understand that old claims on land, money, or name would shape how others measured your prospects.", "_id": "StSeSe03Q7mR16A4", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [6,6], "description": "The inheritance question ceased to be a family complaint and became part of the account others kept of your likely future.", "_id": "StSeSe04Q7mR16A4", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [7,7], "description": "An old feud ceased to belong only to the household and began shaping how others addressed you in your own right.", "_id": "StSeSe05Q7mR16A4", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [8,8], "description": "You discovered that a quarrel older than you could still narrow your prospects before you had even chosen your own enemies.", "_id": "StSeSe06Q7mR16A4", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [9,9], "description": "Other people's memory of the feud reached you before your own judgment did, which is one way old conflicts renew themselves.", "_id": "StSeSe07Q7mR16A4", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [10,10], "description": "The inherited quarrel began turning ordinary encounters into tests of whether you would continue it, soften it, or fail it.", "_id": "StSeSe08Q7mR16A4", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [11,11], "description": "A patron's old claim on your household began extending toward you personally, in tones too courteous to refuse outright.", "_id": "StSeSe09Q7mR16A4", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [12,12], "description": "Protection once given to your family became a personal obligation the moment you seemed useful enough to call upon.", "_id": "StSeSe10Q7mR16A4", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [13,13], "description": "You learned that patronage offered to your elders had already been entered into a ledger where your own name would soon appear.", "_id": "StSeSe11Q7mR16A4", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [14,14], "description": "The courtesy once shown your household revealed itself as a claim on your future conduct the moment you started to matter.", "_id": "StSeSe12Q7mR16A4", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [15,15], "description": "A household scandal began shadowing you by association, long before anyone trusted you with the whole account.", "_id": "StSeSe13Q7mR16A4", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [16,16], "description": "Something once buried in family history started to cling to your own name, whether you understood it fully or not.", "_id": "StSeSe14Q7mR16A4", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [17,17], "description": "You found that other people knew enough of the old scandal to judge your family without knowing enough to judge fairly.", "_id": "StSeSe15Q7mR16A4", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [18,18], "description": "Childhood whispers hardened into the introductions by which others first placed you, whether they repeated the story aloud or not.", "_id": "StSeSe16Q7mR16A4", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": { "default": 0 },
+  "_id": "StSelfSeedQ7mR1604"
+}

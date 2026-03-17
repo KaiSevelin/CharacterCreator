@@ -1,0 +1,30 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Story - Family Seeds",
+  "img": "icons/svg/book.svg",
+  "description": "<p>Parallel family-story seeds for character generation. Used as a secondary narrative thread during birth and childhood.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [3,3], "description": "Your household was tied to an inheritance no one considered settled, and the matter returned whenever fortune looked weakest.", "_id": "StFaSe01Q7mR16A1", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [4,4], "description": "An old inheritance remained under dispute, with papers, promises, and resentful kin all saying different things.", "_id": "StFaSe02Q7mR16A1", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [5,5], "description": "Your family expected a portion long spoken of as certain, which only made the dispute sharper once money and land were counted.", "_id": "StFaSe03Q7mR16A1", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [6,6], "description": "A dead relative left behind enough property, rumor, and ambiguity to keep your household watchful of every letter and witness.", "_id": "StFaSe04Q7mR16A1", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [7,7], "description": "Your family carried a feud older than your memory, and no one in the household spoke of it as truly over.", "_id": "StFaSe05Q7mR16A1", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [8,8], "description": "A quarrel with another house had been inherited so thoroughly that even civility seemed a tactical choice.", "_id": "StFaSe06Q7mR16A1", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [9,9], "description": "Your elders remembered an insult, a debt, or a wound too clearly for peace to become anything but a pause.", "_id": "StFaSe07Q7mR16A1", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [10,10], "description": "The neighboring household exchanged courtesies with yours so carefully that even a child could tell kindness had become ceremonial.", "_id": "StFaSe08Q7mR16A1", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [11,11], "description": "A powerful patron had once aided your household, and the debt of gratitude had outlived the favor itself.", "_id": "StFaSe09Q7mR16A1", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [12,12], "description": "Your family enjoyed protection from above, but everyone knew such protection expected service in return.", "_id": "StFaSe10Q7mR16A1", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [13,13], "description": "A favor once granted to your household had hardened into an obligation nobody dared call burdensome in public.", "_id": "StFaSe11Q7mR16A1", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [14,14], "description": "Older kin spoke of a patron with gratitude too disciplined to sound entirely voluntary.", "_id": "StFaSe12Q7mR16A1", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [15,15], "description": "A household shame had been buried rather than forgotten, and older relatives guarded it with practiced tension.", "_id": "StFaSe13Q7mR16A1", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [16,16], "description": "There was something in your family history that had been smoothed over publicly and spoken of only with doors shut.", "_id": "StFaSe14Q7mR16A1", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [17,17], "description": "Your household had once survived some disgrace by silence, and the silence had become part of the inheritance.", "_id": "StFaSe15Q7mR16A1", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [18,18], "description": "The family carried a story everyone knew in outline and no one was allowed to tell plainly.", "_id": "StFaSe16Q7mR16A1", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": { "default": 0 },
+  "_id": "StFamSeedQ7mR1601"
+}

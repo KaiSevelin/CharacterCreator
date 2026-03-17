@@ -1,0 +1,122 @@
+<form class="skilltree-chargen flexcol" autocomplete="off">
+
+    <header class="chargen-header flexrow">
+        <h2 class="chargen-title">
+            <i class="fas fa-scroll"></i>
+            The Life of {{actorName}}
+        </h2>
+
+        <div class="chargen-counters">
+            <span class="tag">
+                <i class="fas fa-hourglass-half"></i>
+                Global: {{state.remainingGlobal}}
+            </span>
+        </div>
+    </header>
+
+    {{#if currentTableDescription}}
+    <section class="chargen-table-intro">
+        <div class="table-description">{{{currentTableDescription}}}</div>
+    </section>
+    {{/if}}
+
+    <section class="chargen-cards">
+        {{#each cards}}
+        <article class="chargen-card {{this.cardClass}}"
+                 data-index="{{@index}}"
+                 title="{{this.tooltip}}"
+                 style='--cg-cover: url("{{this.img}}"); --cg-back: url("{{../backImg}}");'>
+            <div class="card-cover" aria-label="{{this.title}}">
+                <div class="card-flip">
+                    <div class="card-face card-front" role="img" aria-label="{{this.title}}"></div>
+                    <div class="card-face card-back" role="img" aria-label="Card back"></div>
+                </div>
+            </div>
+
+            <header class="card-header">
+                <h3 class="card-title">{{this.title}}</h3>
+            </header>
+
+            {{#if this.text}}
+            <p class="card-text">{{this.text}}</p>
+            {{/if}}
+        </article>
+        {{/each}}
+    </section>
+
+    {{#if reveal}}
+    <section class="chargen-reveal">
+        <h3 class="reveal-title">Rolled Effects</h3>
+        <ul class="reveal-list">
+            {{#each reveal.lines}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        {{#if reveal.nextName}}
+        <p class="reveal-next">Next: {{reveal.nextName}}</p>
+        {{else}}
+        <p class="reveal-next">This path ends here.</p>
+        {{/if}}
+    </section>
+    {{/if}}
+
+    <section class="chargen-bio">
+        <details>
+            <summary>
+                <i class="fas fa-book-open"></i>
+                Biography so far
+            </summary>
+            <ul>
+                {{#each bio}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </details>
+    </section>
+
+    <section class="chargen-tables">
+        <details>
+            <summary>
+                <i class="fas fa-table"></i>
+                Relevant tables and usage
+            </summary>
+            <div class="table-wrap">
+                <table class="cg-table-list">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Use</th>
+                            <th>Table</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each relevantTables}}
+                        <tr>
+                            <td>{{this.role}}</td>
+                            <td>{{this.use}}</td>
+                            <td title="{{this.ref}}">{{this.tableName}}</td>
+                            <td>
+                                {{#if this.ok}}OK{{else}}Missing{{/if}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </details>
+    </section>
+
+    <footer class="sheet-footer flexrow chargen-footer">
+        <button type="button" data-action="table-list">
+            <i class="fas fa-list-check"></i> Validation List
+        </button>
+        <button type="button" data-action="reroll">
+            <i class="fas fa-dice"></i> Reroll Options
+        </button>
+        <button type="button" data-action="finish">
+            <i class="fas fa-flag-checkered"></i> Finish
+        </button>
+    </footer>
+
+</form>

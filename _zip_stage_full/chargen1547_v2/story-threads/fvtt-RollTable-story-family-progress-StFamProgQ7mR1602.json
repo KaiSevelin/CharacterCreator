@@ -1,0 +1,30 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Story - Family Progress",
+  "img": "icons/svg/book.svg",
+  "description": "<p>Parallel family-story developments for character generation. Results are filtered by thread key in code.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [3,3], "description": "The inheritance matter returned in conversation after a season of hardship made old claims suddenly practical again.", "_id": "StFaPr01Q7mR16A2", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [4,4], "description": "Someone outside the household began speaking of the inheritance as if your family's claim were only a temporary inconvenience.", "_id": "StFaPr02Q7mR16A2", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [5,5], "description": "Old papers, witnesses, and memories were dragged out again, and none of them agreed cleanly enough to settle the inheritance.", "_id": "StFaPr03Q7mR16A2", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [6,6], "description": "A promised portion of the inheritance was quietly spent in advance by people too certain the law would eventually agree with them.", "_id": "StFaPr04Q7mR16A2", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [7,7], "description": "The old feud sharpened when a slight, perhaps accidental and perhaps not, gave everyone reason to remember earlier injuries.", "_id": "StFaPr05Q7mR16A2", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [8,8], "description": "Neighbors were drawn into the feud as witnesses, messengers, and partisans, which made the quarrel harder to pretend was private.", "_id": "StFaPr06Q7mR16A2", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [9,9], "description": "The feud persisted through courtesy, trade, and worship alike, touching any place where both households expected to be seen.", "_id": "StFaPr07Q7mR16A2", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [10,10], "description": "A younger member of one house repeated the quarrel badly enough to remind both families how easily habit becomes escalation.", "_id": "StFaPr08Q7mR16A2", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [11,11], "description": "An old favor was called in at a bad moment, and your household learned again that gratitude can be collected like rent.", "_id": "StFaPr09Q7mR16A2", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [12,12], "description": "A small service was requested in the patron's name, but everyone in the house understood the request measured future obedience.", "_id": "StFaPr10Q7mR16A2", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [13,13], "description": "The debt to your patron broadened from courtesy into expectation, and older relatives began speaking more carefully at table.", "_id": "StFaPr11Q7mR16A2", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [14,14], "description": "A favor refused elsewhere came down upon your household instead, which taught everyone how little choice hides inside dependence.", "_id": "StFaPr12Q7mR16A2", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [15,15], "description": "The family scandal was hinted at by someone who should not have known enough to speak so confidently.", "_id": "StFaPr13Q7mR16A2", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [16,16], "description": "Rumor began escaping the household in the form of courtesy, innuendo, and sympathy too pointed to be mistaken for kindness.", "_id": "StFaPr14Q7mR16A2", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [17,17], "description": "A passing mention of the old scandal altered the mood of a room quickly enough to show the matter had never truly gone cold.", "_id": "StFaPr15Q7mR16A2", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [18,18], "description": "Someone with no right to the tale repeated just enough of the scandal to prove that secrecy had become porous.", "_id": "StFaPr16Q7mR16A2", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": { "default": 0 },
+  "_id": "StFamProgQ7mR1602"
+}

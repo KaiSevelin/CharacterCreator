@@ -1,0 +1,434 @@
+﻿{
+    "folder":  "dA5kRoToREvCP9hn",
+    "name":  "Luck",
+    "img":  "icons/svg/card-joker.svg",
+    "description":  "\u003cp\u003eA table of narrow escapes, timely fortune, and small providential turns that feel grounded in hardship rather than convenience.\u003c/p\u003e",
+    "results":  [
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      3,
+                                      3
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "You arrive late enough to miss the quarrel and early enough to hear what mattered.",
+                        "_id":  "VhyzH6PZV8qanbhn",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      4,
+                                      4
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A horse that had every reason to go lame holds together for one more necessary journey.",
+                        "_id":  "HKjNfp9LNQ0G2QJQ",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      5,
+                                      5
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A letter is delayed just long enough to spare you from an ugly commitment.",
+                        "_id":  "fW5iTQ1QbnIcBRuj",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      6,
+                                      6
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A witness forgets the detail that would have tied you to the matter directly.",
+                        "_id":  "6LoIXvdMdPFF5ehT",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      7,
+                                      7
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "You sit beside the only person in the room inclined to help you, and conversation does the rest.",
+                        "_id":  "SzPLtX25jppIAkUg",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      8,
+                                      8
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "The rumor attaches itself to another name, not yours, and you do not correct it.",
+                        "_id":  "hPX0HIhxhvbQX4aZ",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      9,
+                                      9
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A servant takes pity on you for reasons neither of you entirely understands.",
+                        "_id":  "xjFMW9zb0QqDLLCY",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      10,
+                                      10
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A bargain falls your way because two greedier people misjudge each other first.",
+                        "_id":  "caeQySIIi0YdVCpE",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      11,
+                                      11
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A stranger gives warning without knowing how valuable the warning is.",
+                        "_id":  "NtOBXPoLZHuTWqWp",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      12,
+                                      12
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "Illness passes you by after touching nearly everyone around you.",
+                        "_id":  "inYy0JZZhGkmLfLj",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      13,
+                                      13
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "Your opponent chooses pride over caution and hands you the easier path.",
+                        "_id":  "cr3xrGK4Wbo1wmGJ",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      14,
+                                      14
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "The one person who owes you a favor happens still to remember.",
+                        "_id":  "oKD1RjQvfajIcF8b",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      15,
+                                      15
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "You are mistaken for harmless at a moment when harmlessness is a gift from heaven.",
+                        "_id":  "REWraQAkYeojhbU4",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      16,
+                                      16
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "An expensive problem turns into a cheap one because another person has created a larger problem nearby.",
+                        "_id":  "40VLvke4q3KrdjcT",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      17,
+                                      17
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "A patrol passes by while your attention is elsewhere, and only later do you understand what you missed.",
+                        "_id":  "cOmTU0TabO8uXRCR",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    },
+                    {
+                        "type":  "text",
+                        "weight":  1,
+                        "range":  [
+                                      18,
+                                      18
+                                  ],
+                        "drawn":  false,
+                        "_stats":  {
+                                       "compendiumSource":  null,
+                                       "duplicateSource":  null,
+                                       "exportSource":  null,
+                                       "coreVersion":  "13.351",
+                                       "systemId":  "custom-system-builder",
+                                       "systemVersion":  "5.1.0",
+                                       "lastModifiedBy":  null
+                                   },
+                        "description":  "What should have become disaster remains only an unpleasant story, which is luck by any honest measure.",
+                        "_id":  "DB0bVAodLZzxO40I",
+                        "name":  "",
+                        "img":  "icons/svg/d20-black.svg",
+                        "flags":  {
+
+                                  }
+                    }
+                ],
+    "replacement":  true,
+    "displayRoll":  true,
+    "flags":  {
+
+              },
+    "_stats":  {
+                   "compendiumSource":  null,
+                   "duplicateSource":  null,
+                   "exportSource":  {
+                                        "worldId":  "labgame-0940e6bc",
+                                        "uuid":  "RollTable.mWI6zmHkHhQA84Yp",
+                                        "coreVersion":  "13.351",
+                                        "systemId":  "custom-system-builder",
+                                        "systemVersion":  "5.2.0"
+                                    },
+                   "coreVersion":  "13.351",
+                   "systemId":  "custom-system-builder",
+                   "systemVersion":  "5.1.0",
+                   "createdTime":  1771771848853,
+                   "modifiedTime":  1771771916833,
+                   "lastModifiedBy":  "HqdAsTDFzg3TzYAq"
+               },
+    "formula":  "3d6",
+    "ownership":  {
+                      "default":  0
+                  }
+}

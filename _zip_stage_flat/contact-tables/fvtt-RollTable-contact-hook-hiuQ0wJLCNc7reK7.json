@@ -1,0 +1,1875 @@
+{
+  "_id": "hiuQ0wJLCNc7reK7",
+  "name": "Contact Hook",
+  "img": "icons/svg/mystery-man.svg",
+  "description": "<p>Why this contact matters right now.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "name": "Knows a secret that would anger someone powerful.",
+      "description": "Knows a secret that would anger someone powerful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0dc7e32dd4a74756",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "name": "Overheard plans for an upcoming crime.",
+      "description": "Overheard plans for an upcoming crime.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "36a473fb686f41e9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "name": "Recognized a person who was meant to be dead.",
+      "description": "Recognized a person who was meant to be dead.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b9f8c703e92948c2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "name": "Has proof of a lie being told publicly.",
+      "description": "Has proof of a lie being told publicly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "852e50d3572e4cb8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "name": "Saw something suspicious and fears retaliation.",
+      "description": "Saw something suspicious and fears retaliation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d7f7c48d87b94840",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "name": "Knows the real reason a recent event occurred.",
+      "description": "Knows the real reason a recent event occurred.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ba60ec9d419d40ed",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "name": "Has incomplete information and needs confirmation.",
+      "description": "Has incomplete information and needs confirmation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c7b57bb642c948c6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "name": "Possesses a map to a place now thought lost.",
+      "description": "Possesses a map to a place now thought lost.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6e8a0220481b46d4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "name": "Knows who is responsible for a recent disappearance.",
+      "description": "Knows who is responsible for a recent disappearance.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "092938de68f14fad",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "name": "Has knowledge that becomes dangerous at sundown.",
+      "description": "Has knowledge that becomes dangerous at sundown.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "87a7b188ec1f44dd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "name": "Needs help recovering something stolen from them.",
+      "description": "Needs help recovering something stolen from them.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cce72ebe989e437d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "name": "Needs protection until a threat passes.",
+      "description": "Needs protection until a threat passes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b79a23f8f0dc45d6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "name": "Needs help delivering something discreetly.",
+      "description": "Needs help delivering something discreetly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7d6e89d5e6bf461b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "name": "Needs help hiding evidence of a mistake.",
+      "description": "Needs help hiding evidence of a mistake.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "994b73a86b094595",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "name": "Needs someone to speak on their behalf.",
+      "description": "Needs someone to speak on their behalf.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b922b93651f54010",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "name": "Needs help retrieving something they regret giving away.",
+      "description": "Needs help retrieving something they regret giving away.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "34bd130eed1843fa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "name": "Needs assistance escaping an unwanted obligation.",
+      "description": "Needs assistance escaping an unwanted obligation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b2b40226abc94693",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "name": "Needs help settling a debt before consequences arrive.",
+      "description": "Needs help settling a debt before consequences arrive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4cd20e4eddbe4a3b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "name": "Needs help finding someone avoiding them.",
+      "description": "Needs help finding someone avoiding them.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4524bb80503447cb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "name": "Needs help doing something they cannot do alone.",
+      "description": "Needs help doing something they cannot do alone.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b82d4300d12c4497",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "drawn": false,
+      "name": "Is being blackmailed with damaging information.",
+      "description": "Is being blackmailed with damaging information.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8b4a930c549145a3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        22,
+        22
+      ],
+      "drawn": false,
+      "name": "Is blamed for a problem caused by someone else.",
+      "description": "Is blamed for a problem caused by someone else.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dcadd364135a43b2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        23,
+        23
+      ],
+      "drawn": false,
+      "name": "Is caught between two feuding groups.",
+      "description": "Is caught between two feuding groups.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f2508dd2d1f74777",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "drawn": false,
+      "name": "Is being watched and doesn’t know by whom.",
+      "description": "Is being watched and doesn’t know by whom.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ef1ffca49bef4e47",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        25,
+        25
+      ],
+      "drawn": false,
+      "name": "Is hiding from someone they wronged.",
+      "description": "Is hiding from someone they wronged.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5115033198834a22",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        26
+      ],
+      "drawn": false,
+      "name": "Is in danger due to mistaken identity.",
+      "description": "Is in danger due to mistaken identity.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2c492620b8f64f1f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        27,
+        27
+      ],
+      "drawn": false,
+      "name": "Is about to be made an example of.",
+      "description": "Is about to be made an example of.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "85a17d1b014d42a8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        28,
+        28
+      ],
+      "drawn": false,
+      "name": "Is tied to a plan that is already in motion.",
+      "description": "Is tied to a plan that is already in motion.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6bab07560d984677",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        29,
+        29
+      ],
+      "drawn": false,
+      "name": "Is responsible for a problem growing out of control.",
+      "description": "Is responsible for a problem growing out of control.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c3b67062ce8f4ead",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        30,
+        30
+      ],
+      "drawn": false,
+      "name": "Is involved in something they don’t fully understand.",
+      "description": "Is involved in something they don’t fully understand.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8c7cba20818f45db",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "drawn": false,
+      "name": "Can grant access to a restricted location.",
+      "description": "Can grant access to a restricted location.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "decce497c8da4fbf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        32,
+        32
+      ],
+      "drawn": false,
+      "name": "Can introduce you to someone influential.",
+      "description": "Can introduce you to someone influential.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a3f963e005684808",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        33,
+        33
+      ],
+      "drawn": false,
+      "name": "Can provide rare goods at a critical moment.",
+      "description": "Can provide rare goods at a critical moment.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cc3982fb36ab47ed",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        34,
+        34
+      ],
+      "drawn": false,
+      "name": "Can arrange safe passage through dangerous territory.",
+      "description": "Can arrange safe passage through dangerous territory.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "287f474968e748b9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        35,
+        35
+      ],
+      "drawn": false,
+      "name": "Can help bypass a local law or custom.",
+      "description": "Can help bypass a local law or custom.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6b44c23384434a23",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        36
+      ],
+      "drawn": false,
+      "name": "Can falsify or obtain official documents.",
+      "description": "Can falsify or obtain official documents.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "600888d4811b422c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        37,
+        37
+      ],
+      "drawn": false,
+      "name": "Can provide leverage over a rival.",
+      "description": "Can provide leverage over a rival.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7e8b6552580b42bb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        38,
+        38
+      ],
+      "drawn": false,
+      "name": "Can arrange a discreet meeting between enemies.",
+      "description": "Can arrange a discreet meeting between enemies.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4eb4df5d81284a2b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        39,
+        39
+      ],
+      "drawn": false,
+      "name": "Can hide you from active pursuit.",
+      "description": "Can hide you from active pursuit.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3c44d20482ea4a48",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        40,
+        40
+      ],
+      "drawn": false,
+      "name": "Can help sabotage a rival operation.",
+      "description": "Can help sabotage a rival operation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "49ec955996344f9f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "drawn": false,
+      "name": "Owes a favor that must be repaid now.",
+      "description": "Owes a favor that must be repaid now.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "66157b045add4acb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        42,
+        42
+      ],
+      "drawn": false,
+      "name": "Is bound by an oath they regret.",
+      "description": "Is bound by an oath they regret.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cb8ba10717c84e9b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        43,
+        43
+      ],
+      "drawn": false,
+      "name": "Is acting under orders they disagree with.",
+      "description": "Is acting under orders they disagree with.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ff6a4604f9cd45c9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        44,
+        44
+      ],
+      "drawn": false,
+      "name": "Is trying to protect someone close to them.",
+      "description": "Is trying to protect someone close to them.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dfe5e6b878b24183",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        45,
+        45
+      ],
+      "drawn": false,
+      "name": "Is covering for another person’s crime.",
+      "description": "Is covering for another person’s crime.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b64da304d6154788",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "drawn": false,
+      "name": "Is pressured by family, guild, or faction.",
+      "description": "Is pressured by family, guild, or faction.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c44fb726915049a6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        47,
+        47
+      ],
+      "drawn": false,
+      "name": "Is torn between loyalty and survival.",
+      "description": "Is torn between loyalty and survival.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0213e985539b47f7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        48,
+        48
+      ],
+      "drawn": false,
+      "name": "Is entangled in a long-standing feud.",
+      "description": "Is entangled in a long-standing feud.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "42b9c863f5cb469e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        49,
+        49
+      ],
+      "drawn": false,
+      "name": "Is repaying a debt through risky behavior.",
+      "description": "Is repaying a debt through risky behavior.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "65019ad1ef0a4b5b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        50,
+        50
+      ],
+      "drawn": false,
+      "name": "Is bound to secrecy by fear.",
+      "description": "Is bound to secrecy by fear.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9921fc245f764d28",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        51
+      ],
+      "drawn": false,
+      "name": "Feels guilty and wants to make amends.",
+      "description": "Feels guilty and wants to make amends.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1d2e4c0927c04eb9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        52,
+        52
+      ],
+      "drawn": false,
+      "name": "Is desperate and running out of options.",
+      "description": "Is desperate and running out of options.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1d102bcd62c24969",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        53,
+        53
+      ],
+      "drawn": false,
+      "name": "Is acting out of fear rather than reason.",
+      "description": "Is acting out of fear rather than reason.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4566b2ec02504d9c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        54,
+        54
+      ],
+      "drawn": false,
+      "name": "Is driven by pride into dangerous choices.",
+      "description": "Is driven by pride into dangerous choices.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b366ca146d674486",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        55,
+        55
+      ],
+      "drawn": false,
+      "name": "Is trying to prove their worth.",
+      "description": "Is trying to prove their worth.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7d34dc6e62234a22",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        56
+      ],
+      "drawn": false,
+      "name": "Is acting impulsively under stress.",
+      "description": "Is acting impulsively under stress.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "51e979e8e06d49ff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        57,
+        57
+      ],
+      "drawn": false,
+      "name": "Is motivated by grief.",
+      "description": "Is motivated by grief.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f9bec4c2d71b4671",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        58,
+        58
+      ],
+      "drawn": false,
+      "name": "Is hiding panic behind confidence.",
+      "description": "Is hiding panic behind confidence.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7d6d70033cd24441",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        59,
+        59
+      ],
+      "drawn": false,
+      "name": "Is clinging to false hope.",
+      "description": "Is clinging to false hope.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b8b2fa1e83d248e1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        60,
+        60
+      ],
+      "drawn": false,
+      "name": "Is on the verge of breaking down.",
+      "description": "Is on the verge of breaking down.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "07b78ea1f3c24e7f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        61
+      ],
+      "drawn": false,
+      "name": "Can a foreign language",
+      "description": "<p>Can a foreign language</p>",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "797331640a0541f5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq",
+        "modifiedTime": 1771243340401
+      },
+      "flags": {},
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        62,
+        62
+      ],
+      "drawn": false,
+      "name": "Needs help before authorities intervene.",
+      "description": "Needs help before authorities intervene.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dc7ba0038cdd44ff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        63,
+        63
+      ],
+      "drawn": false,
+      "name": "Needs help before a deadline expires.",
+      "description": "Needs help before a deadline expires.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c5dfed39015848a6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        64,
+        64
+      ],
+      "drawn": false,
+      "name": "Needs help while someone is away.",
+      "description": "Needs help while someone is away.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c7a63d8f2df349ee",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        65,
+        65
+      ],
+      "drawn": false,
+      "name": "Needs help before a secret spreads.",
+      "description": "Needs help before a secret spreads.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9b1f7a26660a4641",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        66
+      ],
+      "drawn": false,
+      "name": "Needs help during a public event.",
+      "description": "Needs help during a public event.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a18fc3667f7048ed",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        67,
+        67
+      ],
+      "drawn": false,
+      "name": "Needs help before a deal collapses.",
+      "description": "Needs help before a deal collapses.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6e0fd5c16d4d44af",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        68,
+        68
+      ],
+      "drawn": false,
+      "name": "Needs help before a rival acts.",
+      "description": "Needs help before a rival acts.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fd4568c653f34066",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        69,
+        69
+      ],
+      "drawn": false,
+      "name": "Needs help while something is in transit.",
+      "description": "Needs help while something is in transit.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f12c4ae150754eed",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        70,
+        70
+      ],
+      "drawn": false,
+      "name": "Needs help before tempers boil over.",
+      "description": "Needs help before tempers boil over.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "56a49e1085924756",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        71,
+        71
+      ],
+      "drawn": false,
+      "name": "Offers help, but with dangerous conditions.",
+      "description": "Offers help, but with dangerous conditions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4d58ca0b9aee4a78",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        72,
+        72
+      ],
+      "drawn": false,
+      "name": "Withholds a crucial detail.",
+      "description": "Withholds a crucial detail.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d521a69f9f6a4cc8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        73,
+        73
+      ],
+      "drawn": false,
+      "name": "Is mistaken about an important fact.",
+      "description": "Is mistaken about an important fact.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2bed963ca3484eef",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        74,
+        74
+      ],
+      "drawn": false,
+      "name": "Has the wrong person blamed.",
+      "description": "Has the wrong person blamed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b06b487eee364f9d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        75,
+        75
+      ],
+      "drawn": false,
+      "name": "Underestimates the danger involved.",
+      "description": "Underestimates the danger involved.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "78b12ef5f8a84d93",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        76,
+        76
+      ],
+      "drawn": false,
+      "name": "Overestimates your willingness to help.",
+      "description": "Overestimates your willingness to help.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4213123a21c64f66",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        77,
+        77
+      ],
+      "drawn": false,
+      "name": "Changes their story under pressure.",
+      "description": "Changes their story under pressure.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f58452aa2fcd41f7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        78,
+        78
+      ],
+      "drawn": false,
+      "name": "Has conflicting goals.",
+      "description": "Has conflicting goals.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "77b999ccd2614eba",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        79,
+        79
+      ],
+      "drawn": false,
+      "name": "Draws unwanted attention by association.",
+      "description": "Draws unwanted attention by association.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a7e58c722165409d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        80,
+        80
+      ],
+      "drawn": false,
+      "name": "Brings trouble simply by being involved.",
+      "description": "Brings trouble simply by being involved.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ca1adf36801b48b9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "dA5kRoToREvCP9hn",
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "RollTable.hiuQ0wJLCNc7reK7",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.1.0",
+    "createdTime": 1771243108130,
+    "modifiedTime": 1771257786613,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "formula": "1d80",
+  "ownership": {
+    "default": 0
+  }
+}

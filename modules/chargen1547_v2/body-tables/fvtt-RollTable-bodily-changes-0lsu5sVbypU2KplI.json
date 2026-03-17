@@ -1,0 +1,1183 @@
+{
+  "_id": "0lsu5sVbypU2KplI",
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Bodily Changes",
+  "img": "icons/svg/deaf.svg",
+  "description": "",
+  "results": [
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A thin scar along your left forearm",
+      "_id": "9sgnPRCIoUPRaaqi",
+      "name": "A thin scar along your left forearm",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A jagged scar across your right knuckles",
+      "_id": "wfcgnFQcy04AlLrA",
+      "name": "A jagged scar across your right knuckles",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A faded burn mark on your shoulder",
+      "_id": "KAMBKtPYsWbYW8Lj",
+      "name": "A faded burn mark on your shoulder",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A bite scar that never quite healed",
+      "_id": "0mRfQkMnMWMnWbIj",
+      "name": "A bite scar that never quite healed",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A broken nose that healed crooked",
+      "_id": "xdHbGr8fIoJyY8SY",
+      "name": "A broken nose that healed crooked",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A chipped front tooth",
+      "_id": "DYdYhCBw9ojzF5pq",
+      "name": "A chipped front tooth",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A missing tooth replaced with wood or bone",
+      "_id": "vrKMxXsh3gjNUpqX",
+      "name": "A missing tooth replaced with wood or bone",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A noticeable limp from an old injury",
+      "_id": "pbz9iCg4COdXUAQ6",
+      "name": "A noticeable limp from an old injury",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A stiff knee that aches in the cold",
+      "_id": "Hpq7Jv167rZL5p6y",
+      "name": "A stiff knee that aches in the cold",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A hand that trembles slightly under stress",
+      "_id": "srLOpJxPu3IrTLFE",
+      "name": "A hand that trembles slightly under stress",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A shoulder that sometimes slips out of place",
+      "_id": "N7Ngv5wNCfQriWgF",
+      "name": "A shoulder that sometimes slips out of place",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar that runs from ear to jaw",
+      "_id": "Nh6VN2QaxNtcH6dT",
+      "name": "A scar that runs from ear to jaw",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A tattoo of a simple symbol on your wrist",
+      "_id": "xokTDDgoLRPFgHBA",
+      "name": "A tattoo of a simple symbol on your wrist",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A faded tattoo on your forearm",
+      "_id": "Wz3NeUIfXmmre3N9",
+      "name": "A faded tattoo on your forearm",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A small brand mark from an old punishment",
+      "_id": "37oIzr1Lqcu3bDod",
+      "name": "A small brand mark from an old punishment",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "Callused hands from years of hard work",
+      "_id": "wWbm5wAzfa25Osnu",
+      "name": "Callused hands from years of hard work",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A thickened scar on your palm",
+      "_id": "HPy1SG5XjkmCiu3n",
+      "name": "A thickened scar on your palm",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A patch of skin that never tans (old scar tissue)",
+      "_id": "ehN9OhsmhAE10Wpx",
+      "name": "A patch of skin that never tans (old scar tissue)",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A distinctive birthmark on your neck",
+      "_id": "oaYRctF0rDm7rtAj",
+      "name": "A distinctive birthmark on your neck",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A birthmark shaped like a blot on your cheek",
+      "_id": "kQ7xHJLMgYtwzWPU",
+      "name": "A birthmark shaped like a blot on your cheek",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A mole you’re self-conscious about",
+      "_id": "OwTjuF92Sbu20S2T",
+      "name": "A mole you’re self-conscious about",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        22,
+        22
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A permanently hoarse voice",
+      "_id": "B7F1kR3k7A6xyw1z",
+      "name": "A permanently hoarse voice",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        23,
+        23
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A slight stutter when nervous",
+      "_id": "wpOOrLW14HZNRlP9",
+      "name": "A slight stutter when nervous",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A laugh that’s loud and unmistakable",
+      "_id": "m8xNMhwC9ImRYa81",
+      "name": "A laugh that’s loud and unmistakable",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        25,
+        25
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A cloudy eye that weakens your sight",
+      "_id": "v9rTTprnb06ncxBl",
+      "name": "A cloudy eye that weakens your sight",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        26,
+        26
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "One eyebrow split by an old cut",
+      "_id": "tS7eXkBv62ee5IIM",
+      "name": "One eyebrow split by an old cut",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        27,
+        27
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A small notch missing from one ear",
+      "_id": "iFznLLZ0XZYeGiXM",
+      "name": "A small notch missing from one ear",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        28,
+        28
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A pierced ear with a simple ring",
+      "_id": "qmI90vEC2bYrNf9y",
+      "name": "A pierced ear with a simple ring",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        29,
+        29
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A healed cut that left a pale line across your scalp",
+      "_id": "20Lqu3BadThMddNc",
+      "name": "A healed cut that left a pale line across your scalp",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        30,
+        30
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A patch of hair that never grew back",
+      "_id": "MfjIcAqfH8uzUZUP",
+      "name": "A patch of hair that never grew back",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A badly healed rib that aches after exertion",
+      "_id": "JiO24A8a2H1Dv0Wj",
+      "name": "A badly healed rib that aches after exertion",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        32,
+        32
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A back that stiffens after long rides",
+      "_id": "GSnmqE4mPsxyc9Qh",
+      "name": "A back that stiffens after long rides",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        33,
+        33
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar on your abdomen from a deep wound",
+      "_id": "RfcXbhK1O1vXAzD9",
+      "name": "A scar on your abdomen from a deep wound",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        34,
+        34
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar on your thigh from a blade or arrow",
+      "_id": "4vJUnTJbHoN8YcbO",
+      "name": "A scar on your thigh from a blade or arrow",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        35,
+        35
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A hand with one finger partially crippled",
+      "_id": "7Z9CAqqUBGRqghPB",
+      "name": "A hand with one finger partially crippled",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        36,
+        36
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A missing fingertip",
+      "_id": "tY9OoDPCCnaQ3AqX",
+      "name": "A missing fingertip",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        37,
+        37
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A faint smell of smoke that clings to you",
+      "_id": "QynSkwjDV62sWyQf",
+      "name": "A faint smell of smoke that clings to you",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        38,
+        38
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A habit of rubbing a particular scar when thinking",
+      "_id": "6nciiOXhGBskDXY4",
+      "name": "A habit of rubbing a particular scar when thinking",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        39,
+        39
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A sun-darkened complexion from outdoor work",
+      "_id": "955Dq5gr64PZyWxG",
+      "name": "A sun-darkened complexion from outdoor work",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        40,
+        40
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A pale complexion from long indoor hours",
+      "_id": "wmZpaRWuT48oXmQm",
+      "name": "A pale complexion from long indoor hours",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar shaped like a crescent on your wrist",
+      "_id": "P4geF1KdQRFmCMID",
+      "name": "A scar shaped like a crescent on your wrist",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        42,
+        42
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar shaped like a hook near your elbow",
+      "_id": "bI1pwuFwCaI7IPzO",
+      "name": "A scar shaped like a hook near your elbow",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        43,
+        43
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A small tattoo you keep hidden",
+      "_id": "nSKJkETOlMFNsNnK",
+      "name": "A small tattoo you keep hidden",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        44,
+        44
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A brand mark you try to conceal",
+      "_id": "v4JXASNCl71sWx6z",
+      "name": "A brand mark you try to conceal",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        45,
+        45
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A healed cut that left your smile slightly uneven",
+      "_id": "qwgrOE7T7b2J0DTv",
+      "name": "A healed cut that left your smile slightly uneven",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar that runs across your lower lip",
+      "_id": "tABBTRj28FALWuJj",
+      "name": "A scar that runs across your lower lip",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        47,
+        47
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A scar through your beard line that won’t fill in",
+      "_id": "yo3EtILjQ1vAc3kB",
+      "name": "A scar through your beard line that won’t fill in",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        48,
+        48
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A chronic ache in your wrist from repetitive work",
+      "_id": "pmD7LiAGwUSYWq3I",
+      "name": "A chronic ache in your wrist from repetitive work",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        49,
+        49
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A lingering cough from a past sickness",
+      "_id": "bNOKNQilNzju6esV",
+      "name": "A lingering cough from a past sickness",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    },
+    {
+      "type": "document",
+      "weight": 1,
+      "range": [
+        50,
+        50
+      ],
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "description": "A shortness of breath after hard running",
+      "_id": "JJL133er3wF9gjNW",
+      "name": "A shortness of breath after hard running",
+      "img": "icons/svg/d20-black.svg",
+      "drawn": false,
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "RollTable.0lsu5sVbypU2KplI",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.1.0",
+    "createdTime": 1770561740777,
+    "modifiedTime": 1771328053974,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "formula": "1d50",
+  "ownership": {
+    "default": 0
+  }
+}

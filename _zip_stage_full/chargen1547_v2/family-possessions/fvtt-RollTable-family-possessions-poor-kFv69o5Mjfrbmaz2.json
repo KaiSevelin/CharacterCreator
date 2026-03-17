@@ -1,0 +1,224 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Family possessions, poor",
+  "img": "icons/svg/daze.svg",
+  "description": "<p>A 3d6 biography table of poor household rights, claims, obligations, and scraps of standing that do not overlap with item rewards.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "description": "A tolerated place to sleep or build, secure only until someone stronger objected.",
+      "_id": "FaPoRsA1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "description": "The right to glean after harvest, worth little in good years and everything in bad ones.",
+      "_id": "FaPoRsB1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "description": "A customary claim to gather fallen wood, reeds, or peat that others disputed whenever scarcity sharpened.",
+      "_id": "FaPoRsC1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "description": "Kin in one nearby place who would take you in briefly, though never without reminding you of the cost.",
+      "_id": "FaPoRsD1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "description": "A household reputation for hard use, low complaint, and payment that came late but did come.",
+      "_id": "FaPoRsE1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "description": "Access to common grazing, shared water, or rough pasture whose value depended on season and patience.",
+      "_id": "FaPoRsF1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "description": "The right to use a village oven, mill, or ferry at older terms than newer families could demand.",
+      "_id": "FaPoRsG1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "description": "A narrow claim to a strip of ground everyone recognized and no one had bothered to define clearly.",
+      "_id": "FaPoRsH1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "description": "A remembered favor owed to the household by someone only slightly better placed than you were.",
+      "_id": "FaPoRsI1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "description": "A place in local custom: not respected exactly, but known, which can matter nearly as much.",
+      "_id": "FaPoRsJ1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "description": "The expectation that your household could always be called on first for rough labor and small emergencies.",
+      "_id": "FaPoRsK1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "description": "A family name associated with endurance, thrift, and surviving ugly seasons.",
+      "_id": "FaPoRsL1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "description": "The right to gather what others left behind: stubble, windfall, scraps, or salvage.",
+      "_id": "FaPoRsM1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "description": "Informal access to pathways, crossings, or fishing spots known best by long use rather than law.",
+      "_id": "FaPoRsN1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "description": "A household standing modest enough to be overlooked and solid enough not to be easily pushed aside.",
+      "_id": "FaPoRsO1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "description": "More security than your station should have allowed: customary rights, neighborly obligations, and enough local recognition to make hardship survivable.",
+      "_id": "FaPoRsP1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "kFv69o5Mjfrbmaz2"
+}

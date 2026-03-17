@@ -1,0 +1,30 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Story - Self Progress",
+  "img": "icons/svg/book.svg",
+  "description": "<p>Parallel personal-story developments for character generation. Results are filtered by thread key in code.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [3,3], "description": "The inheritance dispute began costing you chances directly, as others weighed your prospects against unfinished family claims.", "_id": "StSePr01Q7mR16A5", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [4,4], "description": "A letter, witness, or rumor revived the inheritance matter just when it seemed safe to treat it as someone else's burden.", "_id": "StSePr02Q7mR16A5", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [5,5], "description": "You found that people could be cordial to you and still calculate around the unresolved inheritance at the same time.", "_id": "StSePr03Q7mR16A5", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [6,6], "description": "What should have come to you or your branch of the family kept being delayed by persons who insisted delay was only prudence.", "_id": "StSePr04Q7mR16A5", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [7,7], "description": "The old feud reached you through insult, exclusion, or needless resistance from people who had decided your surname was argument enough.", "_id": "StSePr05Q7mR16A5", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [8,8], "description": "You were forced to discover how much of the feud had become habit in others long before it ever became choice in you.", "_id": "StSePr06Q7mR16A5", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [9,9], "description": "What began as inherited hostility became your own practical problem once the feud started closing doors that should have stayed open.", "_id": "StSePr07Q7mR16A5", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [10,10], "description": "A small slight against you acquired the weight of family history so quickly that it was clear the quarrel had only been waiting for a new name.", "_id": "StSePr08Q7mR16A5", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [11,11], "description": "The patron's earlier favor ripened into expectation, and your compliance began being measured before it was requested.", "_id": "StSePr09Q7mR16A5", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [12,12], "description": "You were reminded that old protection creates very modern obligations once your own life becomes useful to somebody powerful.", "_id": "StSePr10Q7mR16A5", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [13,13], "description": "A request made in a patron's name showed clearly that your freedom now included the freedom to disappoint someone dangerous.", "_id": "StSePr11Q7mR16A5", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [14,14], "description": "The patron's goodwill began being spoken of as if it were a debt you had not yet finished paying, which sharpened every favor afterward.", "_id": "StSePr12Q7mR16A5", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [15,15], "description": "The buried scandal brushed your own name more openly, and you learned how quickly politeness changes once rumor acquires detail.", "_id": "StSePr13Q7mR16A5", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [16,16], "description": "Someone repeated enough of the old scandal to harm you while still keeping enough back to make denial look uncertain.", "_id": "StSePr14Q7mR16A5", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [17,17], "description": "A matter once kept inside the family began shaping your introductions, opportunities, and excuses in public.", "_id": "StSePr15Q7mR16A5", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [18,18], "description": "The scandal lingered in the faces of people meeting you for the first time, as if someone had prepared them in advance.", "_id": "StSePr16Q7mR16A5", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": { "default": 0 },
+  "_id": "StSelfProgQ7mR1605"
+}

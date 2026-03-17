@@ -1,0 +1,24 @@
+<form class="flexcol" autocomplete="off">
+    <section class="form-group">
+        <p>This will create or update managed Character Generator content in the world.</p>
+        <ul>
+            <li><strong>Items &gt; {{folderName}}</strong></li>
+            <li><strong>RollTables &gt; {{folderName}}</strong></li>
+        </ul>
+        <p>Existing content inside those managed folders may be overwritten.</p>
+    </section>
+
+    <section class="form-group">
+        <p>Current managed content:</p>
+        <ul>
+            <li>Item folders: {{itemStats.folderCount}}, items: {{itemStats.documentCount}}</li>
+            <li>RollTable folders: {{tableStats.folderCount}}, rolltables: {{tableStats.documentCount}}</li>
+        </ul>
+    </section>
+
+    <footer class="sheet-footer flexrow">
+        <button type="submit">
+            <i class="fas fa-database"></i> Setup Data
+        </button>
+    </footer>
+</form>

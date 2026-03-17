@@ -1,0 +1,4787 @@
+{
+  "_id": "akVp6Ju3EW80CP3N",
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Contact Quirk",
+  "img": "icons/svg/mystery-man.svg",
+  "description": "<p>A physical or behavioral quirk of a contact.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "name": "Smells faintly of smoke.",
+      "description": "Smells faintly of smoke.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fa8b569a8dda413e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "name": "Smells strongly of alcohol.",
+      "description": "Smells strongly of alcohol.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "425528f0b9bf4a1e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "name": "Carries the scent of damp earth.",
+      "description": "Carries the scent of damp earth.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "64396d20e34b45ef",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "name": "Smells of sweat no matter the weather.",
+      "description": "Smells of sweat no matter the weather.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "650f83fe1a264fff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "name": "Has a sharp herbal smell.",
+      "description": "Has a sharp herbal smell.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ffba44d259f1465b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "name": "Smells faintly of metal or blood.",
+      "description": "Smells faintly of metal or blood.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "949b81ce971e4021",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "name": "Smells of animal fur or hides.",
+      "description": "Smells of animal fur or hides.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1c574500ba55480e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "name": "Carries a lingering incense scent.",
+      "description": "Carries a lingering incense scent.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d8b8f14bfa404777",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "name": "Smells of old parchment and dust.",
+      "description": "Smells of old parchment and dust.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f82881ef338c4b60",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "name": "Has a sour, unwashed odor.",
+      "description": "Has a sour, unwashed odor.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1f6dc16c84d242e3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "name": "Smells of strong perfume.",
+      "description": "Smells of strong perfume.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c2eb5b1548374a21",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "name": "Smells faintly of rot or decay.",
+      "description": "Smells faintly of rot or decay.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b81b54b868cb4bf5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "name": "Smells of cooking grease.",
+      "description": "Smells of cooking grease.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "60f93edf8f9e45f8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "name": "Carries a medicinal scent.",
+      "description": "Carries a medicinal scent.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d288c391fc384e1b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "name": "Smells of sea salt and brine.",
+      "description": "Smells of sea salt and brine.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9f0a43c712bf477e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "name": "Smells faintly of mold.",
+      "description": "Smells faintly of mold.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4a515662fb1f449d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "name": "Has a clean soap scent, oddly so.",
+      "description": "Has a clean soap scent, oddly so.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ef61ad0d48214ccc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "name": "Smells of leather and oil.",
+      "description": "Smells of leather and oil.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "82025c2eda3047c5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "name": "Carries a smoky campfire scent.",
+      "description": "Carries a smoky campfire scent.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "849f1f6ecab84448",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "name": "Smells faintly of flowers.",
+      "description": "Smells faintly of flowers.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "94347273f0b34798",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "drawn": false,
+      "name": "Wears heavily patched clothing.",
+      "description": "Wears heavily patched clothing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "87a9638056f44145",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        22,
+        22
+      ],
+      "drawn": false,
+      "name": "Clothes are always stained with grease.",
+      "description": "Clothes are always stained with grease.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ca71d2db4c5049ee",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        23,
+        23
+      ],
+      "drawn": false,
+      "name": "Wears clothes a size too large.",
+      "description": "Wears clothes a size too large.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "58c4edff039b4de6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "drawn": false,
+      "name": "Wears clothes a size too small.",
+      "description": "Wears clothes a size too small.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7b4d4c89d06c407e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        25,
+        25
+      ],
+      "drawn": false,
+      "name": "Clothing is meticulously clean.",
+      "description": "Clothing is meticulously clean.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6190ca16535e4148",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        26
+      ],
+      "drawn": false,
+      "name": "Clothing is frayed at the edges.",
+      "description": "Clothing is frayed at the edges.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "be98debbe02c4295",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        27,
+        27
+      ],
+      "drawn": false,
+      "name": "Wears mismatched garments.",
+      "description": "Wears mismatched garments.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2e654a48510449e8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        28,
+        28
+      ],
+      "drawn": false,
+      "name": "Wears outdated fashion.",
+      "description": "Wears outdated fashion.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "037d3829d0104bdf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        29,
+        29
+      ],
+      "drawn": false,
+      "name": "Wears overly practical clothing.",
+      "description": "Wears overly practical clothing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9bf9fe3c23ca40aa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        30,
+        30
+      ],
+      "drawn": false,
+      "name": "Wears impractically fine clothing.",
+      "description": "Wears impractically fine clothing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "09d68ea6e5b74b90",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "drawn": false,
+      "name": "Always wears gloves.",
+      "description": "Always wears gloves.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b460e7799eec46db",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        32,
+        32
+      ],
+      "drawn": false,
+      "name": "Always wears a hat.",
+      "description": "<p>Always wears a hood or hat.</p>",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6536a9fc900748c2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq",
+        "modifiedTime": 1771242698400
+      },
+      "flags": {},
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        33,
+        33
+      ],
+      "drawn": false,
+      "name": "Wears clothing layered excessively.",
+      "description": "Wears clothing layered excessively.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7254e71d5f384b90",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        34,
+        34
+      ],
+      "drawn": false,
+      "name": "Clothing smells damp.",
+      "description": "Clothing smells damp.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3a98ae1df7b64799",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        35,
+        35
+      ],
+      "drawn": false,
+      "name": "Wears visibly repaired boots.",
+      "description": "Wears visibly repaired boots.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1b10b4156cc749a2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        36
+      ],
+      "drawn": false,
+      "name": "Boots are worn unevenly.",
+      "description": "Boots are worn unevenly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "212e83c31f2e4ef3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        37,
+        37
+      ],
+      "drawn": false,
+      "name": "Wears many pockets.",
+      "description": "Wears many pockets.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c209949f5014469d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        38,
+        38
+      ],
+      "drawn": false,
+      "name": "Wears almost no pockets.",
+      "description": "Wears almost no pockets.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "966e126f26214c22",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        39,
+        39
+      ],
+      "drawn": false,
+      "name": "Clothing bears old bloodstains.",
+      "description": "Clothing bears old bloodstains.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5f6ba37dfa89486b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        40,
+        40
+      ],
+      "drawn": false,
+      "name": "Clothing is sun-faded.",
+      "description": "Clothing is sun-faded.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1381289bc7204914",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "drawn": false,
+      "name": "Wears ritual markings on clothes.",
+      "description": "Wears ritual markings on clothes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6ee1d026f161459e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        42,
+        42
+      ],
+      "drawn": false,
+      "name": "Wears borrowed clothing.",
+      "description": "Wears borrowed clothing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a872d21faf124073",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        43,
+        43
+      ],
+      "drawn": false,
+      "name": "Wears uniform-like attire.",
+      "description": "Wears uniform-like attire.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d2cb334831ca4039",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        44,
+        44
+      ],
+      "drawn": false,
+      "name": "Clothing hangs stiffly.",
+      "description": "Clothing hangs stiffly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aa0358af07274b6a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        45,
+        45
+      ],
+      "drawn": false,
+      "name": "Wears clothing stained with dye.",
+      "description": "Wears clothing stained with dye.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dee33d873d35497d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "drawn": false,
+      "name": "Wears jewelry sewn into clothes.",
+      "description": "Wears jewelry sewn into clothes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "086e9fc5d191492b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        47,
+        47
+      ],
+      "drawn": false,
+      "name": "Wears a distinctive cloak.",
+      "description": "Wears a distinctive cloak.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "589cee1a9d804da7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        48,
+        48
+      ],
+      "drawn": false,
+      "name": "Keeps clothing tightly belted.",
+      "description": "Keeps clothing tightly belted.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "06a371d5cf164d8d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        49,
+        49
+      ],
+      "drawn": false,
+      "name": "Wears clothing cut for mobility.",
+      "description": "Wears clothing cut for mobility.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f249b1847dd24f12",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        50,
+        50
+      ],
+      "drawn": false,
+      "name": "Missing a finger.",
+      "description": "Missing a finger.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2899d2de9b974e07",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        51
+      ],
+      "drawn": false,
+      "name": "Missing several fingers on one hand.",
+      "description": "Missing several fingers on one hand.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3dee8aa527474ff4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        52,
+        52
+      ],
+      "drawn": false,
+      "name": "Missing a hand, replaced with a crude prosthesis.",
+      "description": "Missing a hand, replaced with a crude prosthesis.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e1f13bbd952048d7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        53,
+        53
+      ],
+      "drawn": false,
+      "name": "Missing an arm.",
+      "description": "Missing an arm.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d859c3fec3f54bd5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        54,
+        54
+      ],
+      "drawn": false,
+      "name": "Missing toes on one foot.",
+      "description": "Missing toes on one foot.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2e2cc9cd9fe8450c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        55,
+        55
+      ],
+      "drawn": false,
+      "name": "Missing a foot, replaced with a peg.",
+      "description": "Missing a foot, replaced with a peg.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e84af8393a0d4021",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        56
+      ],
+      "drawn": false,
+      "name": "Missing an eye, wears a patch.",
+      "description": "Missing an eye, wears a patch.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d41321cdd1054928",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        57,
+        57
+      ],
+      "drawn": false,
+      "name": "Missing a part of an ear.",
+      "description": "<p>Missing an ear or part of one.</p>",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f4e06bd7a10443d2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq",
+        "modifiedTime": 1771242728591
+      },
+      "flags": {},
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        58,
+        58
+      ],
+      "drawn": false,
+      "name": "Has a mechanical limb.",
+      "description": "Has a mechanical limb.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3b07d132c4e049c2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        59,
+        59
+      ],
+      "drawn": false,
+      "name": "Uses a cane due to limb loss.",
+      "description": "Uses a cane due to limb loss.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6929f3da87434212",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        60,
+        60
+      ],
+      "drawn": false,
+      "name": "Has a long facial scar.",
+      "description": "Has a long facial scar.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b21468cfbbcc4e31",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        61
+      ],
+      "drawn": false,
+      "name": "Has scars across the hands.",
+      "description": "Has scars across the hands.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "04b29931857b4970",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        62,
+        62
+      ],
+      "drawn": false,
+      "name": "Has burn scars on the arms.",
+      "description": "Has burn scars on the arms.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fdce995a95774ae8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        63,
+        63
+      ],
+      "drawn": false,
+      "name": "Has lash scars on the back.",
+      "description": "Has lash scars on the back.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "00c52cf9d3b241ba",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        64,
+        64
+      ],
+      "drawn": false,
+      "name": "Has ritual scars.",
+      "description": "Has ritual scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c406911fd1e647f0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        65,
+        65
+      ],
+      "drawn": false,
+      "name": "Has knife scars on the torso.",
+      "description": "Has knife scars on the torso.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5fedcb0a94af466e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        66
+      ],
+      "drawn": false,
+      "name": "Has bite scars.",
+      "description": "Has bite scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "23530e9f34df4380",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        67,
+        67
+      ],
+      "drawn": false,
+      "name": "Has scarred knuckles.",
+      "description": "Has scarred knuckles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d2ed32be1d3e4431",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        68,
+        68
+      ],
+      "drawn": false,
+      "name": "Has scars around the wrists.",
+      "description": "Has scars around the wrists.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4bf33142be594493",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        69,
+        69
+      ],
+      "drawn": false,
+      "name": "Has scars around the ankles.",
+      "description": "Has scars around the ankles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f1e2169e176342f4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        70,
+        70
+      ],
+      "drawn": false,
+      "name": "Has an old surgical scar.",
+      "description": "Has an old surgical scar.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b7eaad15c3454486",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        71,
+        71
+      ],
+      "drawn": false,
+      "name": "Has shrapnel scars.",
+      "description": "Has shrapnel scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "46754555026b4125",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        72,
+        72
+      ],
+      "drawn": false,
+      "name": "Has faded battle scars.",
+      "description": "Has faded battle scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8c2e41c6e405422d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        73,
+        73
+      ],
+      "drawn": false,
+      "name": "Has deep puncture scars.",
+      "description": "Has deep puncture scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0956b5e4106c4d3e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        74,
+        74
+      ],
+      "drawn": false,
+      "name": "Has scars from restraints.",
+      "description": "Has scars from restraints.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d5ef9705267742a6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        75,
+        75
+      ],
+      "drawn": false,
+      "name": "Has poorly healed scars.",
+      "description": "Has poorly healed scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "995d2bc90b7d4055",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        76,
+        76
+      ],
+      "drawn": false,
+      "name": "Has decorative scarification.",
+      "description": "Has decorative scarification.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4031735336054b14",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        77,
+        77
+      ],
+      "drawn": false,
+      "name": "Has scarred neck.",
+      "description": "Has scarred neck.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "52c6e56fabee4668",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        78,
+        78
+      ],
+      "drawn": false,
+      "name": "Has claw-like scars.",
+      "description": "Has claw-like scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c2becf7e1c8f4f55",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        79,
+        79
+      ],
+      "drawn": false,
+      "name": "Has whip scars.",
+      "description": "Has whip scars.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8a8c282f2f8c49c9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        80,
+        80
+      ],
+      "drawn": false,
+      "name": "Walks with a limp.",
+      "description": "Walks with a limp.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "be9ab1e476f64e01",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        81,
+        81
+      ],
+      "drawn": false,
+      "name": "Drags one foot.",
+      "description": "Drags one foot.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "17557919c9e34336",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        82,
+        82
+      ],
+      "drawn": false,
+      "name": "Walks stiffly.",
+      "description": "Walks stiffly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "005d57d3af30442b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        83,
+        83
+      ],
+      "drawn": false,
+      "name": "Walks with a confident stride.",
+      "description": "Walks with a confident stride.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5c73c4061bc44195",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        84,
+        84
+      ],
+      "drawn": false,
+      "name": "Shuffles when walking.",
+      "description": "Shuffles when walking.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c3fc99d9fc684539",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        85,
+        85
+      ],
+      "drawn": false,
+      "name": "Moves with a swagger.",
+      "description": "Moves with a swagger.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "124fedbd6fe94e52",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        86,
+        86
+      ],
+      "drawn": false,
+      "name": "Walks cautiously.",
+      "description": "Walks cautiously.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e7b8a9bbb84d4a26",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        87,
+        87
+      ],
+      "drawn": false,
+      "name": "Moves quickly and lightly.",
+      "description": "Moves quickly and lightly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4e9331a344394d5f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        88,
+        88
+      ],
+      "drawn": false,
+      "name": "Walks heavily.",
+      "description": "Walks heavily.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e70d2c30c2d1449b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        89,
+        89
+      ],
+      "drawn": false,
+      "name": "Moves silently.",
+      "description": "Moves silently.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1dd7eb12d47f4cfe",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        90,
+        90
+      ],
+      "drawn": false,
+      "name": "Sways while walking.",
+      "description": "Sways while walking.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2a78c62aedc94bdf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        91,
+        91
+      ],
+      "drawn": false,
+      "name": "Walks hunched over.",
+      "description": "Walks hunched over.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "929d5312a2304590",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        92,
+        92
+      ],
+      "drawn": false,
+      "name": "Walks with long strides.",
+      "description": "Walks with long strides.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "37908cea20974cfa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        93,
+        93
+      ],
+      "drawn": false,
+      "name": "Walks with short steps.",
+      "description": "Walks with short steps.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c36fbc60f6c94437",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        94,
+        94
+      ],
+      "drawn": false,
+      "name": "Moves unevenly.",
+      "description": "Moves unevenly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f92672cf59e84f38",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        95,
+        95
+      ],
+      "drawn": false,
+      "name": "Walks as if in pain.",
+      "description": "Walks as if in pain.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d8b88678944d4bcb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        96,
+        96
+      ],
+      "drawn": false,
+      "name": "Moves restlessly.",
+      "description": "Moves restlessly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "788d6a4ae91a44d4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        97,
+        97
+      ],
+      "drawn": false,
+      "name": "Paces often.",
+      "description": "Paces often.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "df909ddd15ca4872",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        98,
+        98
+      ],
+      "drawn": false,
+      "name": "Stands shifting weight.",
+      "description": "Stands shifting weight.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ff2c66b893154e25",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        99,
+        99
+      ],
+      "drawn": false,
+      "name": "Walks rigidly.",
+      "description": "Walks rigidly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "88abb66a8f244660",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "name": "Has reddened skin.",
+      "description": "Has reddened skin.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7b149365d8ec403e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        101,
+        101
+      ],
+      "drawn": false,
+      "name": "Has persistent coughing.",
+      "description": "Has persistent coughing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7cdfb2d4170b497a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        102,
+        102
+      ],
+      "drawn": false,
+      "name": "Has frequent nosebleeds.",
+      "description": "Has frequent nosebleeds.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f485331d3c1740ba",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        103,
+        103
+      ],
+      "drawn": false,
+      "name": "Has shaking hands.",
+      "description": "Has shaking hands.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dd3e423629e34c21",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        104,
+        104
+      ],
+      "drawn": false,
+      "name": "Has watery eyes.",
+      "description": "Has watery eyes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1b27eb8a4e354d0a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        105,
+        105
+      ],
+      "drawn": false,
+      "name": "Has labored breathing.",
+      "description": "Has labored breathing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "94c3305f5e41406d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        106,
+        106
+      ],
+      "drawn": false,
+      "name": "Has poor balance.",
+      "description": "Has poor balance.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2c11e82080794953",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        107,
+        107
+      ],
+      "drawn": false,
+      "name": "Has chronic fatigue.",
+      "description": "Has chronic fatigue.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9448bfa9467d47e8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        108,
+        108
+      ],
+      "drawn": false,
+      "name": "Has sun-damaged skin.",
+      "description": "Has sun-damaged skin.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9468eccefef144ea",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        109,
+        109
+      ],
+      "drawn": false,
+      "name": "Has frequent headaches.",
+      "description": "Has frequent headaches.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f5273573a69f4ad3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        110,
+        110
+      ],
+      "drawn": false,
+      "name": "Has swollen joints.",
+      "description": "Has swollen joints.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ad1e02dc49f54036",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        111,
+        111
+      ],
+      "drawn": false,
+      "name": "Has trembling voice.",
+      "description": "Has trembling voice.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1e50e3d592a845c8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        112,
+        112
+      ],
+      "drawn": false,
+      "name": "Has numb fingers.",
+      "description": "Has numb fingers.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "da45ec4739cc407b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        113,
+        113
+      ],
+      "drawn": false,
+      "name": "Has constant muscle tension.",
+      "description": "Has constant muscle tension.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "697f2364dc3447c2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        114,
+        114
+      ],
+      "drawn": false,
+      "name": "Has bruises easily.",
+      "description": "Has bruises easily.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "227db273f2324ef2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        115,
+        115
+      ],
+      "drawn": false,
+      "name": "Has frequent sneezing.",
+      "description": "Has frequent sneezing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "421c0d97ddaf4eed",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        116,
+        116
+      ],
+      "drawn": false,
+      "name": "Has ringing ears.",
+      "description": "Has ringing ears.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0903fe2790df4375",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        117,
+        117
+      ],
+      "drawn": false,
+      "name": "Has stiff joints.",
+      "description": "Has stiff joints.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7e550721556747c4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        118,
+        118
+      ],
+      "drawn": false,
+      "name": "Has pale complexion.",
+      "description": "Has pale complexion.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2f741438fcd246e2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        119,
+        119
+      ],
+      "drawn": false,
+      "name": "Has flushed complexion.",
+      "description": "Has flushed complexion.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aba985fbfb8f45fa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        120,
+        120
+      ],
+      "drawn": false,
+      "name": "Speaks loudly.",
+      "description": "Speaks loudly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b973b427b6494277",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        121,
+        121
+      ],
+      "drawn": false,
+      "name": "Speaks softly.",
+      "description": "Speaks softly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a2c24c118f42438e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        122,
+        122
+      ],
+      "drawn": false,
+      "name": "Interrupts others.",
+      "description": "Interrupts others.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f8f3dddcba104419",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        123,
+        123
+      ],
+      "drawn": false,
+      "name": "Avoids eye contact.",
+      "description": "Avoids eye contact.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "134548910a904a49",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        124,
+        124
+      ],
+      "drawn": false,
+      "name": "Stares intensely.",
+      "description": "Stares intensely.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "78cc04409af44359",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        125,
+        125
+      ],
+      "drawn": false,
+      "name": "Fidgets constantly.",
+      "description": "Fidgets constantly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "12554f6bcf45426c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        126,
+        126
+      ],
+      "drawn": false,
+      "name": "Gestures wildly.",
+      "description": "Gestures wildly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a34c4024f79243c6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        127,
+        127
+      ],
+      "drawn": false,
+      "name": "Barely gestures.",
+      "description": "Barely gestures.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1a77f9c953d84e18",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        128,
+        128
+      ],
+      "drawn": false,
+      "name": "Talks too fast.",
+      "description": "Talks too fast.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dff4a905df964f91",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        129,
+        129
+      ],
+      "drawn": false,
+      "name": "Talks very slowly.",
+      "description": "Talks very slowly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2eb9ec1cfc374359",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        130,
+        130
+      ],
+      "drawn": false,
+      "name": "Repeats phrases.",
+      "description": "Repeats phrases.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "63ec723ed5bb4afa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        131,
+        131
+      ],
+      "drawn": false,
+      "name": "Overexplains things.",
+      "description": "Overexplains things.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "bf7239bba4104e24",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        132,
+        132
+      ],
+      "drawn": false,
+      "name": "Answers with questions.",
+      "description": "Answers with questions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6708d34a93c74cb9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        133,
+        133
+      ],
+      "drawn": false,
+      "name": "Avoids direct answers.",
+      "description": "Avoids direct answers.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "24ed09d7c19546ef",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        134,
+        134
+      ],
+      "drawn": false,
+      "name": "Laughs nervously.",
+      "description": "Laughs nervously.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c36e20de445444eb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        135,
+        135
+      ],
+      "drawn": false,
+      "name": "Speaks bluntly.",
+      "description": "Speaks bluntly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "741ee32c11b74829",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        136,
+        136
+      ],
+      "drawn": false,
+      "name": "Speaks politely.",
+      "description": "Speaks politely.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3cfa1a8cc26b4912",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        137,
+        137
+      ],
+      "drawn": false,
+      "name": "Uses formal language.",
+      "description": "Uses formal language.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2886b960b68e41ac",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        138,
+        138
+      ],
+      "drawn": false,
+      "name": "Uses crude language.",
+      "description": "Uses crude language.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "26a404ec511c4f81",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        139,
+        139
+      ],
+      "drawn": false,
+      "name": "Whispers often.",
+      "description": "Whispers often.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "008790c291aa45b6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        140,
+        140
+      ],
+      "drawn": false,
+      "name": "Clears throat often.",
+      "description": "Clears throat often.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "14c9541efd4b490e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        141,
+        141
+      ],
+      "drawn": false,
+      "name": "Pauses before speaking.",
+      "description": "Pauses before speaking.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "20ead9d18f62427b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        142,
+        142
+      ],
+      "drawn": false,
+      "name": "Speaks with certainty.",
+      "description": "Speaks with certainty.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "bd4987480ee14d4a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        143,
+        143
+      ],
+      "drawn": false,
+      "name": "Hesitates often.",
+      "description": "Hesitates often.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1fbdbc58639e4b15",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        144,
+        144
+      ],
+      "drawn": false,
+      "name": "Talks to themselves.",
+      "description": "Talks to themselves.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a4b79e2c323d4f6d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        145,
+        145
+      ],
+      "drawn": false,
+      "name": "Mutters under breath.",
+      "description": "Mutters under breath.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d497c1b3c189420c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        146,
+        146
+      ],
+      "drawn": false,
+      "name": "Raises voice when stressed.",
+      "description": "Raises voice when stressed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b68c05f204e94914",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        147,
+        147
+      ],
+      "drawn": false,
+      "name": "Falls silent under pressure.",
+      "description": "Falls silent under pressure.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cbe116fb4be14eff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        148,
+        148
+      ],
+      "drawn": false,
+      "name": "Stands unnaturally still.",
+      "description": "Stands unnaturally still.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3cc29cac478a4a98",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        149,
+        149
+      ],
+      "drawn": false,
+      "name": "Leans on nearby objects.",
+      "description": "Leans on nearby objects.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6a467a65d2004105",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        150,
+        150
+      ],
+      "drawn": false,
+      "name": "Paces in circles.",
+      "description": "Paces in circles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b5983722dcad4fd5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        151,
+        151
+      ],
+      "drawn": false,
+      "name": "Rocks back and forth.",
+      "description": "Rocks back and forth.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "22046ef2df9f40c5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        152,
+        152
+      ],
+      "drawn": false,
+      "name": "Shifts constantly.",
+      "description": "Shifts constantly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c05eac57f18f41f0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        153,
+        153
+      ],
+      "drawn": false,
+      "name": "Stands rigidly.",
+      "description": "Stands rigidly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "20cfe0bc6fdd491d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        154,
+        154
+      ],
+      "drawn": false,
+      "name": "Slouches heavily.",
+      "description": "Slouches heavily.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "be42d4e07da14cf6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        155,
+        155
+      ],
+      "drawn": false,
+      "name": "Keeps perfect posture.",
+      "description": "Keeps perfect posture.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4a31503da33a4b64",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        156,
+        156
+      ],
+      "drawn": false,
+      "name": "Moves cautiously.",
+      "description": "Moves cautiously.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "00be72b84c08420a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        157,
+        157
+      ],
+      "drawn": false,
+      "name": "Moves impulsively.",
+      "description": "Moves impulsively.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8b303529eda240dd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        158,
+        158
+      ],
+      "drawn": false,
+      "name": "Has a loud booming laugh.",
+      "description": "Has a loud booming laugh.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fd52845c723c46b0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        159,
+        159
+      ],
+      "drawn": false,
+      "name": "Laughs silently.",
+      "description": "Laughs silently.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "445e051ed65240ce",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        160,
+        160
+      ],
+      "drawn": false,
+      "name": "Has a wheezing laugh.",
+      "description": "Has a wheezing laugh.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7ea0a149fcce4791",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        161,
+        161
+      ],
+      "drawn": false,
+      "name": "Laughs at inappropriate moments.",
+      "description": "Laughs at inappropriate moments.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9ddd57d044e44d2a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        162,
+        162
+      ],
+      "drawn": false,
+      "name": "Rarely laughs at all.",
+      "description": "Rarely laughs at all.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ba7d9e4761ad4e67",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        163,
+        163
+      ],
+      "drawn": false,
+      "name": "Has a facial twitch.",
+      "description": "Has a facial twitch.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8acddd872d9e468f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        164,
+        164
+      ],
+      "drawn": false,
+      "name": "Blinks excessively.",
+      "description": "Blinks excessively.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a2664ce649464f0b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        165,
+        165
+      ],
+      "drawn": false,
+      "name": "Cracks knuckles.",
+      "description": "Cracks knuckles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cbf1fc4a24224b6c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        166,
+        166
+      ],
+      "drawn": false,
+      "name": "Taps fingers.",
+      "description": "Taps fingers.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "56ef054740ca47fd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        167,
+        167
+      ],
+      "drawn": false,
+      "name": "Grinds teeth.",
+      "description": "Grinds teeth.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fd8c61a9c6224e3c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        168,
+        168
+      ],
+      "drawn": false,
+      "name": "Sniffs repeatedly.",
+      "description": "Sniffs repeatedly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7f88b3b8817147ca",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        169,
+        169
+      ],
+      "drawn": false,
+      "name": "Clears throat.",
+      "description": "Clears throat.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fdc1dda6072a405a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        170,
+        170
+      ],
+      "drawn": false,
+      "name": "Touches face often.",
+      "description": "Touches face often.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c5eff32017b14ebc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        171,
+        171
+      ],
+      "drawn": false,
+      "name": "Rubs hands together.",
+      "description": "Rubs hands together.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d601f336d2d74c4c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        172,
+        172
+      ],
+      "drawn": false,
+      "name": "Tugs at clothing.",
+      "description": "Tugs at clothing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e65bdf7310a342fc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        173,
+        173
+      ],
+      "drawn": false,
+      "name": "Rarely smiles.",
+      "description": "Rarely smiles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "944b8cf25ba14568",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        174,
+        174
+      ],
+      "drawn": false,
+      "name": "Smiles too easily.",
+      "description": "Smiles too easily.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b2de49de79d04b07",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        175,
+        175
+      ],
+      "drawn": false,
+      "name": "Frowns often.",
+      "description": "Frowns often.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fa2d20ca3c484afe",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        176,
+        176
+      ],
+      "drawn": false,
+      "name": "Looks perpetually tired.",
+      "description": "Looks perpetually tired.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "82af68b96104431d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        177,
+        177
+      ],
+      "drawn": false,
+      "name": "Has a stern expression.",
+      "description": "Has a stern expression.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "449c3d4a2e92454d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        178,
+        178
+      ],
+      "drawn": false,
+      "name": "Looks perpetually amused.",
+      "description": "Looks perpetually amused.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a0f0041788984ed5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        179,
+        179
+      ],
+      "drawn": false,
+      "name": "Looks suspicious.",
+      "description": "Looks suspicious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6f206c5ec13c4018",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        180,
+        180
+      ],
+      "drawn": false,
+      "name": "Looks anxious.",
+      "description": "Looks anxious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c87e23ad9d4e44ea",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        181,
+        181
+      ],
+      "drawn": false,
+      "name": "Looks bored.",
+      "description": "Looks bored.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cf3cbb843dbf43cf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        182,
+        182
+      ],
+      "drawn": false,
+      "name": "Looks distracted.",
+      "description": "Looks distracted.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "64ec9ad11ff24f78",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        183,
+        183
+      ],
+      "drawn": false,
+      "name": "Looks intense.",
+      "description": "Looks intense.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dfccae667d904e03",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        184,
+        184
+      ],
+      "drawn": false,
+      "name": "Looks relaxed.",
+      "description": "Looks relaxed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "db23bb0513b046c6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        185,
+        185
+      ],
+      "drawn": false,
+      "name": "Looks irritated.",
+      "description": "Looks irritated.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "48cdda4a20f44820",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        186,
+        186
+      ],
+      "drawn": false,
+      "name": "Looks thoughtful.",
+      "description": "Looks thoughtful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9ca92eb9da934e74",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        187,
+        187
+      ],
+      "drawn": false,
+      "name": "Looks confused.",
+      "description": "Looks confused.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "77f1383b5f2b452a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        188,
+        188
+      ],
+      "drawn": false,
+      "name": "Looks grim.",
+      "description": "Looks grim.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e794d034fa7a42e2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        189,
+        189
+      ],
+      "drawn": false,
+      "name": "Looks hopeful.",
+      "description": "Looks hopeful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "069c99a8ba9d43e1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        190,
+        190
+      ],
+      "drawn": false,
+      "name": "Looks resigned.",
+      "description": "Looks resigned.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3bebc6e64d1b42f0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        191,
+        191
+      ],
+      "drawn": false,
+      "name": "Looks alert.",
+      "description": "Looks alert.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0a89d7895d3a420a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        192,
+        192
+      ],
+      "drawn": false,
+      "name": "Looks weary.",
+      "description": "Looks weary.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ca0c0ea4a9374f84",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        193,
+        193
+      ],
+      "drawn": false,
+      "name": "Has a stutter.",
+      "description": "Has a stutter.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dc46bb491fc349a7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        194,
+        194
+      ],
+      "drawn": false,
+      "name": "Uses filler words constantly.",
+      "description": "Uses filler words constantly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3caf4283f845489b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        195,
+        195
+      ],
+      "drawn": false,
+      "name": "Ends sentences upward.",
+      "description": "Ends sentences upward.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d36b41c78841440c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        196,
+        196
+      ],
+      "drawn": false,
+      "name": "Drops sentence endings.",
+      "description": "Drops sentence endings.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5455a3b07bea4bde",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        197,
+        197
+      ],
+      "drawn": false,
+      "name": "Mispronounces words.",
+      "description": "Mispronounces words.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e9d40c633a45414c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        198,
+        198
+      ],
+      "drawn": false,
+      "name": "Uses old sayings.",
+      "description": "Uses old sayings.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "081a4259bc6f4b32",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        199,
+        199
+      ],
+      "drawn": false,
+      "name": "Speaks in short sentences.",
+      "description": "Speaks in short sentences.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "344947521544421c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        200,
+        200
+      ],
+      "drawn": false,
+      "name": "Speaks in long rambling sentences.",
+      "description": "Speaks in long rambling sentences.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0aff260e418e4012",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        201,
+        201
+      ],
+      "drawn": false,
+      "name": "Whispers key words.",
+      "description": "Whispers key words.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "30ad1434793d4c5e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        202,
+        202
+      ],
+      "drawn": false,
+      "name": "Emphasizes odd words.",
+      "description": "Emphasizes odd words.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2b9f63ab20fc40b8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 25,
+      "range": [
+        203,
+        227
+      ],
+      "_id": "k5QxEF2ke3yI2tIq",
+      "name": "Nothing notable",
+      "img": "icons/svg/d20-black.svg",
+      "description": "<p>Nothing notable</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "createdTime": 1771242885110,
+        "modifiedTime": 1771243839304,
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 24,
+      "range": [
+        228,
+        251
+      ],
+      "_id": "1yhVjMa2a09aarQL",
+      "name": "None",
+      "img": "icons/svg/d20-black.svg",
+      "description": "<p>None</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "createdTime": 1771243894620,
+        "modifiedTime": 1771243914607,
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 25,
+      "range": [
+        252,
+        276
+      ],
+      "_id": "QHVYfYjoBcPH7fuA",
+      "name": "Unremarkable",
+      "img": "icons/svg/d20-black.svg",
+      "description": "<p>Unremarkable</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "createdTime": 1771243895475,
+        "modifiedTime": 1771243933294,
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 24,
+      "range": [
+        277,
+        300
+      ],
+      "_id": "6siXYCHNMezjliO5",
+      "name": "Nothing remarkable",
+      "img": "icons/svg/d20-black.svg",
+      "description": "<p>Nothing remarkable</p>",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "createdTime": 1771243896246,
+        "modifiedTime": 1771243956638,
+        "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+      },
+      "documentUuid": null
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "RollTable.akVp6Ju3EW80CP3N",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.1.0",
+    "createdTime": 1771241490019,
+    "modifiedTime": 1771257786613,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "formula": "1d300",
+  "ownership": {
+    "default": 0
+  }
+}

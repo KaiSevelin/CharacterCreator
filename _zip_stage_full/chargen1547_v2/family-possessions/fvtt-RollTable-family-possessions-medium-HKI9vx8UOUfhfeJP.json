@@ -1,0 +1,224 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Family possessions, medium",
+  "img": "icons/svg/daze.svg",
+  "description": "<p>A 3d6 biography table of middling household rights, standing, expectations, and claims that do not overlap with item rewards.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "description": "A lease that looked respectable from the road and fragile in any conversation involving money.",
+      "_id": "FaMeRsA1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "description": "A market right, stall claim, or place of trade known to the town even when paperwork went missing.",
+      "_id": "FaMeRsB1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "description": "Trade credit extended on the strength of your household name, useful until misfortune made everyone suddenly precise.",
+      "_id": "FaMeRsC1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "description": "A modest but real expectation of decent marriage, treated in the family almost as an asset.",
+      "_id": "FaMeRsD1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "description": "A set of clients or customers who preferred your household by habit and would rather not begin again elsewhere.",
+      "_id": "FaMeRsE1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "description": "Access to storage, workshop space, or carriage room that made the family more settled than its rivals.",
+      "_id": "FaMeRsF1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "description": "A favorable tenancy or contract renewed often enough to feel inherited.",
+      "_id": "FaMeRsG1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "description": "A household reputation for respectable dealing, careful speech, and remembering obligations.",
+      "_id": "FaMeRsH1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "description": "Partnership rights or a small share in an enterprise that brought influence even when it brought little coin.",
+      "_id": "FaMeRsI1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "description": "Priority in local arrangements: first call on work, first notice of opportunities, or first hearing in disputes.",
+      "_id": "FaMeRsJ1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "description": "The expectation that apprentices, servants, or dependents attached themselves to your household for advancement.",
+      "_id": "FaMeRsK1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "description": "A marriage connection under discussion, half promise and half strategy, improving how the family was treated already.",
+      "_id": "FaMeRsL1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "description": "A recognized place in guild, parish, or town life that let your household speak and be answered.",
+      "_id": "FaMeRsM1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "description": "Long-standing access to suppliers, carriers, or intermediaries who did not offer the same terms to strangers.",
+      "_id": "FaMeRsN1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "description": "Household standing solid enough that people assumed continuity, credit, and competent management before asking questions.",
+      "_id": "FaMeRsO1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "description": "The sort of family position that turned opportunity into expectation and expectation into a form of inherited property.",
+      "_id": "FaMeRsP1q2W3e4C",
+      "name": "",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "HKI9vx8UOUfhfeJP"
+}

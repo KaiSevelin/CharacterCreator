@@ -1,0 +1,30 @@
+{
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Story - Self Resolution",
+  "img": "icons/svg/book.svg",
+  "description": "<p>Parallel personal-story resolutions for character generation. Results are filtered by thread key in code.</p>",
+  "results": [
+    { "type": "text", "weight": 1, "range": [3,3], "description": "[money 1d6*100] The inheritance dispute ended in a settlement you could keep, though not one either side would have named just.", "_id": "StSeRe01Q7mR16A6", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [4,4], "description": "[social 1] The inheritance stopped ruling your prospects only when the dispute collapsed under its own cost in time, patience, and witnesses.", "_id": "StSeRe02Q7mR16A6", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [5,5], "description": "[money 2d6*100] You received enough of the inheritance to alter your prospects, but not enough to stop hearing how much had been lost in getting it.", "_id": "StSeRe03Q7mR16A6", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [6,6], "description": "[social -1][bio RollTable.wc0827FvVWKn4eJO] The inheritance dispute closed in law if not in memory, and afterward people treated the bitterness as part of the property itself.", "_id": "StSeRe04Q7mR16A6", "name": "disputed-inheritance", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [7,7], "description": "[body] The old feud burned out before it destroyed anything further of yours, leaving caution behind where hatred had once been expected.", "_id": "StSeRe05Q7mR16A6", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [8,8], "description": "[bio RollTable.kC0YeELeXOdwDeaJ] The feud loosened its hold on your name until it became history people remembered only when they were already looking backward.", "_id": "StSeRe06Q7mR16A6", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [9,9], "description": "[social 1] The quarrel passed into wariness rather than reconciliation, which proved to be peace enough for ordinary life to resume.", "_id": "StSeRe07Q7mR16A6", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [10,10], "description": "The feud ceased to command your days once both sides discovered exhaustion could accomplish what victory had not.", "_id": "StSeRe08Q7mR16A6", "name": "old-feud", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [11,11], "description": "[contact] The patron's hold slackened when rank shifted elsewhere, leaving you freer than before and unsure who had paid the hidden cost.", "_id": "StSeRe09Q7mR16A6", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [12,12], "description": "[contact][social 1] You discharged the old obligation as well as such things are ever discharged, and afterward found freedom stranger than service.", "_id": "StSeRe10Q7mR16A6", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [13,13], "description": "The patron kept your gratitude but lost the right to command it, which was the nearest thing the matter ever found to release.", "_id": "StSeRe11Q7mR16A6", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [14,14], "description": "What had begun as service hardened into survival and ended as distance, which is one of the common shapes of freedom.", "_id": "StSeRe12Q7mR16A6", "name": "patron-obligation", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [15,15], "description": "[social -1] The scandal lost its grip on your life when some fresher disgrace gave the world better material to discuss.", "_id": "StSeRe13Q7mR16A6", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [16,16], "description": "[bio RollTable.kC0YeELeXOdwDeaJ] The old scandal sank into background noise, which is about as close to innocence as most lives ever recover.", "_id": "StSeRe14Q7mR16A6", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [17,17], "description": "[social 1] The shame remained in outline but lost the power to decide your opportunities, which was victory enough to be useful.", "_id": "StSeRe15Q7mR16A6", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} },
+    { "type": "text", "weight": 1, "range": [18,18], "description": "The scandal settled into family atmosphere: something still sensed in the room, but no longer strong enough to govern your name.", "_id": "StSeRe16Q7mR16A6", "name": "buried-scandal", "img": "icons/svg/d20-black.svg", "flags": {} }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": { "default": 0 },
+  "_id": "StSelfResoQ7mR1606"
+}

@@ -1,0 +1,4633 @@
+{
+  "_id": "WGJQlBQ1HgfzMhaY",
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Contact Tone",
+  "img": "icons/svg/mystery-man.svg",
+  "description": "<p>The current attitude or mood a contact shows toward the character.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "name": "Friendly but cautious.",
+      "description": "Friendly but cautious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8967de1050204e7c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "name": "Polite and distant.",
+      "description": "Polite and distant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7622a4d4e7e74f2a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "name": "Warm and welcoming.",
+      "description": "Warm and welcoming.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2c126a9eb8a04121",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "name": "Formally respectful.",
+      "description": "Formally respectful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e28634db2cae4c7b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "name": "Casually respectful.",
+      "description": "Casually respectful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "43d40449cf2648bd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "name": "Openly suspicious.",
+      "description": "Openly suspicious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "155c3019923a4b7c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "name": "Mildly distrustful.",
+      "description": "Mildly distrustful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b469885fe0fb4192",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "name": "Neutral and businesslike.",
+      "description": "Neutral and businesslike.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b8708bf3438a4085",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "name": "Helpful when convenient.",
+      "description": "Helpful when convenient.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6a3e8abcc2dc430d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "name": "Helpful but distracted.",
+      "description": "Helpful but distracted.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "88ecd20b299b4692",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "name": "Eager to please.",
+      "description": "Eager to please.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9b1fd0b498334b1a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "name": "Reluctant but cooperative.",
+      "description": "Reluctant but cooperative.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a8358ec7484e4b9a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "name": "Patient and measured.",
+      "description": "Patient and measured.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "bb7c4ea76ffc4017",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "name": "Impatient with delays.",
+      "description": "Impatient with delays.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9e29f392e50f408f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "name": "Curt and to the point.",
+      "description": "Curt and to the point.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e2f08cd6a4fc485d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "name": "Chatty but unfocused.",
+      "description": "Chatty but unfocused.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1750fd83c84941a6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "name": "Awkward but sincere.",
+      "description": "Awkward but sincere.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "caee298516e846d6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "name": "Confident and assertive.",
+      "description": "Confident and assertive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "34e547df21044b9e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "name": "Submissive in tone.",
+      "description": "Submissive in tone.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "17ea4acdaff7461a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "name": "Overly deferential.",
+      "description": "Overly deferential.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "afb0bab2536842a4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "drawn": false,
+      "name": "Guarded and noncommittal.",
+      "description": "Guarded and noncommittal.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f104261e84974dac",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        22,
+        22
+      ],
+      "drawn": false,
+      "name": "Nonchalant about outcomes.",
+      "description": "Nonchalant about outcomes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6a9337a39ad145ab",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        23,
+        23
+      ],
+      "drawn": false,
+      "name": "Serious and humorless.",
+      "description": "Serious and humorless.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2adc02dcf2784acf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "drawn": false,
+      "name": "Dryly amused.",
+      "description": "Dryly amused.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "66543b7a2cd5432a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        25,
+        25
+      ],
+      "drawn": false,
+      "name": "Lighthearted but shallow.",
+      "description": "Lighthearted but shallow.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ce027c9c9e2b4b8e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        26
+      ],
+      "drawn": false,
+      "name": "Warm yet professional.",
+      "description": "Warm yet professional.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fdc4054f50d64ad3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        27,
+        27
+      ],
+      "drawn": false,
+      "name": "Cold but efficient.",
+      "description": "Cold but efficient.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6ef2f3431a3b4c97",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        28,
+        28
+      ],
+      "drawn": false,
+      "name": "Testing your intentions.",
+      "description": "Testing your intentions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "99f8c1d4a65d4c3e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        29,
+        29
+      ],
+      "drawn": false,
+      "name": "Evaluating your worth.",
+      "description": "Evaluating your worth.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ed0ccb32c82640ee",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        30,
+        30
+      ],
+      "drawn": false,
+      "name": "Waiting to be convinced.",
+      "description": "Waiting to be convinced.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "70a450fe03aa4079",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "drawn": false,
+      "name": "Skeptical but listening.",
+      "description": "Skeptical but listening.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d6890414477f4c6c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        32,
+        32
+      ],
+      "drawn": false,
+      "name": "Agreeable for now.",
+      "description": "Agreeable for now.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d9d720fee7c54d6a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        33,
+        33
+      ],
+      "drawn": false,
+      "name": "Hesitant and uncertain.",
+      "description": "Hesitant and uncertain.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3a065f9481e84ed2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        34,
+        34
+      ],
+      "drawn": false,
+      "name": "Nervous but willing.",
+      "description": "Nervous but willing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fd44aea01d134b2c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        35,
+        35
+      ],
+      "drawn": false,
+      "name": "Uneasy in your presence.",
+      "description": "Uneasy in your presence.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "96acd81606884935",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        36
+      ],
+      "drawn": false,
+      "name": "Comfortable and relaxed.",
+      "description": "Comfortable and relaxed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0edb2ffaee78421e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        37,
+        37
+      ],
+      "drawn": false,
+      "name": "Formally distant.",
+      "description": "Formally distant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e251d4e301434893",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        38,
+        38
+      ],
+      "drawn": false,
+      "name": "Personally familiar.",
+      "description": "Personally familiar.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f34d803700714641",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        39,
+        39
+      ],
+      "drawn": false,
+      "name": "Strictly transactional.",
+      "description": "Strictly transactional.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1c65d0148d374aba",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        40,
+        40
+      ],
+      "drawn": false,
+      "name": "Casually transactional.",
+      "description": "Casually transactional.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "61737c1b36ea4468",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "drawn": false,
+      "name": "Openly curious.",
+      "description": "Openly curious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "345ea90141e94b36",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        42,
+        42
+      ],
+      "drawn": false,
+      "name": "Politely curious.",
+      "description": "Politely curious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0546238e37084575",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        43,
+        43
+      ],
+      "drawn": false,
+      "name": "Probing for weaknesses.",
+      "description": "Probing for weaknesses.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cadb7d03384c4ac2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        44,
+        44
+      ],
+      "drawn": false,
+      "name": "Careful not to offend.",
+      "description": "Careful not to offend.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2292fce682314134",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        45,
+        45
+      ],
+      "drawn": false,
+      "name": "Easily offended.",
+      "description": "Easily offended.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6071049d2ee14cfd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "drawn": false,
+      "name": "Hard to read.",
+      "description": "Hard to read.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7b13741ac6c248f2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        47,
+        47
+      ],
+      "drawn": false,
+      "name": "Emotionally reserved.",
+      "description": "Emotionally reserved.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5704273677804153",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        48,
+        48
+      ],
+      "drawn": false,
+      "name": "Emotionally expressive.",
+      "description": "Emotionally expressive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "772dbb2ba9e74dd5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        49,
+        49
+      ],
+      "drawn": false,
+      "name": "Overly enthusiastic.",
+      "description": "Overly enthusiastic.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f98b519ee6f045f6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        50,
+        50
+      ],
+      "drawn": false,
+      "name": "Understated and calm.",
+      "description": "Understated and calm.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e44b1dfa5f2a4f30",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        51
+      ],
+      "drawn": false,
+      "name": "Bluntly honest.",
+      "description": "Bluntly honest.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f4e9ac9d66994724",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        52,
+        52
+      ],
+      "drawn": false,
+      "name": "Indirect and evasive.",
+      "description": "Indirect and evasive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6c7297213ca742a4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        53,
+        53
+      ],
+      "drawn": false,
+      "name": "Respectful but firm.",
+      "description": "Respectful but firm.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ca2d7756500d4c3c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        54,
+        54
+      ],
+      "drawn": false,
+      "name": "Friendly but distracted.",
+      "description": "Friendly but distracted.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "20effd67433140b2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        55,
+        55
+      ],
+      "drawn": false,
+      "name": "Friendly but guarded.",
+      "description": "Friendly but guarded.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7bb159b33e3e4a42",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        56
+      ],
+      "drawn": false,
+      "name": "Neutral, awaiting direction.",
+      "description": "Neutral, awaiting direction.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d5584a9403ef415d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        57,
+        57
+      ],
+      "drawn": false,
+      "name": "Supportive in small ways.",
+      "description": "Supportive in small ways.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b68d1817519e4e72",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        58,
+        58
+      ],
+      "drawn": false,
+      "name": "Encouraging but vague.",
+      "description": "Encouraging but vague.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "36d03ba4965d4225",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        59,
+        59
+      ],
+      "drawn": false,
+      "name": "Dismissive of details.",
+      "description": "Dismissive of details.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "90e519751d644644",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        60,
+        60
+      ],
+      "drawn": false,
+      "name": "Attentive to details.",
+      "description": "Attentive to details.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2e683e05aef14221",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        61
+      ],
+      "drawn": false,
+      "name": "Testing boundaries.",
+      "description": "Testing boundaries.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "adfc20b817f94e3a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        62,
+        62
+      ],
+      "drawn": false,
+      "name": "Protective of their time.",
+      "description": "Protective of their time.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e344d2e347a24132",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        63,
+        63
+      ],
+      "drawn": false,
+      "name": "Protective of their interests.",
+      "description": "Protective of their interests.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "231498493e1a4068",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        64,
+        64
+      ],
+      "drawn": false,
+      "name": "Patient with questions.",
+      "description": "Patient with questions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dcf1b502c2a24c4d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        65,
+        65
+      ],
+      "drawn": false,
+      "name": "Impatient with questions.",
+      "description": "Impatient with questions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3a90f3ce0acf4d24",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        66
+      ],
+      "drawn": false,
+      "name": "Firmly neutral.",
+      "description": "Firmly neutral.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "47c9c3e7bf934558",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        67,
+        67
+      ],
+      "drawn": false,
+      "name": "Soft-spoken and polite.",
+      "description": "Soft-spoken and polite.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "822a1ef7d0674243",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        68,
+        68
+      ],
+      "drawn": false,
+      "name": "Loud and forceful.",
+      "description": "Loud and forceful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f471c38111804152",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        69,
+        69
+      ],
+      "drawn": false,
+      "name": "Carefully courteous.",
+      "description": "Carefully courteous.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2d4ff700a5634c36",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        70,
+        70
+      ],
+      "drawn": false,
+      "name": "Formally cold.",
+      "description": "Formally cold.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d6bbcee0d6a54a5a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        71,
+        71
+      ],
+      "drawn": false,
+      "name": "Warm but distracted.",
+      "description": "Warm but distracted.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6a505983a6cd40c2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        72,
+        72
+      ],
+      "drawn": false,
+      "name": "Measured and thoughtful.",
+      "description": "Measured and thoughtful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e05a1fd451b141e9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        73,
+        73
+      ],
+      "drawn": false,
+      "name": "Rushed and preoccupied.",
+      "description": "Rushed and preoccupied.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0d5963835d7b47de",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        74,
+        74
+      ],
+      "drawn": false,
+      "name": "Casually indifferent.",
+      "description": "Casually indifferent.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e4dd8cb1174c4fd2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        75,
+        75
+      ],
+      "drawn": false,
+      "name": "Mildly condescending.",
+      "description": "Mildly condescending.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e4e60381408d486c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        76,
+        76
+      ],
+      "drawn": false,
+      "name": "Openly condescending.",
+      "description": "Openly condescending.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "80296623906c4bc7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        77,
+        77
+      ],
+      "drawn": false,
+      "name": "Careful and restrained.",
+      "description": "Careful and restrained.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0bc8d9c0a329491b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        78,
+        78
+      ],
+      "drawn": false,
+      "name": "Relaxed but alert.",
+      "description": "Relaxed but alert.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f9b3410e44364829",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        79,
+        79
+      ],
+      "drawn": false,
+      "name": "Defensive in tone.",
+      "description": "Defensive in tone.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5a72c40ad042432a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        80,
+        80
+      ],
+      "drawn": false,
+      "name": "Open to negotiation.",
+      "description": "Open to negotiation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b2a2b3c1db9a462d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        81,
+        81
+      ],
+      "drawn": false,
+      "name": "Unwilling to negotiate.",
+      "description": "Unwilling to negotiate.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "43ef2ed23cb040f9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        82,
+        82
+      ],
+      "drawn": false,
+      "name": "Waiting for incentives.",
+      "description": "Waiting for incentives.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dfea102d68a74f2c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        83,
+        83
+      ],
+      "drawn": false,
+      "name": "Motivated by courtesy.",
+      "description": "Motivated by courtesy.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "665d8197d8a04579",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        84,
+        84
+      ],
+      "drawn": false,
+      "name": "Motivated by gain.",
+      "description": "Motivated by gain.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3f1ce8f006c64ec1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        85,
+        85
+      ],
+      "drawn": false,
+      "name": "Motivated by obligation.",
+      "description": "Motivated by obligation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "82a175711f9d4d14",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        86,
+        86
+      ],
+      "drawn": false,
+      "name": "Motivated by curiosity.",
+      "description": "Motivated by curiosity.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5740decf8e684603",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        87,
+        87
+      ],
+      "drawn": false,
+      "name": "Testing your patience.",
+      "description": "Testing your patience.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d7e2d242ff8b4f72",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        88,
+        88
+      ],
+      "drawn": false,
+      "name": "Appearing helpful, withholding subtly.",
+      "description": "Appearing helpful, withholding subtly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "bfe487a034a54fcf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        89,
+        89
+      ],
+      "drawn": false,
+      "name": "Direct but tactful.",
+      "description": "Direct but tactful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0df8b0613ae94ea6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        90,
+        90
+      ],
+      "drawn": false,
+      "name": "Indirect but polite.",
+      "description": "Indirect but polite.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "57afb43f2f804ec0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        91,
+        91
+      ],
+      "drawn": false,
+      "name": "Formally welcoming.",
+      "description": "Formally welcoming.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3638d7bc4d224331",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        92,
+        92
+      ],
+      "drawn": false,
+      "name": "Informally welcoming.",
+      "description": "Informally welcoming.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fdbdc132afcc4913",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        93,
+        93
+      ],
+      "drawn": false,
+      "name": "Respectful but skeptical.",
+      "description": "Respectful but skeptical.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "25eac6674b044975",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        94,
+        94
+      ],
+      "drawn": false,
+      "name": "Calm but watchful.",
+      "description": "Calm but watchful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "82f051e1b5954c85",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        95,
+        95
+      ],
+      "drawn": false,
+      "name": "Uncomfortable but polite.",
+      "description": "Uncomfortable but polite.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d4eabac60f7f4f2b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        96,
+        96
+      ],
+      "drawn": false,
+      "name": "Comfortable but aloof.",
+      "description": "Comfortable but aloof.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "418f6281428142ab",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        97,
+        97
+      ],
+      "drawn": false,
+      "name": "Engaged but reserved.",
+      "description": "Engaged but reserved.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b868afe226964809",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        98,
+        98
+      ],
+      "drawn": false,
+      "name": "Engaged and attentive.",
+      "description": "Engaged and attentive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1cc938695209469d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        99,
+        99
+      ],
+      "drawn": false,
+      "name": "Detached but listening.",
+      "description": "Detached but listening.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "54863f3b27e24ae4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "name": "Detached and uninterested.",
+      "description": "Detached and uninterested.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1835e0f4cb6745e4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        101,
+        101
+      ],
+      "drawn": false,
+      "name": "Carefully neutral.",
+      "description": "Carefully neutral.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "57187db565a145b9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        102,
+        102
+      ],
+      "drawn": false,
+      "name": "Open but cautious.",
+      "description": "Open but cautious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "738ecdd46f3c4631",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        103,
+        103
+      ],
+      "drawn": false,
+      "name": "Guarded but fair.",
+      "description": "Guarded but fair.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7145a558cdb941da",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        104,
+        104
+      ],
+      "drawn": false,
+      "name": "Agreeable with limits.",
+      "description": "Agreeable with limits.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c05b8e2e861046ce",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        105,
+        105
+      ],
+      "drawn": false,
+      "name": "Cooperative under conditions.",
+      "description": "Cooperative under conditions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1d0318c81f8d40ac",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        106,
+        106
+      ],
+      "drawn": false,
+      "name": "Helpful with expectations.",
+      "description": "Helpful with expectations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "064b9cc1f3c54008",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        107,
+        107
+      ],
+      "drawn": false,
+      "name": "Patient but firm.",
+      "description": "Patient but firm.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3293d1a60dd0479a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        108,
+        108
+      ],
+      "drawn": false,
+      "name": "Polite but dismissive.",
+      "description": "Polite but dismissive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cf06fe32b2a94413",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        109,
+        109
+      ],
+      "drawn": false,
+      "name": "Respectful yet impatient.",
+      "description": "Respectful yet impatient.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "077cedf096794b42",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        110,
+        110
+      ],
+      "drawn": false,
+      "name": "Friendly on the surface.",
+      "description": "Friendly on the surface.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f088388c0e7446e5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        111,
+        111
+      ],
+      "drawn": false,
+      "name": "Coolly professional.",
+      "description": "Coolly professional.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fdf664fbde1d4bb4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        112,
+        112
+      ],
+      "drawn": false,
+      "name": "Quietly supportive.",
+      "description": "Quietly supportive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8eabf09d293e4d5a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        113,
+        113
+      ],
+      "drawn": false,
+      "name": "Quietly judgmental.",
+      "description": "Quietly judgmental.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9d72fabfa1764daa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        114,
+        114
+      ],
+      "drawn": false,
+      "name": "Nonjudgmental but distant.",
+      "description": "Nonjudgmental but distant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ae832fb9040140b6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        115,
+        115
+      ],
+      "drawn": false,
+      "name": "Encouraging but noncommittal.",
+      "description": "Encouraging but noncommittal.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "68347e1a80394185",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        116,
+        116
+      ],
+      "drawn": false,
+      "name": "Sympathetic but detached.",
+      "description": "Sympathetic but detached.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f2fbc21786554bd5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        117,
+        117
+      ],
+      "drawn": false,
+      "name": "Sympathetic and engaged.",
+      "description": "Sympathetic and engaged.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d67476d4958448fd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        118,
+        118
+      ],
+      "drawn": false,
+      "name": "Interested but wary.",
+      "description": "Interested but wary.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5f5b3e6721724780",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        119,
+        119
+      ],
+      "drawn": false,
+      "name": "Uninterested but polite.",
+      "description": "Uninterested but polite.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b28db777e5f74d03",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        120,
+        120
+      ],
+      "drawn": false,
+      "name": "Formal and restrained.",
+      "description": "Formal and restrained.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "53f313ba24624c8e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        121,
+        121
+      ],
+      "drawn": false,
+      "name": "Casual and relaxed.",
+      "description": "Casual and relaxed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4590f35bf9184b99",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        122,
+        122
+      ],
+      "drawn": false,
+      "name": "Reserved but attentive.",
+      "description": "Reserved but attentive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4d685a3c51194764",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        123,
+        123
+      ],
+      "drawn": false,
+      "name": "Reserved and skeptical.",
+      "description": "Reserved and skeptical.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "96311689fb1b4747",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        124,
+        124
+      ],
+      "drawn": false,
+      "name": "Testing your sincerity.",
+      "description": "Testing your sincerity.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a8cdbe338b464e40",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        125,
+        125
+      ],
+      "drawn": false,
+      "name": "Assessing risks carefully.",
+      "description": "Assessing risks carefully.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "651f9daf771940f8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        126,
+        126
+      ],
+      "drawn": false,
+      "name": "Guarded but curious.",
+      "description": "Guarded but curious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8918c9e3831040ea",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        127,
+        127
+      ],
+      "drawn": false,
+      "name": "Friendly once engaged.",
+      "description": "Friendly once engaged.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fd609d6d40324b2f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        128,
+        128
+      ],
+      "drawn": false,
+      "name": "Neutral, keeping options open.",
+      "description": "Neutral, keeping options open.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "178f4cadf2dd482a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        129,
+        129
+      ],
+      "drawn": false,
+      "name": "Politely evasive.",
+      "description": "Politely evasive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "35241d3baa72441d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        130,
+        130
+      ],
+      "drawn": false,
+      "name": "Firmly businesslike.",
+      "description": "Firmly businesslike.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "643922742bf04bcc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        131,
+        131
+      ],
+      "drawn": false,
+      "name": "Openly businesslike.",
+      "description": "Openly businesslike.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3987690f561447e3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        132,
+        132
+      ],
+      "drawn": false,
+      "name": "Patient with negotiation.",
+      "description": "Patient with negotiation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7c78f247737543ea",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        133,
+        133
+      ],
+      "drawn": false,
+      "name": "Uncomfortable with negotiation.",
+      "description": "Uncomfortable with negotiation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e358fce247524b9f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        134,
+        134
+      ],
+      "drawn": false,
+      "name": "Respectful of boundaries.",
+      "description": "Respectful of boundaries.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6e14bf411d0445b0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        135,
+        135
+      ],
+      "drawn": false,
+      "name": "Insensitive to boundaries.",
+      "description": "Insensitive to boundaries.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "684483a7ea10488d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        136,
+        136
+      ],
+      "drawn": false,
+      "name": "Courteous but rushed.",
+      "description": "Courteous but rushed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e539f70fa438464d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        137,
+        137
+      ],
+      "drawn": false,
+      "name": "Unhurried and calm.",
+      "description": "Unhurried and calm.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "38b3386abc354c0b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        138,
+        138
+      ],
+      "drawn": false,
+      "name": "Overly formal.",
+      "description": "Overly formal.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f4fbd3e32f7a4272",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        139,
+        139
+      ],
+      "drawn": false,
+      "name": "Understated but warm.",
+      "description": "Understated but warm.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d3b802a9cace4217",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        140,
+        140
+      ],
+      "drawn": false,
+      "name": "Cautiously optimistic.",
+      "description": "Cautiously optimistic.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5f753ed0495b4b84",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        141,
+        141
+      ],
+      "drawn": false,
+      "name": "Cautiously pessimistic.",
+      "description": "Cautiously pessimistic.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a5051f24e03d4421",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        142,
+        142
+      ],
+      "drawn": false,
+      "name": "Willing to listen.",
+      "description": "Willing to listen.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "91c7c3eb4c924213",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        143,
+        143
+      ],
+      "drawn": false,
+      "name": "Reluctant to listen.",
+      "description": "Reluctant to listen.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "148dce9edc09467b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        144,
+        144
+      ],
+      "drawn": false,
+      "name": "Appearing agreeable, privately resistant.",
+      "description": "Appearing agreeable, privately resistant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f3d24f6e999a427b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        145,
+        145
+      ],
+      "drawn": false,
+      "name": "Appearing distant, quietly helpful.",
+      "description": "Appearing distant, quietly helpful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6e0292df314645bd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        146,
+        146
+      ],
+      "drawn": false,
+      "name": "Surface-friendly, internally guarded.",
+      "description": "Surface-friendly, internally guarded.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1a8b3b1503b046b3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        147,
+        147
+      ],
+      "drawn": false,
+      "name": "Surface-neutral, internally opinionated.",
+      "description": "Surface-neutral, internally opinionated.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4878502986284503",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        148,
+        148
+      ],
+      "drawn": false,
+      "name": "Actively sizing you up.",
+      "description": "Actively sizing you up.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "61bed9aab11b43c1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        149,
+        149
+      ],
+      "drawn": false,
+      "name": "Passively observing.",
+      "description": "Passively observing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "03ca99a380784139",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        150,
+        150
+      ],
+      "drawn": false,
+      "name": "Guarded but polite.",
+      "description": "Guarded but polite.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0d9e690aefe6491b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        151,
+        151
+      ],
+      "drawn": false,
+      "name": "Neutral with mild interest.",
+      "description": "Neutral with mild interest.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a7a7dddce68f4188",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        152,
+        152
+      ],
+      "drawn": false,
+      "name": "Neutral with mild concern.",
+      "description": "Neutral with mild concern.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "44cd54e04ba64398",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        153,
+        153
+      ],
+      "drawn": false,
+      "name": "Professional and neutral.",
+      "description": "Professional and neutral.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8a0231c44b9f486e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        154,
+        154
+      ],
+      "drawn": false,
+      "name": "Patient, awaiting clarity.",
+      "description": "Patient, awaiting clarity.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "827aa3b0f70f4c83",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        155,
+        155
+      ],
+      "drawn": false,
+      "name": "Reluctant but listening.",
+      "description": "Reluctant but listening.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3560f3c6d5fb41df",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        156,
+        156
+      ],
+      "drawn": false,
+      "name": "Attentive but cautious.",
+      "description": "Attentive but cautious.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aaceef1b946d4871",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        157,
+        157
+      ],
+      "drawn": false,
+      "name": "Attentive but skeptical.",
+      "description": "Attentive but skeptical.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c67e2ea8513b4385",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        158,
+        158
+      ],
+      "drawn": false,
+      "name": "Open but noncommittal.",
+      "description": "Open but noncommittal.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6e733a9b3d8b40ce",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        159,
+        159
+      ],
+      "drawn": false,
+      "name": "Friendly but formal.",
+      "description": "Friendly but formal.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e35a6359992741e2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        160,
+        160
+      ],
+      "drawn": false,
+      "name": "Respectful but distant.",
+      "description": "Respectful but distant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "666664bb480b4761",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        161,
+        161
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (1).",
+      "description": "Neutral but reserved (1).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9c92595a7c9142aa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        162,
+        162
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (2).",
+      "description": "Neutral but reserved (2).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "55b4ecee305248db",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        163,
+        163
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (3).",
+      "description": "Neutral but reserved (3).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "048b2d164daf44a3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        164,
+        164
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (4).",
+      "description": "Neutral but reserved (4).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "531bda8a380e43d8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        165,
+        165
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (5).",
+      "description": "Neutral but reserved (5).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6594aae09ae44bec",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        166,
+        166
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (6).",
+      "description": "Neutral but reserved (6).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "220576e7f2a84376",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        167,
+        167
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (7).",
+      "description": "Neutral but reserved (7).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5a5b25342d3441ff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        168,
+        168
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (8).",
+      "description": "Neutral but reserved (8).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "eb3ef46dc9af4342",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        169,
+        169
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (9).",
+      "description": "Neutral but reserved (9).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5ebb591c5ccb4048",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        170,
+        170
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (10).",
+      "description": "Neutral but reserved (10).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2e5fb8bae4014681",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        171,
+        171
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (11).",
+      "description": "Neutral but reserved (11).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ff807280ec9f4d4a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        172,
+        172
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (12).",
+      "description": "Neutral but reserved (12).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d056d4d45b664002",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        173,
+        173
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (13).",
+      "description": "Neutral but reserved (13).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1d7e015798154b6e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        174,
+        174
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (14).",
+      "description": "Neutral but reserved (14).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1ae47774d4524e3a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        175,
+        175
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (15).",
+      "description": "Neutral but reserved (15).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "98cab8b4c7a74f3d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        176,
+        176
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (16).",
+      "description": "Neutral but reserved (16).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "84d3ebba6dc94ffb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        177,
+        177
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (17).",
+      "description": "Neutral but reserved (17).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1a369103605f4882",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        178,
+        178
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (18).",
+      "description": "Neutral but reserved (18).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "17acefc88df24b9e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        179,
+        179
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (19).",
+      "description": "Neutral but reserved (19).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6c591b4724ba4974",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        180,
+        180
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (20).",
+      "description": "Neutral but reserved (20).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f842e25bed9144f3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        181,
+        181
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (21).",
+      "description": "Neutral but reserved (21).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "742d7300affd4f45",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        182,
+        182
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (22).",
+      "description": "Neutral but reserved (22).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e2e7339e64824dc9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        183,
+        183
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (23).",
+      "description": "Neutral but reserved (23).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f4dc6e3d6d454952",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        184,
+        184
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (24).",
+      "description": "Neutral but reserved (24).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "de289cf05be34d53",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        185,
+        185
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (25).",
+      "description": "Neutral but reserved (25).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "38340f6f1b6c4842",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        186,
+        186
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (26).",
+      "description": "Neutral but reserved (26).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "91010ab63c4e46c7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        187,
+        187
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (27).",
+      "description": "Neutral but reserved (27).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "179d5cdd2a1b4146",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        188,
+        188
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (28).",
+      "description": "Neutral but reserved (28).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c71ab93f860544b4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        189,
+        189
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (29).",
+      "description": "Neutral but reserved (29).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0808e8aa33b04754",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        190,
+        190
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (30).",
+      "description": "Neutral but reserved (30).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1148691ce2bf4bd5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        191,
+        191
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (31).",
+      "description": "Neutral but reserved (31).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "71f232a978af4d58",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        192,
+        192
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (32).",
+      "description": "Neutral but reserved (32).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f6162976a06c4b19",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        193,
+        193
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (33).",
+      "description": "Neutral but reserved (33).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2f9aff7d274a433e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        194,
+        194
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (34).",
+      "description": "Neutral but reserved (34).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "58b6b2a6e6584929",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        195,
+        195
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (35).",
+      "description": "Neutral but reserved (35).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e7d12e98ffb945b2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        196,
+        196
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (36).",
+      "description": "Neutral but reserved (36).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "de68314e05d444a5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        197,
+        197
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (37).",
+      "description": "Neutral but reserved (37).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "abaa4589c8b84d87",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        198,
+        198
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (38).",
+      "description": "Neutral but reserved (38).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "969fc3db672d4669",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        199,
+        199
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (39).",
+      "description": "Neutral but reserved (39).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7c8605e7e8a14c5d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        200,
+        200
+      ],
+      "drawn": false,
+      "name": "Neutral but reserved (40).",
+      "description": "Neutral but reserved (40).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4ce9a129c83c4a70",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "RollTable.WGJQlBQ1HgfzMhaY",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.1.0",
+    "createdTime": 1771241253129,
+    "modifiedTime": 1771257786613,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "formula": "1d200",
+  "ownership": {
+    "default": 0
+  }
+}
