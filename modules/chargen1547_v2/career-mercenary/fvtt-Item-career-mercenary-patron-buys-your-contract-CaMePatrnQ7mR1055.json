@@ -1,2 +1,146 @@
-﻿{"folder":"RUXVfLU7KC7rU4jQ","name":"Patron buys your contract","type":"equippableItem","img":"icons/svg/item-bag.svg","system":{"body":{"contents":[],"key":"custom_body","type":"panel"},"display":{"width":820,"height":980,"fix_size":false,"pp_width":64,"pp_height":64},"header":{"contents":[],"key":"custom_header","type":"panel"},"hidden":[],"modifiers":[],"props":{"ChoiceTitle":"Patron buys your contract","ChoiceText":"Someone with power decided you were more useful owned than merely hired.","ChoiceTags":"status","ChoiceBio":"A patron buying your contract changed your value from hired blade to controlled asset.","ChoiceCard":"media/home/games/1547/Cards/General Public life.webp","Effects1":{"0":{"$deleted":false,"Weight":"2","Type":"Contact","TargetKey":"","Amount":"","TargetText":"","NextTable":"RollTable.WMuB1MNtzlqKZgJX"},"1":{"$deleted":false,"Weight":"2","Type":"Social","TargetKey":"","Amount":"1","TargetText":"","NextTable":"RollTable.ijcOO4ESiaen56Yu"},"2":{"$deleted":false,"Weight":"2","Type":"Money","TargetKey":"","Amount":"90","TargetText":"","NextTable":""}},"Effects2":{"0":{"$deleted":false,"Weight":"2","Type":"Stat","TargetKey":"Charisma","Amount":"1","TargetText":""},"1":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"2":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":""}},"Effects3":{"0":{"$deleted":false,"Weight":"2","Type":"Money","TargetKey":"","Amount":"120","TargetText":""},"1":{"$deleted":false,"Weight":"2","Type":"Social","TargetKey":"","Amount":"1","TargetText":""},"2":{"$deleted":false,"Weight":"2","Type":"Item","TargetKey":"RollTable.3rEWQziu0PS0OIQo","Amount":"1","TargetText":""}}},"unique":false,"templateSystemUniqueVersion":4241488775,"template":"CGRwEfTpl9K2P7rQ","uniqueId":"ItemCaMepejgsu00"},"flags":{"custom-system-builder":{"version":"5.2.0"}},"items":[],"ownership":{"default":0},"_id":"ItemCaMepejgsu00"}
+{
+    "folder":  "RUXVfLU7KC7rU4jQ",
+    "name":  "Patron buys your contract",
+    "type":  "equippableItem",
+    "img":  "icons/svg/item-bag.svg",
+    "system":  {
+                   "body":  {
+                                "contents":  [
 
+                                             ],
+                                "key":  "custom_body",
+                                "type":  "panel"
+                            },
+                   "display":  {
+                                   "width":  820,
+                                   "height":  980,
+                                   "fix_size":  false,
+                                   "pp_width":  64,
+                                   "pp_height":  64
+                               },
+                   "header":  {
+                                  "contents":  [
+
+                                               ],
+                                  "key":  "custom_header",
+                                  "type":  "panel"
+                              },
+                   "hidden":  [
+
+                              ],
+                   "modifiers":  [
+
+                                 ],
+                   "props":  {
+                                 "ChoiceTitle":  "Patron buys your contract",
+                                 "ChoiceText":  "Someone with power decided you were more useful owned than merely hired.",
+                                 "ChoiceTags":  "status",
+                                 "ChoiceBio":  "A patron buying your contract changed your value from hired blade to controlled asset.",
+                                 "ChoiceCard":  "media/home/games/1547/Cards/General Public life.webp",
+                                 "Effects1":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "3",
+                                                            "Type":  "Contact",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTablep5odc00",
+                                                            "TransitionText":  "Because a patron buying your contract changed your value from hired blade to controlled asset, command grew out of survival, reputation, and the obedience of armed men.",
+                                                            "TransitionMode":  "optional",
+                                                            "TransitionPrompt":  "A patron buying your contract could entangle your future with command, but you may remain on your current path instead."
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Social",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "1",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTablfpa34g00",
+                                                            "TransitionText":  "Because a patron buying your contract changed your value from hired blade to controlled asset, soldiering for pay changed into something else.",
+                                                            "TransitionMode":  "optional",
+                                                            "TransitionPrompt":  "A patron buying your contract could pull you into more courtly circles, but you may remain on your current path instead."
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Money",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "90",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              },
+                                 "Effects2":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Charisma",
+                                                            "Amount":  "1",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        }
+                                              },
+                                 "Effects3":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Money",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "120",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Social",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "1",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Item",
+                                                            "TargetKey":  "RollTable.3rEWQziu0PS0OIQo",
+                                                            "Amount":  "1",
+                                                            "TargetText":  ""
+                                                        }
+                                              }
+                             },
+                   "unique":  false,
+                   "templateSystemUniqueVersion":  4241488775,
+                   "template":  "CGRwEfTpl9K2P7rQ",
+                   "uniqueId":  "ItemCaMepejgsu00"
+               },
+    "flags":  {
+                  "custom-system-builder":  {
+                                                "version":  "5.2.0"
+                                            }
+              },
+    "items":  [
+
+              ],
+    "ownership":  {
+                      "default":  0
+                  },
+    "_id":  "ItemCaMepejgsu00"
+}

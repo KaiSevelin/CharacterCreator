@@ -1,0 +1,224 @@
+{
+  "folder": null,
+  "name": "Suspicion",
+  "img": "icons/svg/book.svg",
+  "description": "<p>A 3d6 biography table of rumor, unease, scrutiny, and doubtful reputation.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "description": "People speak of you as if you have already done something unforgivable.",
+      "_id": "SuSpRow00000001",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "description": "A dark rumor clings to your name and resists correction.",
+      "_id": "SuSpRow00000002",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "description": "Someone in authority has reason to keep an eye on you.",
+      "_id": "SuSpRow00000003",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "description": "You are remembered as having been near something troubling.",
+      "_id": "SuSpRow00000004",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "description": "Trust comes slowly where your name is known.",
+      "_id": "SuSpRow00000005",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "description": "Some people find you difficult to place and therefore difficult to trust.",
+      "_id": "SuSpRow00000006",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "description": "An old association still colors how others judge you.",
+      "_id": "SuSpRow00000007",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "description": "Nothing concrete is held against you, but doubt gathers easily around you.",
+      "_id": "SuSpRow00000008",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "description": "You have learned how quickly innocence can sound rehearsed.",
+      "_id": "SuSpRow00000009",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "description": "A harmless peculiarity has been mistaken for something worse.",
+      "_id": "SuSpRow00000010",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "description": "Those who know you well defend you; others hesitate.",
+      "_id": "SuSpRow00000011",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "description": "You were once suspected unfairly, and the memory remains.",
+      "_id": "SuSpRow00000012",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "description": "You know what it is to be watched more closely than others.",
+      "_id": "SuSpRow00000013",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "description": "Your name has passed through uneasy conversations behind closed doors.",
+      "_id": "SuSpRow00000014",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "description": "A serious accusation nearly fixed itself to your life.",
+      "_id": "SuSpRow00000015",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "description": "You escaped condemnation, but many still wonder whether they were wrong to let you go.",
+      "_id": "SuSpRow00000016",
+      "name": "suspicion",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "wc0827FvVWKn4eJO"
+}

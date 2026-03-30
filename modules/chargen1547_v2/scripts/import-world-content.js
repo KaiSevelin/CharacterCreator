@@ -149,7 +149,10 @@ async function ensureFolderPath(documentType, parts, cache) {
 }
 
 async function loadImportJSON(path) {
-    const response = await fetch(foundry.utils.getRoute(path));
+    const route = foundry.utils.getRoute(path);
+    const separator = route.includes("?") ? "&" : "?";
+    const cacheBust = `${route}${separator}cgcb=${Date.now()}`;
+    const response = await fetch(cacheBust, { cache: "no-store" });
     if (!response.ok) throw new Error(`Failed to fetch ${path}`);
     return await response.json();
 }
@@ -200,9 +203,11 @@ async function upsertWorldDocument(documentClass, data, folder) {
     const existing = game[collection]?.get(payload._id) ?? null;
 
     if (existing) {
-        payload._id = existing.id;
-        await existing.update(payload, { diff: false, recursive: false });
-        return { action: "updated", document: existing };
+        const existingId = existing.id;
+        await existing.delete();
+        payload._id = existingId;
+        const recreated = await documentClass.create(payload, { keepId: true });
+        return { action: "updated", document: recreated };
     }
 
     const created = await documentClass.create(payload, { keepId: true });

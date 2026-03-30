@@ -64,6 +64,8 @@ export function parseRewardJSONText(text, tableName = "RollTable", validateParse
             rr,
             weight: Number.isFinite(Number(rr.weight)) ? Number(rr.weight) : 1,
             changes: Array.isArray(rr.changes) ? rr.changes : [],
+            transitionMode: rr.transitionMode != null ? String(rr.transitionMode).trim().toLowerCase() : "",
+            transitionPrompt: rr.transitionPrompt != null ? String(rr.transitionPrompt) : "",
             next: (rr.next && typeof rr.next === "object")
                 ? { tableUuid: String(rr.next.tableUuid ?? "").trim() }
                 : null
@@ -87,6 +89,9 @@ export function parseRewardJSONText(text, tableName = "RollTable", validateParse
                 ...rr,
                 weight: Number.isFinite(Number(rr.weight)) ? Number(rr.weight) : 0,
                 change,
+                transitionText: rr.transitionText != null ? String(rr.transitionText).trim() : "",
+                transitionMode: rr.transitionMode != null ? String(rr.transitionMode).trim().toLowerCase() : "",
+                transitionPrompt: rr.transitionPrompt != null ? String(rr.transitionPrompt) : "",
                 next: (rr.next && typeof rr.next === "object")
                     ? { tableUuid: String(rr.next.tableUuid ?? "").trim() }
                     : null
@@ -153,19 +158,64 @@ export function pickWeightedEffectRow(rows) {
     return list[list.length - 1];
 }
 
+const SECONDARY_BIO_TABLE_UUIDS = new Set([
+    "RollTable.kC0YeELeXOdwDeaJ",
+    "RollTable.wc0827FvVWKn4eJO",
+    "RollTable.ogCUBgf4giALU7XZ"
+]);
+
+function isSecondaryBioRow(row) {
+    const tableUuid = String(row?.change?.roll?.tableUuid ?? "").trim();
+    return SECONDARY_BIO_TABLE_UUIDS.has(tableUuid);
+}
+
+function primarySlotRows(rows) {
+    const list = Array.isArray(rows) ? rows.filter(r => r && typeof r === "object") : [];
+    if (!list.length) return list;
+
+    const hasNonSecondaryOption = list.some(row => !isSecondaryBioRow(row));
+    if (!hasNonSecondaryOption) return list;
+
+    return list.map(row => ({
+        ...row,
+        weight: isSecondaryBioRow(row) ? 1 : Math.max(1, Number(row.weight ?? 0))
+    }));
+}
+
 export function resolveRewardFromEffectTables(effectTables) {
     const tables = Array.isArray(effectTables) ? effectTables : [];
     const changes = [];
     let next = null;
+    let transitionText = "";
+    let transitionMode = "";
+    let transitionPrompt = "";
+    const chosenEffects = [];
 
-    for (const tbl of tables) {
-        const row = pickWeightedEffectRow(tbl?.rows ?? []);
+    for (const [index, tbl] of tables.entries()) {
+        const rows = index === 0 ? primarySlotRows(tbl?.rows ?? []) : (tbl?.rows ?? []);
+        const row = pickWeightedEffectRow(rows);
         if (!row) continue;
+        const rowIndex = rows.indexOf(row);
+        chosenEffects.push({
+            tableIndex: index + 1,
+            rowIndex,
+            type: String(row?.change?.type ?? "").trim(),
+            targetKey: String(row?.change?.targetKey ?? row?.change?.characteristic ?? "").trim(),
+            nextTableUuid: String(row?.next?.tableUuid ?? "").trim(),
+            transitionText: String(row?.transitionText ?? "").trim(),
+            transitionMode: String(row?.transitionMode ?? "").trim().toLowerCase(),
+            transitionPrompt: String(row?.transitionPrompt ?? "").trim()
+        });
         if (row.change) changes.push(row.change);
-        if (!next && row.next?.tableUuid) next = { tableUuid: String(row.next.tableUuid).trim() };
+        if (!next && row.next?.tableUuid) {
+            next = { tableUuid: String(row.next.tableUuid).trim() };
+            transitionText = String(row.transitionText ?? "").trim();
+            transitionMode = String(row.transitionMode ?? "").trim().toLowerCase();
+            transitionPrompt = String(row.transitionPrompt ?? "").trim();
+        }
     }
 
-    return { weight: 1, changes, next };
+    return { weight: 1, changes, next, transitionText, transitionMode, transitionPrompt, chosenEffects };
 }
 
 export function summarizeRewardChange(ch) {
@@ -175,7 +225,7 @@ export function summarizeRewardChange(ch) {
     if (ch.type === "maneuver") return `Maneuver ${ch.targetKey}${ch.targetLevel != null ? ` -> ${ch.targetLevel}` : ""}`;
     if (ch.type === "money") return ch.formula ? `Money: ${ch.formula}` : `Money: ${ch.amount}`;
     if (ch.type === "luck") return `Lucky streak: ${ch.on ? "ON" : "OFF"}`;
-    if (ch.type === "contact") return "Gain a contact";
+    if (ch.type === "contact") return ch.text ? `Contact: ${ch.text}` : "Gain a contact";
     if (ch.type === "body") return "Roll body change";
     if (ch.type === "social") return `Social Status ${Number(ch.amount) >= 0 ? "+" : ""}${ch.amount}`;
     if (ch.type === "drive") return ch.action === "add" ? `Add drive: ${ch.category}` : "Remove a drive";
@@ -225,41 +275,65 @@ export async function applyRewardChanges(app, run, changes = [], deps = {}) {
         }
 
         if (ch.type === "contact") {
-            const roleRoll = await app._rollOnce(run.contactTables.roleTable);
-            const flavorRoll = await app._rollOnce(run.contactTables.flavorTable);
-            const toneRoll = await app._rollOnce(run.contactTables.toneTable);
-            const quirkRoll = await app._rollOnce(run.contactTables.quirkTable);
+            let contactLine = String(ch.text ?? "").trim();
+            if (!contactLine) {
+                const roleRoll = await app._rollOnce(run.contactTables.roleTable);
+                const flavorRoll = await app._rollOnce(run.contactTables.flavorTable);
+                const toneRoll = await app._rollOnce(run.contactTables.toneTable);
+                const quirkRoll = await app._rollOnce(run.contactTables.quirkTable);
 
-            const role = app.constructor._resultRawJSON(roleRoll.result).trim();
-            const flavor = app.constructor._resultRawJSON(flavorRoll.result).trim();
-            const tone = app.constructor._resultRawJSON(toneRoll.result).trim();
-            const quirk = app.constructor._resultRawJSON(quirkRoll.result).trim();
+                const role = app.constructor._resultRawJSON(roleRoll.result).trim();
+                const flavor = app.constructor._resultRawJSON(flavorRoll.result).trim();
+                const tone = app.constructor._resultRawJSON(toneRoll.result).trim();
+                const quirk = app.constructor._resultRawJSON(quirkRoll.result).trim();
 
-            const d100 = (new Roll("1d100")).evaluate({ async: false }).total;
-            const hookCount = (d100 <= 90) ? 1 : 2;
+                const d100 = (new Roll("1d100")).evaluate({ async: false }).total;
+                const hookCount = (d100 <= 90) ? 1 : 2;
 
-            const hooks = [];
-            const seen = new Set();
-            const maxAttempts = hookCount * 6;
+                const hooks = [];
+                const seen = new Set();
+                const maxAttempts = hookCount * 6;
 
-            for (let i = 0; i < maxAttempts && hooks.length < hookCount; i++) {
-                const h = await app._rollOnce(run.contactTables.hookTable);
-                const hook = app.constructor._resultRawJSON(h.result).trim();
-                if (!hook) continue;
+                for (let i = 0; i < maxAttempts && hooks.length < hookCount; i++) {
+                    const h = await app._rollOnce(run.contactTables.hookTable);
+                    const hook = app.constructor._resultRawJSON(h.result).trim();
+                    if (!hook) continue;
 
-                const key = hook.toLowerCase();
-                if (seen.has(key)) continue;
-                seen.add(key);
-                hooks.push(hook);
+                    const key = hook.toLowerCase();
+                    if (seen.has(key)) continue;
+                    seen.add(key);
+                    hooks.push(hook);
+                }
+
+                const clean = (text) => String(text ?? "").trim().replace(/\s+/g, " ");
+                const isPlaceholder = (text) => /^(none|null|n\/a)\.?$/i.test(clean(text));
+                const sentence = (text) => {
+                    const value = clean(text);
+                    if (!value || isPlaceholder(value)) return "";
+                    return /[.!?]$/.test(value) ? value : `${value}.`;
+                };
+
+                const parts = [];
+                if (role && !isPlaceholder(role)) parts.push(clean(role));
+
+                const flavorLine = sentence(flavor);
+                if (flavorLine) parts.push(flavorLine);
+
+                const toneLine = sentence(tone);
+                if (toneLine) parts.push(`Tone: ${toneLine}`);
+
+                const quirkLine = sentence(quirk);
+                if (quirkLine) parts.push(`Quirk: ${quirkLine}`);
+
+                const cleanHooks = hooks
+                    .map(h => clean(h))
+                    .filter(h => h && !isPlaceholder(h));
+                if (cleanHooks.length) {
+                    parts.push(`Hooks: ${cleanHooks.map(h => sentence(h)).join(" ")}`);
+                }
+
+                contactLine = parts.join(" ").trim();
             }
-
-            const parts = [role];
-            if (flavor) parts.push(`- ${flavor}`);
-            if (tone) parts.push(`Tone: ${tone}`);
-            if (quirk) parts.push(`Quirk: ${quirk}`);
-            if (hooks.length) parts.push(`Hooks: ${hooks.join(", ")}`);
-
-            const contactLine = parts.join(" ");
             await app._appendListProp("Contacts", contactLine);
             await app._addBio(run, `Gained a contact: ${contactLine}`);
             continue;

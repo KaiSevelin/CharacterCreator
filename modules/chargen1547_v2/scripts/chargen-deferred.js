@@ -1,3 +1,5 @@
+import { PRIMARY_STATS } from "/modules/chargen1547_v2/foundry-primary-stats/stats.js";
+
 const DEFERRED_TABLES = {
     "old-friend": {
         1: "RollTable.DfOldFrndStg1A0X",
@@ -106,7 +108,7 @@ export function parseDeferredTags(rawText, context = {}) {
         } else if (cmd === "stat" && parts.length >= 2) {
             const characteristic = parts[0];
             const steps = Number(parts[1]);
-            if (["Strength", "Stamina", "Dexterity", "Faith", "Charisma", "Intelligence"].includes(characteristic) && Number.isFinite(steps) && steps !== 0) {
+            if (PRIMARY_STATS.includes(characteristic) && Number.isFinite(steps) && steps !== 0) {
                 changes.push({ type: "stat", characteristic, steps });
             }
         } else if (cmd === "body") {
@@ -244,6 +246,7 @@ export async function buildDeferredReveal(app, run) {
         isDeferred: true,
         title: "The Past Returns",
         originLine: ready.origin ? `From your time in ${ready.origin}` : "From an earlier chapter of your life",
+        sourceTitle: ready.sourceTitle || "",
         text: parsed.text,
         image: ready.image || DEFERRED_IMAGES[ready.type] || "",
         payload: {

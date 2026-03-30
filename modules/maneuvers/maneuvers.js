@@ -1,5 +1,45 @@
 [
     {
+        "name": "Act of Faith",
+        "uuid": "Item.9TDjGpjLsS2ZInCz",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Act of Heroism",
+        "uuid": "Item.PCMSwxICLz2Swnbg",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Act of Inspiration",
+        "uuid": "Item.d2cbZAP5J9MvtFwk",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Act of Precision",
+        "uuid": "Item.C9AOwpsyX2fLn3St",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Act of Speed",
+        "uuid": "Item.fIF4KGkCpk6TqrB5",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Act of Strength",
+        "uuid": "Item.Uvq41w9Ik1EKy7gM",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Act of Toughness",
+        "uuid": "Item.vvUVUoFs3tzr8Xk7",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Aim",
+        "uuid": "Item.SBIsohvIxk1hMePv",
+        "folder": "Maneuvers"
+    },
+    {
         "name": "All-In",
         "uuid": "Item.qKblR61N6NE1DHZf",
         "folder": "Maneuvers"
@@ -12,6 +52,11 @@
     {
         "name": "Bind",
         "uuid": "Item.Ki0terhQZNkLRN1L",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Brace Firearm",
+        "uuid": "Item.Qtc3sNJL5kABXzDJ",
         "folder": "Maneuvers"
     },
     {
@@ -42,6 +87,11 @@
     {
         "name": "Counter Strike",
         "uuid": "Item.W88cuoIAA7yiKG9w",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Desperate Defense",
+        "uuid": "Item.AYxAdcJLNiqt3Kz0",
         "folder": "Maneuvers"
     },
     {
@@ -82,6 +132,11 @@
     {
         "name": "Lock and Strike",
         "uuid": "Item.lIIYhkGTa2e2xa7A",
+        "folder": "Maneuvers"
+    },
+    {
+        "name": "Opportunity Strike",
+        "uuid": "Item.RAwHPMwVPZ8vbhfw",
         "folder": "Maneuvers"
     },
     {

@@ -46,6 +46,17 @@ export interface SkillTreeEvaluationEntry {
     missing: SkillTreeMissingEntry[];
 }
 
+export interface SkillTreeAvailableIncrease {
+    nodeId: SkillTreeNodeId;
+    name: string;
+    type: string;
+    kind: "skill" | "maneuver" | "spell";
+    currentLevel: number;
+    nextLevel: number;
+    maxLevel?: number | null;
+    missing: SkillTreeMissingEntry[];
+}
+
 export interface SkillTreeGrantableNode {
     nodeId: SkillTreeNodeId;
     level: number;
@@ -99,10 +110,21 @@ export interface SkillTreeApi {
 
     validateActorUnlock(actor: Actor, nodeId: string, targetLevel?: number, graphData?: SkillTreeGraphData): SkillTreeUnlockCheck;
     evaluateGraphForActor(actor: Actor, graphData?: SkillTreeGraphData): Record<string, SkillTreeEvaluationEntry>;
+    listAvailableNodeIncreases(actor: Actor, options?: {
+        graphData?: SkillTreeGraphData;
+        kind?: "skill" | "maneuver" | "spell" | Array<"skill" | "maneuver" | "spell">;
+        kinds?: Array<"skill" | "maneuver" | "spell">;
+        levelUpsOnly?: boolean;
+        skillTemplates?: string[];
+        maneuverTemplates?: string[];
+        spellTemplates?: string[];
+    }): Promise<SkillTreeAvailableIncrease[]>;
 
     getFirstGrantableNode(actor: Actor, nodeId: string, targetLevel?: number, graphData?: SkillTreeGraphData): SkillTreeGrantableNode | null;
     getFirstGrantableNodeFromWorldGraph(actor: Actor, nodeId: string, targetLevel?: number): Promise<SkillTreeGrantableNode | null>;
     grantFirstAvailableNode(actor: Actor, nodeId: string, targetLevel?: number, options?: { graphData?: SkillTreeGraphData }): Promise<SkillTreeGrantResult>;
+    nextStepToward(actor: Actor, nodeId: string, targetLevel?: number, graphData?: SkillTreeGraphData | null): SkillTreeGrantableNode | null;
+    NODES: Map<string, unknown>;
 
     getAvailableManeuvers(actor: Actor, options?: {
         maneuverTemplate?: string;

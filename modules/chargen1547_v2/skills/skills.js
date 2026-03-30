@@ -1,4 +1,4 @@
-[
+const SKILL_INTERFACES = [
     {
         "name": "Art Creative",
         "uuid": "Item.3ssOYdjj50y5HMlZ",
@@ -384,4 +384,6 @@
         "minLevel": 1,
         "maxLevel": 3
     }
-]
+];
+
+export default SKILL_INTERFACES;

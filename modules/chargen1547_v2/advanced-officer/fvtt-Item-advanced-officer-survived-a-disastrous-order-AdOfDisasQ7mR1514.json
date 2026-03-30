@@ -1,2 +1,171 @@
-﻿{"folder":"RUXVfLU7KC7rU4jQ","name":"Survived a disastrous order","type":"equippableItem","img":"icons/svg/item-bag.svg","system":{"body":{"key":"custom_body","contents":[],"type":"panel"},"display":{"pp_width":64,"pp_height":64,"fix_size":false,"width":820,"height":980},"header":{"key":"custom_header","contents":[],"type":"panel"},"hidden":[],"modifiers":[],"props":{"ChoiceTitle":"Survived a disastrous order","ChoiceText":"An order from above went wrong exactly as badly as it should have, and you survived the result more intelligently than proudly.","ChoiceTags":"","ChoiceBio":"","ChoiceCard":"media/home/games/1547/Cards/General Fate.webp","Effects1":{"0":{"$deleted":false,"Weight":"2","Type":"Suspicion","TargetKey":"","Amount":"","TargetText":"","NextTable":"RollTable.WMuB1MNtzlqKZgJX"},"1":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"2":{"$deleted":false,"Weight":"2","Type":"Skill","TargetKey":"Item.00wKdoVpnYkW0LUk","Amount":"1","TargetText":"","NextTable":"RollTable.qs5qcuXODy67x8m1"}},"Effects2":{"0":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"1":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"2":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""}},"Effects3":{"0":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"1":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"2":{"$deleted":false,"Weight":"2","Type":"Bio","TargetKey":"RollTable.kC0YeELeXOdwDeaJ","Amount":"","TargetText":"","NextTable":""}}},"unique":false,"templateSystemUniqueVersion":4241488775,"template":"CGRwEfTpl9K2P7rQ","uniqueId":"ItemAdOf19ubkbo0"},"flags":{"custom-system-builder":{"version":"5.2.0"}},"items":[],"ownership":{"default":0},"_id":"ItemAdOf19ubkbo0"}
+{
+    "folder":  "RUXVfLU7KC7rU4jQ",
+    "name":  "Survived a disastrous order",
+    "type":  "equippableItem",
+    "img":  "icons/svg/item-bag.svg",
+    "system":  {
+                   "body":  {
+                                "key":  "custom_body",
+                                "contents":  [
 
+                                             ],
+                                "type":  "panel"
+                            },
+                   "display":  {
+                                   "pp_width":  64,
+                                   "pp_height":  64,
+                                   "fix_size":  false,
+                                   "width":  820,
+                                   "height":  980
+                               },
+                   "header":  {
+                                  "key":  "custom_header",
+                                  "contents":  [
+
+                                               ],
+                                  "type":  "panel"
+                              },
+                   "hidden":  [
+
+                              ],
+                   "modifiers":  [
+
+                                 ],
+                   "props":  {
+                                 "ChoiceTitle":  "Survived a disastrous order",
+                                 "ChoiceText":  "You carried out command under conditions any honest man would have called murder by paperwork.",
+                                 "ChoiceTags":  "",
+                                 "ChoiceBio":  "Surviving a disastrous order taught you that institutions can waste lives more coldly than enemies do.",
+                                 "ChoiceCard":  "media/home/games/1547/Cards/General War.webp",
+                                 "Effects1":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "3",
+                                                            "Type":  "Skill",
+                                                            "TargetKey":  "Item.00wKdoVpnYkW0LUk",
+                                                            "Amount":  "1",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTabl18aof8z0",
+                                                            "TransitionText":  "Because a disastrous order taught you that institutions can waste lives more coldly than enemies do, soldiering for pay began to look cleaner than serving bad command."
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Bio",
+                                                            "TargetKey":  "RollTable.wc0827FvVWKn4eJO",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTabl16nnqwq0",
+                                                            "TransitionText":  "Because a disastrous order taught you that institutions can waste lives more coldly than enemies do, bitterness and endurance seasoned you into a veteran."
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "1",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTabl16nnqwq0",
+                                                            "TransitionText":  "Because surviving a disastrous order taught you how little command protects anyone from consequence, you carried the matter forward into a harsher veteran life."
+                                                        }
+                                              },
+                                 "Effects2":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Drive",
+                                                            "TargetKey":  "add",
+                                                            "Amount":  "Bitterness",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        }
+                                              },
+                                 "Effects3":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        }
+                                              },
+                                 "Effects4":  {
+                                                  "0":  {
+                                                            "Type":  "Drive",
+                                                            "NextTable":  "",
+                                                            "Weight":  "2",
+                                                            "TargetText":  "",
+                                                            "Amount":  "Responsibility",
+                                                            "TargetKey":  "add"
+                                                        },
+                                                  "1":  {
+                                                            "Type":  "Drive",
+                                                            "NextTable":  "",
+                                                            "Weight":  "2",
+                                                            "TargetText":  "",
+                                                            "Amount":  "Guilt",
+                                                            "TargetKey":  "add"
+                                                        },
+                                                  "2":  {
+                                                            "Type":  "Nothing",
+                                                            "NextTable":  "",
+                                                            "Weight":  "2",
+                                                            "TargetText":  "",
+                                                            "Amount":  "",
+                                                            "TargetKey":  ""
+                                                        }
+                                              }
+                             },
+                   "unique":  false,
+                   "templateSystemUniqueVersion":  4241488775,
+                   "template":  "CGRwEfTpl9K2P7rQ",
+                   "uniqueId":  "AdOfDisasQ7mR1514",
+                   "flags":  {
+
+                             }
+               },
+    "flags":  {
+                  "custom-system-builder":  {
+                                                "version":  "5.2.0"
+                                            }
+              },
+    "_id":  "AdOfDisasQ7mR1514",
+    "items":  [
+
+              ],
+    "ownership":  {
+                      "default":  0
+                  }
+}

@@ -1,12 +1,18 @@
 ﻿import { importWorldContent } from "./import-world-content.js";
 
+import { STATIC_LEGACY_REF_MAP } from "./legacy-rolltable-map.js";
+
 export const CHARGEN_MODULE_ID = "chargen1547_v2";
-export const DEFAULT_STARTING_TABLE = "RollTable.WqxPqlsw4LlVk5mp";
+export const DEFAULT_STARTING_TABLE = "RollTable.BhHorosc3d6Q7mR4";
 
 const SETTING_KEYS = {
     startingTable: "startingTable",
     contentFolderName: "contentFolderName",
-    legacyIdMap: "legacyIdMap"
+    legacyIdMap: "legacyIdMap",
+    maxRolls: "maxRolls",
+    careerStatPicks: "careerStatPicks",
+    careerSkillPicks: "careerSkillPicks",
+    careerManeuverPicks: "careerManeuverPicks"
 };
 
 function managedFolderStats(folderName, documentType, collection) {
@@ -105,8 +111,12 @@ export class ChargenSetupDataMenu extends FormApplication {
         if (!confirmed) return;
 
         const report = await importWorldContent({ rootFolderName: folderName });
-        ui.notifications.info(
-            `Setup complete: ${report.items.created + report.items.updated} items, ${report.rolltables.created + report.rolltables.updated} rolltables.`
+        const { SkillTreeChargenApp } = await import("./chargen.js");
+        const installValidation = await SkillTreeChargenApp.validateInstallInterfaces({
+            rootFolderName: folderName
+        });
+        ui.notifications[installValidation.ok ? "info" : "warn"](
+            `Setup complete: ${report.items.created + report.items.updated} items, ${report.rolltables.created + report.rolltables.updated} rolltables. Install validation found ${installValidation.errors.length} error(s) and ${installValidation.warnings.length} warning(s).`
         );
     }
 }
@@ -128,6 +138,42 @@ export function registerChargenSettings() {
         config: true,
         type: String,
         default: "Character generator"
+    });
+
+    game.settings.register(CHARGEN_MODULE_ID, SETTING_KEYS.maxRolls, {
+        name: "Maximum Number of Rolls",
+        hint: "Maximum number of life-path table rolls before character generation is forced to end.",
+        scope: "world",
+        config: true,
+        type: Number,
+        default: 14
+    });
+
+    game.settings.register(CHARGEN_MODULE_ID, SETTING_KEYS.careerStatPicks, {
+        name: "Career Advancement Stat Picks",
+        hint: "Number of extra stat increases granted in the post-career advancement wizard.",
+        scope: "world",
+        config: true,
+        type: Number,
+        default: 3
+    });
+
+    game.settings.register(CHARGEN_MODULE_ID, SETTING_KEYS.careerSkillPicks, {
+        name: "Career Advancement Skill Picks",
+        hint: "Number of extra skill increases granted in the post-career advancement wizard.",
+        scope: "world",
+        config: true,
+        type: Number,
+        default: 3
+    });
+
+    game.settings.register(CHARGEN_MODULE_ID, SETTING_KEYS.careerManeuverPicks, {
+        name: "Career Advancement Maneuver/Reward Picks",
+        hint: "Number of maneuver or alternative reward picks granted in the final step of the post-career advancement wizard.",
+        scope: "world",
+        config: true,
+        type: Number,
+        default: 2
     });
 
     game.settings.register(CHARGEN_MODULE_ID, SETTING_KEYS.legacyIdMap, {
@@ -155,13 +201,17 @@ export function getLegacyMappedRef(ref) {
     const value = String(ref ?? "").trim();
     if (!value) return value;
     const map = getChargenSetting(SETTING_KEYS.legacyIdMap) ?? {};
-    return String(map[value] ?? value).trim();
+    return String(STATIC_LEGACY_REF_MAP[value] ?? map[value] ?? value).trim();
 }
 
 export function getChargenSettings() {
     return {
         startingTable: String(getChargenSetting(SETTING_KEYS.startingTable) ?? "").trim(),
-        contentFolderName: String(getChargenSetting(SETTING_KEYS.contentFolderName) ?? "").trim() || "Character generator"
+        contentFolderName: String(getChargenSetting(SETTING_KEYS.contentFolderName) ?? "").trim() || "Character generator",
+        maxRolls: Math.max(1, Number(getChargenSetting(SETTING_KEYS.maxRolls) ?? 14) || 14),
+        careerStatPicks: Math.max(0, Number(getChargenSetting(SETTING_KEYS.careerStatPicks) ?? 3) || 3),
+        careerSkillPicks: Math.max(0, Number(getChargenSetting(SETTING_KEYS.careerSkillPicks) ?? 3) || 3),
+        careerManeuverPicks: Math.max(0, Number(getChargenSetting(SETTING_KEYS.careerManeuverPicks) ?? 2) || 2)
     };
 }
 

@@ -1,2 +1,152 @@
-﻿{"folder":"RUXVfLU7KC7rU4jQ","name":"Carried a dangerous letter","type":"equippableItem","img":"icons/svg/item-bag.svg","system":{"body":{"key":"custom_body","contents":[],"type":"panel"},"display":{"pp_width":64,"pp_height":64,"fix_size":false,"width":820,"height":980},"header":{"key":"custom_header","contents":[],"type":"panel"},"hidden":[],"modifiers":[],"props":{"ChoiceTitle":"Carried a dangerous letter","ChoiceText":"You bore a sealed letter between chambers and understood its importance from the silence that followed its delivery.","ChoiceTags":"status","ChoiceBio":"Carrying a dangerous letter taught you how lightly ruin can travel when folded well.","ChoiceCard":"media/home/games/1547/Cards/General Secrets.webp","Effects1":{"0":{"$deleted":false,"Weight":"2","Type":"Secrets","TargetKey":"","Amount":"","TargetText":"","NextTable":"RollTable.ijcOO4ESiaen56Yu"},"1":{"$deleted":false,"Weight":"2","Type":"Contact","TargetKey":"","Amount":"","TargetText":"","NextTable":"RollTable.ING1R5qxA3CZlzw7"},"2":{"$deleted":false,"Weight":"2","Type":"Suspicion","TargetKey":"","Amount":"","TargetText":"","NextTable":"RollTable.WMuB1MNtzlqKZgJX"}},"Effects2":{"0":{"$deleted":false,"Weight":"2","Type":"Drive","TargetKey":"add","Amount":"Discretion","TargetText":"","NextTable":""},"1":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"2":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""}},"Effects3":{"0":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"1":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""},"2":{"$deleted":false,"Weight":"2","Type":"Nothing","TargetKey":"","Amount":"","TargetText":"","NextTable":""}}},"unique":false,"templateSystemUniqueVersion":4241488775,"template":"CGRwEfTpl9K2P7rQ","uniqueId":"ItemAdCoxziyed00"},"flags":{"custom-system-builder":{"version":"5.2.0"}},"items":[],"ownership":{"default":0},"_id":"ItemAdCoxziyed00"}
+{
+    "folder":  "RUXVfLU7KC7rU4jQ",
+    "name":  "Carried a dangerous letter",
+    "type":  "equippableItem",
+    "img":  "icons/svg/item-bag.svg",
+    "system":  {
+                   "body":  {
+                                "key":  "custom_body",
+                                "contents":  [
 
+                                             ],
+                                "type":  "panel"
+                            },
+                   "display":  {
+                                   "pp_width":  64,
+                                   "pp_height":  64,
+                                   "fix_size":  false,
+                                   "width":  820,
+                                   "height":  980
+                               },
+                   "header":  {
+                                  "key":  "custom_header",
+                                  "contents":  [
+
+                                               ],
+                                  "type":  "panel"
+                              },
+                   "hidden":  [
+
+                              ],
+                   "modifiers":  [
+
+                                 ],
+                   "props":  {
+                                 "ChoiceTitle":  "Carried a dangerous letter",
+                                 "ChoiceText":  "You bore a sealed letter between chambers and understood its importance from the silence that followed its delivery.",
+                                 "ChoiceTags":  "status",
+                                 "ChoiceBio":  "Carrying a dangerous letter taught you how lightly ruin can travel when folded well.",
+                                 "ChoiceCard":  "media/home/games/1547/Cards/General Secrets.webp",
+                                 "Effects1":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Secrets",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTablfpa34g00",
+                                                            "TransitionText":  "Because carrying a dangerous letter taught you how lightly ruin can travel when folded well, you stayed at court by mastering the traffic of secrets."
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Contact",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTabls9kwwo00",
+                                                            "TransitionText":  "Because carrying a dangerous letter taught you how lightly ruin can travel when folded well, it was not a long step from discreet service to deadlier errands.",
+                                                            "TransitionMode":  "optional",
+                                                            "TransitionPrompt":  "A dangerous letter opened the door to deadlier errands. Do you follow that darker path, or remain at court?"
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Suspicion",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.RollTablep5odc00",
+                                                            "TransitionText":  "Because carrying a dangerous letter taught you how lightly ruin can travel when folded well, being trusted with dangerous errands made higher responsibility follow.",
+                                                            "TransitionMode":  "optional",
+                                                            "TransitionPrompt":  "Being trusted with dangerous errands opened a path into higher responsibility. Do you accept that rise, or remain in the subtler courts?"
+                                                        }
+                                              },
+                                 "Effects2":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Drive",
+                                                            "TargetKey":  "add",
+                                                            "Amount":  "Discretion",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Esteem",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              },
+                                 "Effects3":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Secrets",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              }
+                             },
+                   "unique":  false,
+                   "templateSystemUniqueVersion":  4241488775,
+                   "template":  "CGRwEfTpl9K2P7rQ",
+                   "uniqueId":  "ItemAdCoxziyed00"
+               },
+    "flags":  {
+                  "custom-system-builder":  {
+                                                "version":  "5.2.0"
+                                            }
+              },
+    "items":  [
+
+              ],
+    "ownership":  {
+                      "default":  0
+                  },
+    "_id":  "ItemAdCoxziyed00"
+}

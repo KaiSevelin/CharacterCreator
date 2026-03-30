@@ -14,6 +14,12 @@
         </div>
     </header>
 
+    {{#if currentTableName}}
+    <section class="chargen-stage">
+        <h3 class="chargen-stage-title">{{currentTableName}}</h3>
+    </section>
+    {{/if}}
+
     {{#if currentTableDescription}}
     <section class="chargen-table-intro">
         <div class="table-description">{{{currentTableDescription}}}</div>
@@ -22,7 +28,7 @@
 
     <section class="chargen-cards">
         {{#each cards}}
-        <article class="chargen-card {{this.cardClass}}"
+        <article class="chargen-card {{this.cardClass}} {{#if this.masked}}is-veiled{{/if}}"
                  data-index="{{@index}}"
                  title="{{this.tooltip}}"
                  style='--cg-cover: url("{{this.img}}"); --cg-back: url("{{../backImg}}");'>
@@ -35,6 +41,13 @@
 
             <header class="card-header">
                 <h3 class="card-title">{{this.title}}</h3>
+                {{#if this.badges.length}}
+                <div class="card-badges" aria-label="Card hints">
+                    {{#each this.badges}}
+                    <span class="card-badge is-{{this.tone}}" title="{{this.detail}}">{{this.label}}</span>
+                    {{/each}}
+                </div>
+                {{/if}}
             </header>
 
             {{#if this.text}}
@@ -46,15 +59,37 @@
 
     {{#if reveal}}
     <section class="chargen-reveal">
-        {{#if reveal.isDeferred}}
+        {{#unless reveal.isDeferred}}
+        <h3 class="reveal-title">Rolled Effects</h3>
+        <ul class="reveal-list">
+            {{#each reveal.lines}}
+            <li>{{this}}</li>
+        {{/each}}
+        </ul>
+        {{#if reveal.nextName}}
+        <p class="reveal-next">Next: {{#if reveal.nextDetail}}{{reveal.nextDetail}}{{else}}{{reveal.nextName}}{{/if}}</p>
+        {{else}}
+        <p class="reveal-next">This path ends here.</p>
+        {{/if}}
+        {{/unless}}
+    </section>
+    {{/if}}
+
+    {{#if reveal.isDeferred}}
+    <div class="deferred-overlay" data-action="continue" role="button" tabindex="0" aria-label="Continue past deferred reveal">
         <div class="deferred-intertitle">
             <div class="deferred-intertitle__frame">
+                {{#if reveal.image}}
+                <div class="deferred-card-art">
+                    <img src="{{reveal.image}}" alt="{{reveal.title}}">
+                </div>
+                {{/if}}
                 <h3 class="reveal-title deferred-title">{{reveal.title}}</h3>
                 {{#if reveal.originLine}}
                 <p class="deferred-origin">{{reveal.originLine}}</p>
                 {{/if}}
                 {{#if reveal.text}}
-                <p class="reveal-text deferred-text">{{reveal.text}}</p>
+                <p class="reveal-text deferred-text">{{{revealDeferredHtml}}}</p>
                 {{/if}}
                 {{#if revealDeferredLines}}
                 <ul class="deferred-effects">
@@ -63,22 +98,10 @@
                     {{/each}}
                 </ul>
                 {{/if}}
+                <p class="deferred-dismiss">Click to continue</p>
             </div>
         </div>
-        {{else}}
-        <h3 class="reveal-title">Rolled Effects</h3>
-        <ul class="reveal-list">
-            {{#each reveal.lines}}
-            <li>{{this}}</li>
-            {{/each}}
-        </ul>
-        {{#if reveal.nextName}}
-        <p class="reveal-next">Next: {{reveal.nextName}}</p>
-        {{else}}
-        <p class="reveal-next">This path ends here.</p>
-        {{/if}}
-        {{/if}}
-    </section>
+    </div>
     {{/if}}
 
     <section class="chargen-bio">

@@ -1,236 +1,236 @@
-﻿export const FOUNDRY_ROLLTABLES = [
+export const FOUNDRY_ROLLTABLES = [
     // Character generation result items
     {
-        "name": "Birth - Horoscope (3d6)",
-        "uuid": "RollTable.WqxPqlsw4LlVk5mp",
+        "name": "Birth - Horoscope",
+        "uuid": "RollTable.BhHorosc3d6Q7mR4",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Birth - Humors",
-        "uuid": "RollTable.DeL6AoYlpbZdonNB",
+        "uuid": "RollTable.BhHumors1d8Q7mRX",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Birth - Culture",
-        "uuid": "RollTable.xAv1PpHtLBk0okve",
+        "uuid": "RollTable.RollTabl1se2z1p0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Birth - Origin",
-        "uuid": "RollTable.9nGKQuiE0n8zMKis",
+        "uuid": "RollTable.RollTabl1iexh0z0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Childhood - Event",
-        "uuid": "RollTable.lYCgeYXWr1ffGGfP",
+        "uuid": "RollTable.RollTabljxeywt00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Adolescence - Apprenticeship",
-        "uuid": "RollTable.UQbxrFgmwIhF7C6Z",
+        "uuid": "RollTable.RollTabl1di2k770",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Adolescence - Turning Point",
-        "uuid": "RollTable.FLfMZ9iohHhxtU1I",
+        "uuid": "RollTable.RollTabl18pgeph0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Archer",
-        "uuid": "RollTable.bp9WEbKRooNKQvGt",
+        "uuid": "RollTable.RollTablofiy0f00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Craftsman",
-        "uuid": "RollTable.IoGU4kOWXz9PSFOK",
+        "uuid": "RollTable.RollTabl1ng4bd90",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Criminal",
-        "uuid": "RollTable.X55z5fpz3bTdZClp",
+        "uuid": "RollTable.RollTablkgc1up00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Farmer",
-        "uuid": "RollTable.A1RrLCICrK5f40jJ",
+        "uuid": "RollTable.RollTabl1j54bkz0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Hunter",
-        "uuid": "RollTable.MrV9BCMG2bqx79nv",
+        "uuid": "RollTable.RollTabl1292qb70",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Infantry",
-        "uuid": "RollTable.KDDwoJJO2TqLfVAC",
+        "uuid": "RollTable.RollTabl10hmtij0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Laborer",
-        "uuid": "RollTable.mpCZ3Ol8CZc7f5SI",
+        "uuid": "RollTable.RollTablp3hdnp00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Mercenary",
-        "uuid": "RollTable.ntwdFBjHDGPRbTGp",
+        "uuid": "RollTable.RollTabl18aof8z0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Merchant",
-        "uuid": "RollTable.JCTyoDEhUK9QI2F9",
+        "uuid": "RollTable.RollTabl13q1w6l0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Physician",
-        "uuid": "RollTable.ueXoInj2HzzNOmoB",
+        "uuid": "RollTable.RollTabl15vpg4l0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Poor",
-        "uuid": "RollTable.qs5qcuXODy67x8m1",
+        "uuid": "RollTable.RollTabl8063t100",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Religious",
-        "uuid": "RollTable.QBV98dNvE1QvrOm9",
+        "uuid": "RollTable.RollTablh7tzz500",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Sailor",
-        "uuid": "RollTable.K3kispvuhYBseRZi",
+        "uuid": "RollTable.RollTabl1ny1ovz0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Scholar",
-        "uuid": "RollTable.YascVYcBBd6ay4eM",
+        "uuid": "RollTable.RollTabln2ef6p00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Career - Squire",
-        "uuid": "RollTable.bxLsTYFLJjVsjO2t",
+        "uuid": "RollTable.RollTabl17cxuth0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Alchemist",
-        "uuid": "RollTable.sFt2zfogDamQFL46",
+        "uuid": "RollTable.RollTabl1ecc6dw0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Artist",
-        "uuid": "RollTable.kEWbGLBm0Fn264Wz",
+        "uuid": "RollTable.RollTabl104nzia0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Astrologer",
-        "uuid": "RollTable.iAkg5OYJcNKyJHZ4",
+        "uuid": "RollTable.RollTabl1a6jkqk0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Assassin",
-        "uuid": "RollTable.ING1R5qxA3CZlzw7",
+        "uuid": "RollTable.RollTabls9kwwo00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Cavalry",
-        "uuid": "RollTable.wAgGiKah42jPkc3A",
+        "uuid": "RollTable.RollTabl1l77bmw0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Courtier",
-        "uuid": "RollTable.ijcOO4ESiaen56Yu",
+        "uuid": "RollTable.RollTablfpa34g00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Cunning Folk",
-        "uuid": "RollTable.xwT9rbEtaCplBKtU",
+        "uuid": "RollTable.RollTabllvhxuy00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Explorer",
-        "uuid": "RollTable.VT99LBJzDu8vqFQO",
+        "uuid": "RollTable.RollTabl195ip9o0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Guildmaster",
-        "uuid": "RollTable.wW3X8NEJ00oYwUab",
+        "uuid": "RollTable.RollTablcd362w00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Imprisoned",
-        "uuid": "RollTable.h3GsLBBu1ovDua9o",
+        "uuid": "RollTable.RollTabls7rp7400",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Inquisitioner",
-        "uuid": "RollTable.3NwgqNEi3CUf1gLa",
+        "uuid": "RollTable.RollTabl4wbyzm00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Knight",
-        "uuid": "RollTable.UI0dXws7eVib8ck3",
+        "uuid": "RollTable.RollTabl1w5dtto0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Master Thief",
-        "uuid": "RollTable.nRWxxU4aIZ6ng2vH",
+        "uuid": "RollTable.RollTabl1n6is7i0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Musketeer",
-        "uuid": "RollTable.U2xSPqFsg17BLsWE",
+        "uuid": "RollTable.RollTabl1rpmeyw0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Occultist",
-        "uuid": "RollTable.ZgnfOdgm32rS1gmv",
+        "uuid": "RollTable.RollTabl154wo5k0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Officer",
-        "uuid": "RollTable.WMuB1MNtzlqKZgJX",
+        "uuid": "RollTable.RollTablep5odc00",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },
     {
         "name": "Advanced - Veteran",
-        "uuid": "RollTable.f32EHBGDAdPR68Km",
+        "uuid": "RollTable.RollTabl16nnqwq0",
         "folder": "CharacterGeneration",
         "tableType": "Result item"
     },

@@ -1,4 +1,4 @@
-﻿import { promptAddDrive, promptRemoveDrive } from "./drive-prompts.js";
+import { promptAddDrive, promptRemoveDrive } from "./drive-prompts.js";
 import { PRIMARY_STATS } from "/modules/chargen1547_v2/foundry-primary-stats/stats.js";
 import {
     advanceDeferredQueue,
@@ -15,24 +15,47 @@ import {
     resolveRewardFromEffectTables,
     summarizeRewardChange
 } from "./chargen-rewards.js";
+import {
+    buildChargenInterfaceCatalog,
+    DEFAULT_BODY_TABLE,
+    DEFAULT_CONTACT_TABLES,
+    normalizeInterfacePath,
+    SPECIAL_BIO_TABLES,
+    SPECIAL_ITEM_TABLES,
+    UNKNOWN_CARD_IMAGE
+} from "./interface-registry.js";
 console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
 const UNKNOWN_EXTREME_EXCLUDED_TABLE_REFS = new Set([
-    "RollTable.WqxPqlsw4LlVk5mp",
-    "RollTable.DeL6AoYlpbZdonNB",
-    "birth-horoscope-3d6",
+    "RollTable.BhHorosc3d6Q7mR4",
+    "RollTable.BhHumors1d8Q7mRX",
+    "birth-horoscope",
     "birth-humors"
 ]);
 
-const UNKNOWN_CARD_IMAGE = "media/home/games/1547/Cards/General Unknown.webp";
-const DEFAULT_CONTACT_TABLES = {
-    roleTable: "RollTable.BvPhlA2uAb4uo0Ni",
-    flavorTable: "RollTable.YBiS5eK7mf7v6V4s",
-    toneTable: "RollTable.WGJQlBQ1HgfzMhaY",
-    hookTable: "RollTable.hiuQ0wJLCNc7reK7",
-    quirkTable: "RollTable.akVp6Ju3EW80CP3N"
-};
-const DEFAULT_BODY_TABLE = "RollTable.0lsu5sVbypU2KplI";
+const STARTING_MANEUVER_REFS = [
+    "Item.RAwHPMwVPZ8vbhfw",
+    "Item.4DkWGQOP1z9hLWHb",
+    "Item.SBIsohvIxk1hMePv",
+    "Item.Qtc3sNJL5kABXzDJ",
+    "Item.UkOecPq8lfF2jnWG",
+    "Item.lURv2PmrFg0xnqbr",
+    "Item.Uvq41w9Ik1EKy7gM",
+    "Item.C9AOwpsyX2fLn3St",
+    "Item.vvUVUoFs3tzr8Xk7",
+    "Item.fIF4KGkCpk6TqrB5",
+    "Item.d2cbZAP5J9MvtFwk",
+    "Item.PCMSwxICLz2Swnbg",
+    "Item.EzBwgx66m1efLL1D",
+    "Item.AYxAdcJLNiqt3Kz0"
+];
+
+const CAREER_LITERACY_TABLES = new Map([
+    ["career - scholar", "Scholarship taught you to read and write in your native tongue."],
+    ["career - religious", "Religious instruction taught you to read and write in your native tongue."],
+    ["career - physician", "Medical study taught you to read and write in your native tongue."],
+    ["career - merchant", "Trade and account-keeping taught you to read and write in your native tongue."]
+]);
 
 // -------- Optional helpers (safe even if you skip images) --------
 function isPlaceholderImg(p) {
@@ -48,7 +71,7 @@ function resolveImgPath(p) {
 function normalizeTableKey(name) {
     return String(name ?? "")
         .toLowerCase()
-        .replace(/[–—]/g, "-")
+        .replace(/[â€“â€”]/g, "-")
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
 }
@@ -78,7 +101,6 @@ export class SkillTreeChargenApp extends FormApplication {
         if (!uuidOrId || typeof uuidOrId !== "string") return null;
         const ref = getLegacyMappedRef(String(uuidOrId).trim());
         if (!ref) return null;
-
         const doc = ref.includes(".")
             ? await fromUuid(ref).catch(() => null)
             : game.tables.get(ref);
@@ -116,8 +138,8 @@ export class SkillTreeChargenApp extends FormApplication {
             : [];
         const preflightOnlyTables = explicitPreflightOnlyTables.length
             ? explicitPreflightOnlyTables
-            : (startingTable === "RollTable.WqxPqlsw4LlVk5mp"
-                ? [startingTable, "RollTable.DeL6AoYlpbZdonNB"]
+            : (startingTable === "RollTable.BhHorosc3d6Q7mR4"
+                ? [startingTable, "RollTable.BhHumors1d8Q7mRX"]
                 : []);
 
         return {
@@ -235,9 +257,9 @@ export class SkillTreeChargenApp extends FormApplication {
         }
 
         if (
-            setup.startingTable === "RollTable.WqxPqlsw4LlVk5mp" &&
+            setup.startingTable === "RollTable.BhHorosc3d6Q7mR4" &&
             setup.preflightOnlyTables.length === 2 &&
-            setup.preflightOnlyTables.includes("RollTable.DeL6AoYlpbZdonNB")
+            setup.preflightOnlyTables.includes("RollTable.BhHumors1d8Q7mRX")
         ) {
             report.careerValidation = {
                 ok: true,
@@ -308,6 +330,342 @@ export class SkillTreeChargenApp extends FormApplication {
         return report;
     }
 
+    static _managedRootFolder(folderName, documentType) {
+        return game.folders.contents.find(f =>
+            f.type === documentType &&
+            f.name === folderName &&
+            !f.folder
+        ) ?? null;
+    }
+
+    static _managedFolderIds(rootFolder, documentType) {
+        if (!rootFolder) return new Set();
+        const folderIds = new Set([rootFolder.id]);
+        let changed = true;
+        while (changed) {
+            changed = false;
+            for (const folder of game.folders.contents) {
+                if (folder.type !== documentType) continue;
+                const parentId = String(folder.folder?._id ?? folder.folder?.id ?? folder.folder ?? "");
+                if (parentId && folderIds.has(parentId) && !folderIds.has(folder.id)) {
+                    folderIds.add(folder.id);
+                    changed = true;
+                }
+            }
+        }
+        return folderIds;
+    }
+
+    static _collectManagedDocuments(folderName, documentType, collection) {
+        const rootFolder = SkillTreeChargenApp._managedRootFolder(folderName, documentType);
+        const folderIds = SkillTreeChargenApp._managedFolderIds(rootFolder, documentType);
+        if (!folderIds.size) {
+            return {
+                rootFolder: null,
+                folderIds,
+                documents: []
+            };
+        }
+
+        const documents = collection.contents.filter(doc => {
+            const folderId = String(doc.folder?._id ?? doc.folder?.id ?? doc.folder ?? "");
+            return folderId && folderIds.has(folderId);
+        });
+
+        return {
+            rootFolder,
+            folderIds,
+            documents
+        };
+    }
+
+    static _isChargenTemplateItem(item) {
+        const props = SkillTreeChargenApp._getTemplateProps(item);
+        if (!props || typeof props !== "object") return false;
+        return Object.keys(props).some(key =>
+            key === "ChoiceTitle" ||
+            key === "ChoiceText" ||
+            key === "ChoiceCard" ||
+            key === "ChoiceBio" ||
+            key === "DeferredType" ||
+            /^Effects[1-3]$/.test(key) ||
+            /^Reward\d+/.test(key) ||
+            /^Effect\d+Type$/.test(key)
+        );
+    }
+
+    static async _validateInstallInterfaceRef(ref, source, report, catalog, opts = {}) {
+        const value = String(ref ?? "").trim();
+        if (!value) return null;
+
+        const mapped = getLegacyMappedRef(value);
+        const doc = await SkillTreeChargenApp._resolveRollTableRef(mapped);
+        if (doc) return { ref: mapped, doc, registry: catalog.rolltablesByUuid.get(mapped) ?? null };
+
+        const registryEntry = catalog.rolltablesByUuid.get(mapped) ?? null;
+        const level = opts.level ?? (registryEntry && catalog.externalItemTableRefs.has(mapped) ? "warning" : "error");
+        SkillTreeChargenApp._addIssue(
+            report,
+            level,
+            opts.code ?? "missing-install-rolltable-interface",
+            opts.message ?? `Missing RollTable interface "${mapped}" from ${source}.`,
+            {
+                source,
+                ref: mapped,
+                registryKnown: Boolean(registryEntry),
+                tableType: registryEntry?.tableType ?? null
+            }
+        );
+        return null;
+    }
+
+    static async _validateParsedInstallInterfaces(parsed, sourceMeta, report, catalog) {
+        const source = `${sourceMeta.kind} "${sourceMeta.name}" (${sourceMeta.uuid})`;
+        const iconPaths = [
+            String(parsed?.choice?.icon ?? "").trim(),
+            String(parsed?.deferred?.image ?? "").trim()
+        ].filter(Boolean);
+
+        for (const iconPath of iconPaths) {
+            if (isPlaceholderImg(iconPath)) continue;
+            const normalized = normalizeInterfacePath(iconPath);
+            if (!catalog.cardsByPath.has(normalized)) {
+                SkillTreeChargenApp._addIssue(
+                    report,
+                    "error",
+                    "missing-card-interface",
+                    `Card asset is not registered in cards/cards.js: ${iconPath}`,
+                    { source, path: iconPath }
+                );
+            }
+        }
+
+        const rewardSources = parsed?.effectTables?.length
+            ? parsed.effectTables.flatMap(tbl => tbl?.rows ?? [])
+            : (parsed?.rewards ?? []);
+
+        for (const reward of rewardSources) {
+            const nextRef = String(reward?.next?.tableUuid ?? "").trim();
+            if (nextRef) {
+                await SkillTreeChargenApp._validateInstallInterfaceRef(
+                    nextRef,
+                    source,
+                    report,
+                    catalog,
+                    {
+                        code: "missing-next-rolltable",
+                        message: `Missing next RollTable "${nextRef}" from ${source}.`,
+                        level: "error"
+                    }
+                );
+            }
+        }
+
+        const changeSources = parsed?.effectTables?.length
+            ? parsed.effectTables.flatMap(tbl => (tbl?.rows ?? []).map(row => row?.change).filter(Boolean))
+            : (parsed?.rewards ?? []).flatMap(reward => reward?.changes ?? []);
+
+        for (const change of changeSources) {
+            if (!change || typeof change !== "object") continue;
+
+            if (change.type === "skill") {
+                const targetKey = getLegacyMappedRef(String(change.targetKey ?? "").trim());
+                if (!catalog.skillsByUuid.has(targetKey)) {
+                    SkillTreeChargenApp._addIssue(
+                        report,
+                        "error",
+                        "missing-skill-interface",
+                        `Missing skill interface "${targetKey}" from ${source}.`,
+                        { source, targetKey }
+                    );
+                }
+                continue;
+            }
+
+            if (change.type === "maneuver") {
+                const targetKey = getLegacyMappedRef(String(change.targetKey ?? "").trim());
+                const doc = await SkillTreeChargenApp._resolveItemSpecDoc(targetKey);
+                if (!doc) {
+                    SkillTreeChargenApp._addIssue(
+                        report,
+                        "warning",
+                        "missing-maneuver-interface",
+                        `Missing maneuver item interface "${targetKey}" from ${source}.`,
+                        { source, targetKey }
+                    );
+                }
+                continue;
+            }
+
+            if (change.type === "bio") {
+                const ref = String(change.roll?.tableUuid ?? "").trim();
+                if (ref) {
+                    await SkillTreeChargenApp._validateInstallInterfaceRef(
+                        ref,
+                        source,
+                        report,
+                        catalog,
+                        {
+                            code: "missing-bio-rolltable",
+                            message: `Missing biography RollTable "${ref}" from ${source}.`,
+                            level: "error"
+                        }
+                    );
+                }
+                continue;
+            }
+
+            if (change.type === "item") {
+                const itemUuid = getLegacyMappedRef(String(change.itemUuid ?? "").trim());
+                const tableUuid = String(change.tableUuid ?? "").trim();
+
+                if (itemUuid) {
+                    const doc = await SkillTreeChargenApp._resolveItemSpecDoc(itemUuid);
+                    if (!doc) {
+                        SkillTreeChargenApp._addIssue(
+                            report,
+                            "warning",
+                            "missing-item-interface",
+                            `Missing item interface "${itemUuid}" from ${source}.`,
+                            { source, itemUuid }
+                        );
+                    }
+                }
+
+                if (tableUuid) {
+                    const mappedTableUuid = getLegacyMappedRef(tableUuid);
+                    const registryEntry = catalog.rolltablesByUuid.get(mappedTableUuid) ?? null;
+                    await SkillTreeChargenApp._validateInstallInterfaceRef(
+                        mappedTableUuid,
+                        source,
+                        report,
+                        catalog,
+                        {
+                            code: "missing-item-rolltable-interface",
+                            message: `Missing item RollTable interface "${mappedTableUuid}" from ${source}.`,
+                            level: registryEntry && catalog.externalItemTableRefs.has(mappedTableUuid) ? "warning" : "error"
+                        }
+                    );
+                }
+            }
+        }
+    }
+
+    static async validateInstallInterfaces(opts = {}) {
+        const settings = getChargenSettings();
+        const rootFolderName = String(opts.rootFolderName ?? settings.contentFolderName).trim() || settings.contentFolderName;
+        const catalog = buildChargenInterfaceCatalog();
+        const report = {
+            ok: false,
+            checkedAt: new Date().toISOString(),
+            rootFolderName,
+            summary: {
+                managedItems: 0,
+                managedRolltables: 0
+            },
+            errors: [],
+            warnings: []
+        };
+
+        const managedTables = SkillTreeChargenApp._collectManagedDocuments(rootFolderName, "RollTable", game.tables);
+        const managedItems = SkillTreeChargenApp._collectManagedDocuments(rootFolderName, "Item", game.items);
+
+        report.summary.managedRolltables = managedTables.documents.length;
+        report.summary.managedItems = managedItems.documents.length;
+
+        if (!managedTables.rootFolder) {
+            SkillTreeChargenApp._addIssue(
+                report,
+                "warning",
+                "missing-managed-rolltable-root",
+                `Managed RollTable folder "${rootFolderName}" was not found.`
+            );
+        }
+
+        if (!managedItems.rootFolder) {
+            SkillTreeChargenApp._addIssue(
+                report,
+                "warning",
+                "missing-managed-item-root",
+                `Managed Item folder "${rootFolderName}" was not found.`
+            );
+        }
+
+        for (const table of managedTables.documents) {
+            const validation = await SkillTreeChargenApp.validateTableJSON(table.uuid);
+            if (!validation.ok) {
+                for (const bad of validation.bad) {
+                    SkillTreeChargenApp._addIssue(
+                        report,
+                        "error",
+                        "invalid-managed-rolltable-result",
+                        `Invalid RollTable result in "${table.name}" (${table.uuid}).`,
+                        {
+                            tableUuid: table.uuid,
+                            tableName: table.name,
+                            resultId: bad.id,
+                            range: bad.range,
+                            detail: bad.error
+                        }
+                    );
+                }
+                continue;
+            }
+
+            for (const result of table.results.contents) {
+                try {
+                    const parsed = await SkillTreeChargenApp.parseRollTableResult(result, table.name);
+                    await SkillTreeChargenApp._validateParsedInstallInterfaces(
+                        parsed,
+                        { kind: "RollTable", name: table.name, uuid: table.uuid },
+                        report,
+                        catalog
+                    );
+                } catch (err) {
+                    SkillTreeChargenApp._addIssue(
+                        report,
+                        "error",
+                        "unparseable-managed-rolltable-result",
+                        `Could not parse RollTable result in "${table.name}" (${table.uuid}).`,
+                        {
+                            tableUuid: table.uuid,
+                            tableName: table.name,
+                            detail: err?.message ?? String(err)
+                        }
+                    );
+                }
+            }
+        }
+
+        for (const item of managedItems.documents) {
+            if (!SkillTreeChargenApp._isChargenTemplateItem(item)) continue;
+            try {
+                const parsed = SkillTreeChargenApp._parseTemplateItemToChoiceData(item, item.name);
+                await SkillTreeChargenApp._validateParsedInstallInterfaces(
+                    parsed,
+                    { kind: "Item", name: item.name, uuid: item.uuid },
+                    report,
+                    catalog
+                );
+            } catch (err) {
+                SkillTreeChargenApp._addIssue(
+                    report,
+                    "error",
+                    "invalid-managed-item-template",
+                    `Could not parse managed item "${item.name}" (${item.uuid}).`,
+                    {
+                        itemUuid: item.uuid,
+                        itemName: item.name,
+                        detail: err?.message ?? String(err)
+                    }
+                );
+            }
+        }
+
+        report.ok = report.errors.length === 0;
+        return report;
+    }
+
     // ---- NEW: prompt for a name, create an actor, and start chargen ----
     static async open(opts = {}) {
         const settings = getChargenSettings();
@@ -323,8 +681,14 @@ export class SkillTreeChargenApp extends FormApplication {
         }
         const setup = preflight.setup ?? this._normalizeSetupTables(mergedOpts);
 
-        const name = await this._promptForName();
-        if (!name) return;
+        const identity = opts.identity?.name
+            ? {
+                name: String(opts.identity.name).trim(),
+                nativeLanguage: String(opts.identity.nativeLanguage ?? "").trim()
+            }
+            : await this._promptForIdentity();
+        if (!identity?.name) return;
+        const name = identity.name;
 
         const type =
             game.system?.documentTypes?.Actor?.[0] ??
@@ -339,13 +703,17 @@ export class SkillTreeChargenApp extends FormApplication {
                 [game.user.id]: CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER
             }
         });
-        const app = new SkillTreeChargenApp(actor);
+        const app = new SkillTreeChargenApp(actor, {
+            simulation: opts.simulation ?? null
+        });
+        await app._ensureLanguage(identity.nativeLanguage, { readWrite: false });
+        await actor.setFlag("world", "chargenNativeLanguage", String(identity.nativeLanguage ?? "").trim());
        // Run once per actor at the start of chargen
         const startingTable =
             mergedOpts.startingTable;
 
         const choices = mergedOpts.choices ?? 2;
-        const maxRolls = mergedOpts.maxRolls ?? 10;
+        const maxRolls = mergedOpts.maxRolls ?? 14;
 
         const contactTables = {
             roleTable: setup.contactTables?.roleTable,
@@ -371,14 +739,11 @@ export class SkillTreeChargenApp extends FormApplication {
             deferredReady: []
         };
         if (!actor.getFlag("world", "baselineStatsApplied")) {
-            const stats = ["Strength", "Stamina", "Dexterity", "Faith", "Charisma", "Intelligence"];
-
-            for (const s of stats) {
-                await advanceStat(actor, s, 1); // +1 step: 1d6+0 → 1d6+1
+            for (const s of PRIMARY_STATS) {
+                await advanceStat(actor, s, 1); // +1 step: 1d6+0 â†’ 1d6+1
             }
 
             await actor.setFlag("world", "baselineStatsApplied", true);
-            await app._addBio(run, "Baseline: all stats increased by 1 step (starting package).");
         }
         if (!actor.getFlag("world", "baselineMinZeroSkillsApplied")) {
             const baselineSkills = await app._getBaselineMinZeroSkills();
@@ -387,8 +752,12 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             await actor.setFlag("world", "baselineMinZeroSkillsApplied", true);
-            await app._addBio(run, `Baseline: granted ${baselineSkills.length} skills at level 0 where minLevel is 0.`);
         }
+        if (!actor.getFlag("world", "baselineStartingManeuversApplied")) {
+            await app._grantStartingManeuvers();
+            await actor.setFlag("world", "baselineStartingManeuversApplied", true);
+        }
+        await app._maybeGrantCareerLiteracy(run, startingTable);
         run.cards = await app._rollCards(run);
 
         await app._setState({
@@ -396,7 +765,147 @@ export class SkillTreeChargenApp extends FormApplication {
             run
         });
 
-        app.render(true);
+        if (opts.render !== false) {
+            app.render(true);
+        }
+        return app;
+    }
+
+    static _defaultSimulationIdentity(index = 0) {
+        return {
+            name: `Simulated Character ${index + 1}`,
+            nativeLanguage: "Common Tongue"
+        };
+    }
+
+    static _summarizeSimulationOutcomes(outcomes = []) {
+        const list = Array.isArray(outcomes) ? outcomes.filter(Boolean) : [];
+        const totalRuns = list.length;
+        const withDrive = list.filter(o => Number(o.driveCount ?? 0) >= 1).length;
+        const withTwoDrives = list.filter(o => Number(o.driveCount ?? 0) >= 2).length;
+        const withCareer = list.filter(o => Number(o.careerCardsSeen ?? 0) >= 1).length;
+        const careerEndedPrematurely = list.filter(o => o.careerEndedPrematurely).length;
+        const avgDrives = totalRuns ? (list.reduce((sum, o) => sum + Number(o.driveCount ?? 0), 0) / totalRuns) : 0;
+        const avgCareerCards = withCareer
+            ? (list.filter(o => Number(o.careerCardsSeen ?? 0) >= 1).reduce((sum, o) => sum + Number(o.careerCardsSeen ?? 0), 0) / withCareer)
+            : 0;
+
+        const terminalCards = new Map();
+        const driveCategories = new Map();
+        const effectRolls = new Map();
+
+        for (const outcome of list) {
+            const terminalKey = String(outcome.terminalCareerChoiceTitle ?? "").trim();
+            if (terminalKey) {
+                terminalCards.set(terminalKey, (terminalCards.get(terminalKey) ?? 0) + 1);
+            }
+
+            for (const category of outcome.driveCategories ?? []) {
+                const key = String(category ?? "").trim();
+                if (!key) continue;
+                driveCategories.set(key, (driveCategories.get(key) ?? 0) + 1);
+            }
+
+            for (const effect of outcome.effectRolls ?? []) {
+                const key = `${effect.choiceTitle} | Effects${effect.tableIndex} | Row ${effect.rowIndex + 1} | ${effect.type || "unknown"}${effect.targetKey ? ` | ${effect.targetKey}` : ""}`;
+                effectRolls.set(key, (effectRolls.get(key) ?? 0) + 1);
+            }
+        }
+
+        const topTerminalCards = Array.from(terminalCards.entries())
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([choiceTitle, count]) => ({ choiceTitle, count }));
+
+        const topDriveCategories = Array.from(driveCategories.entries())
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([category, count]) => ({ category, count }));
+
+        const topEffectRolls = Array.from(effectRolls.entries())
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 20)
+            .map(([effect, count]) => ({ effect, count }));
+
+        return {
+            totalRuns,
+            withDrive,
+            withTwoDrives,
+            withCareer,
+            careerEndedPrematurely,
+            driveRate: totalRuns ? withDrive / totalRuns : 0,
+            twoDriveRate: totalRuns ? withTwoDrives / totalRuns : 0,
+            prematureCareerEndRate: withCareer ? careerEndedPrematurely / withCareer : 0,
+            avgDrives,
+            avgCareerCards,
+            topTerminalCards,
+            topDriveCategories,
+            topEffectRolls
+        };
+    }
+
+    static async runBatchSimulation(opts = {}) {
+        const count = Math.max(1, Number(opts.count ?? 100) || 100);
+        const cleanupActors = opts.cleanupActors !== false;
+        const render = opts.render === true;
+        const results = [];
+        const failures = [];
+
+        for (let i = 0; i < count; i += 1) {
+            let app = null;
+            try {
+                app = await this.open({
+                    ...opts,
+                    identity: opts.identityFactory
+                        ? await opts.identityFactory(i)
+                        : this._defaultSimulationIdentity(i),
+                    render,
+                    simulation: {
+                        enabled: true,
+                        runIndex: i,
+                        suppressChat: true,
+                        suppressNotifications: true,
+                        ...(opts.simulation ?? {})
+                    }
+                });
+
+                if (!app) {
+                    failures.push({ runIndex: i, error: "Simulation failed to initialize." });
+                    continue;
+                }
+
+                const outcome = await app.runSimulationToCompletion();
+                results.push(outcome);
+            } catch (err) {
+                failures.push({
+                    runIndex: i,
+                    error: err?.message ?? String(err)
+                });
+                console.error(`Chargen batch simulation failed on run ${i + 1}:`, err);
+            } finally {
+                const actor = app?.actor ?? null;
+                if (cleanupActors && actor) {
+                    await actor.delete().catch((err) => {
+                        console.warn("Failed to delete simulation actor:", actor?.name, err);
+                    });
+                }
+            }
+        }
+
+        const summary = this._summarizeSimulationOutcomes(results);
+        console.group(`SkillTreeChargen.simulate: ${summary.totalRuns} run(s)`);
+        console.log("Summary:", summary);
+        if (summary.topTerminalCards.length) console.table(summary.topTerminalCards);
+        if (summary.topDriveCategories.length) console.table(summary.topDriveCategories);
+        if (summary.topEffectRolls.length) console.table(summary.topEffectRolls);
+        if (failures.length) console.table(failures);
+        console.groupEnd();
+
+        return {
+            summary,
+            outcomes: results,
+            failures
+        };
     }
 
     static async validateTablesInFolder(folderUuid, { recursive = true } = {}) {
@@ -616,7 +1125,14 @@ export class SkillTreeChargenApp extends FormApplication {
             return;
         }
 
-        if (type === "contact" || type === "body") {
+        if (type === "contact") {
+            if (ch.text != null && typeof ch.text !== "string") {
+                throw new Error(`Contact change "text" must be a string in "${tableName}" (rewards[${rewardIdx}].changes[${changeIdx}]).`);
+            }
+            return;
+        }
+
+        if (type === "body") {
             return;
         }
 
@@ -748,6 +1264,15 @@ export class SkillTreeChargenApp extends FormApplication {
                         `rewards[${rewardIdx}].next.tableUuid must be a non-empty string in "${tableName}".`
                     );
                 }
+                if (rw.transitionMode != null && String(rw.transitionMode).trim() !== "") {
+                    const mode = String(rw.transitionMode).trim().toLowerCase();
+                    if (mode !== "forced" && mode !== "optional") {
+                        throw new Error(`rewards[${rewardIdx}].transitionMode must be "forced" or "optional" in "${tableName}".`);
+                    }
+                }
+                if (rw.transitionPrompt != null && typeof rw.transitionPrompt !== "string") {
+                    throw new Error(`rewards[${rewardIdx}].transitionPrompt must be a string in "${tableName}".`);
+                }
 
                 rw.changes.forEach((ch, changeIdx) => {
                     SkillTreeChargenApp._validateChangeSchema(ch, tableName, rewardIdx, changeIdx);
@@ -771,6 +1296,18 @@ export class SkillTreeChargenApp extends FormApplication {
                         row.weight,
                         `effectTables[${tableIdx}].rows[${rowIdx}].weight must be numeric in "${tableName}".`
                     );
+                    if (row.transitionText != null && typeof row.transitionText !== "string") {
+                        throw new Error(`effectTables[${tableIdx}].rows[${rowIdx}].transitionText must be a string in "${tableName}".`);
+                    }
+                    if (row.transitionMode != null && String(row.transitionMode).trim() !== "") {
+                        const mode = String(row.transitionMode).trim().toLowerCase();
+                        if (mode !== "forced" && mode !== "optional") {
+                            throw new Error(`effectTables[${tableIdx}].rows[${rowIdx}].transitionMode must be "forced" or "optional" in "${tableName}".`);
+                        }
+                    }
+                    if (row.transitionPrompt != null && typeof row.transitionPrompt !== "string") {
+                        throw new Error(`effectTables[${tableIdx}].rows[${rowIdx}].transitionPrompt must be a string in "${tableName}".`);
+                    }
                     if (row.next != null) {
                         if (!SkillTreeChargenApp._isObject(row.next)) {
                             throw new Error(`effectTables[${tableIdx}].rows[${rowIdx}].next must be an object in "${tableName}".`);
@@ -1072,7 +1609,7 @@ export class SkillTreeChargenApp extends FormApplication {
         for (const ref of allowedRefs) {
             const doc = await SkillTreeChargenApp._resolveRollTableRef(ref).catch(() => null);
             if (doc?.uuid) allowedUuids.add(doc.uuid);
-            else if (ref.startsWith("RollTable.RollTabl1wmevv80")) allowedUuids.add(ref);
+            else if (ref.startsWith("RollTable.")) allowedUuids.add(ref);
         }
         if (allowedUuids.size) allowedUuids.add(startDoc.uuid);
 
@@ -1631,15 +2168,31 @@ export class SkillTreeChargenApp extends FormApplication {
     }
 
 
-    static async _promptForName() {
+    static async _promptForIdentity() {
         return new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(value);
+            };
             const content = `
-        <form>
-          <div class="form-group">
-            <label>Character Name</label>
-            <input type="text" name="name" placeholder="Enter a name..." autofocus />
-          </div>
-        </form>
+        <div class="chargen-dialog">
+          <div class="chargen-dialog__eyebrow">First Chapter</div>
+          <h2 class="chargen-dialog__title">Create New Character</h2>
+          <p class="chargen-dialog__copy">Set the name by which the world knows this person, and the language they first learned at home.</p>
+          <form class="chargen-dialog__section">
+            <div class="chargen-dialog__field">
+              <label>Character Name</label>
+              <input type="text" name="name" placeholder="Enter a name..." autofocus />
+            </div>
+            <div class="chargen-dialog__field">
+              <label>Native Language</label>
+              <input type="text" name="nativeLanguage" placeholder="Enter a native language..." />
+              <div class="chargen-dialog__hint">This language will be added to the actor at the start of creation.</div>
+            </div>
+          </form>
+        </div>
       `;
 
             new Dialog({
@@ -1650,20 +2203,23 @@ export class SkillTreeChargenApp extends FormApplication {
                         label: "Create",
                         callback: (html) => {
                             const name = String(html.find("input[name='name']").val() ?? "").trim();
-                            resolve(name || null);
+                            const nativeLanguage = String(html.find("input[name='nativeLanguage']").val() ?? "").trim();
+                            finish(name ? { name, nativeLanguage } : null);
                         }
                     },
-                    cancel: { label: "Cancel", callback: () => resolve(null) }
+                    cancel: { label: "Cancel", callback: () => finish(null) }
                 },
                 default: "create",
-                close: () => resolve(null)
-            }, { width: 420 }).render(true);
+                close: () => finish(null)
+            }, { width: 480, classes: ["skilltree-chargen-dialog"] }).render(true);
         });
     }
 
     constructor(actor, options = {}) {
         super({}, options);
         this.actor = actor;
+        this._actionInFlight = false;
+        this._simulation = options.simulation ?? null;
     }
 
     /* ---------------- State helpers ---------------- */
@@ -1672,7 +2228,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
     _getState() {
         return foundry.utils.getProperty(this.actor, this._flagPath()) ?? {
-            setup: { startingTable: "", choices: 2, maxRolls: 10 },
+            setup: { startingTable: "", choices: 2, maxRolls: 14 },
             run: null
         };
     }
@@ -1683,6 +2239,125 @@ export class SkillTreeChargenApp extends FormApplication {
 
     _isSetupMode(state) {
         return !state.run;
+    }
+
+    _simulationEnabled() {
+        return Boolean(this._simulation?.enabled);
+    }
+
+    _simulationOption(key, fallback = null) {
+        if (!this._simulationEnabled()) return fallback;
+        return this._simulation?.[key] ?? fallback;
+    }
+
+    _shouldRenderInteractiveUi() {
+        return !this._simulationEnabled() || Boolean(this._simulationOption("render", false));
+    }
+
+    _randomChoice(list = []) {
+        if (!Array.isArray(list) || !list.length) return null;
+        return list[Math.floor(Math.random() * list.length)] ?? null;
+    }
+
+    _normalizeSkillTreeEntryName(value, fallback = "") {
+        if (typeof value === "string") return value.trim();
+        if (value && typeof value === "object") {
+            const scopeName = String(value?.scope?.name ?? "").trim();
+            if (scopeName) return scopeName;
+            const name = String(value?.name ?? "").trim();
+            if (name) return name;
+            const uuid = String(value?.scope?.uuid ?? value?.uuid ?? "").trim();
+            if (uuid) return uuid;
+        }
+        return String(fallback ?? "").trim();
+    }
+
+    _generateSimulationDriveText(category) {
+        const label = String(category ?? "Conviction").trim() || "Conviction";
+        const lower = label.toLowerCase();
+        return `I will live by ${lower} when the next hard choice comes.`;
+    }
+
+    _getDriveLinesFromActor() {
+        const raw = String(this.actor.system?.props?.Drives ?? "").trim();
+        return raw
+            ? raw.split("\n").map(line => line.trim()).filter(Boolean)
+            : [];
+    }
+
+    _buildSimulationOutcome(run) {
+        const history = Array.isArray(run?.history) ? run.history : [];
+        const driveLines = this._getDriveLinesFromActor();
+        const driveCategories = driveLines
+            .map(line => /^\[(.+?)\]/.exec(line)?.[1] ?? "")
+            .filter(Boolean);
+        const careerHistory = history.filter(entry => entry?.fromIsCareerAdvancementTable);
+        const terminalCareerEntry = careerHistory.find(entry => entry?.terminal);
+
+        return {
+            actorName: this.actor.name,
+            totalChoices: history.length,
+            driveCount: driveLines.length,
+            driveCategories,
+            careerCardsSeen: careerHistory.length,
+            careerEndedPrematurely: Boolean(terminalCareerEntry),
+            terminalCareerTable: terminalCareerEntry?.fromName ?? "",
+            terminalCareerChoiceTitle: terminalCareerEntry?.choiceTitle ?? "",
+            bioEntries: Array.isArray(run?.bio) ? run.bio.length : 0,
+            remainingGlobal: Number(run?.remainingGlobal ?? 0),
+            finalTableUuid: String(run?.tableUuid ?? "").trim(),
+            effectRolls: history.flatMap(entry =>
+                Array.isArray(entry?.rewardApplied?.chosenEffects)
+                    ? entry.rewardApplied.chosenEffects.map(effect => ({
+                        choiceTitle: String(entry.choiceTitle ?? "").trim(),
+                        tableIndex: Number(effect.tableIndex ?? 0),
+                        rowIndex: Number(effect.rowIndex ?? -1),
+                        type: String(effect.type ?? "").trim(),
+                        targetKey: String(effect.targetKey ?? "").trim(),
+                        nextTableUuid: String(effect.nextTableUuid ?? "").trim()
+                    }))
+                    : []
+            )
+        };
+    }
+
+    async runSimulationToCompletion() {
+        if (!this._simulationEnabled()) {
+            throw new Error("Simulation mode is not enabled for this chargen app.");
+        }
+
+        const maxSteps = Math.max(25, Number(this._simulationOption("maxSteps", 250)) || 250);
+
+        for (let step = 0; step < maxSteps; step += 1) {
+            const state = this._getState();
+            const run = state.run;
+
+            if (!run) {
+                return this._simulation?.lastOutcome ?? null;
+            }
+
+            if (run.reveal) {
+                await this._onContinue();
+                continue;
+            }
+
+            if (!Array.isArray(run.cards) || run.cards.length === 0) {
+                await this._finishWithSummary(run);
+                continue;
+            }
+
+            const index = Math.max(0, Number(this._simulationOption("pickCardIndex", NaN)));
+            const chosenIndex = Number.isFinite(index) && index < run.cards.length
+                ? index
+                : Math.floor(Math.random() * run.cards.length);
+
+            if (run.cards[chosenIndex]?.masked) {
+                await this._onChoose(chosenIndex);
+            }
+            await this._onChoose(chosenIndex);
+        }
+
+        throw new Error(`Simulation exceeded safety limit of ${maxSteps} steps.`);
     }
 
     /* ---------------- Foundry helpers ---------------- */
@@ -1844,6 +2519,15 @@ export class SkillTreeChargenApp extends FormApplication {
         const stack = SkillTreeChargenApp._toBoolean(props[`${prefix}Stack`]);
         const languageTableKey = String(props[`${prefix}LanguageTableKey`] ?? "").trim();
 
+        if (SPECIAL_BIO_TABLES[type]) {
+            return { type: "bio", roll: { tableUuid: SPECIAL_BIO_TABLES[type] } };
+        }
+        if (SPECIAL_ITEM_TABLES[type]) {
+            const out = { type: "item", tableUuid: SPECIAL_ITEM_TABLES[type] };
+            if (qty != null) out.qty = qty;
+            return out;
+        }
+
         if (type === "stat") {
             if (characteristic) ch.characteristic = characteristic;
             if (steps != null) ch.steps = steps;
@@ -1890,7 +2574,12 @@ export class SkillTreeChargenApp extends FormApplication {
             return ch;
         }
 
-        // contact/body currently carry no additional fields
+        if (type === "contact") {
+            if (text) ch.text = text;
+            return ch;
+        }
+
+        // body currently carries no additional fields
         return ch;
     }
 
@@ -1905,8 +2594,18 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const targetKey = String(row?.TargetKey ?? "").trim();
         const amountRaw = String(row?.Amount ?? "").trim();
+        const targetText = String(row?.TargetText ?? "").trim();
         const amountNum = SkillTreeChargenApp._numberOrNull(amountRaw);
         const ch = { type };
+
+        if (SPECIAL_BIO_TABLES[type]) {
+            return { type: "bio", roll: { tableUuid: SPECIAL_BIO_TABLES[type] } };
+        }
+        if (SPECIAL_ITEM_TABLES[type]) {
+            const out = { type: "item", tableUuid: SPECIAL_ITEM_TABLES[type] };
+            if (amountNum != null) out.qty = amountNum;
+            return out;
+        }
 
         if (type === "stat") {
             if (targetKey) ch.characteristic = targetKey;
@@ -1927,7 +2626,11 @@ export class SkillTreeChargenApp extends FormApplication {
             ch.on = SkillTreeChargenApp._toBoolean(amountRaw || true);
             return ch;
         }
-        if (type === "contact" || type === "body") return ch;
+        if (type === "contact") {
+            if (targetText) ch.text = targetText;
+            return ch;
+        }
+        if (type === "body") return ch;
         if (type === "social") {
             if (amountNum != null) ch.amount = amountNum;
             return ch;
@@ -1944,7 +2647,7 @@ export class SkillTreeChargenApp extends FormApplication {
             return ch;
         }
         if (type === "item") {
-            if (targetKey.includes("RollTable.RollTabl1wmevv80")) ch.tableUuid = targetKey;
+            if (targetKey.startsWith("RollTable.")) ch.tableUuid = targetKey;
             else if (targetKey.includes(".")) ch.itemUuid = targetKey;
             else if (targetKey) ch.name = targetKey;
             if (amountNum != null) ch.qty = amountNum;
@@ -1961,11 +2664,17 @@ export class SkillTreeChargenApp extends FormApplication {
         const rows = SkillTreeChargenApp._rowsFromDynamicTable(props?.[tableKey]).map((row, idx) => {
             const weight = SkillTreeChargenApp._numberOrNull(row?.Weight) ?? 0;
             const nextTableUuid = String(row?.NextTable ?? "").trim();
+            const transitionText = String(row?.TransitionText ?? "").trim();
+            const transitionMode = String(row?.TransitionMode ?? "").trim().toLowerCase();
+            const transitionPrompt = String(row?.TransitionPrompt ?? "").trim();
             return {
                 rowIndex: idx,
                 weight,
                 change: SkillTreeChargenApp._buildChangeFromEffectRow(row),
                 next: nextTableUuid ? { tableUuid: nextTableUuid } : null,
+                transitionText,
+                transitionMode,
+                transitionPrompt,
                 raw: row
             };
         }).filter(r => r.weight > 0);
@@ -2047,7 +2756,9 @@ export class SkillTreeChargenApp extends FormApplication {
             if (changes.length || nextTableUuid) {
                 const rw = {
                     weight: weightRaw == null ? 1 : weightRaw,
-                    changes
+                    changes,
+                    transitionMode: String(props[`${prefix}TransitionMode`] ?? "").trim().toLowerCase(),
+                    transitionPrompt: String(props[`${prefix}TransitionPrompt`] ?? "").trim()
                 };
                 if (nextTableUuid) rw.next = { tableUuid: nextTableUuid };
                 rewards.push(rw);
@@ -2062,6 +2773,174 @@ export class SkillTreeChargenApp extends FormApplication {
         };
         SkillTreeChargenApp._validateParsedResultSchema(parsed, tableName);
         return parsed;
+    }
+
+    static _tableFamilyLabel(tableName = "") {
+        const text = String(tableName ?? "").trim().toLowerCase();
+        if (text.startsWith("career -")) return "career";
+        if (text.startsWith("advanced -")) return "advanced";
+        return "";
+    }
+
+    static _cardHintBadge(label, tone, detail) {
+        return { label, tone, detail };
+    }
+
+    _inferChoiceHintBadges(choiceData, currentTable = null) {
+        const badges = [];
+        const tags = Array.isArray(choiceData?.choice?.tags)
+            ? choiceData.choice.tags.map(tag => String(tag ?? "").trim().toLowerCase()).filter(Boolean)
+            : [];
+        const effectTables = Array.isArray(choiceData?.effectTables) ? choiceData.effectTables : [];
+        const rewardRows = Array.isArray(choiceData?.rewards)
+            ? choiceData.rewards.map((reward, idx) => ({
+                rowIndex: idx,
+                change: null,
+                changes: Array.isArray(reward?.changes) ? reward.changes.filter(Boolean) : [],
+                next: reward?.next ?? null
+            }))
+            : [];
+        const rows = effectTables.length
+            ? effectTables.flatMap(tbl => tbl?.rows ?? [])
+            : rewardRows;
+        const changes = rows.flatMap(row => {
+            if (Array.isArray(row?.changes) && row.changes.length) return row.changes;
+            return row?.change ? [row.change] : [];
+        }).filter(Boolean);
+        const tableName = String(currentTable?.name ?? "").trim();
+        const currentTableUuid = String(currentTable?.uuid ?? "").trim();
+        const loweredTableName = tableName.toLowerCase();
+        const tableFamily = SkillTreeChargenApp._tableFamilyLabel(tableName);
+        const isCareerStage = tableFamily === "career" || tableFamily === "advanced";
+        const nextRefs = rows
+            .map(row => String(row?.next?.tableUuid ?? "").trim())
+            .filter(Boolean);
+        const uniqueNextRefs = Array.from(new Set(nextRefs));
+        const loweredNextRefs = uniqueNextRefs.map(ref => ref.toLowerCase());
+        const deferred = choiceData?.deferred && typeof choiceData.deferred === "object" ? choiceData.deferred : null;
+        const hasChangeType = (type) => changes.some(change => String(change?.type ?? "").trim().toLowerCase() === type);
+        const matchesAnyNeedle = (needles = []) => {
+            const haystacks = [loweredTableName, ...loweredNextRefs, ...tags];
+            return needles.some(needle => haystacks.some(hay => hay.includes(needle)));
+        };
+
+        const addBadge = (label, tone, detail) => {
+            if (badges.some(entry => entry.label === label)) return;
+            badges.push(SkillTreeChargenApp._cardHintBadge(label, tone, detail));
+        };
+
+        const hasDriveChance = changes.some(change =>
+            String(change?.type ?? "").trim().toLowerCase() === "drive"
+            && String(change?.action ?? "add").trim().toLowerCase() === "add"
+        );
+        if (hasDriveChance) {
+            addBadge("Drive Chance", "growth", "May define or deepen a personal drive.");
+        }
+
+        const hasStatusSignal = tags.includes("status")
+            || hasChangeType("social");
+        if (hasStatusSignal) {
+            addBadge("Status", "status", "Often affects reputation, standing, or social position.");
+        }
+
+        const hasRiskSignal = tags.includes("risk")
+            || changes.some(change => {
+                const type = String(change?.type ?? "").trim().toLowerCase();
+                if (type === "body") return true;
+                if (type === "social") return Number(change?.amount ?? 0) < 0;
+                if (type === "bio") {
+                    const rollRef = String(change?.roll?.tableUuid ?? "").trim().toLowerCase();
+                    return rollRef.includes("secrets")
+                        || rollRef.includes("suspicion")
+                        || rollRef.includes("esteem");
+                }
+                return false;
+            })
+            || nextRefs.some(ref => {
+                const lowered = ref.toLowerCase();
+                return lowered.includes("suspicion") || lowered.includes("secrets");
+            });
+        if (hasRiskSignal) {
+            addBadge("Risky", "risk", "The outcome can bring fallout, loss, or lasting trouble.");
+        }
+
+        if (isCareerStage && rows.some(row => !String(row?.next?.tableUuid ?? "").trim())) {
+            addBadge("May End Career", "warning", "One outcome can bring this career chapter to an early close.");
+        }
+
+        const shiftsAwayFromCurrent = isCareerStage && uniqueNextRefs.some(ref => ref !== currentTableUuid);
+        if (shiftsAwayFromCurrent || (isCareerStage && uniqueNextRefs.length > 1)) {
+            addBadge("Career Shift", "shift", "May redirect you into a different career path.");
+        }
+
+        if (deferred) {
+            addBadge("Deferred Trouble", "warning", "What happens here may return later in the story.");
+        }
+
+        if (hasChangeType("skill")) {
+            addBadge("Skill Growth", "growth", "Often leads to practical training or increased competence.");
+        }
+
+        if (hasChangeType("maneuver")) {
+            addBadge("Maneuver", "growth", "May unlock a combat technique or special move.");
+        }
+
+        if (hasChangeType("item")) {
+            addBadge("Item Reward", "reward", "May yield gear, loot, or an equipment roll.");
+        }
+
+        if (hasChangeType("money")) {
+            addBadge("Money", "reward", "Can improve your finances or material footing.");
+        }
+
+        if (hasChangeType("luck")) {
+            addBadge("Luck", "reward", "May alter your fortune beyond the immediate reward.");
+        }
+
+        if (hasChangeType("body")) {
+            addBadge("Body Change", "risk", "May leave a physical mark or bodily consequence.");
+        }
+
+        if (hasChangeType("bio")) {
+            addBadge("Biography Twist", "story", "This can add a narrative turn to your life story.");
+        }
+
+        if (changes.some(change =>
+            String(change?.type ?? "").trim().toLowerCase() === "social"
+            && Number(change?.amount ?? 0) < 0
+        )) {
+            addBadge("Harsh Social Cost", "warning", "One outcome can damage your standing or reputation.");
+        }
+
+        const likelyOpportunity = !hasRiskSignal
+            && !deferred
+            && !rows.some(row => !String(row?.next?.tableUuid ?? "").trim())
+            && changes.some(change => {
+                const type = String(change?.type ?? "").trim().toLowerCase();
+                if (type === "skill" || type === "maneuver" || type === "item" || type === "money" || type === "luck") return true;
+                if (type === "stat") return Number(change?.steps ?? 0) > 0;
+                if (type === "social") return Number(change?.amount ?? 0) > 0;
+                return false;
+            });
+        if (likelyOpportunity) {
+            addBadge("Opportunity", "reward", "Mostly promises advancement, gain, or useful openings.");
+        }
+
+        if (matchesAnyNeedle(["career-infantry", "career-mercenary", "advanced-officer", "advanced-cavalry", "advanced-musketeer", "advanced-veteran", "war"])) {
+            addBadge("War", "theme-war", "Pulls toward soldiering, campaigns, or martial hardship.");
+        } else if (matchesAnyNeedle(["advanced-courtier", "advanced-knight", "court", "noble", "status"])) {
+            addBadge("Court", "theme-court", "Leans toward rank, patronage, etiquette, or courtly maneuvering.");
+        } else if (matchesAnyNeedle(["career-criminal", "advanced-assassin", "advanced-master-thief", "advanced-imprisoned", "crime", "smuggl", "underworld"])) {
+            addBadge("Crime", "theme-crime", "Touches secrets, theft, smuggling, or the underworld.");
+        } else if (matchesAnyNeedle(["advanced-occultist", "advanced-astrologer", "advanced-cunning-folk", "advanced-alchemist", "mystic", "occult", "astrolog"])) {
+            addBadge("Mystic", "theme-mystic", "Hints at strange knowledge, omens, or occult entanglement.");
+        } else if (matchesAnyNeedle(["career-religious", "advanced-inquisitioner", "faith", "relic", "saint", "pilgrim"])) {
+            addBadge("Faith", "theme-faith", "Concerns devotion, doctrine, relics, or moral judgment.");
+        } else if (matchesAnyNeedle(["career-sailor", "advanced-explorer", "career-merchant", "travel", "route", "border", "pilgrim"])) {
+            addBadge("Travel", "theme-travel", "Leads toward roads, voyages, escorts, or uncertain passage.");
+        }
+
+        return badges.slice(0, 3);
     }
 
     static async _resolveItemFromRollResult(result) {
@@ -2131,28 +3010,120 @@ export class SkillTreeChargenApp extends FormApplication {
 
     /* ---------------- Biography helpers ---------------- */
 
+    _getBiographyHtml() {
+        return String(this.actor.system?.props?.Biography ?? "");
+    }
+
     _getBioLines() {
-        return String(this.actor.system?.props?.Biography ?? "")
+        return this._getBiographyHtml()
+            .replace(/<[^>]+>/g, "\n")
             .split("\n")
-            .map(s => s.trim())
+            .map(s => {
+                let text = String(s ?? "").trim();
+                if (!text) return "";
+
+                // Normalize previously escaped rich-text content so repeated
+                // biography appends do not accumulate &amp;#x27;-style artifacts.
+                for (let i = 0; i < 4; i += 1) {
+                    const next = foundry.utils.unescapeHTML(text).trim();
+                    if (!next || next === text) break;
+                    text = next;
+                }
+                return text;
+            })
             .filter(Boolean);
+    }
+
+    _isBioStageHeading(text) {
+        const t = String(text ?? "").trim();
+        return /^(Birth|Childhood|Adolescence|Career|Advanced)\s+-\s+/.test(t);
+    }
+
+    _isBioMechanicalLine(text) {
+        const t = String(text ?? "").trim();
+        return /^(Baseline:|Improved |Learned |Received |Language |Social Status |Item:|Appearance:|Gained a contact:|Lucky streak:|Missed:|Language award|Language already known;|Career ended)/.test(t);
+    }
+
+    _escapeRegex(text) {
+        return String(text ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    _renderBiographyBlock(text) {
+        const t = String(text ?? "").trim();
+        if (!t) return "";
+
+        const escaped = foundry.utils.escapeHTML(t);
+        if (this._isBioStageHeading(t)) {
+            return "";
+        }
+        if (this._isBioMechanicalLine(t)) {
+            return "";
+        }
+        return `<p class="cg-bio-entry">${escaped}</p>`;
+    }
+
+    _renderBiographyHtmlBlock(innerHtml) {
+        const html = String(innerHtml ?? "").trim();
+        if (!html) return "";
+        return `<p class="cg-bio-entry">${html}</p>`;
+    }
+
+    _formatDeferredBiographyText(text, sourceTitle = "") {
+        const plain = String(text ?? "").trim();
+        if (!plain) return "";
+
+        const escaped = foundry.utils.escapeHTML(plain);
+        const title = String(sourceTitle ?? "").trim();
+        if (!title) return escaped;
+
+        const escapedTitle = foundry.utils.escapeHTML(title);
+        const pattern = new RegExp(this._escapeRegex(escapedTitle), "g");
+        return escaped.replace(pattern, `<strong>${escapedTitle}</strong>`);
     }
 
     async _appendBiography(lineOrLines) {
         const add = Array.isArray(lineOrLines) ? lineOrLines : [lineOrLines];
-        const cur = this._getBioLines();
+        const baseHtml = this._getBioLines()
+            .map(line => this._renderBiographyBlock(line))
+            .filter(Boolean)
+            .join("\n");
+        const blocks = [];
 
         for (const line of add) {
             const t = String(line ?? "").trim();
-            if (t) cur.push(t);
+            const block = this._renderBiographyBlock(t);
+            if (block) blocks.push(block);
         }
 
-        await this.actor.update({ "system.props.Biography": cur.join("\n") });
+        if (!blocks.length) return;
+
+        const nextHtml = [baseHtml, ...blocks]
+            .filter(Boolean)
+            .join("\n");
+
+        await this.actor.update({ "system.props.Biography": nextHtml });
+    }
+
+    async _appendBiographyHtmlBlock(innerHtml) {
+        const baseHtml = this._getBioLines()
+            .map(line => this._renderBiographyBlock(line))
+            .filter(Boolean)
+            .join("\n");
+        const block = this._renderBiographyHtmlBlock(innerHtml);
+        if (!block) return;
+
+        const nextHtml = [baseHtml, block]
+            .filter(Boolean)
+            .join("\n");
+
+        await this.actor.update({ "system.props.Biography": nextHtml });
     }
 
     async _addBio(run, text) {
         if (!text) return;
         const line = String(text);
+        const block = this._renderBiographyBlock(line);
+        if (!block) return;
         run.bio.push(line);
         await this._appendBiography(line);
     }
@@ -2165,6 +3136,395 @@ export class SkillTreeChargenApp extends FormApplication {
         return Number.isFinite(n) ? n : 0;
     }
 
+    _isCareerAdvancementTable(table) {
+        const folderName = String(table?.folder?.name ?? "").trim().toLowerCase();
+        return folderName.startsWith("career-") || folderName.startsWith("advanced-");
+    }
+
+    async _getSkillTreeGraphData() {
+        const st = globalThis.SkillTree;
+        if (!st) return null;
+
+        if (typeof st.getGraphData === "function") {
+            const graphData = await st.getGraphData();
+            if (graphData) return graphData;
+        }
+
+        if (typeof st.exportGraphData === "function" && st?.NODES instanceof Map) {
+            try {
+                return st.exportGraphData({ nodes: st.NODES });
+            } catch (_err) {
+                // Fall through to legacy behavior.
+            }
+        }
+
+        return st?.NODES ?? null;
+    }
+
+    async _ensureSkillTreeActorRefs(graphData) {
+        const st = globalThis.SkillTree;
+        if (typeof st?.ensureActorNodeRefs !== "function" || !graphData) return;
+        await st.ensureActorNodeRefs(this.actor, graphData);
+    }
+
+    async _listAvailableNodeIncreases(kinds) {
+        const st = globalThis.SkillTree;
+        if (typeof st?.listAvailableNodeIncreases !== "function") return [];
+        const graphData = await this._getSkillTreeGraphData();
+        await this._ensureSkillTreeActorRefs(graphData);
+        const requested = Array.isArray(kinds) ? kinds : [kinds];
+        const result = await st.listAvailableNodeIncreases(this.actor, {
+            kind: requested.length === 1 ? requested[0] : requested,
+            kinds: requested,
+            graphData
+        });
+        return Array.isArray(result)
+            ? result.map(entry => ({
+                ...entry,
+                name: this._normalizeSkillTreeEntryName(entry?.name, entry?.nodeId)
+            }))
+            : [];
+    }
+
+    async _promptCareerAdvancementStatPick(title, picksRemaining) {
+        if (this._simulationEnabled()) {
+            return this._randomChoice(PRIMARY_STATS);
+        }
+        const statChoices = PRIMARY_STATS
+            .map((stat, idx) => `
+                <label class="chargen-dialog__choice">
+                  <input type="radio" name="careerStatPick" value="${foundry.utils.escapeHTML(stat)}" ${idx === 0 ? "checked" : ""}>
+                  <span class="chargen-dialog__choice-body">
+                    <span class="chargen-dialog__choice-mark"></span>
+                    <span>
+                      <span class="chargen-dialog__choice-title">${foundry.utils.escapeHTML(stat)}</span>
+                      <span class="chargen-dialog__choice-meta">Increase ${foundry.utils.escapeHTML(stat)} by one step.</span>
+                    </span>
+                  </span>
+                </label>
+            `)
+            .join("");
+
+        return await new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(value);
+            };
+            new Dialog({
+                title: "Career Advancement",
+                content: `
+                  <div class="chargen-dialog">
+                    <div class="chargen-dialog__eyebrow">Advancement</div>
+                    <h2 class="chargen-dialog__title">${foundry.utils.escapeHTML(title)}</h2>
+                    <p class="chargen-dialog__copy">${picksRemaining} stat increase${picksRemaining === 1 ? "" : "s"} remaining.</p>
+                    <div class="chargen-dialog__choice-list">${statChoices}</div>
+                  </div>
+                `,
+                buttons: {
+                    apply: {
+                        label: "Apply",
+                        callback: (html) => {
+                            const value = String(html[0]?.querySelector('input[name="careerStatPick"]:checked')?.value ?? "").trim();
+                            finish(value || null);
+                        }
+                    },
+                    cancel: {
+                        label: "Skip",
+                        callback: () => finish(null)
+                    }
+                },
+                default: "apply",
+                close: () => finish(null)
+            }, { width: 520, classes: ["skilltree-chargen-dialog"] }).render(true);
+        });
+    }
+
+    async _promptCareerAdvancementIncreasePick({ title, picksRemaining, entries = [], alternativeOptions = [] }) {
+        if (this._simulationEnabled()) {
+            const options = [
+                ...entries.map(entry => String(entry.nodeId ?? "").trim()).filter(Boolean),
+                ...alternativeOptions.map(option => String(option.value ?? "").trim()).filter(Boolean)
+            ];
+            return this._randomChoice(options);
+        }
+        const optionRows = [
+            ...entries.map((entry, idx) => `
+                <label class="chargen-dialog__choice">
+                  <input type="radio" name="careerAdvancePick" value="${foundry.utils.escapeHTML(entry.nodeId)}" ${idx === 0 ? "checked" : ""}>
+                  <span class="chargen-dialog__choice-body">
+                    <span class="chargen-dialog__choice-mark"></span>
+                    <span>
+                      <span class="chargen-dialog__choice-title">${foundry.utils.escapeHTML(entry.name)}</span>
+                      <span class="chargen-dialog__choice-meta">${foundry.utils.escapeHTML(String(entry.kind ?? "skill"))} • ${entry.currentLevel} -> ${entry.nextLevel}</span>
+                    </span>
+                  </span>
+                </label>
+            `),
+            ...alternativeOptions.map((option, idx) => `
+                <label class="chargen-dialog__choice">
+                  <input type="radio" name="careerAdvancePick" value="${foundry.utils.escapeHTML(option.value)}" ${(entries.length === 0 && idx === 0) ? "checked" : ""}>
+                  <span class="chargen-dialog__choice-body">
+                    <span class="chargen-dialog__choice-mark"></span>
+                    <span>
+                      <span class="chargen-dialog__choice-title">${foundry.utils.escapeHTML(option.label)}</span>
+                      <span class="chargen-dialog__choice-meta">Alternative reward</span>
+                    </span>
+                  </span>
+                </label>
+            `)
+        ].join("");
+
+        return await new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(value);
+            };
+            new Dialog({
+                title: "Career Advancement",
+                content: `
+                  <div class="chargen-dialog">
+                    <div class="chargen-dialog__eyebrow">Advancement</div>
+                    <h2 class="chargen-dialog__title">${foundry.utils.escapeHTML(title)}</h2>
+                    <p class="chargen-dialog__copy">${picksRemaining} pick${picksRemaining === 1 ? "" : "s"} remaining.</p>
+                    <div class="chargen-dialog__choice-list">${optionRows}</div>
+                  </div>
+                `,
+                buttons: {
+                    apply: {
+                        label: "Apply",
+                        callback: (html) => {
+                            const value = String(html[0]?.querySelector('input[name="careerAdvancePick"]:checked')?.value ?? "").trim();
+                            finish(value || null);
+                        }
+                    },
+                    cancel: {
+                        label: "Skip",
+                        callback: () => finish(null)
+                    }
+                },
+                default: "apply",
+                close: () => finish(null)
+            }, { width: 560, classes: ["skilltree-chargen-dialog"] }).render(true);
+        });
+    }
+
+    async _applyListedIncrease(run, entry, { silent = false } = {}) {
+        const st = globalThis.SkillTree;
+        if (!entry?.nodeId || typeof st?.grantFirstAvailableNode !== "function") return false;
+        const graphData = await this._getSkillTreeGraphData();
+        await this._ensureSkillTreeActorRefs(graphData);
+        const result = await st.grantFirstAvailableNode(this.actor, entry.nodeId, entry.nextLevel, {
+            graphData
+        });
+        if (!result?.ok || !result.granted) return false;
+
+        await this._ensureVisibleActorItemForNode(entry.nodeId, graphData);
+        const grantedLevel = Number(result.granted.level);
+        if (Number.isFinite(grantedLevel)) {
+            if (entry.kind === "skill" && typeof st.setSkillLevel === "function") {
+                await st.setSkillLevel(this.actor, entry.nodeId, grantedLevel);
+            } else if (typeof st.setNodeLevel === "function") {
+                await st.setNodeLevel(this.actor, entry.nodeId, grantedLevel);
+            }
+            await this._ensureSkillTreeActorRefs(graphData);
+        }
+
+        const showLevel = entry.kind !== "maneuver" && Number.isFinite(grantedLevel);
+        if (!silent) {
+            await this._addBio(run, showLevel ? `Career advancement learned ${entry.name} ${grantedLevel}` : `Career advancement learned ${entry.name}`);
+        }
+        return true;
+    }
+
+    async _applyCareerAdvancementAlternative(run, value) {
+        const ref = String(value ?? "").trim();
+        if (!ref) return false;
+
+        if (ref === "alt:money:50") {
+            const money = await this._addMoney(50);
+            await this._addBio(run, `Career advancement granted 50 money (${money.before} -> ${money.after}).`);
+            return true;
+        }
+
+        if (!ref.startsWith("alt:table:")) return false;
+        const tableUuid = ref.slice("alt:table:".length);
+        const rr = await this._rollOnce(tableUuid);
+        const spec = SkillTreeChargenApp._resultRawJSON(rr.result).trim();
+        const doc = await this._getItemDocFromSpec(spec);
+        if (!doc) {
+            await this._addBio(run, `Career advancement item reward failed from ${tableUuid}.`);
+            return false;
+        }
+
+        await this._grantItemToActor(run, doc, 1);
+        return true;
+    }
+
+    async _runCareerAdvancementWizard(run, reveal) {
+        const tableName = String(reveal?.fromName ?? "Career").trim() || "Career";
+        const settings = getChargenSettings();
+        const statPickCount = Math.max(0, Number(settings.careerStatPicks ?? 3) || 0);
+        const skillPickCount = Math.max(0, Number(settings.careerSkillPicks ?? 3) || 0);
+        const maneuverPickCount = Math.max(0, Number(settings.careerManeuverPicks ?? 2) || 0);
+
+        for (let i = 0; i < statPickCount; i += 1) {
+            const stat = await this._promptCareerAdvancementStatPick(`How Did This Career Change You?`, statPickCount - i);
+            if (!stat) {
+                await this._addBio(run, `Career advancement ended early during stat picks after ${tableName}.`);
+                return false;
+            }
+
+            const props = this.actor.system?.props ?? {};
+            const dKey = `Stats_${stat}Dice`;
+            const mKey = `Stats_${stat}Mod`;
+            const beforeDice = Number(props[dKey] ?? 1);
+            const beforeMod = Number(props[mKey] ?? 0);
+            const before = `${beforeDice}d6+${beforeMod}`;
+            const after = await advanceStat(this.actor, stat, 1);
+            await this._addBio(run, `Career advancement improved ${stat} (${before} -> ${after.dice}d6+${after.mod})`);
+        }
+
+        for (let i = 0; i < skillPickCount; i += 1) {
+            const allSkills = await this._listAvailableNodeIncreases("skill");
+            const availableSkills = allSkills
+                .sort((a, b) => String(a.name ?? "").localeCompare(String(b.name ?? "")));
+
+            if (!availableSkills.length) {
+                await this._addBio(run, "Career advancement ended early: no more available skill increases.");
+                break;
+            }
+
+            const pickedNodeId = await this._promptCareerAdvancementIncreasePick({
+                title: "How Did This Career Change You?",
+                picksRemaining: skillPickCount - i,
+                entries: availableSkills
+            });
+            if (!pickedNodeId) {
+                await this._addBio(run, `Career advancement ended early during skill picks after ${tableName}.`);
+                return false;
+            }
+
+            const picked = availableSkills.find(entry => String(entry.nodeId) === pickedNodeId);
+            if (!picked) {
+                await this._addBio(run, "Career advancement skill pick was invalid.");
+                return false;
+            }
+
+            const applied = await this._applyListedIncrease(run, picked);
+            if (!applied) {
+                await this._addBio(run, `Career advancement could not apply ${picked.name}.`);
+                return false;
+            }
+        }
+
+        const maneuverAlternatives = [
+            { value: "alt:money:50", label: "Gain 50 money" },
+            { value: "alt:table:RollTable.4Xbki12nYfJHAIdX", label: "Roll on Items - Military" },
+            { value: "alt:table:RollTable.weXLb9rAqFMsHe6W", label: "Roll on Items - Occult" },
+            { value: "alt:table:RollTable.L6GjkyWmF3QsMezU", label: "Roll on Spells - Random Minor" }
+        ];
+
+        for (let i = 0; i < maneuverPickCount; i += 1) {
+            const availableManeuvers = (await this._listAvailableNodeIncreases("maneuver"))
+                .sort((a, b) => String(a.name ?? "").localeCompare(String(b.name ?? "")));
+
+            const pick = await this._promptCareerAdvancementIncreasePick({
+                title: "How Did This Career Change You?",
+                picksRemaining: maneuverPickCount - i,
+                entries: availableManeuvers,
+                alternativeOptions: maneuverAlternatives
+            });
+            if (!pick) {
+                await this._addBio(run, `Career advancement ended early during maneuver rewards after ${tableName}.`);
+                return false;
+            }
+
+            if (pick.startsWith("alt:")) {
+                const applied = await this._applyCareerAdvancementAlternative(run, pick);
+                if (!applied) {
+                    await this._addBio(run, `Career advancement alternative reward failed: ${pick}.`);
+                    return false;
+                }
+                continue;
+            }
+
+            const picked = availableManeuvers.find(entry => String(entry.nodeId) === pick);
+            if (!picked) {
+                await this._addBio(run, "Career advancement maneuver pick was invalid.");
+                return false;
+            }
+
+            const applied = await this._applyListedIncrease(run, picked);
+            if (!applied) {
+                await this._addBio(run, `Career advancement could not apply ${picked.name}.`);
+                return false;
+            }
+        }
+
+        await this._addBio(run, `Career advancement completed after ${tableName}.`);
+        return true;
+    }
+
+    async _applyCareerAdvancementBundle(run, reveal) {
+        return await this._runCareerAdvancementWizard(run, reveal);
+    }
+
+    async _maybeApplyCareerAdvancementBundle(state, run, reveal = null) {
+        if (!run?.careerAdvancementEligible || run?.careerAdvancementApplied) return false;
+        const sourceName = String(reveal?.fromName ?? run.careerAdvancementSource ?? "Career").trim() || "Career";
+        await this._applyCareerAdvancementBundle(run, { fromName: sourceName });
+        run.careerAdvancementApplied = true;
+        await this._setState({ ...state, run });
+        return true;
+    }
+
+    async _ensureVisibleActorItemForNode(nodeId, graphData = null) {
+        const ref = String(nodeId ?? "").trim();
+        if (!ref.startsWith("Item.")) return false;
+
+        const sourceDoc = await this._getItemDocFromSpec(ref);
+        if (!sourceDoc) return false;
+
+        let embedded = this.actor.items.find(item =>
+            String(item.flags?.chargen1547_v2?.skilltreeNodeRef ?? "").trim() === ref
+            || (item.name === sourceDoc.name && item.type === sourceDoc.type)
+        ) ?? null;
+
+        if (!embedded) {
+            const data = sourceDoc.toObject();
+            foundry.utils.setProperty(data, "flags.chargen1547_v2.skilltreeNodeRef", ref);
+            const created = await this.actor.createEmbeddedDocuments("Item", [data]);
+            embedded = Array.isArray(created) ? created[0] ?? null : null;
+        }
+
+        if (embedded && typeof globalThis.SkillTree?.ensureActorItemNodeRef === "function" && graphData) {
+            await globalThis.SkillTree.ensureActorItemNodeRef(embedded, graphData);
+        }
+
+        return Boolean(embedded);
+    }
+
+    async _grantStartingManeuvers() {
+        for (const ref of STARTING_MANEUVER_REFS) {
+            const doc = await this._getItemDocFromSpec(ref);
+            if (!doc) continue;
+
+            const alreadyHas = this.actor.items.some(item =>
+                String(item.flags?.chargen1547_v2?.startingManeuverRef ?? "").trim() === ref
+                || (item.name === doc.name && item.type === doc.type)
+            );
+            if (alreadyHas) continue;
+
+            const data = doc.toObject();
+            foundry.utils.setProperty(data, "flags.chargen1547_v2.startingManeuverRef", ref);
+            await this.actor.createEmbeddedDocuments("Item", [data]);
+        }
+    }
+
     async _grantSkillToward(run, targetKey, targetLevel, fallback, { silent = false } = {}) {
         const st = globalThis.SkillTree;
         if ((!st?.grantFirstAvailableNode && !st?.nextStepToward) || (!st?.grantFirstAvailableNode && !st?.NODES)) {
@@ -2174,9 +3534,24 @@ export class SkillTreeChargenApp extends FormApplication {
             return;
         }
 
+        const graphData = await this._getSkillTreeGraphData();
+        await this._ensureSkillTreeActorRefs(graphData);
+
+        const numericTargetLevel = Number(targetLevel);
+        if (numericTargetLevel === 0 && typeof st?.nextStepToward === "function" && graphData) {
+            const baselineStep = st.nextStepToward(this.actor, targetKey, numericTargetLevel, graphData, null);
+            if (baselineStep?.nodeName && !String(baselineStep.nodeName).startsWith("Traits_")) {
+                const existing = this.actor.system?.props?.[baselineStep.nodeName];
+                if (existing == null || String(existing).trim() === "") {
+                    await this.actor.update({ [`system.props.${baselineStep.nodeName}`]: "0" });
+                }
+                return;
+            }
+        }
+
         if (typeof st.grantFirstAvailableNode === "function") {
             const result = await st.grantFirstAvailableNode(this.actor, targetKey, targetLevel, {
-                graphData: st.NODES
+                graphData
             });
 
             if (!result?.ok || !result.granted) {
@@ -2186,7 +3561,10 @@ export class SkillTreeChargenApp extends FormApplication {
                 return;
             }
 
-            const grantedName = result.next?.name ?? result.granted.nodeId ?? targetKey;
+            const grantedName = await this._resolveLearnedLabel(
+                result.granted?.nodeId ?? targetKey,
+                result.next?.name ?? result.granted?.nodeId ?? targetKey
+            );
             const grantedType = String(result.next?.type ?? "").toLowerCase();
             const grantedLevel = Number(result.granted.level);
             const showLevel = grantedType !== "maneuver" && Number.isFinite(grantedLevel);
@@ -2196,7 +3574,7 @@ export class SkillTreeChargenApp extends FormApplication {
             return;
         }
 
-        const step = st.nextStepToward(this.actor, targetKey, targetLevel, st.NODES, null);
+        const step = st.nextStepToward(this.actor, targetKey, targetLevel, graphData, null);
         if (step === true) return;
         if (!step?.nodeName) return;
         if (String(step.nodeName).startsWith("Traits_")) return;
@@ -2206,20 +3584,16 @@ export class SkillTreeChargenApp extends FormApplication {
 
         await this.actor.update({ [`system.props.${step.nodeName}`]: String(next) });
         if (!silent) {
-            await this._addBio(run, `Learned ${step.nodeName} ${next}`);
+            const learnedName = await this._resolveLearnedLabel(targetKey, step.nodeName);
+            await this._addBio(run, `Learned ${learnedName} ${next}`);
         }
     }
 
     async _getBaselineMinZeroSkills() {
         if (Array.isArray(BASELINE_MIN_ZERO_SKILLS_CACHE)) return BASELINE_MIN_ZERO_SKILLS_CACHE;
 
-        const url = foundry.utils.getRoute("modules/chargen1547_v2/skills/skills.js");
-        const raw = await fetch(url).then(async r => {
-            if (!r.ok) throw new Error(`Failed to load baseline skills from ${url}`);
-            return await r.text();
-        });
-        const parsed = JSON.parse(raw);
-        BASELINE_MIN_ZERO_SKILLS_CACHE = parsed
+        const catalog = buildChargenInterfaceCatalog();
+        BASELINE_MIN_ZERO_SKILLS_CACHE = catalog.skills
             .filter(entry => Number(entry?.minLevel) === 0 && String(entry?.uuid ?? "").trim() !== "")
             .map(entry => String(entry.uuid).trim());
         return BASELINE_MIN_ZERO_SKILLS_CACHE;
@@ -2248,19 +3622,40 @@ export class SkillTreeChargenApp extends FormApplication {
         const table = await this._getRollTable(tableUuidOrId);
         if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
 
-        // Roll using the table's formula (e.g. "1d100")
-        const roll = await (new Roll(table.formula)).evaluate({ async: true });
+        const allResults = Array.from(table.results ?? []);
+        let roll = null;
+        let matched = [];
 
-        // Get results for that roll WITHOUT drawing/consuming
-        const results = table.getResultsForRoll?.(roll.total) ?? [];
+        const formula = String(table.formula ?? "").trim();
+        if (formula) {
+            try {
+                roll = await (new Roll(formula)).evaluate({ async: true });
+                matched = table.getResultsForRoll?.(roll.total) ?? [];
+            } catch (err) {
+                console.warn(`Chargen: failed to evaluate rolltable formula for "${table.name}" (${tableUuidOrId}). Falling back to weighted pick.`, err);
+            }
+        }
 
         // If multiple results match (overlapping ranges), pick one
-        const r = results.length ? results[Math.floor(Math.random() * results.length)] : null;
+        let r = matched.length ? matched[Math.floor(Math.random() * matched.length)] : null;
+
+        // Fallback for malformed imported tables with missing/bad formulas.
+        if (!r && allResults.length) {
+            const weighted = [];
+            for (const result of allResults) {
+                const copies = Math.max(1, Number(result?.weight ?? 1) || 1);
+                for (let i = 0; i < copies; i += 1) weighted.push(result);
+            }
+            r = weighted[Math.floor(Math.random() * weighted.length)] ?? allResults[0] ?? null;
+        }
 
         if (!r) {
-            throw new Error(
-                `RollTable "${table.name}" produced no result for roll ${roll.total} (${table.formula}).`
-            );
+            if (roll) {
+                throw new Error(
+                    `RollTable "${table.name}" produced no result for roll ${roll.total} (${table.formula}).`
+                );
+            }
+            throw new Error(`RollTable "${table.name}" has no usable results.`);
         }
 
         return { result: r, raw: SkillTreeChargenApp._resultRawJSON(r) };
@@ -2292,37 +3687,90 @@ export class SkillTreeChargenApp extends FormApplication {
             && ("Language" in row || "LanguageReadWrite" in row);
     }
 
+    _cloneLanguageRows(value) {
+        if (Array.isArray(value)) {
+            return {
+                storage: "array",
+                rows: foundry.utils.deepClone(value)
+            };
+        }
+
+        if (value && typeof value === "object") {
+            const entries = Object.entries(value)
+                .filter(([, row]) => row && typeof row === "object" && !Array.isArray(row) && !row.$deleted)
+                .sort((a, b) => Number(a[0]) - Number(b[0]));
+
+            return {
+                storage: "object",
+                rows: entries.map(([, row]) => foundry.utils.deepClone(row))
+            };
+        }
+
+        return null;
+    }
+
+    _serializeLanguageRows(rows, storage = "array") {
+        const cleanRows = Array.isArray(rows)
+            ? rows
+                .filter(row => row && typeof row === "object" && !Array.isArray(row))
+                .map(row => {
+                    const cloned = foundry.utils.deepClone(row);
+                    if (storage === "object") cloned.$deleted = false;
+                    return cloned;
+                })
+            : [];
+
+        if (storage === "object") {
+            const out = {};
+            cleanRows.forEach((row, index) => {
+                out[String(index)] = row;
+            });
+            return out;
+        }
+
+        return cleanRows;
+    }
+
     _resolveLanguageTable(tableKeyHint = null) {
         const props = this.actor.system?.props ?? {};
         const hint = String(tableKeyHint ?? "").trim();
 
         if (hint) {
             const hinted = props[hint];
-            if (Array.isArray(hinted)) {
-                return { tableKey: hint, rows: foundry.utils.deepClone(hinted) };
+            const cloned = this._cloneLanguageRows(hinted);
+            if (cloned) {
+                return { tableKey: hint, rows: cloned.rows, storage: cloned.storage };
+            }
+        }
+
+        const preferred = this._cloneLanguageRows(props.LanguageTable);
+        if (preferred) {
+            return { tableKey: "LanguageTable", rows: preferred.rows, storage: "object" };
+        }
+
+        const defaultCloned = this._cloneLanguageRows(props.Languages);
+        if (defaultCloned) {
+            return { tableKey: "Languages", rows: defaultCloned.rows, storage: defaultCloned.storage };
+        }
+
+        for (const [k, v] of Object.entries(props)) {
+            const cloned = this._cloneLanguageRows(v);
+            if (!cloned || !cloned.rows.length) continue;
+            if (cloned.rows.some(row => this._isLanguageRow(row))) {
+                return { tableKey: k, rows: cloned.rows, storage: cloned.storage };
             }
         }
 
         for (const [k, v] of Object.entries(props)) {
-            if (!Array.isArray(v) || !v.length) continue;
-            if (v.some(row => this._isLanguageRow(row))) {
-                return { tableKey: k, rows: foundry.utils.deepClone(v) };
-            }
-        }
-
-        for (const [k, v] of Object.entries(props)) {
-            if (!Array.isArray(v)) continue;
+            const cloned = this._cloneLanguageRows(v);
+            if (!cloned) continue;
             if (k.toLowerCase().includes("language")) {
-                return { tableKey: k, rows: foundry.utils.deepClone(v) };
+                return { tableKey: k, rows: cloned.rows, storage: cloned.storage };
             }
         }
 
-        if (hint) return { tableKey: hint, rows: [] };
-        if (Array.isArray(props.Languages)) {
-            return { tableKey: "Languages", rows: foundry.utils.deepClone(props.Languages) };
-        }
-
-        return { tableKey: "Languages", rows: [] };
+        if (hint) return { tableKey: hint, rows: [], storage: "object" };
+        return { tableKey: "LanguageTable", rows: [], storage: "object" };
     }
 
     _getKnownLanguages(rows) {
@@ -2340,105 +3788,323 @@ export class SkillTreeChargenApp extends FormApplication {
         return out;
     }
 
-    async _promptLanguageAwardAction({ canUpgrade = false } = {}) {
-        return new Promise((resolve) => {
-            const buttons = {
-                add: {
-                    label: "Add New Language",
-                    callback: () => resolve("add")
-                },
-                cancel: {
-                    label: "Cancel",
-                    callback: () => resolve(null)
-                }
-            };
+    _nextDynamicTableRowKey(value) {
+        if (!value || typeof value !== "object" || Array.isArray(value)) return "0";
+        const keys = Object.keys(value)
+            .map(k => Number(k))
+            .filter(n => Number.isInteger(n) && n >= 0);
+        return String(keys.length ? Math.max(...keys) + 1 : 0);
+    }
 
-            if (canUpgrade) {
-                buttons.upgrade = {
-                    label: "Upgrade Read/Write",
-                    callback: () => resolve("upgrade")
-                };
+    async _ensureLanguage(languageName, { readWrite = false, tableKeyHint = null } = {}) {
+        const name = String(languageName ?? "").trim();
+        if (!name) return false;
+
+        const tableRef = this._resolveLanguageTable(tableKeyHint);
+        const rows = Array.isArray(tableRef.rows) ? tableRef.rows : [];
+        const existing = this._getKnownLanguages(rows)
+            .find(l => l.name.toLowerCase() === name.toLowerCase());
+
+        const rawTable = this.actor.system?.props?.[tableRef.tableKey];
+        const isObjectTable = rawTable && typeof rawTable === "object" && !Array.isArray(rawTable);
+
+        if (existing) {
+            if (!readWrite || existing.readWrite) return false;
+            if (isObjectTable) {
+                const matchingKey = Object.entries(rawTable).find(([, row]) =>
+                    this._isLanguageRow(row)
+                    && String(row.Language ?? "").trim().toLowerCase() === existing.name.toLowerCase()
+                )?.[0];
+                if (matchingKey != null) {
+                    await this.actor.update({
+                        [`system.props.${tableRef.tableKey}.${matchingKey}.$deleted`]: false,
+                        [`system.props.${tableRef.tableKey}.${matchingKey}.Language`]: existing.name,
+                        [`system.props.${tableRef.tableKey}.${matchingKey}.LanguageReadWrite`]: true
+                    });
+                    return true;
+                }
             }
+
+            rows[existing.rowIndex] = {
+                ...(rows[existing.rowIndex] ?? {}),
+                Language: existing.name,
+                LanguageReadWrite: true
+            };
+            await this.actor.update({
+                [`system.props.${tableRef.tableKey}`]: this._serializeLanguageRows(rows, tableRef.storage)
+            });
+            return true;
+        }
+
+        if (isObjectTable || tableRef.storage === "object") {
+            const rowKey = this._nextDynamicTableRowKey(rawTable);
+            await this.actor.update({
+                [`system.props.${tableRef.tableKey}.${rowKey}.$deleted`]: false,
+                [`system.props.${tableRef.tableKey}.${rowKey}.Language`]: name,
+                [`system.props.${tableRef.tableKey}.${rowKey}.LanguageReadWrite`]: Boolean(readWrite)
+            });
+            return true;
+        }
+
+        rows.push({
+            Language: name,
+            LanguageReadWrite: Boolean(readWrite)
+        });
+        await this.actor.update({
+            [`system.props.${tableRef.tableKey}`]: this._serializeLanguageRows(rows, tableRef.storage)
+        });
+        return true;
+    }
+
+    _getNativeLanguageName() {
+        const flagged = String(this.actor.getFlag("world", "chargenNativeLanguage") ?? "").trim();
+        if (flagged) return flagged;
+
+        const tableRef = this._resolveLanguageTable();
+        const known = this._getKnownLanguages(Array.isArray(tableRef.rows) ? tableRef.rows : []);
+        return String(known[0]?.name ?? "").trim();
+    }
+
+    async _maybeGrantCareerLiteracy(run, tableUuid) {
+        const ref = String(tableUuid ?? "").trim();
+        if (!ref) return false;
+
+        const table = await this._getRollTable(ref);
+        const tableName = String(table?.name ?? "").trim();
+        const key = tableName.toLowerCase();
+        const bioLine = CAREER_LITERACY_TABLES.get(key);
+        if (!bioLine) return false;
+
+        const flagKey = `careerLiteracyGranted.${normalizeTableKey(tableName)}`;
+        if (this.actor.getFlag("world", flagKey)) return false;
+
+        const nativeLanguage = this._getNativeLanguageName();
+        if (!nativeLanguage) return false;
+
+        const granted = await this._ensureLanguage(nativeLanguage, { readWrite: true });
+        await this.actor.setFlag("world", flagKey, true);
+        if (granted) {
+            await this._addBio(run, bioLine);
+        }
+        return granted;
+    }
+
+    async _promptLanguageAwardAction({ canUpgrade = false } = {}) {
+        if (this._simulationEnabled()) {
+            return canUpgrade && Math.random() < 0.35 ? "upgrade" : "add";
+        }
+        return new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(value);
+            };
+            const options = [
+                {
+                    value: "add",
+                    title: "Add New Language",
+                    meta: "Add a new spoken language to the character."
+                }
+            ];
+            if (canUpgrade) {
+                options.unshift({
+                    value: "upgrade",
+                    title: "Upgrade Read/Write",
+                    meta: "Improve literacy in a language the character already knows."
+                });
+            }
+            const optionRows = options.map((option, idx) => `
+                <label class="chargen-dialog__choice">
+                  <input type="radio" name="languageAwardAction" value="${option.value}" ${idx === 0 ? "checked" : ""}>
+                  <span class="chargen-dialog__choice-body">
+                    <span class="chargen-dialog__choice-mark"></span>
+                    <span>
+                      <span class="chargen-dialog__choice-title">${foundry.utils.escapeHTML(option.title)}</span>
+                      <span class="chargen-dialog__choice-meta">${foundry.utils.escapeHTML(option.meta)}</span>
+                    </span>
+                  </span>
+                </label>
+            `).join("");
 
             new Dialog({
                 title: "Language Award",
                 content: `
-                    <p>Choose how to apply this language award.</p>
-                    <ul>
-                      <li><strong>Add New Language</strong>: add a new spoken language.</li>
-                      <li><strong>Upgrade Read/Write</strong>: improve literacy in a known language.</li>
-                    </ul>
+                  <div class="chargen-dialog">
+                    <div class="chargen-dialog__eyebrow">Tongues</div>
+                    <h2 class="chargen-dialog__title">Language Award</h2>
+                    <p class="chargen-dialog__copy">Choose how this language gain should shape the character.</p>
+                    <div class="chargen-dialog__choice-list">${optionRows}</div>
+                  </div>
                 `,
-                buttons,
-                default: canUpgrade ? "upgrade" : "add",
-                close: () => resolve(null)
-            }).render(true);
+                buttons: {
+                    apply: {
+                        label: "Apply",
+                        callback: (html) => {
+                            const value = String(html[0]?.querySelector('input[name="languageAwardAction"]:checked')?.value ?? "").trim();
+                            finish(value || null);
+                        }
+                    },
+                    cancel: {
+                        label: "Cancel",
+                        callback: () => finish(null)
+                    }
+                },
+                default: "apply",
+                close: () => finish(null)
+            }, { width: 560, classes: ["skilltree-chargen-dialog"] }).render(true);
         });
     }
 
     async _promptNewLanguageName() {
+        if (this._simulationEnabled()) {
+            const index = Number(this._simulationOption("runIndex", 0)) + this._getKnownLanguages(this._resolveLanguageTable().rows).length + 1;
+            return `SimLanguage${index}`;
+        }
         return new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(value);
+            };
             new Dialog({
                 title: "Add New Language",
                 content: `
-                    <div class="form-group">
+                  <div class="chargen-dialog">
+                    <div class="chargen-dialog__eyebrow">Tongues</div>
+                    <h2 class="chargen-dialog__title">Add New Language</h2>
+                    <p class="chargen-dialog__copy">Name a language the character can now speak.</p>
+                    <div class="chargen-dialog__field">
                       <label for="cg-language-name">Language</label>
                       <input id="cg-language-name" name="languageName" type="text" placeholder="e.g. Castilian" />
                     </div>
+                  </div>
                 `,
                 buttons: {
                     ok: {
                         label: "Add",
                         callback: (html) => {
                             const value = String(html.find("[name='languageName']").val() ?? "").trim();
-                            resolve(value || null);
+                            finish(value || null);
                         }
                     },
                     cancel: {
                         label: "Cancel",
-                        callback: () => resolve(null)
+                        callback: () => finish(null)
                     }
                 },
                 default: "ok",
-                close: () => resolve(null)
-            }).render(true);
+                close: () => finish(null)
+            }, { width: 480, classes: ["skilltree-chargen-dialog"] }).render(true);
         });
     }
 
     async _promptLanguageUpgradeChoice(upgradable) {
+        if (this._simulationEnabled()) {
+            return this._randomChoice(upgradable);
+        }
         const options = upgradable
-            .map((l, i) => `<option value="${i}">${foundry.utils.escapeHTML(l.name)}</option>`)
+            .map((l, i) => `
+                <label class="chargen-dialog__choice">
+                  <input type="radio" name="languageUpgrade" value="${i}" ${i === 0 ? "checked" : ""}>
+                  <span class="chargen-dialog__choice-body">
+                    <span class="chargen-dialog__choice-mark"></span>
+                    <span>
+                      <span class="chargen-dialog__choice-title">${foundry.utils.escapeHTML(l.name)}</span>
+                      <span class="chargen-dialog__choice-meta">Known language, upgrade to read and write.</span>
+                    </span>
+                  </span>
+                </label>
+            `)
             .join("");
 
         return new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(value);
+            };
             new Dialog({
                 title: "Upgrade Language Read/Write",
                 content: `
-                    <div class="form-group">
-                      <label for="cg-language-upgrade">Choose Language</label>
-                      <select id="cg-language-upgrade" name="languageUpgrade">${options}</select>
-                    </div>
+                  <div class="chargen-dialog">
+                    <div class="chargen-dialog__eyebrow">Tongues</div>
+                    <h2 class="chargen-dialog__title">Upgrade Language Read/Write</h2>
+                    <p class="chargen-dialog__copy">Choose which known language should become fully literate.</p>
+                    <div class="chargen-dialog__choice-list">${options}</div>
+                  </div>
                 `,
                 buttons: {
                     ok: {
                         label: "Upgrade",
                         callback: (html) => {
-                            const idx = Number(html.find("[name='languageUpgrade']").val());
+                            const idx = Number(html[0]?.querySelector('input[name="languageUpgrade"]:checked')?.value);
                             if (!Number.isInteger(idx) || idx < 0 || idx >= upgradable.length) {
-                                resolve(null);
+                                finish(null);
                                 return;
                             }
-                            resolve(upgradable[idx]);
+                            finish(upgradable[idx]);
                         }
                     },
                     cancel: {
                         label: "Cancel",
-                        callback: () => resolve(null)
+                        callback: () => finish(null)
                     }
                 },
                 default: "ok",
-                close: () => resolve(null)
-            }).render(true);
+                close: () => finish(null)
+            }, { width: 560, classes: ["skilltree-chargen-dialog"] }).render(true);
+        });
+    }
+
+    async _promptOptionalTransition({ fromName = "", toUuid = "", prompt = "" } = {}) {
+        const targetRef = String(toUuid ?? "").trim();
+        if (!targetRef) return false;
+
+        if (this._simulationEnabled()) {
+            return Math.random() < 0.5;
+        }
+
+        const toName = await this._getTableName(targetRef) || targetRef;
+        const fromLabel = String(fromName ?? "").trim() || "your current path";
+        const promptText = String(prompt ?? "").trim()
+            || `You may move to ${toName}, or remain on ${fromLabel}.`;
+
+        return new Promise((resolve) => {
+            let settled = false;
+            const finish = (value) => {
+                if (settled) return;
+                settled = true;
+                resolve(Boolean(value));
+            };
+            new Dialog({
+                title: "A New Path Opens",
+                content: `
+                  <div class="chargen-dialog">
+                    <div class="chargen-dialog__eyebrow">Transition</div>
+                    <h2 class="chargen-dialog__title">A New Path Opens</h2>
+                    <p class="chargen-dialog__copy">${foundry.utils.escapeHTML(promptText)}</p>
+                    <div class="chargen-dialog__section">
+                      <p class="chargen-dialog__copy"><strong>Current:</strong> ${foundry.utils.escapeHTML(fromLabel)}</p>
+                      <p class="chargen-dialog__copy"><strong>New path:</strong> ${foundry.utils.escapeHTML(toName)}</p>
+                    </div>
+                  </div>
+                `,
+                buttons: {
+                    take: {
+                        label: "Take the New Path",
+                        callback: () => finish(true)
+                    },
+                    stay: {
+                        label: "Remain Where You Are",
+                        callback: () => finish(false)
+                    }
+                },
+                default: "take",
+                close: () => finish(false)
+            }, { width: 560, classes: ["skilltree-chargen-dialog"] }).render(true);
         });
     }
 
@@ -2467,13 +4133,10 @@ export class SkillTreeChargenApp extends FormApplication {
                 return;
             }
 
-            rows[chosen.rowIndex] = {
-                ...(rows[chosen.rowIndex] ?? {}),
-                Language: chosen.name,
-                LanguageReadWrite: true
-            };
-
-            await this.actor.update({ [`system.props.${tableRef.tableKey}`]: rows });
+            await this._ensureLanguage(chosen.name, {
+                readWrite: true,
+                tableKeyHint: tableRef.tableKey
+            });
             await this._addBio(run, `Language literacy gained: ${chosen.name} (read/write).`);
             return;
         }
@@ -2487,12 +4150,10 @@ export class SkillTreeChargenApp extends FormApplication {
         const existing = known.find(l => l.name.toLowerCase() === newLanguage.toLowerCase());
         if (existing) {
             if (!existing.readWrite) {
-                rows[existing.rowIndex] = {
-                    ...(rows[existing.rowIndex] ?? {}),
-                    Language: existing.name,
-                    LanguageReadWrite: true
-                };
-                await this.actor.update({ [`system.props.${tableRef.tableKey}`]: rows });
+                await this._ensureLanguage(existing.name, {
+                    readWrite: true,
+                    tableKeyHint: tableRef.tableKey
+                });
                 await this._addBio(run, `Language already known; upgraded ${existing.name} to read/write.`);
                 return;
             }
@@ -2502,19 +4163,36 @@ export class SkillTreeChargenApp extends FormApplication {
             return;
         }
 
-        rows.push({
-            Language: newLanguage,
-            LanguageReadWrite: false
+        await this._ensureLanguage(newLanguage, {
+            readWrite: false,
+            tableKeyHint: tableRef.tableKey
         });
-        await this.actor.update({ [`system.props.${tableRef.tableKey}`]: rows });
         await this._addBio(run, `Learned language: ${newLanguage}.`);
     }
 
     async _applyChanges(run, changes = []) {
         return applyRewardChanges(this, run, changes, {
             advanceStat,
-            promptAddDrive,
-            promptRemoveDrive
+            promptAddDrive: async (actor, category) => {
+                if (this._simulationEnabled()) {
+                    const line = `[${category}] ${this._generateSimulationDriveText(category)}`;
+                    const existing = String(actor.system?.props?.Drives ?? "").trim();
+                    const updated = existing ? `${existing}\n${line}` : line;
+                    await actor.update({ "system.props.Drives": updated });
+                    return true;
+                }
+                return await promptAddDrive(actor, category);
+            },
+            promptRemoveDrive: async (actor) => {
+                if (this._simulationEnabled()) {
+                    const lines = this._getDriveLinesFromActor();
+                    if (!lines.length) return false;
+                    const updated = lines.slice(1).join("\n");
+                    await actor.update({ "system.props.Drives": updated });
+                    return true;
+                }
+                return await promptRemoveDrive(actor);
+            }
         });
     }
     async _rollLuckTable(run) {
@@ -2546,14 +4224,11 @@ export class SkillTreeChargenApp extends FormApplication {
             return clamp(Number.isFinite(n) ? n : 0, -2, 2);
         };
 
-        const statusPassChance = () => {
+        const statusCheckTarget = () => {
             const s = getSocialStatus();                 // -2..+2
             const lucky = Boolean(run.luckyStreak);
-
-            // Simple, gentle curve (always possible, never guaranteed):
-            // base 55%, +/-12% per status step, +10% if lucky
-            const p = 0.55 + (0.12 * s) + (lucky ? 0.10 : 0.0);
-            return clamp(p, 0.10, 0.95);
+            const target = 7 + s + (lucky ? 1 : 0);
+            return clamp(target, 2, 12);
         };
 
         const drawRolledResult = async () => {
@@ -2586,16 +4261,15 @@ export class SkillTreeChargenApp extends FormApplication {
             // If this is a Status-gated choice, do the extra roll. On failure, redraw once and
             // accept the replacement without another social-status gate so the user keeps a full choice set.
             if (hasStatusTag(drawn.data)) {
-                const p = statusPassChance();
-                const roll = Math.floor(Math.random() * 100) + 1; // 1..100
-                const target = Math.floor(p * 100);
+                const target = statusCheckTarget();
+                const roll = (await (new Roll("2d6")).evaluate({ async: true })).total;
 
                 if (roll > target) {
                     const s = getSocialStatus();
                     const luckyTxt = run.luckyStreak ? " + Lucky" : "";
                     await this._addBio(
                         run,
-                        `Missed: ${drawn.data.choice?.title ?? "Unknown"} (Status check failed: rolled ${roll} vs ${target}; Social ${s}${luckyTxt})`
+                        `Missed: ${drawn.data.choice?.title ?? "Unknown"} (Status check failed: rolled ${roll} on 2d6 vs ${target}; Social ${s}${luckyTxt})`
                     );
 
                     const replacement = await drawRolledResult();
@@ -2626,22 +4300,88 @@ export class SkillTreeChargenApp extends FormApplication {
         return out;
     }
 
-    _summarizeChange(ch) {
+    async _resolveSummaryLabelForItemSpec(spec) {
+        const raw = String(spec ?? "").trim();
+        if (!raw) return "";
+        const doc = await this._getItemDocFromSpec(raw);
+        return String(doc?.name ?? raw.replace(/^Item\./, "")).trim();
+    }
+
+    async _resolveLearnedLabel(spec, fallback = "") {
+        const raw = String(spec ?? "").trim();
+        if (!raw) return String(fallback ?? "").trim();
+
+        const resolved = await this._resolveSummaryLabelForItemSpec(raw);
+        if (resolved) return resolved;
+
+        return String(fallback || raw).replace(/^Item\./, "").trim();
+    }
+
+    async _resolveSummaryLabelForTableRef(tableUuidOrId) {
+        const raw = String(tableUuidOrId ?? "").trim();
+        if (!raw) return "";
+        const name = await this._getTableName(raw);
+        return String(name ?? raw.replace(/^RollTable\./, "")).trim();
+    }
+
+    async _summarizeChange(ch) {
+        if (!ch || typeof ch !== "object") return null;
+
+        if (ch.type === "skill" || ch.type === "maneuver") {
+            const kind = ch.type === "maneuver" ? "Maneuver" : "Skill";
+            const label = await this._resolveSummaryLabelForItemSpec(ch.targetKey ?? ch.skill ?? ch.maneuver ?? "");
+            const level = Number(ch.targetLevel);
+            if (Number.isFinite(level) && level !== 0) {
+                return `${kind}: ${label} ${level > 0 ? "+" : ""}${level}`;
+            }
+            return `${kind}: ${label}`;
+        }
+
+        if (ch.type === "bio") {
+            if (ch.text) return `Biography: ${ch.text}`;
+            if (ch.roll?.tableUuid) {
+                const tableName = await this._resolveSummaryLabelForTableRef(ch.roll.tableUuid);
+                return tableName ? `Biography: roll on ${tableName}` : "Roll biography entry";
+            }
+            return "Roll biography entry";
+        }
+
+        if (ch.type === "item") {
+            if (ch.name) return `Item: ${ch.name}`;
+            if (ch.itemUuid) {
+                const itemName = await this._resolveSummaryLabelForItemSpec(ch.itemUuid);
+                return itemName ? `Item: ${itemName}` : "Item reward";
+            }
+            if (ch.tableUuid) {
+                const tableName = await this._resolveSummaryLabelForTableRef(ch.tableUuid);
+                return tableName ? `Item: roll on ${tableName}` : "Item reward";
+            }
+        }
+
         return summarizeRewardChange(ch);
     }
 
-    async _buildRevealSummary(run, reward, nextUuid) {
+    async _buildRevealSummary(run, reward, nextUuid, transitionState = "") {
         const lines = [];
         for (const ch of reward?.changes ?? []) {
-            const line = this._summarizeChange(ch);
+            const line = await this._summarizeChange(ch);
             if (line) lines.push(line);
         }
 
         const nextName = nextUuid ? await this._getTableName(nextUuid) : "";
+        const transitionKind = String(transitionState ?? "").trim().toLowerCase();
+        let nextDetail = nextName;
+        if (nextName && transitionKind === "chosen") {
+            nextDetail = `You chose a new path: ${nextName}`;
+        } else if (nextName && transitionKind === "forced") {
+            nextDetail = `Your path were forced to ${nextName}`;
+        }
         return {
             lines,
             nextUuid,
             nextName,
+            nextDetail,
+            transitionKind,
             terminal: !nextUuid,
             exhausted: Number(run?.remainingGlobal ?? 0) <= 0
         };
@@ -2668,29 +4408,43 @@ export class SkillTreeChargenApp extends FormApplication {
         const backImg = resolveImgPath("media/home/games/1547/Cards/backside.webp");
         const unknownImg = resolveImgPath(UNKNOWN_CARD_IMAGE);
 
+        const revealDeferredLines = reveal?.isDeferred
+            ? (await Promise.all((reveal.payload?.changes ?? []).map(ch => this._summarizeChange(ch)))).filter(Boolean)
+            : [];
+        const revealDeferredHtml = reveal?.isDeferred && reveal?.text
+            ? this._formatDeferredBiographyText(reveal.text, reveal.sourceTitle)
+            : "";
+
         return {
-            revealDeferredLines: reveal?.isDeferred
-                ? (reveal.payload?.changes ?? []).map(ch => this._summarizeChange(ch)).filter(Boolean)
-                : [],
+            revealDeferredLines,
+            revealDeferredHtml,
             state: run ?? { remainingGlobal: 0 },
             actorName: this.actor?.name ?? "",
             currentTableName: table?.name ?? "",
             currentTableDescription: tableDescription,
             backImg,
             reveal,
-            cards: (run?.cards ?? []).map((c, idx) => ({
-                title: c.masked ? "Unknown" : c.data.choice.title,
-                text: c.masked ? "" : (c.data.choice.text ?? ""),
-                img: c.masked ? unknownImg : (c.img ?? ""),
-                cardClass: reveal
-                    ? (idx === reveal.chosenIndex ? "is-selected" : "is-flipped is-rejected")
-                    : "",
-                tooltip: reveal
-                    ? (idx === reveal.chosenIndex ? "Click this card again to continue." : "Not chosen.")
-                    : (c.masked
-                        ? "Click to reveal this hidden result."
-                        : "Click to choose this option. The reward is rolled immediately.")
-            })),
+            cards: (run?.cards ?? []).map((c, idx) => {
+                const badges = c.masked ? [] : this._inferChoiceHintBadges(c.data, table);
+                const badgeTip = badges.length
+                    ? ` Hints: ${badges.map(entry => entry.detail).join(" ")}`
+                    : "";
+                return {
+                    title: c.masked ? "Unknown" : c.data.choice.title,
+                    text: c.masked ? "" : (c.data.choice.text ?? ""),
+                    img: c.masked ? unknownImg : (c.img ?? ""),
+                    masked: Boolean(c.masked),
+                    badges,
+                    cardClass: reveal
+                        ? (idx === reveal.chosenIndex ? "is-selected" : "is-flipped is-rejected")
+                        : "",
+                    tooltip: reveal
+                        ? (idx === reveal.chosenIndex ? "Click this card again to continue." : "Not chosen.")
+                        : (c.masked
+                            ? "Click to reveal this hidden result."
+                            : `Click to choose this option. The reward is rolled immediately.${badgeTip}`)
+                };
+            }),
             bio: run?.bio ?? [],
             relevantTables
         };
@@ -2771,6 +4525,12 @@ export class SkillTreeChargenApp extends FormApplication {
         html.find("[data-action='table-list']").on("click", () => this._onShowTableList());
         html.find("[data-action='continue']").on("click", () => this._onContinue());
 
+        html.on("keydown", ".deferred-overlay", (ev) => {
+            if (ev.key !== "Enter" && ev.key !== " ") return;
+            ev.preventDefault();
+            this._onContinue();
+        });
+
         html.on("click", ".chargen-card", (ev) => {
             ev.preventDefault();
             ev.stopPropagation();
@@ -2826,8 +4586,13 @@ export class SkillTreeChargenApp extends FormApplication {
     }
 
     async _onChoose(index, cardEl) {
+        if (this._actionInFlight) return;
+        this._actionInFlight = true;
         const state = this._getState();
-        if (!state.run) return;
+        if (!state.run) {
+            this._actionInFlight = false;
+            return;
+        }
 
         const run = state.run;
         if (run.remainingGlobal <= 0) {
@@ -2841,7 +4606,7 @@ export class SkillTreeChargenApp extends FormApplication {
             if (picked.masked) {
                 picked.masked = false;
                 await this._setState({ ...state, run });
-                this.render(true);
+                if (this._shouldRenderInteractiveUi()) this.render(true);
                 return;
             }
 
@@ -2853,8 +4618,6 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             const data = picked.data;
-
-            await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
             if (data.bio) await this._addBio(run, String(data.bio));
 
             const reward = Array.isArray(data.effectTables) && data.effectTables.length
@@ -2866,27 +4629,71 @@ export class SkillTreeChargenApp extends FormApplication {
 
             const fromUuid = run.tableUuid;
             const fromName = await this._getTableName(fromUuid);
+            const fromTable = await this._getRollTable(fromUuid);
+            if (this._isCareerAdvancementTable(fromTable)) {
+                run.careerAdvancementEligible = true;
+                run.careerAdvancementSource = fromName;
+            }
             advanceDeferredQueue(run);
             const deferred = extractDeferredFromChoice(data, fromName);
             if (deferred) {
                 await enqueueDeferred(run, deferred);
             }
 
-            const nextUuid = String(reward?.next?.tableUuid ?? "").trim();
+            const rewardNextUuid = String(reward?.next?.tableUuid ?? "").trim();
+            let nextUuid = rewardNextUuid;
+            let transitionState = "";
+            if (
+                rewardNextUuid
+                && rewardNextUuid !== fromUuid
+                && String(reward?.transitionMode ?? "").trim().toLowerCase() === "optional"
+            ) {
+                const takeTransition = await this._promptOptionalTransition({
+                    fromName,
+                    toUuid: rewardNextUuid,
+                    prompt: reward?.transitionPrompt
+                });
+                if (!takeTransition) {
+                    nextUuid = fromUuid;
+                    transitionState = "declined";
+                    const declinedTargetName = await this._getTableName(rewardNextUuid);
+                    await this._addBio(
+                        run,
+                        declinedTargetName
+                            ? `You chose to remain on ${fromName} instead of moving to ${declinedTargetName}.`
+                            : `You chose to remain on ${fromName}.`
+                    );
+                } else {
+                    transitionState = "chosen";
+                }
+            } else if (rewardNextUuid && rewardNextUuid !== fromUuid) {
+                transitionState = "forced";
+            }
 
             run.remainingGlobal = Math.max(0, Number(run.remainingGlobal ?? 0) - 1);
             run.history.push({
                 tableUuid: run.tableUuid,
+                fromIsCareerAdvancementTable: this._isCareerAdvancementTable(fromTable),
+                fromName,
                 choiceTitle: data.choice?.title ?? "",
-                rewardApplied: reward
+                rewardApplied: reward,
+                transitionState,
+                terminal: !nextUuid
             });
-            if (!nextUuid) {
-                await this._addBio(run, `Career ended with ${fromName}`);
-            }
-
-            if (nextUuid) {
-                const toName = await this._getTableName(nextUuid);
-                await this._addBio(run, `${toName}`);
+            if (nextUuid && nextUuid !== fromUuid) {
+                if (reward.transitionText) {
+                    await this._addBio(run, String(reward.transitionText));
+                }
+            } else if (!nextUuid) {
+                const choiceTitle = String(data.choice?.title ?? "").trim();
+                const terminalReason = reward.transitionText
+                    ? String(reward.transitionText).trim()
+                    : (choiceTitle
+                        ? `${choiceTitle} brought this chapter of your life to an end.`
+                        : `${fromName} came to an end here.`);
+                if (terminalReason) {
+                    await this._addBio(run, terminalReason);
+                }
             }
 
             run.reveal = {
@@ -2894,37 +4701,81 @@ export class SkillTreeChargenApp extends FormApplication {
                 chosenIndex: index,
                 fromUuid,
                 fromName,
-                ...(await this._buildRevealSummary(run, reward, nextUuid))
+                ...(await this._buildRevealSummary(run, reward, nextUuid, transitionState))
             };
 
             await new Promise(r => setTimeout(r, 520));
             await this._setState({ ...state, run });
-            this.render(true);
+            if (this._shouldRenderInteractiveUi()) this.render(true);
 
         } catch (e) {
             ui.notifications.error(e.message);
             console.error(e);
+        } finally {
+            this._actionInFlight = false;
         }
     }
 
     async _onContinue() {
+        if (this._actionInFlight) return;
+        this._actionInFlight = true;
         const state = this._getState();
         const run = state.run;
         const reveal = run?.reveal;
-        if (!run || !reveal) return;
+        if (!run || !reveal) {
+            this._actionInFlight = false;
+            return;
+        }
 
-        if (reveal.isDeferred) {
-            const payload = reveal.payload ?? {};
-            if (Array.isArray(payload.changes) && payload.changes.length) {
-                await this._applyChanges(run, payload.changes);
-            }
-            if (reveal.text) {
-                await this._addBio(run, `The past returns: ${reveal.text}`);
-            }
-            if (Array.isArray(payload.enqueue)) {
-                for (const entry of payload.enqueue) {
-                    await enqueueDeferred(run, entry);
+        try {
+            if (reveal.isDeferred) {
+                const payload = reveal.payload ?? {};
+                if (Array.isArray(payload.changes) && payload.changes.length) {
+                    await this._applyChanges(run, payload.changes);
                 }
+                if (reveal.text) {
+                    const line = `The past returns: ${reveal.text}`;
+                    run.bio.push(line);
+                    await this._appendBiographyHtmlBlock(
+                        this._formatDeferredBiographyText(line, reveal.sourceTitle)
+                    );
+                }
+                if (Array.isArray(payload.enqueue)) {
+                    for (const entry of payload.enqueue) {
+                        await enqueueDeferred(run, entry);
+                    }
+                }
+
+                if (reveal.exhausted) {
+                    await this._setState({ ...state, run: { ...run, reveal: null } });
+                    await this._finishWithSummary(run);
+                    return;
+                }
+
+                if (reveal.terminal || !reveal.nextUuid) {
+                    await this._setState({ ...state, run: { ...run, reveal: null } });
+                    await this._finishWithSummary(run);
+                    return;
+                }
+
+                run.tableUuid = reveal.nextUuid;
+                await this._maybeGrantCareerLiteracy(run, run.tableUuid);
+                run.reveal = null;
+                run.cards = await this._rollCards(run);
+                await this._setState({ ...state, run });
+                if (this._shouldRenderInteractiveUi()) this.render(true);
+                return;
+            }
+
+            const deferredReveal = await buildDeferredReveal(this, run);
+            if (deferredReveal) {
+                run.reveal = {
+                    ...reveal,
+                    ...deferredReveal
+                };
+                await this._setState({ ...state, run });
+                if (this._shouldRenderInteractiveUi()) this.render(true);
+                return;
             }
 
             if (reveal.exhausted) {
@@ -2940,41 +4791,17 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             run.tableUuid = reveal.nextUuid;
+            await this._maybeGrantCareerLiteracy(run, run.tableUuid);
             run.reveal = null;
             run.cards = await this._rollCards(run);
             await this._setState({ ...state, run });
-            this.render(true);
-            return;
+            if (this._shouldRenderInteractiveUi()) this.render(true);
+        } catch (e) {
+            ui.notifications.error(e?.message ?? "Unable to continue.");
+            console.error(e);
+        } finally {
+            this._actionInFlight = false;
         }
-
-        const deferredReveal = await buildDeferredReveal(this, run);
-        if (deferredReveal) {
-            run.reveal = {
-                ...reveal,
-                ...deferredReveal
-            };
-            await this._setState({ ...state, run });
-            this.render(true);
-            return;
-        }
-
-        if (reveal.exhausted) {
-            await this._setState({ ...state, run: { ...run, reveal: null } });
-            await this._finishWithSummary(run);
-            return;
-        }
-
-        if (reveal.terminal || !reveal.nextUuid) {
-            await this._setState({ ...state, run: { ...run, reveal: null } });
-            await this._finishWithSummary(run);
-            return;
-        }
-
-        run.tableUuid = reveal.nextUuid;
-        run.reveal = null;
-        run.cards = await this._rollCards(run);
-        await this._setState({ ...state, run });
-        this.render(true);
     }
     async _getItemDocFromSpec(spec) {
         return await SkillTreeChargenApp._resolveItemSpecDoc(getLegacyMappedRef(spec));
@@ -2998,7 +4825,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 const cur = Number(foundry.utils.getProperty(existing, qtyPath) ?? 1);
                 const next = Math.max(0, cur + qty);
                 await existing.update({ [qtyPath]: next });
-                await this._addBio(run, `Item: ${name} (${cur} → ${next})`);
+                await this._addBio(run, `Item: ${name} (${cur} â†’ ${next})`);
                 return;
             }
         }
@@ -3009,25 +4836,38 @@ export class SkillTreeChargenApp extends FormApplication {
         foundry.utils.setProperty(data, "system.props.Quantity", Number.isFinite(qty) ? qty : 1);
 
         await this.actor.createEmbeddedDocuments("Item", [data]);
-        await this._addBio(run, `Item: ${name}${qty !== 1 ? ` ×${qty}` : ""}`);
+        await this._addBio(run, `Item: ${name}${qty !== 1 ? ` Ã—${qty}` : ""}`);
     }
 
     async _finishWithSummary(run) {
+        const state = this._getState();
+        await this._maybeApplyCareerAdvancementBundle(state, run);
+
+        if (this._simulationEnabled()) {
+            this._simulation.lastOutcome = this._buildSimulationOutcome(run);
+        }
+
         const actor = this.actor;
         const bioHtml = (run.bio ?? []).map(s => `<li>${foundry.utils.escapeHTML(String(s))}</li>`).join("");
 
-        await ChatMessage.create({
-            speaker: ChatMessage.getSpeaker({ actor }),
-            content: `
+        if (!this._simulationOption("suppressChat", false)) {
+            await ChatMessage.create({
+                speaker: ChatMessage.getSpeaker({ actor }),
+                content: `
         <h3>Character Generation Finished</h3>
         <p><b>${foundry.utils.escapeHTML(actor.name)}</b> biography:</p>
         <ul>${bioHtml}</ul>
       `
-        });
+            });
+        }
 
-        ui.notifications.info("Character generation finished.");
+        if (!this._simulationOption("suppressNotifications", false)) {
+            ui.notifications.info("Character generation finished.");
+        }
         await this._setState({ ...this._getState(), run: null });
-        this.close();
+        if (!this._simulationEnabled()) {
+            this.close();
+        }
     }
 
     async _onFinish() {
@@ -3065,7 +4905,7 @@ export async function advanceStat(actor, characteristic, steps) {
 
     const beforeIndex = statIndex(beforeDice, beforeMod);
 
-    // ✅ allow negative steps, but clamp to minimum
+    // âœ… allow negative steps, but clamp to minimum
     const afterIndex = Math.max(0, beforeIndex + Number(steps ?? 0));
 
     const { dice, mod } = indexToStat(afterIndex);
