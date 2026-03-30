@@ -1,0 +1,4633 @@
+{
+  "_id": "YBiS5eK7mf7v6V4s",
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Contact Flavor",
+  "img": "icons/svg/mystery-man.svg",
+  "description": "<p>The demeanor, habits, and general disposition of a contact.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "name": "Quiet and observant, watching more than speaking.",
+      "description": "Quiet and observant, watching more than speaking.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "15d16b1bb7224d64",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "name": "Talkative once started, but hard to stop.",
+      "description": "Talkative once started, but hard to stop.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6367663cc22b411a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "name": "Blunt and direct, with little patience for niceties.",
+      "description": "Blunt and direct, with little patience for niceties.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "10d1118f08ca47eb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "name": "Polite on the surface, but clearly guarded.",
+      "description": "Polite on the surface, but clearly guarded.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "015d6bda119f4d51",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "name": "Easily distracted by minor details.",
+      "description": "Easily distracted by minor details.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "79879d59d1ed47b7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "name": "Methodical and slow, but rarely mistaken.",
+      "description": "Methodical and slow, but rarely mistaken.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6ca307687ccc4a81",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "name": "Nervous, always checking their surroundings.",
+      "description": "Nervous, always checking their surroundings.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cbbb0e19d3114881",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "name": "World-weary and tired of explanations.",
+      "description": "World-weary and tired of explanations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "65751237ec6c48ed",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "name": "Earnest and sincere, perhaps overly so.",
+      "description": "Earnest and sincere, perhaps overly so.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d02d097ae7f34d83",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "name": "Jovial, laughing easily at small things.",
+      "description": "Jovial, laughing easily at small things.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a82b88e442b54062",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "name": "Suspicious of motives, even friendly ones.",
+      "description": "Suspicious of motives, even friendly ones.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3f82429034d34067",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "name": "Naive about danger, but confident anyway.",
+      "description": "Naive about danger, but confident anyway.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "10bfd31e13544dcb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "name": "Overly cautious, triple-checking everything.",
+      "description": "Overly cautious, triple-checking everything.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1ae6eedec9aa4d12",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "name": "Relaxed and unhurried, even under pressure.",
+      "description": "Relaxed and unhurried, even under pressure.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7af1527dfeb74233",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "name": "Restless, unable to sit still for long.",
+      "description": "Restless, unable to sit still for long.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3b82379781914116",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "drawn": false,
+      "name": "Soft-spoken and careful with words.",
+      "description": "Soft-spoken and careful with words.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "57a6aab6066d491b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "drawn": false,
+      "name": "Loud and expressive, hard to ignore.",
+      "description": "Loud and expressive, hard to ignore.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b04426965852487e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "drawn": false,
+      "name": "Dry-humored, often misunderstood.",
+      "description": "Dry-humored, often misunderstood.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a8a65a7eed90427b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        19,
+        19
+      ],
+      "drawn": false,
+      "name": "Prone to exaggeration, intentionally or not.",
+      "description": "Prone to exaggeration, intentionally or not.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2153f09294594746",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        20,
+        20
+      ],
+      "drawn": false,
+      "name": "Uncomfortable with silence, fills gaps with chatter.",
+      "description": "Uncomfortable with silence, fills gaps with chatter.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2740fb66a4f140f4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        21,
+        21
+      ],
+      "drawn": false,
+      "name": "Comfortable with silence, lets others talk.",
+      "description": "Comfortable with silence, lets others talk.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "72f54dda44594eb4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        22,
+        22
+      ],
+      "drawn": false,
+      "name": "Careful to avoid giving direct answers.",
+      "description": "Careful to avoid giving direct answers.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "38ad34b995344569",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        23,
+        23
+      ],
+      "drawn": false,
+      "name": "Overly honest, sometimes to their detriment.",
+      "description": "Overly honest, sometimes to their detriment.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a302441a75754158",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        24,
+        24
+      ],
+      "drawn": false,
+      "name": "Speaks in proverbs and sayings.",
+      "description": "Speaks in proverbs and sayings.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "934e178bd65a4a00",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        25,
+        25
+      ],
+      "drawn": false,
+      "name": "Prefers action over discussion.",
+      "description": "Prefers action over discussion.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "57c362e9df2d44cf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        26,
+        26
+      ],
+      "drawn": false,
+      "name": "Pragmatic and results-focused.",
+      "description": "Pragmatic and results-focused.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2942579143c0447e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        27,
+        27
+      ],
+      "drawn": false,
+      "name": "Idealistic, clinging to personal principles.",
+      "description": "Idealistic, clinging to personal principles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "63d9a601d6864345",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        28,
+        28
+      ],
+      "drawn": false,
+      "name": "Cynical about promises and plans.",
+      "description": "Cynical about promises and plans.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8cebd633678049b6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        29,
+        29
+      ],
+      "drawn": false,
+      "name": "Optimistic despite evidence to the contrary.",
+      "description": "Optimistic despite evidence to the contrary.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "263458d0d5d54f10",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        30,
+        30
+      ],
+      "drawn": false,
+      "name": "Resigned to things rarely changing.",
+      "description": "Resigned to things rarely changing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "379579f865aa4cdf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        31,
+        31
+      ],
+      "drawn": false,
+      "name": "Melancholic, often lost in thought.",
+      "description": "Melancholic, often lost in thought.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "04eff113b4054f01",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        32,
+        32
+      ],
+      "drawn": false,
+      "name": "Anxious about making mistakes.",
+      "description": "Anxious about making mistakes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1815791b4ec3434b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        33,
+        33
+      ],
+      "drawn": false,
+      "name": "Confident, sometimes excessively so.",
+      "description": "Confident, sometimes excessively so.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d33976d0bd5b4ea4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        34,
+        34
+      ],
+      "drawn": false,
+      "name": "Self-deprecating, quick to downplay achievements.",
+      "description": "Self-deprecating, quick to downplay achievements.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0aa94ca2f4d6459f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        35,
+        35
+      ],
+      "drawn": false,
+      "name": "Quietly proud of their work.",
+      "description": "Quietly proud of their work.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "295ff98944d14318",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        36,
+        36
+      ],
+      "drawn": false,
+      "name": "Easily flattered, perhaps suspiciously so.",
+      "description": "Easily flattered, perhaps suspiciously so.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "709d169c82894aba",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        37,
+        37
+      ],
+      "drawn": false,
+      "name": "Hard to impress, but fair when convinced.",
+      "description": "Hard to impress, but fair when convinced.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4c7fa461ac3e4c2c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        38,
+        38
+      ],
+      "drawn": false,
+      "name": "Careful with favors, remembers every one.",
+      "description": "Careful with favors, remembers every one.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "812664f5761047ca",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        39,
+        39
+      ],
+      "drawn": false,
+      "name": "Forgives easily, but never forgets.",
+      "description": "Forgives easily, but never forgets.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0acffbf516634eec",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        40,
+        40
+      ],
+      "drawn": false,
+      "name": "Holds grudges longer than expected.",
+      "description": "Holds grudges longer than expected.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "57e6d8a49fde4c9a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        41,
+        41
+      ],
+      "drawn": false,
+      "name": "Prone to sudden mood shifts.",
+      "description": "Prone to sudden mood shifts.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "42f6711f4aa944bd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        42,
+        42
+      ],
+      "drawn": false,
+      "name": "Consistent and predictable in behavior.",
+      "description": "Consistent and predictable in behavior.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1f21ca4204054d0e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        43,
+        43
+      ],
+      "drawn": false,
+      "name": "Unpredictable, changing plans without warning.",
+      "description": "Unpredictable, changing plans without warning.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "596a664b152c48d7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        44,
+        44
+      ],
+      "drawn": false,
+      "name": "Superstitious about small signs and omens.",
+      "description": "Superstitious about small signs and omens.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "056c92549563477d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        45,
+        45
+      ],
+      "drawn": false,
+      "name": "Skeptical of superstition, but cautious anyway.",
+      "description": "Skeptical of superstition, but cautious anyway.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "31b788929aeb4d0e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        46,
+        46
+      ],
+      "drawn": false,
+      "name": "Keeps meticulous notes or records.",
+      "description": "Keeps meticulous notes or records.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "35da1a4921cf40aa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        47,
+        47
+      ],
+      "drawn": false,
+      "name": "Relies on memory rather than writing.",
+      "description": "Relies on memory rather than writing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6cc42ee331cb4a02",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        48,
+        48
+      ],
+      "drawn": false,
+      "name": "Frequently distracted by passing thoughts.",
+      "description": "Frequently distracted by passing thoughts.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "50da060c91374782",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        49,
+        49
+      ],
+      "drawn": false,
+      "name": "Intensely focused once engaged.",
+      "description": "Intensely focused once engaged.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3ba9b11fca694950",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        50,
+        50
+      ],
+      "drawn": false,
+      "name": "Appears calm, even when clearly stressed.",
+      "description": "Appears calm, even when clearly stressed.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a26da23d01f14714",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        51,
+        51
+      ],
+      "drawn": false,
+      "name": "Open about fears, hides ambitions.",
+      "description": "Open about fears, hides ambitions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "df1e1b1d07074fec",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        52,
+        52
+      ],
+      "drawn": false,
+      "name": "Open about ambitions, hides fears.",
+      "description": "Open about ambitions, hides fears.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "db70b2fb5f8c486f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        53,
+        53
+      ],
+      "drawn": false,
+      "name": "Avoids eye contact when thinking.",
+      "description": "Avoids eye contact when thinking.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "137818d9a4cf4ee5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        54,
+        54
+      ],
+      "drawn": false,
+      "name": "Stares directly, making others uncomfortable.",
+      "description": "Stares directly, making others uncomfortable.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0cc896c0cfab415c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        55,
+        55
+      ],
+      "drawn": false,
+      "name": "Speaks slowly, choosing words carefully.",
+      "description": "Speaks slowly, choosing words carefully.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f040e7cc3089475f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        56,
+        56
+      ],
+      "drawn": false,
+      "name": "Speaks quickly, often overthinking aloud.",
+      "description": "Speaks quickly, often overthinking aloud.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "526d12f4de2849db",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        57,
+        57
+      ],
+      "drawn": false,
+      "name": "Interrupts without realizing it.",
+      "description": "Interrupts without realizing it.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0e14d16058774ba9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        58,
+        58
+      ],
+      "drawn": false,
+      "name": "Listens patiently, rarely interrupting.",
+      "description": "Listens patiently, rarely interrupting.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1ff9bf366212440b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        59,
+        59
+      ],
+      "drawn": false,
+      "name": "Treats conversations like negotiations.",
+      "description": "Treats conversations like negotiations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b39779e9d4124144",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        60,
+        60
+      ],
+      "drawn": false,
+      "name": "Treats conversations casually, even serious ones.",
+      "description": "Treats conversations casually, even serious ones.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c32e14cf80914223",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        61,
+        61
+      ],
+      "drawn": false,
+      "name": "Quick to joke in tense moments.",
+      "description": "Quick to joke in tense moments.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "99f89bdd6ddf4ea8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        62,
+        62
+      ],
+      "drawn": false,
+      "name": "Humorless, but not unfriendly.",
+      "description": "Humorless, but not unfriendly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6c1daa56714148cb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        63,
+        63
+      ],
+      "drawn": false,
+      "name": "Uses humor defensively.",
+      "description": "Uses humor defensively.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8c87710632284550",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        64,
+        64
+      ],
+      "drawn": false,
+      "name": "Uses silence defensively.",
+      "description": "Uses silence defensively.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "532481857b534428",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        65,
+        65
+      ],
+      "drawn": false,
+      "name": "Reluctant to share personal details.",
+      "description": "Reluctant to share personal details.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "df8b9f1d4d2d4a5c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        66,
+        66
+      ],
+      "drawn": false,
+      "name": "Overshares personal details unintentionally.",
+      "description": "Overshares personal details unintentionally.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aa56b2903d4f49b0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        67,
+        67
+      ],
+      "drawn": false,
+      "name": "Dismissive of authority figures.",
+      "description": "Dismissive of authority figures.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f543710e67634b36",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        68,
+        68
+      ],
+      "drawn": false,
+      "name": "Respectful of hierarchy and titles.",
+      "description": "Respectful of hierarchy and titles.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d33f059dd8ce4f26",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        69,
+        69
+      ],
+      "drawn": false,
+      "name": "Treats everyone the same, regardless of status.",
+      "description": "Treats everyone the same, regardless of status.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a26c04d15d0e4bfa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        70,
+        70
+      ],
+      "drawn": false,
+      "name": "Changes tone depending on who is listening.",
+      "description": "Changes tone depending on who is listening.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "bcf7aa2fc66844fb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        71,
+        71
+      ],
+      "drawn": false,
+      "name": "Appears more competent than they feel.",
+      "description": "Appears more competent than they feel.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ff0d9c21f8ad47ff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        72,
+        72
+      ],
+      "drawn": false,
+      "name": "Appears less competent than they are.",
+      "description": "Appears less competent than they are.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b26de007dbe449fd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        73,
+        73
+      ],
+      "drawn": false,
+      "name": "Overconfident in familiar situations.",
+      "description": "Overconfident in familiar situations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b9fc8ecc1b53481a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        74,
+        74
+      ],
+      "drawn": false,
+      "name": "Uncertain even in familiar situations.",
+      "description": "Uncertain even in familiar situations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "605a8ce9fe274855",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        75,
+        75
+      ],
+      "drawn": false,
+      "name": "Prefers routine and predictability.",
+      "description": "Prefers routine and predictability.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d113d51bd19845b0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        76,
+        76
+      ],
+      "drawn": false,
+      "name": "Thrives on chaos and improvisation.",
+      "description": "Thrives on chaos and improvisation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dc8e23abd43d4f16",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        77,
+        77
+      ],
+      "drawn": false,
+      "name": "Keeps physical distance when speaking.",
+      "description": "Keeps physical distance when speaking.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "78df682aec864abb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        78,
+        78
+      ],
+      "drawn": false,
+      "name": "Invades personal space unintentionally.",
+      "description": "Invades personal space unintentionally.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "57360be90a6541f0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        79,
+        79
+      ],
+      "drawn": false,
+      "name": "Frequently checks the time or sun.",
+      "description": "Frequently checks the time or sun.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ff340b2ebcf24529",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        80,
+        80
+      ],
+      "drawn": false,
+      "name": "Seems unaware of time passing.",
+      "description": "Seems unaware of time passing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "96b1de84d9b54b5b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        81,
+        81
+      ],
+      "drawn": false,
+      "name": "Obsessed with small efficiencies.",
+      "description": "Obsessed with small efficiencies.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2ad18d3789514ed5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        82,
+        82
+      ],
+      "drawn": false,
+      "name": "Wastes time on trivial matters.",
+      "description": "Wastes time on trivial matters.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d5fb93da61c14645",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        83,
+        83
+      ],
+      "drawn": false,
+      "name": "Remembers faces better than names.",
+      "description": "Remembers faces better than names.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8c920e19e5004220",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        84,
+        84
+      ],
+      "drawn": false,
+      "name": "Remembers names better than faces.",
+      "description": "Remembers names better than faces.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0f5806dd035f422f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        85,
+        85
+      ],
+      "drawn": false,
+      "name": "Sensitive to insults, real or imagined.",
+      "description": "Sensitive to insults, real or imagined.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4771295915c8434b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        86,
+        86
+      ],
+      "drawn": false,
+      "name": "Thick-skinned, rarely offended.",
+      "description": "Thick-skinned, rarely offended.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fc4e954204f54bff",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        87,
+        87
+      ],
+      "drawn": false,
+      "name": "Defensive when questioned closely.",
+      "description": "Defensive when questioned closely.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0a4092cd47d1468a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        88,
+        88
+      ],
+      "drawn": false,
+      "name": "Welcomes questions, enjoys explaining.",
+      "description": "Welcomes questions, enjoys explaining.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "15be75bf8f2f490a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        89,
+        89
+      ],
+      "drawn": false,
+      "name": "Reluctant to admit ignorance.",
+      "description": "Reluctant to admit ignorance.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1fdff23638aa4075",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        90,
+        90
+      ],
+      "drawn": false,
+      "name": "Comfortable admitting ignorance.",
+      "description": "Comfortable admitting ignorance.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c1d5a963c88b40b1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        91,
+        91
+      ],
+      "drawn": false,
+      "name": "Quick to blame circumstances.",
+      "description": "Quick to blame circumstances.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "54e7e91366114344",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        92,
+        92
+      ],
+      "drawn": false,
+      "name": "Quick to blame themselves.",
+      "description": "Quick to blame themselves.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8822a7dd6d744874",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        93,
+        93
+      ],
+      "drawn": false,
+      "name": "Careful to avoid responsibility.",
+      "description": "Careful to avoid responsibility.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ebceae4ca4914395",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        94,
+        94
+      ],
+      "drawn": false,
+      "name": "Eager to take responsibility.",
+      "description": "Eager to take responsibility.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "95052c9d42634a93",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        95,
+        95
+      ],
+      "drawn": false,
+      "name": "Speaks fondly of the past.",
+      "description": "Speaks fondly of the past.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "45c9391133e246bf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        96,
+        96
+      ],
+      "drawn": false,
+      "name": "Avoids talking about the past.",
+      "description": "Avoids talking about the past.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e6b629fc54c14ff8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        97,
+        97
+      ],
+      "drawn": false,
+      "name": "Worried about the future.",
+      "description": "Worried about the future.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "10bc629f602a4566",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        98,
+        98
+      ],
+      "drawn": false,
+      "name": "Dismissive of future planning.",
+      "description": "Dismissive of future planning.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e435edac6c2c4445",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        99,
+        99
+      ],
+      "drawn": false,
+      "name": "Feels trapped by obligations.",
+      "description": "Feels trapped by obligations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e87f2d9a393d4dbc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        100,
+        100
+      ],
+      "drawn": false,
+      "name": "Defines themselves by obligations.",
+      "description": "Defines themselves by obligations.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2934620bf41d4fb7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        101,
+        101
+      ],
+      "drawn": false,
+      "name": "Enjoys giving advice, asked or not.",
+      "description": "Enjoys giving advice, asked or not.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "76128bf423f8479a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        102,
+        102
+      ],
+      "drawn": false,
+      "name": "Avoids giving advice.",
+      "description": "Avoids giving advice.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3191263567e04ff6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        103,
+        103
+      ],
+      "drawn": false,
+      "name": "Protective of personal boundaries.",
+      "description": "Protective of personal boundaries.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7039df28012b417b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        104,
+        104
+      ],
+      "drawn": false,
+      "name": "Unaware of others’ boundaries.",
+      "description": "Unaware of others’ boundaries.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "994d9ee36a474d3f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        105,
+        105
+      ],
+      "drawn": false,
+      "name": "Prone to nervous habits.",
+      "description": "Prone to nervous habits.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2e5e0f69dd0d4530",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        106,
+        106
+      ],
+      "drawn": false,
+      "name": "Appears unnervingly still.",
+      "description": "Appears unnervingly still.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "24672374fc6e449d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        107,
+        107
+      ],
+      "drawn": false,
+      "name": "Carries a quiet sense of guilt.",
+      "description": "Carries a quiet sense of guilt.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "dd71d9b0640d4088",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        108,
+        108
+      ],
+      "drawn": false,
+      "name": "Carries quiet pride.",
+      "description": "Carries quiet pride.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a32b7525d0a54437",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        109,
+        109
+      ],
+      "drawn": false,
+      "name": "Feels underestimated.",
+      "description": "Feels underestimated.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4ce438f760ba4b01",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        110,
+        110
+      ],
+      "drawn": false,
+      "name": "Feels overestimated.",
+      "description": "Feels overestimated.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d9df7c54e2c041c1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        111,
+        111
+      ],
+      "drawn": false,
+      "name": "Treats danger casually.",
+      "description": "Treats danger casually.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "819c89fc97754384",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        112,
+        112
+      ],
+      "drawn": false,
+      "name": "Treats minor risks seriously.",
+      "description": "Treats minor risks seriously.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d8b93e2577d344b7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        113,
+        113
+      ],
+      "drawn": false,
+      "name": "Downplays successes.",
+      "description": "Downplays successes.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "452db4b7118f431d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        114,
+        114
+      ],
+      "drawn": false,
+      "name": "Downplays failures.",
+      "description": "Downplays failures.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c1230a1eada24d4b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        115,
+        115
+      ],
+      "drawn": false,
+      "name": "Believes luck plays a big role.",
+      "description": "Believes luck plays a big role.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e9796ad2aa3743fc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        116,
+        116
+      ],
+      "drawn": false,
+      "name": "Believes luck is meaningless.",
+      "description": "Believes luck is meaningless.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1b1587985dc24efd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        117,
+        117
+      ],
+      "drawn": false,
+      "name": "Reads people well, but says little.",
+      "description": "Reads people well, but says little.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3c236185c8354254",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        118,
+        118
+      ],
+      "drawn": false,
+      "name": "Misreads people confidently.",
+      "description": "Misreads people confidently.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "88a331ef279f425e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        119,
+        119
+      ],
+      "drawn": false,
+      "name": "Appears sympathetic, but detached.",
+      "description": "Appears sympathetic, but detached.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "397107895efc4fdb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        120,
+        120
+      ],
+      "drawn": false,
+      "name": "Appears detached, but sympathetic.",
+      "description": "Appears detached, but sympathetic.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2cf23f08fdb14e68",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        121,
+        121
+      ],
+      "drawn": false,
+      "name": "Deflects praise.",
+      "description": "Deflects praise.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "971eb9c035694a6d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        122,
+        122
+      ],
+      "drawn": false,
+      "name": "Deflects criticism.",
+      "description": "Deflects criticism.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d1c31b0bf8d94afe",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        123,
+        123
+      ],
+      "drawn": false,
+      "name": "Finds comfort in routines.",
+      "description": "Finds comfort in routines.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "89e0052ce6ef49c3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        124,
+        124
+      ],
+      "drawn": false,
+      "name": "Finds routines stifling.",
+      "description": "Finds routines stifling.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cdaf2e60921d414d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        125,
+        125
+      ],
+      "drawn": false,
+      "name": "Enjoys small talk.",
+      "description": "Enjoys small talk.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "58e9dbf649f64b8b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        126,
+        126
+      ],
+      "drawn": false,
+      "name": "Despises small talk.",
+      "description": "Despises small talk.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e5fe5c83b1d745f2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        127,
+        127
+      ],
+      "drawn": false,
+      "name": "Appears approachable, but distant.",
+      "description": "Appears approachable, but distant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "27e807bcdabf4a2a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        128,
+        128
+      ],
+      "drawn": false,
+      "name": "Appears distant, but approachable.",
+      "description": "Appears distant, but approachable.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b1abbf4d03ba4f89",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        129,
+        129
+      ],
+      "drawn": false,
+      "name": "Calm under scrutiny.",
+      "description": "Calm under scrutiny.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b30eccf094b94bf9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        130,
+        130
+      ],
+      "drawn": false,
+      "name": "Folds under scrutiny.",
+      "description": "Folds under scrutiny.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ff837c689d164a1a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        131,
+        131
+      ],
+      "drawn": false,
+      "name": "Slow to trust, slow to doubt.",
+      "description": "Slow to trust, slow to doubt.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "eb85a0288bfa418a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        132,
+        132
+      ],
+      "drawn": false,
+      "name": "Quick to trust, quick to doubt.",
+      "description": "Quick to trust, quick to doubt.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2def8febc6e44bb5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        133,
+        133
+      ],
+      "drawn": false,
+      "name": "Maintains a carefully neutral demeanor.",
+      "description": "Maintains a carefully neutral demeanor.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "71b79b85dd594a54",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        134,
+        134
+      ],
+      "drawn": false,
+      "name": "Expressive, emotions worn openly.",
+      "description": "Expressive, emotions worn openly.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "542e0eb579dd43a8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        135,
+        135
+      ],
+      "drawn": false,
+      "name": "Softens when discussing familiar topics.",
+      "description": "Softens when discussing familiar topics.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "971206a71b3f4acd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        136,
+        136
+      ],
+      "drawn": false,
+      "name": "Hardens when discussing familiar topics.",
+      "description": "Hardens when discussing familiar topics.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "745089903ae34e78",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        137,
+        137
+      ],
+      "drawn": false,
+      "name": "Seems to be hiding exhaustion.",
+      "description": "Seems to be hiding exhaustion.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aa8db0bd7f964dad",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        138,
+        138
+      ],
+      "drawn": false,
+      "name": "Seems energized by interaction.",
+      "description": "Seems energized by interaction.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b95482d5f2f34b9a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        139,
+        139
+      ],
+      "drawn": false,
+      "name": "Frequently asks questions.",
+      "description": "Frequently asks questions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7a0fa044c22546e2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        140,
+        140
+      ],
+      "drawn": false,
+      "name": "Rarely asks questions.",
+      "description": "Rarely asks questions.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f72144acc4f84618",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        141,
+        141
+      ],
+      "drawn": false,
+      "name": "Seems to be listening for something else.",
+      "description": "Seems to be listening for something else.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9716378582f24639",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        142,
+        142
+      ],
+      "drawn": false,
+      "name": "Fully present in conversation.",
+      "description": "Fully present in conversation.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "074e9cf93cba4a5e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        143,
+        143
+      ],
+      "drawn": false,
+      "name": "Carries an air of quiet competence.",
+      "description": "Carries an air of quiet competence.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "192a547769344381",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        144,
+        144
+      ],
+      "drawn": false,
+      "name": "Carries an air of quiet uncertainty.",
+      "description": "Carries an air of quiet uncertainty.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "01f13aee4b3f44f8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        145,
+        145
+      ],
+      "drawn": false,
+      "name": "Appears uninterested, but attentive.",
+      "description": "Appears uninterested, but attentive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d63e44cdc3a44789",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        146,
+        146
+      ],
+      "drawn": false,
+      "name": "Appears attentive, but uninterested.",
+      "description": "Appears attentive, but uninterested.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "51d6b13e9dc14414",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        147,
+        147
+      ],
+      "drawn": false,
+      "name": "Speaks carefully around sensitive topics.",
+      "description": "Speaks carefully around sensitive topics.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a6219288eede4eaa",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        148,
+        148
+      ],
+      "drawn": false,
+      "name": "Blunders into sensitive topics.",
+      "description": "Blunders into sensitive topics.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6f2cf76e634e433b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        149,
+        149
+      ],
+      "drawn": false,
+      "name": "Seems used to disappointment.",
+      "description": "Seems used to disappointment.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fed4436387a24dd6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        150,
+        150
+      ],
+      "drawn": false,
+      "name": "Seems unused to disappointment.",
+      "description": "Seems unused to disappointment.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4b96aeda697c40f3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        151,
+        151
+      ],
+      "drawn": false,
+      "name": "Treats mistakes as learning opportunities.",
+      "description": "Treats mistakes as learning opportunities.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "86f032febdcf42b7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        152,
+        152
+      ],
+      "drawn": false,
+      "name": "Treats mistakes as personal failures.",
+      "description": "Treats mistakes as personal failures.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "04373d909302475a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        153,
+        153
+      ],
+      "drawn": false,
+      "name": "Comfortable in crowds.",
+      "description": "Comfortable in crowds.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "72fdb3ff99054e8f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        154,
+        154
+      ],
+      "drawn": false,
+      "name": "Uncomfortable in crowds.",
+      "description": "Uncomfortable in crowds.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f21556778dc64f09",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        155,
+        155
+      ],
+      "drawn": false,
+      "name": "Comfortable alone.",
+      "description": "Comfortable alone.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e38596ec02444da5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        156,
+        156
+      ],
+      "drawn": false,
+      "name": "Uncomfortable alone.",
+      "description": "Uncomfortable alone.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6d93e8b2ec8147af",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        157,
+        157
+      ],
+      "drawn": false,
+      "name": "Appears adaptable to circumstances.",
+      "description": "Appears adaptable to circumstances.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "220df3f605934cea",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        158,
+        158
+      ],
+      "drawn": false,
+      "name": "Resists change instinctively.",
+      "description": "Resists change instinctively.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2907a3c115ce4efd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        159,
+        159
+      ],
+      "drawn": false,
+      "name": "Seems older than their years.",
+      "description": "Seems older than their years.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f730c1f44b684bdc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        160,
+        160
+      ],
+      "drawn": false,
+      "name": "Seems younger than their years.",
+      "description": "Seems younger than their years.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6d848a9054e5400c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        161,
+        161
+      ],
+      "drawn": false,
+      "name": "Often lost in thought.",
+      "description": "Often lost in thought.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6c742b1538d343f5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        162,
+        162
+      ],
+      "drawn": false,
+      "name": "Rarely introspective.",
+      "description": "Rarely introspective.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "51e2bb76b90946ee",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        163,
+        163
+      ],
+      "drawn": false,
+      "name": "Observes before acting.",
+      "description": "Observes before acting.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fb57c1b889c949c9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        164,
+        164
+      ],
+      "drawn": false,
+      "name": "Acts before observing.",
+      "description": "Acts before observing.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "69f6a47dd1a8451e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        165,
+        165
+      ],
+      "drawn": false,
+      "name": "Carries a quiet sense of urgency.",
+      "description": "Carries a quiet sense of urgency.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5f4417b1349d4409",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        166,
+        166
+      ],
+      "drawn": false,
+      "name": "Moves as if time is abundant.",
+      "description": "Moves as if time is abundant.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b2a79483e0474d03",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        167,
+        167
+      ],
+      "drawn": false,
+      "name": "Appears grounded and practical.",
+      "description": "Appears grounded and practical.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0df5dee493b84a0f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        168,
+        168
+      ],
+      "drawn": false,
+      "name": "Appears abstract and theoretical.",
+      "description": "Appears abstract and theoretical.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "91194a5869854c18",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        169,
+        169
+      ],
+      "drawn": false,
+      "name": "Treats conversations as performances.",
+      "description": "Treats conversations as performances.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e6a670d5483446af",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        170,
+        170
+      ],
+      "drawn": false,
+      "name": "Treats conversations as chores.",
+      "description": "Treats conversations as chores.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d1c19e9a109940f9",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        171,
+        171
+      ],
+      "drawn": false,
+      "name": "Appears cautiously hopeful.",
+      "description": "Appears cautiously hopeful.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "91e385fe906344c3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        172,
+        172
+      ],
+      "drawn": false,
+      "name": "Appears quietly pessimistic.",
+      "description": "Appears quietly pessimistic.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6a37daad9ef84c76",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        173,
+        173
+      ],
+      "drawn": false,
+      "name": "Speaks fondly of simple pleasures.",
+      "description": "Speaks fondly of simple pleasures.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "892b2176bd204cc0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        174,
+        174
+      ],
+      "drawn": false,
+      "name": "Dismisses simple pleasures.",
+      "description": "Dismisses simple pleasures.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "eca5e8f80a524d07",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        175,
+        175
+      ],
+      "drawn": false,
+      "name": "Appears emotionally reserved.",
+      "description": "Appears emotionally reserved.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "30e0dbe99f024487",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        176,
+        176
+      ],
+      "drawn": false,
+      "name": "Appears emotionally expressive.",
+      "description": "Appears emotionally expressive.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7db207b35aad4a0d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        177,
+        177
+      ],
+      "drawn": false,
+      "name": "Balances optimism and caution.",
+      "description": "Balances optimism and caution.",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c833bfbb5de54da1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        178,
+        178
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (1).",
+      "description": "Has an unremarkable but noticeable habit (1).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9c3a6a110f5f4e92",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        179,
+        179
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (2).",
+      "description": "Has an unremarkable but noticeable habit (2).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f947759cebf14012",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        180,
+        180
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (3).",
+      "description": "Has an unremarkable but noticeable habit (3).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "251fc872ddb44dac",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        181,
+        181
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (4).",
+      "description": "Has an unremarkable but noticeable habit (4).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fe71d9cab43643a0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        182,
+        182
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (5).",
+      "description": "Has an unremarkable but noticeable habit (5).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "27dd502eeb40419e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        183,
+        183
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (6).",
+      "description": "Has an unremarkable but noticeable habit (6).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "80359357ab064537",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        184,
+        184
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (7).",
+      "description": "Has an unremarkable but noticeable habit (7).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "794e32eb05724d7c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        185,
+        185
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (8).",
+      "description": "Has an unremarkable but noticeable habit (8).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a885b51cc9f640d8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        186,
+        186
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (9).",
+      "description": "Has an unremarkable but noticeable habit (9).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "10ee200cf2ec456c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        187,
+        187
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (10).",
+      "description": "Has an unremarkable but noticeable habit (10).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "37f028df20c14095",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        188,
+        188
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (11).",
+      "description": "Has an unremarkable but noticeable habit (11).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2aabd2d7ebb44fe1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        189,
+        189
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (12).",
+      "description": "Has an unremarkable but noticeable habit (12).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0a0b75a95070415a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        190,
+        190
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (13).",
+      "description": "Has an unremarkable but noticeable habit (13).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b5362fed26a8417a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        191,
+        191
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (14).",
+      "description": "Has an unremarkable but noticeable habit (14).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "98ea0e7d7d0840f8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        192,
+        192
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (15).",
+      "description": "Has an unremarkable but noticeable habit (15).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8807a0e11bbf4cd0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        193,
+        193
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (16).",
+      "description": "Has an unremarkable but noticeable habit (16).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "05348d4e82984b7f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        194,
+        194
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (17).",
+      "description": "Has an unremarkable but noticeable habit (17).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "893c59de845d4653",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        195,
+        195
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (18).",
+      "description": "Has an unremarkable but noticeable habit (18).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0cf00b0ee69c44b4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        196,
+        196
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (19).",
+      "description": "Has an unremarkable but noticeable habit (19).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4f025971768246a4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        197,
+        197
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (20).",
+      "description": "Has an unremarkable but noticeable habit (20).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4dd0b53422ec4da4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        198,
+        198
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (21).",
+      "description": "Has an unremarkable but noticeable habit (21).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "df09744772234d95",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        199,
+        199
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (22).",
+      "description": "Has an unremarkable but noticeable habit (22).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "17f91dd6836d4d4c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        200,
+        200
+      ],
+      "drawn": false,
+      "name": "Has an unremarkable but noticeable habit (23).",
+      "description": "Has an unremarkable but noticeable habit (23).",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1453467e275147e6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "RollTable.YBiS5eK7mf7v6V4s",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.1.0",
+    "createdTime": 1771241108658,
+    "modifiedTime": 1771257786613,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "formula": "1d200",
+  "ownership": {
+    "default": 0
+  }
+}

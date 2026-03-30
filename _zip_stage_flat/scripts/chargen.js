@@ -1,4 +1,4 @@
-﻿import { promptAddDrive, promptRemoveDrive } from "./drive-prompts.js";
+import { promptAddDrive, promptRemoveDrive } from "./drive-prompts.js";
 import { PRIMARY_STATS } from "/modules/chargen1547_v2/foundry-primary-stats/stats.js";
 import {
     advanceDeferredQueue,
@@ -18,9 +18,9 @@ import {
 console.log("CHARGEN.JS LOADED FROM", import.meta.url);
 
 const UNKNOWN_EXTREME_EXCLUDED_TABLE_REFS = new Set([
-    "RollTable.WqxPqlsw4LlVk5mp",
-    "RollTable.DeL6AoYlpbZdonNB",
-    "birth-horoscope-3d6",
+    "RollTable.BhHorosc3d6Q7mR4",
+    "RollTable.BhHumors1d8Q7mRX",
+    "birth-horoscope",
     "birth-humors"
 ]);
 
@@ -33,6 +33,15 @@ const DEFAULT_CONTACT_TABLES = {
     quirkTable: "RollTable.akVp6Ju3EW80CP3N"
 };
 const DEFAULT_BODY_TABLE = "RollTable.0lsu5sVbypU2KplI";
+const SPECIAL_BIO_TABLES = {
+    esteem: "RollTable.kC0YeELeXOdwDeaJ",
+    suspicion: "RollTable.wc0827FvVWKn4eJO",
+    secrets: "RollTable.ogCUBgf4giALU7XZ"
+};
+const SPECIAL_ITEM_TABLES = {
+    blessing: "RollTable.T9L3nhbOJJDslvAE",
+    curse: "RollTable.XJp7FU4UxUzU4261"
+};
 
 // -------- Optional helpers (safe even if you skip images) --------
 function isPlaceholderImg(p) {
@@ -78,7 +87,6 @@ export class SkillTreeChargenApp extends FormApplication {
         if (!uuidOrId || typeof uuidOrId !== "string") return null;
         const ref = getLegacyMappedRef(String(uuidOrId).trim());
         if (!ref) return null;
-
         const doc = ref.includes(".")
             ? await fromUuid(ref).catch(() => null)
             : game.tables.get(ref);
@@ -116,8 +124,8 @@ export class SkillTreeChargenApp extends FormApplication {
             : [];
         const preflightOnlyTables = explicitPreflightOnlyTables.length
             ? explicitPreflightOnlyTables
-            : (startingTable === "RollTable.WqxPqlsw4LlVk5mp"
-                ? [startingTable, "RollTable.DeL6AoYlpbZdonNB"]
+            : (startingTable === "RollTable.BhHorosc3d6Q7mR4"
+                ? [startingTable, "RollTable.BhHumors1d8Q7mRX"]
                 : []);
 
         return {
@@ -235,9 +243,9 @@ export class SkillTreeChargenApp extends FormApplication {
         }
 
         if (
-            setup.startingTable === "RollTable.WqxPqlsw4LlVk5mp" &&
+            setup.startingTable === "RollTable.BhHorosc3d6Q7mR4" &&
             setup.preflightOnlyTables.length === 2 &&
-            setup.preflightOnlyTables.includes("RollTable.DeL6AoYlpbZdonNB")
+            setup.preflightOnlyTables.includes("RollTable.BhHumors1d8Q7mRX")
         ) {
             report.careerValidation = {
                 ok: true,
@@ -323,8 +331,9 @@ export class SkillTreeChargenApp extends FormApplication {
         }
         const setup = preflight.setup ?? this._normalizeSetupTables(mergedOpts);
 
-        const name = await this._promptForName();
-        if (!name) return;
+        const identity = await this._promptForIdentity();
+        if (!identity?.name) return;
+        const name = identity.name;
 
         const type =
             game.system?.documentTypes?.Actor?.[0] ??
@@ -340,12 +349,13 @@ export class SkillTreeChargenApp extends FormApplication {
             }
         });
         const app = new SkillTreeChargenApp(actor);
+        await app._ensureLanguage(identity.nativeLanguage, { readWrite: false });
        // Run once per actor at the start of chargen
         const startingTable =
             mergedOpts.startingTable;
 
         const choices = mergedOpts.choices ?? 2;
-        const maxRolls = mergedOpts.maxRolls ?? 10;
+        const maxRolls = mergedOpts.maxRolls ?? 14;
 
         const contactTables = {
             roleTable: setup.contactTables?.roleTable,
@@ -378,7 +388,6 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             await actor.setFlag("world", "baselineStatsApplied", true);
-            await app._addBio(run, "Baseline: all stats increased by 1 step (starting package).");
         }
         if (!actor.getFlag("world", "baselineMinZeroSkillsApplied")) {
             const baselineSkills = await app._getBaselineMinZeroSkills();
@@ -387,7 +396,6 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             await actor.setFlag("world", "baselineMinZeroSkillsApplied", true);
-            await app._addBio(run, `Baseline: granted ${baselineSkills.length} skills at level 0 where minLevel is 0.`);
         }
         run.cards = await app._rollCards(run);
 
@@ -616,7 +624,14 @@ export class SkillTreeChargenApp extends FormApplication {
             return;
         }
 
-        if (type === "contact" || type === "body") {
+        if (type === "contact") {
+            if (ch.text != null && typeof ch.text !== "string") {
+                throw new Error(`Contact change "text" must be a string in "${tableName}" (rewards[${rewardIdx}].changes[${changeIdx}]).`);
+            }
+            return;
+        }
+
+        if (type === "body") {
             return;
         }
 
@@ -771,6 +786,9 @@ export class SkillTreeChargenApp extends FormApplication {
                         row.weight,
                         `effectTables[${tableIdx}].rows[${rowIdx}].weight must be numeric in "${tableName}".`
                     );
+                    if (row.transitionText != null && typeof row.transitionText !== "string") {
+                        throw new Error(`effectTables[${tableIdx}].rows[${rowIdx}].transitionText must be a string in "${tableName}".`);
+                    }
                     if (row.next != null) {
                         if (!SkillTreeChargenApp._isObject(row.next)) {
                             throw new Error(`effectTables[${tableIdx}].rows[${rowIdx}].next must be an object in "${tableName}".`);
@@ -1072,7 +1090,7 @@ export class SkillTreeChargenApp extends FormApplication {
         for (const ref of allowedRefs) {
             const doc = await SkillTreeChargenApp._resolveRollTableRef(ref).catch(() => null);
             if (doc?.uuid) allowedUuids.add(doc.uuid);
-            else if (ref.startsWith("RollTable.RollTabl1wmevv80")) allowedUuids.add(ref);
+            else if (ref.startsWith("RollTable.")) allowedUuids.add(ref);
         }
         if (allowedUuids.size) allowedUuids.add(startDoc.uuid);
 
@@ -1631,13 +1649,17 @@ export class SkillTreeChargenApp extends FormApplication {
     }
 
 
-    static async _promptForName() {
+    static async _promptForIdentity() {
         return new Promise((resolve) => {
             const content = `
         <form>
           <div class="form-group">
             <label>Character Name</label>
             <input type="text" name="name" placeholder="Enter a name..." autofocus />
+          </div>
+          <div class="form-group">
+            <label>Native Language</label>
+            <input type="text" name="nativeLanguage" placeholder="Enter a native language..." />
           </div>
         </form>
       `;
@@ -1650,7 +1672,8 @@ export class SkillTreeChargenApp extends FormApplication {
                         label: "Create",
                         callback: (html) => {
                             const name = String(html.find("input[name='name']").val() ?? "").trim();
-                            resolve(name || null);
+                            const nativeLanguage = String(html.find("input[name='nativeLanguage']").val() ?? "").trim();
+                            resolve(name ? { name, nativeLanguage } : null);
                         }
                     },
                     cancel: { label: "Cancel", callback: () => resolve(null) }
@@ -1672,7 +1695,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
     _getState() {
         return foundry.utils.getProperty(this.actor, this._flagPath()) ?? {
-            setup: { startingTable: "", choices: 2, maxRolls: 10 },
+            setup: { startingTable: "", choices: 2, maxRolls: 14 },
             run: null
         };
     }
@@ -1844,6 +1867,15 @@ export class SkillTreeChargenApp extends FormApplication {
         const stack = SkillTreeChargenApp._toBoolean(props[`${prefix}Stack`]);
         const languageTableKey = String(props[`${prefix}LanguageTableKey`] ?? "").trim();
 
+        if (SPECIAL_BIO_TABLES[type]) {
+            return { type: "bio", roll: { tableUuid: SPECIAL_BIO_TABLES[type] } };
+        }
+        if (SPECIAL_ITEM_TABLES[type]) {
+            const out = { type: "item", tableUuid: SPECIAL_ITEM_TABLES[type] };
+            if (qty != null) out.qty = qty;
+            return out;
+        }
+
         if (type === "stat") {
             if (characteristic) ch.characteristic = characteristic;
             if (steps != null) ch.steps = steps;
@@ -1890,7 +1922,12 @@ export class SkillTreeChargenApp extends FormApplication {
             return ch;
         }
 
-        // contact/body currently carry no additional fields
+        if (type === "contact") {
+            if (text) ch.text = text;
+            return ch;
+        }
+
+        // body currently carries no additional fields
         return ch;
     }
 
@@ -1905,8 +1942,18 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const targetKey = String(row?.TargetKey ?? "").trim();
         const amountRaw = String(row?.Amount ?? "").trim();
+        const targetText = String(row?.TargetText ?? "").trim();
         const amountNum = SkillTreeChargenApp._numberOrNull(amountRaw);
         const ch = { type };
+
+        if (SPECIAL_BIO_TABLES[type]) {
+            return { type: "bio", roll: { tableUuid: SPECIAL_BIO_TABLES[type] } };
+        }
+        if (SPECIAL_ITEM_TABLES[type]) {
+            const out = { type: "item", tableUuid: SPECIAL_ITEM_TABLES[type] };
+            if (amountNum != null) out.qty = amountNum;
+            return out;
+        }
 
         if (type === "stat") {
             if (targetKey) ch.characteristic = targetKey;
@@ -1927,7 +1974,11 @@ export class SkillTreeChargenApp extends FormApplication {
             ch.on = SkillTreeChargenApp._toBoolean(amountRaw || true);
             return ch;
         }
-        if (type === "contact" || type === "body") return ch;
+        if (type === "contact") {
+            if (targetText) ch.text = targetText;
+            return ch;
+        }
+        if (type === "body") return ch;
         if (type === "social") {
             if (amountNum != null) ch.amount = amountNum;
             return ch;
@@ -1944,7 +1995,7 @@ export class SkillTreeChargenApp extends FormApplication {
             return ch;
         }
         if (type === "item") {
-            if (targetKey.includes("RollTable.RollTabl1wmevv80")) ch.tableUuid = targetKey;
+            if (targetKey.startsWith("RollTable.")) ch.tableUuid = targetKey;
             else if (targetKey.includes(".")) ch.itemUuid = targetKey;
             else if (targetKey) ch.name = targetKey;
             if (amountNum != null) ch.qty = amountNum;
@@ -1961,11 +2012,13 @@ export class SkillTreeChargenApp extends FormApplication {
         const rows = SkillTreeChargenApp._rowsFromDynamicTable(props?.[tableKey]).map((row, idx) => {
             const weight = SkillTreeChargenApp._numberOrNull(row?.Weight) ?? 0;
             const nextTableUuid = String(row?.NextTable ?? "").trim();
+            const transitionText = String(row?.TransitionText ?? "").trim();
             return {
                 rowIndex: idx,
                 weight,
                 change: SkillTreeChargenApp._buildChangeFromEffectRow(row),
                 next: nextTableUuid ? { tableUuid: nextTableUuid } : null,
+                transitionText,
                 raw: row
             };
         }).filter(r => r.weight > 0);
@@ -2131,28 +2184,120 @@ export class SkillTreeChargenApp extends FormApplication {
 
     /* ---------------- Biography helpers ---------------- */
 
+    _getBiographyHtml() {
+        return String(this.actor.system?.props?.Biography ?? "");
+    }
+
     _getBioLines() {
-        return String(this.actor.system?.props?.Biography ?? "")
+        return this._getBiographyHtml()
+            .replace(/<[^>]+>/g, "\n")
             .split("\n")
-            .map(s => s.trim())
+            .map(s => {
+                let text = String(s ?? "").trim();
+                if (!text) return "";
+
+                // Normalize previously escaped rich-text content so repeated
+                // biography appends do not accumulate &amp;#x27;-style artifacts.
+                for (let i = 0; i < 4; i += 1) {
+                    const next = foundry.utils.unescapeHTML(text).trim();
+                    if (!next || next === text) break;
+                    text = next;
+                }
+                return text;
+            })
             .filter(Boolean);
+    }
+
+    _isBioStageHeading(text) {
+        const t = String(text ?? "").trim();
+        return /^(Birth|Childhood|Adolescence|Career|Advanced)\s+-\s+/.test(t);
+    }
+
+    _isBioMechanicalLine(text) {
+        const t = String(text ?? "").trim();
+        return /^(Baseline:|Improved |Learned |Received |Language |Social Status |Item:|Appearance:|Gained a contact:|Lucky streak:|Missed:|Language award|Language already known;|Career ended)/.test(t);
+    }
+
+    _escapeRegex(text) {
+        return String(text ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    _renderBiographyBlock(text) {
+        const t = String(text ?? "").trim();
+        if (!t) return "";
+
+        const escaped = foundry.utils.escapeHTML(t);
+        if (this._isBioStageHeading(t)) {
+            return "";
+        }
+        if (this._isBioMechanicalLine(t)) {
+            return "";
+        }
+        return `<p class="cg-bio-entry">${escaped}</p>`;
+    }
+
+    _renderBiographyHtmlBlock(innerHtml) {
+        const html = String(innerHtml ?? "").trim();
+        if (!html) return "";
+        return `<p class="cg-bio-entry">${html}</p>`;
+    }
+
+    _formatDeferredBiographyText(text, sourceTitle = "") {
+        const plain = String(text ?? "").trim();
+        if (!plain) return "";
+
+        const escaped = foundry.utils.escapeHTML(plain);
+        const title = String(sourceTitle ?? "").trim();
+        if (!title) return escaped;
+
+        const escapedTitle = foundry.utils.escapeHTML(title);
+        const pattern = new RegExp(this._escapeRegex(escapedTitle), "g");
+        return escaped.replace(pattern, `<strong>${escapedTitle}</strong>`);
     }
 
     async _appendBiography(lineOrLines) {
         const add = Array.isArray(lineOrLines) ? lineOrLines : [lineOrLines];
-        const cur = this._getBioLines();
+        const baseHtml = this._getBioLines()
+            .map(line => this._renderBiographyBlock(line))
+            .filter(Boolean)
+            .join("\n");
+        const blocks = [];
 
         for (const line of add) {
             const t = String(line ?? "").trim();
-            if (t) cur.push(t);
+            const block = this._renderBiographyBlock(t);
+            if (block) blocks.push(block);
         }
 
-        await this.actor.update({ "system.props.Biography": cur.join("\n") });
+        if (!blocks.length) return;
+
+        const nextHtml = [baseHtml, ...blocks]
+            .filter(Boolean)
+            .join("\n");
+
+        await this.actor.update({ "system.props.Biography": nextHtml });
+    }
+
+    async _appendBiographyHtmlBlock(innerHtml) {
+        const baseHtml = this._getBioLines()
+            .map(line => this._renderBiographyBlock(line))
+            .filter(Boolean)
+            .join("\n");
+        const block = this._renderBiographyHtmlBlock(innerHtml);
+        if (!block) return;
+
+        const nextHtml = [baseHtml, block]
+            .filter(Boolean)
+            .join("\n");
+
+        await this.actor.update({ "system.props.Biography": nextHtml });
     }
 
     async _addBio(run, text) {
         if (!text) return;
         const line = String(text);
+        const block = this._renderBiographyBlock(line);
+        if (!block) return;
         run.bio.push(line);
         await this._appendBiography(line);
     }
@@ -2186,7 +2331,10 @@ export class SkillTreeChargenApp extends FormApplication {
                 return;
             }
 
-            const grantedName = result.next?.name ?? result.granted.nodeId ?? targetKey;
+            const grantedName = await this._resolveLearnedLabel(
+                result.granted?.nodeId ?? targetKey,
+                result.next?.name ?? result.granted?.nodeId ?? targetKey
+            );
             const grantedType = String(result.next?.type ?? "").toLowerCase();
             const grantedLevel = Number(result.granted.level);
             const showLevel = grantedType !== "maneuver" && Number.isFinite(grantedLevel);
@@ -2206,7 +2354,8 @@ export class SkillTreeChargenApp extends FormApplication {
 
         await this.actor.update({ [`system.props.${step.nodeName}`]: String(next) });
         if (!silent) {
-            await this._addBio(run, `Learned ${step.nodeName} ${next}`);
+            const learnedName = await this._resolveLearnedLabel(targetKey, step.nodeName);
+            await this._addBio(run, `Learned ${learnedName} ${next}`);
         }
     }
 
@@ -2248,19 +2397,40 @@ export class SkillTreeChargenApp extends FormApplication {
         const table = await this._getRollTable(tableUuidOrId);
         if (!table) throw new Error(`RollTable not found: ${tableUuidOrId}`);
 
-        // Roll using the table's formula (e.g. "1d100")
-        const roll = await (new Roll(table.formula)).evaluate({ async: true });
+        const allResults = Array.from(table.results ?? []);
+        let roll = null;
+        let matched = [];
 
-        // Get results for that roll WITHOUT drawing/consuming
-        const results = table.getResultsForRoll?.(roll.total) ?? [];
+        const formula = String(table.formula ?? "").trim();
+        if (formula) {
+            try {
+                roll = await (new Roll(formula)).evaluate({ async: true });
+                matched = table.getResultsForRoll?.(roll.total) ?? [];
+            } catch (err) {
+                console.warn(`Chargen: failed to evaluate rolltable formula for "${table.name}" (${tableUuidOrId}). Falling back to weighted pick.`, err);
+            }
+        }
 
         // If multiple results match (overlapping ranges), pick one
-        const r = results.length ? results[Math.floor(Math.random() * results.length)] : null;
+        let r = matched.length ? matched[Math.floor(Math.random() * matched.length)] : null;
+
+        // Fallback for malformed imported tables with missing/bad formulas.
+        if (!r && allResults.length) {
+            const weighted = [];
+            for (const result of allResults) {
+                const copies = Math.max(1, Number(result?.weight ?? 1) || 1);
+                for (let i = 0; i < copies; i += 1) weighted.push(result);
+            }
+            r = weighted[Math.floor(Math.random() * weighted.length)] ?? allResults[0] ?? null;
+        }
 
         if (!r) {
-            throw new Error(
-                `RollTable "${table.name}" produced no result for roll ${roll.total} (${table.formula}).`
-            );
+            if (roll) {
+                throw new Error(
+                    `RollTable "${table.name}" produced no result for roll ${roll.total} (${table.formula}).`
+                );
+            }
+            throw new Error(`RollTable "${table.name}" has no usable results.`);
         }
 
         return { result: r, raw: SkillTreeChargenApp._resultRawJSON(r) };
@@ -2292,37 +2462,90 @@ export class SkillTreeChargenApp extends FormApplication {
             && ("Language" in row || "LanguageReadWrite" in row);
     }
 
+    _cloneLanguageRows(value) {
+        if (Array.isArray(value)) {
+            return {
+                storage: "array",
+                rows: foundry.utils.deepClone(value)
+            };
+        }
+
+        if (value && typeof value === "object") {
+            const entries = Object.entries(value)
+                .filter(([, row]) => row && typeof row === "object" && !Array.isArray(row) && !row.$deleted)
+                .sort((a, b) => Number(a[0]) - Number(b[0]));
+
+            return {
+                storage: "object",
+                rows: entries.map(([, row]) => foundry.utils.deepClone(row))
+            };
+        }
+
+        return null;
+    }
+
+    _serializeLanguageRows(rows, storage = "array") {
+        const cleanRows = Array.isArray(rows)
+            ? rows
+                .filter(row => row && typeof row === "object" && !Array.isArray(row))
+                .map(row => {
+                    const cloned = foundry.utils.deepClone(row);
+                    if (storage === "object") cloned.$deleted = false;
+                    return cloned;
+                })
+            : [];
+
+        if (storage === "object") {
+            const out = {};
+            cleanRows.forEach((row, index) => {
+                out[String(index)] = row;
+            });
+            return out;
+        }
+
+        return cleanRows;
+    }
+
     _resolveLanguageTable(tableKeyHint = null) {
         const props = this.actor.system?.props ?? {};
         const hint = String(tableKeyHint ?? "").trim();
 
         if (hint) {
             const hinted = props[hint];
-            if (Array.isArray(hinted)) {
-                return { tableKey: hint, rows: foundry.utils.deepClone(hinted) };
+            const cloned = this._cloneLanguageRows(hinted);
+            if (cloned) {
+                return { tableKey: hint, rows: cloned.rows, storage: cloned.storage };
+            }
+        }
+
+        const preferred = this._cloneLanguageRows(props.LanguageTable);
+        if (preferred) {
+            return { tableKey: "LanguageTable", rows: preferred.rows, storage: "object" };
+        }
+
+        const defaultCloned = this._cloneLanguageRows(props.Languages);
+        if (defaultCloned) {
+            return { tableKey: "Languages", rows: defaultCloned.rows, storage: defaultCloned.storage };
+        }
+
+        for (const [k, v] of Object.entries(props)) {
+            const cloned = this._cloneLanguageRows(v);
+            if (!cloned || !cloned.rows.length) continue;
+            if (cloned.rows.some(row => this._isLanguageRow(row))) {
+                return { tableKey: k, rows: cloned.rows, storage: cloned.storage };
             }
         }
 
         for (const [k, v] of Object.entries(props)) {
-            if (!Array.isArray(v) || !v.length) continue;
-            if (v.some(row => this._isLanguageRow(row))) {
-                return { tableKey: k, rows: foundry.utils.deepClone(v) };
-            }
-        }
-
-        for (const [k, v] of Object.entries(props)) {
-            if (!Array.isArray(v)) continue;
+            const cloned = this._cloneLanguageRows(v);
+            if (!cloned) continue;
             if (k.toLowerCase().includes("language")) {
-                return { tableKey: k, rows: foundry.utils.deepClone(v) };
+                return { tableKey: k, rows: cloned.rows, storage: cloned.storage };
             }
         }
 
-        if (hint) return { tableKey: hint, rows: [] };
-        if (Array.isArray(props.Languages)) {
-            return { tableKey: "Languages", rows: foundry.utils.deepClone(props.Languages) };
-        }
-
-        return { tableKey: "Languages", rows: [] };
+        if (hint) return { tableKey: hint, rows: [], storage: "object" };
+        return { tableKey: "LanguageTable", rows: [], storage: "object" };
     }
 
     _getKnownLanguages(rows) {
@@ -2338,6 +2561,74 @@ export class SkillTreeChargenApp extends FormApplication {
             });
         });
         return out;
+    }
+
+    _nextDynamicTableRowKey(value) {
+        if (!value || typeof value !== "object" || Array.isArray(value)) return "0";
+        const keys = Object.keys(value)
+            .map(k => Number(k))
+            .filter(n => Number.isInteger(n) && n >= 0);
+        return String(keys.length ? Math.max(...keys) + 1 : 0);
+    }
+
+    async _ensureLanguage(languageName, { readWrite = false, tableKeyHint = null } = {}) {
+        const name = String(languageName ?? "").trim();
+        if (!name) return false;
+
+        const tableRef = this._resolveLanguageTable(tableKeyHint);
+        const rows = Array.isArray(tableRef.rows) ? tableRef.rows : [];
+        const existing = this._getKnownLanguages(rows)
+            .find(l => l.name.toLowerCase() === name.toLowerCase());
+
+        const rawTable = this.actor.system?.props?.[tableRef.tableKey];
+        const isObjectTable = rawTable && typeof rawTable === "object" && !Array.isArray(rawTable);
+
+        if (existing) {
+            if (!readWrite || existing.readWrite) return false;
+            if (isObjectTable) {
+                const matchingKey = Object.entries(rawTable).find(([, row]) =>
+                    this._isLanguageRow(row)
+                    && String(row.Language ?? "").trim().toLowerCase() === existing.name.toLowerCase()
+                )?.[0];
+                if (matchingKey != null) {
+                    await this.actor.update({
+                        [`system.props.${tableRef.tableKey}.${matchingKey}.$deleted`]: false,
+                        [`system.props.${tableRef.tableKey}.${matchingKey}.Language`]: existing.name,
+                        [`system.props.${tableRef.tableKey}.${matchingKey}.LanguageReadWrite`]: true
+                    });
+                    return true;
+                }
+            }
+
+            rows[existing.rowIndex] = {
+                ...(rows[existing.rowIndex] ?? {}),
+                Language: existing.name,
+                LanguageReadWrite: true
+            };
+            await this.actor.update({
+                [`system.props.${tableRef.tableKey}`]: this._serializeLanguageRows(rows, tableRef.storage)
+            });
+            return true;
+        }
+
+        if (isObjectTable || tableRef.storage === "object") {
+            const rowKey = this._nextDynamicTableRowKey(rawTable);
+            await this.actor.update({
+                [`system.props.${tableRef.tableKey}.${rowKey}.$deleted`]: false,
+                [`system.props.${tableRef.tableKey}.${rowKey}.Language`]: name,
+                [`system.props.${tableRef.tableKey}.${rowKey}.LanguageReadWrite`]: Boolean(readWrite)
+            });
+            return true;
+        }
+
+        rows.push({
+            Language: name,
+            LanguageReadWrite: Boolean(readWrite)
+        });
+        await this.actor.update({
+            [`system.props.${tableRef.tableKey}`]: this._serializeLanguageRows(rows, tableRef.storage)
+        });
+        return true;
     }
 
     async _promptLanguageAwardAction({ canUpgrade = false } = {}) {
@@ -2467,13 +2758,10 @@ export class SkillTreeChargenApp extends FormApplication {
                 return;
             }
 
-            rows[chosen.rowIndex] = {
-                ...(rows[chosen.rowIndex] ?? {}),
-                Language: chosen.name,
-                LanguageReadWrite: true
-            };
-
-            await this.actor.update({ [`system.props.${tableRef.tableKey}`]: rows });
+            await this._ensureLanguage(chosen.name, {
+                readWrite: true,
+                tableKeyHint: tableRef.tableKey
+            });
             await this._addBio(run, `Language literacy gained: ${chosen.name} (read/write).`);
             return;
         }
@@ -2487,12 +2775,10 @@ export class SkillTreeChargenApp extends FormApplication {
         const existing = known.find(l => l.name.toLowerCase() === newLanguage.toLowerCase());
         if (existing) {
             if (!existing.readWrite) {
-                rows[existing.rowIndex] = {
-                    ...(rows[existing.rowIndex] ?? {}),
-                    Language: existing.name,
-                    LanguageReadWrite: true
-                };
-                await this.actor.update({ [`system.props.${tableRef.tableKey}`]: rows });
+                await this._ensureLanguage(existing.name, {
+                    readWrite: true,
+                    tableKeyHint: tableRef.tableKey
+                });
                 await this._addBio(run, `Language already known; upgraded ${existing.name} to read/write.`);
                 return;
             }
@@ -2502,11 +2788,10 @@ export class SkillTreeChargenApp extends FormApplication {
             return;
         }
 
-        rows.push({
-            Language: newLanguage,
-            LanguageReadWrite: false
+        await this._ensureLanguage(newLanguage, {
+            readWrite: false,
+            tableKeyHint: tableRef.tableKey
         });
-        await this.actor.update({ [`system.props.${tableRef.tableKey}`]: rows });
         await this._addBio(run, `Learned language: ${newLanguage}.`);
     }
 
@@ -2546,14 +2831,11 @@ export class SkillTreeChargenApp extends FormApplication {
             return clamp(Number.isFinite(n) ? n : 0, -2, 2);
         };
 
-        const statusPassChance = () => {
+        const statusCheckTarget = () => {
             const s = getSocialStatus();                 // -2..+2
             const lucky = Boolean(run.luckyStreak);
-
-            // Simple, gentle curve (always possible, never guaranteed):
-            // base 55%, +/-12% per status step, +10% if lucky
-            const p = 0.55 + (0.12 * s) + (lucky ? 0.10 : 0.0);
-            return clamp(p, 0.10, 0.95);
+            const target = 7 + s + (lucky ? 1 : 0);
+            return clamp(target, 2, 12);
         };
 
         const drawRolledResult = async () => {
@@ -2586,16 +2868,15 @@ export class SkillTreeChargenApp extends FormApplication {
             // If this is a Status-gated choice, do the extra roll. On failure, redraw once and
             // accept the replacement without another social-status gate so the user keeps a full choice set.
             if (hasStatusTag(drawn.data)) {
-                const p = statusPassChance();
-                const roll = Math.floor(Math.random() * 100) + 1; // 1..100
-                const target = Math.floor(p * 100);
+                const target = statusCheckTarget();
+                const roll = (await (new Roll("2d6")).evaluate({ async: true })).total;
 
                 if (roll > target) {
                     const s = getSocialStatus();
                     const luckyTxt = run.luckyStreak ? " + Lucky" : "";
                     await this._addBio(
                         run,
-                        `Missed: ${drawn.data.choice?.title ?? "Unknown"} (Status check failed: rolled ${roll} vs ${target}; Social ${s}${luckyTxt})`
+                        `Missed: ${drawn.data.choice?.title ?? "Unknown"} (Status check failed: rolled ${roll} on 2d6 vs ${target}; Social ${s}${luckyTxt})`
                     );
 
                     const replacement = await drawRolledResult();
@@ -2626,14 +2907,71 @@ export class SkillTreeChargenApp extends FormApplication {
         return out;
     }
 
-    _summarizeChange(ch) {
+    async _resolveSummaryLabelForItemSpec(spec) {
+        const raw = String(spec ?? "").trim();
+        if (!raw) return "";
+        const doc = await this._getItemDocFromSpec(raw);
+        return String(doc?.name ?? raw.replace(/^Item\./, "")).trim();
+    }
+
+    async _resolveLearnedLabel(spec, fallback = "") {
+        const raw = String(spec ?? "").trim();
+        if (!raw) return String(fallback ?? "").trim();
+
+        const resolved = await this._resolveSummaryLabelForItemSpec(raw);
+        if (resolved) return resolved;
+
+        return String(fallback || raw).replace(/^Item\./, "").trim();
+    }
+
+    async _resolveSummaryLabelForTableRef(tableUuidOrId) {
+        const raw = String(tableUuidOrId ?? "").trim();
+        if (!raw) return "";
+        const name = await this._getTableName(raw);
+        return String(name ?? raw.replace(/^RollTable\./, "")).trim();
+    }
+
+    async _summarizeChange(ch) {
+        if (!ch || typeof ch !== "object") return null;
+
+        if (ch.type === "skill" || ch.type === "maneuver") {
+            const kind = ch.type === "maneuver" ? "Maneuver" : "Skill";
+            const label = await this._resolveSummaryLabelForItemSpec(ch.targetKey ?? ch.skill ?? ch.maneuver ?? "");
+            const level = Number(ch.targetLevel);
+            if (Number.isFinite(level) && level !== 0) {
+                return `${kind}: ${label} ${level > 0 ? "+" : ""}${level}`;
+            }
+            return `${kind}: ${label}`;
+        }
+
+        if (ch.type === "bio") {
+            if (ch.text) return `Biography: ${ch.text}`;
+            if (ch.roll?.tableUuid) {
+                const tableName = await this._resolveSummaryLabelForTableRef(ch.roll.tableUuid);
+                return tableName ? `Biography: roll on ${tableName}` : "Roll biography entry";
+            }
+            return "Roll biography entry";
+        }
+
+        if (ch.type === "item") {
+            if (ch.name) return `Item: ${ch.name}`;
+            if (ch.itemUuid) {
+                const itemName = await this._resolveSummaryLabelForItemSpec(ch.itemUuid);
+                return itemName ? `Item: ${itemName}` : "Item reward";
+            }
+            if (ch.tableUuid) {
+                const tableName = await this._resolveSummaryLabelForTableRef(ch.tableUuid);
+                return tableName ? `Item: roll on ${tableName}` : "Item reward";
+            }
+        }
+
         return summarizeRewardChange(ch);
     }
 
     async _buildRevealSummary(run, reward, nextUuid) {
         const lines = [];
         for (const ch of reward?.changes ?? []) {
-            const line = this._summarizeChange(ch);
+            const line = await this._summarizeChange(ch);
             if (line) lines.push(line);
         }
 
@@ -2668,10 +3006,16 @@ export class SkillTreeChargenApp extends FormApplication {
         const backImg = resolveImgPath("media/home/games/1547/Cards/backside.webp");
         const unknownImg = resolveImgPath(UNKNOWN_CARD_IMAGE);
 
+        const revealDeferredLines = reveal?.isDeferred
+            ? (await Promise.all((reveal.payload?.changes ?? []).map(ch => this._summarizeChange(ch)))).filter(Boolean)
+            : [];
+        const revealDeferredHtml = reveal?.isDeferred && reveal?.text
+            ? this._formatDeferredBiographyText(reveal.text, reveal.sourceTitle)
+            : "";
+
         return {
-            revealDeferredLines: reveal?.isDeferred
-                ? (reveal.payload?.changes ?? []).map(ch => this._summarizeChange(ch)).filter(Boolean)
-                : [],
+            revealDeferredLines,
+            revealDeferredHtml,
             state: run ?? { remainingGlobal: 0 },
             actorName: this.actor?.name ?? "",
             currentTableName: table?.name ?? "",
@@ -2682,6 +3026,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 title: c.masked ? "Unknown" : c.data.choice.title,
                 text: c.masked ? "" : (c.data.choice.text ?? ""),
                 img: c.masked ? unknownImg : (c.img ?? ""),
+                masked: Boolean(c.masked),
                 cardClass: reveal
                     ? (idx === reveal.chosenIndex ? "is-selected" : "is-flipped is-rejected")
                     : "",
@@ -2771,6 +3116,12 @@ export class SkillTreeChargenApp extends FormApplication {
         html.find("[data-action='table-list']").on("click", () => this._onShowTableList());
         html.find("[data-action='continue']").on("click", () => this._onContinue());
 
+        html.on("keydown", ".deferred-overlay", (ev) => {
+            if (ev.key !== "Enter" && ev.key !== " ") return;
+            ev.preventDefault();
+            this._onContinue();
+        });
+
         html.on("click", ".chargen-card", (ev) => {
             ev.preventDefault();
             ev.stopPropagation();
@@ -2853,8 +3204,6 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             const data = picked.data;
-
-            await this._addBio(run, `Chose: ${data.choice?.title ?? "Unknown"}`);
             if (data.bio) await this._addBio(run, String(data.bio));
 
             const reward = Array.isArray(data.effectTables) && data.effectTables.length
@@ -2880,13 +3229,10 @@ export class SkillTreeChargenApp extends FormApplication {
                 choiceTitle: data.choice?.title ?? "",
                 rewardApplied: reward
             });
-            if (!nextUuid) {
-                await this._addBio(run, `Career ended with ${fromName}`);
-            }
-
             if (nextUuid) {
-                const toName = await this._getTableName(nextUuid);
-                await this._addBio(run, `${toName}`);
+                if (reward.transitionText) {
+                    await this._addBio(run, String(reward.transitionText));
+                }
             }
 
             run.reveal = {
@@ -2919,7 +3265,11 @@ export class SkillTreeChargenApp extends FormApplication {
                 await this._applyChanges(run, payload.changes);
             }
             if (reveal.text) {
-                await this._addBio(run, `The past returns: ${reveal.text}`);
+                const line = `The past returns: ${reveal.text}`;
+                run.bio.push(line);
+                await this._appendBiographyHtmlBlock(
+                    this._formatDeferredBiographyText(line, reveal.sourceTitle)
+                );
             }
             if (Array.isArray(payload.enqueue)) {
                 for (const entry of payload.enqueue) {

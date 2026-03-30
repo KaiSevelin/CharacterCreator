@@ -1,0 +1,976 @@
+﻿/* styles/chargen.css - DROP-IN (image card version) */
+
+.skilltree-chargen {
+	gap: 0.75rem;
+	background:
+		radial-gradient(circle at 15% 12%, rgba(218, 173, 93, 0.10), transparent 22%),
+		radial-gradient(circle at 84% 16%, rgba(95, 63, 36, 0.18), transparent 24%),
+		radial-gradient(circle at 52% 82%, rgba(10, 23, 46, 0.34), transparent 40%),
+		linear-gradient(180deg, rgba(13, 24, 44, 0.16), rgba(6, 13, 28, 0.58)),
+		repeating-linear-gradient(45deg, rgba(232, 220, 189, 0.018) 0, rgba(232, 220, 189, 0.018) 2px, transparent 2px, transparent 13px),
+		linear-gradient(135deg, #40516a 0%, #243348 36%, #172335 68%, #0b1420 100%);
+	padding: 0.25rem;
+	box-shadow: inset 0 0 120px rgba(5, 10, 18, 0.35);
+}
+
+	/* --- Header / counters (kept compatible with your current markup) --- */
+	.skilltree-chargen .chargen-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.skilltree-chargen .chargen-title {
+		font-size: 1.6rem;
+		font-weight: 800;
+		letter-spacing: 0.5px;
+		margin: 0;
+		color: #f5ead1;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.45);
+	}
+
+	.skilltree-chargen .chargen-counters {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.skilltree-chargen .chargen-stage {
+		display: block;
+		margin: 0.2rem 0 0.35rem;
+		padding: 0.7rem 0.9rem 0.75rem;
+		border: 1px solid rgba(234, 214, 176, 0.28);
+		border-radius: 14px;
+		background:
+			linear-gradient(180deg, rgba(28, 21, 14, 0.84), rgba(15, 11, 8, 0.9));
+		box-shadow:
+			inset 0 1px 0 rgba(255,255,255,0.06),
+			0 10px 20px rgba(0,0,0,0.18);
+	}
+
+	.skilltree-chargen .chargen-stage-title {
+		margin: 0;
+		padding: 0;
+		color: #f5ead1;
+		font-size: 1.18rem;
+		font-weight: 900;
+		letter-spacing: 0.08em;
+		line-height: 1.2;
+		text-transform: uppercase;
+		text-align: center;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.45);
+		border-bottom: 1px solid rgba(163, 55, 24, 0.95);
+		padding-bottom: 0.35rem;
+	}
+
+		.skilltree-chargen .chargen-counters .tag {
+			display: inline-flex;
+			gap: 0.35rem;
+			align-items: center;
+			padding: 0.25rem 0.55rem;
+			border-radius: 999px;
+			border: 1px solid rgba(234, 214, 176, 0.42);
+			background: rgba(19, 25, 37, 0.38);
+			color: #f2e5c4;
+			font-weight: 700;
+			box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+		}
+
+	/* --- Cards grid (option 2) --- */
+	.skilltree-chargen .chargen-cards {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(2, minmax(220px, 280px));
+		justify-content: center;
+		align-items: stretch;
+		grid-auto-rows: 1fr;
+	}
+
+	/* Card shell */
+	.skilltree-chargen .chargen-card {
+		height: 100%;
+		justify-self: center;
+		width: 100%;
+		max-width: 280px;
+		border: 1px solid var(--color-border-light-primary);
+		border-radius: 14px;
+		overflow: hidden; /* makes the cover clip to rounded corners */
+		background: rgba(255, 250, 240, 0.94);
+		box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+		transition: transform 120ms ease, box-shadow 120ms ease;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.skilltree-chargen .chargen-card.is-veiled {
+		position: relative;
+		box-shadow:
+			0 8px 22px rgba(0,0,0,0.22),
+			0 0 0 2px rgba(244, 229, 188, 0.68),
+			0 0 26px rgba(228, 193, 106, 0.28);
+	}
+
+	.skilltree-chargen .chargen-card.is-veiled::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 14px;
+		padding: 3px;
+		background:
+			linear-gradient(135deg,
+				rgba(233, 214, 158, 0.16),
+				rgba(255, 242, 203, 1),
+				rgba(233, 214, 158, 0.16));
+		-webkit-mask:
+			linear-gradient(#fff 0 0) content-box,
+			linear-gradient(#fff 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		opacity: 1;
+		pointer-events: none;
+		z-index: 5;
+		animation: chargenVeiledPulse 1.15s ease-in-out infinite;
+	}
+
+	.skilltree-chargen .chargen-card.is-veiled::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 14px;
+		box-shadow:
+			0 0 26px rgba(255, 236, 191, 0.52),
+			0 0 52px rgba(227, 182, 74, 0.28);
+		opacity: 0.95;
+		pointer-events: none;
+		z-index: 4;
+		animation: chargenVeiledGlow 1.15s ease-in-out infinite;
+	}
+
+	.skilltree-chargen .chargen-card.is-veiled .card-cover::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 0;
+		box-shadow:
+			inset 0 0 0 3px rgba(255, 244, 214, 1),
+			inset 0 0 0 9px rgba(210, 170, 84, 0.3),
+			inset 0 0 24px rgba(255, 225, 148, 0.34);
+		opacity: 1;
+		pointer-events: none;
+		z-index: 6;
+		animation: chargenVeiledFrame 1.15s ease-in-out infinite;
+	}
+
+	.skilltree-chargen .chargen-card.is-veiled .card-cover::before {
+		content: "";
+		position: absolute;
+		inset: -18% -60%;
+		background: linear-gradient(
+			110deg,
+			rgba(255, 255, 255, 0) 25%,
+			rgba(255, 242, 205, 0.08) 40%,
+			rgba(255, 245, 220, 0.55) 50%,
+			rgba(255, 242, 205, 0.08) 60%,
+			rgba(255, 255, 255, 0) 75%
+		);
+		mix-blend-mode: screen;
+		opacity: 0.9;
+		pointer-events: none;
+		z-index: 7;
+		animation: chargenVeiledSweep 1.45s linear infinite;
+	}
+
+	.skilltree-chargen .chargen-card.is-veiled .card-header::after {
+		content: "Veiled";
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 0.45rem;
+		padding: 0.22rem 0.6rem;
+		border-radius: 999px;
+		border: 1px solid rgba(159, 97, 24, 0.95);
+		background: linear-gradient(180deg, rgba(80, 42, 14, 0.96), rgba(45, 22, 8, 0.96));
+		box-shadow:
+			inset 0 1px 0 rgba(255,255,255,0.14),
+			0 0 12px rgba(216, 171, 76, 0.18);
+		color: #f5e3bc;
+		font-size: 0.72rem;
+		font-weight: 900;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+		.skilltree-chargen .chargen-card:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+		}
+
+		/* Cover image area
+/* Cover becomes the 3D viewport */
+		.skilltree-chargen .chargen-card .card-cover {
+			aspect-ratio: 2 / 3;
+			width: 100%;
+			max-height: 420px;
+			flex: 0 0 auto;
+			border-bottom: 1px solid rgba(0,0,0,0.12);
+			position: relative;
+			overflow: hidden;
+			/* 3D settings */
+			perspective: 1000px;
+			transform-style: preserve-3d;
+		}
+
+		/* Inner flipping layer */
+		.skilltree-chargen .chargen-card .card-flip {
+			position: absolute;
+			inset: 0;
+			transform-style: preserve-3d;
+			transition: transform 520ms cubic-bezier(.2,.8,.2,1);
+			/* ensure faces render nicely */
+			will-change: transform;
+		}
+
+		/* Faces */
+		.skilltree-chargen .chargen-card .card-face {
+			position: absolute;
+			inset: 0;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+			transform-style: preserve-3d;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+
+		.skilltree-chargen .chargen-card .card-front {
+			background-image: var(--cg-cover);
+		}
+
+		/* Back face */
+		.skilltree-chargen .chargen-card .card-back {
+			background-image: var(--cg-back);
+			transform: rotateY(180deg);
+		}
+		.skilltree-chargen .chargen-card.is-flipped {
+			box-shadow: 0 0 0 1px rgba(212,175,55,0.4), 0 0 18px rgba(212,175,55,0.25);
+		}
+.skilltree-chargen .chargen-card.is-rejected {
+			opacity: 0.92;
+		}
+
+.skilltree-chargen-dialog .window-content {
+	background:
+		radial-gradient(circle at 14% 12%, rgba(218, 173, 93, 0.12), transparent 24%),
+		radial-gradient(circle at 82% 16%, rgba(95, 63, 36, 0.22), transparent 26%),
+		linear-gradient(180deg, rgba(20, 16, 11, 0.98), rgba(10, 9, 8, 0.98));
+	color: #f3e6c9;
+	padding: 0.9rem;
+}
+
+.skilltree-chargen-dialog .window-header {
+	background: linear-gradient(180deg, rgba(61, 36, 20, 0.95), rgba(34, 20, 11, 0.98));
+	border-bottom: 1px solid rgba(197, 146, 70, 0.45);
+}
+
+.skilltree-chargen-dialog .window-title {
+	color: #f5ead1;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.chargen-dialog {
+	border: 1px solid rgba(220, 190, 130, 0.34);
+	border-radius: 18px;
+	padding: 1rem;
+	background:
+		linear-gradient(180deg, rgba(31, 22, 16, 0.96), rgba(16, 11, 8, 0.98)),
+		repeating-linear-gradient(45deg, rgba(232, 220, 189, 0.018) 0, rgba(232, 220, 189, 0.018) 2px, transparent 2px, transparent 13px);
+	box-shadow:
+		inset 0 1px 0 rgba(255,255,255,0.05),
+		0 18px 34px rgba(0,0,0,0.34);
+}
+
+.chargen-dialog__eyebrow {
+	margin: 0 0 0.35rem;
+	color: #d6b06d;
+	font-size: 0.74rem;
+	font-weight: 900;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.chargen-dialog__title {
+	margin: 0;
+	color: #f5ead1;
+	font-size: 1.28rem;
+	font-weight: 900;
+	line-height: 1.15;
+}
+
+.chargen-dialog__copy {
+	margin: 0.5rem 0 0;
+	color: #dbc9a4;
+	line-height: 1.5;
+}
+
+.chargen-dialog__section {
+	margin-top: 0.9rem;
+	padding-top: 0.85rem;
+	border-top: 1px solid rgba(197, 146, 70, 0.22);
+}
+
+.chargen-dialog__field {
+	margin-top: 0.8rem;
+}
+
+.chargen-dialog__field label {
+	display: block;
+	margin-bottom: 0.4rem;
+	color: #ead9b7;
+	font-size: 0.8rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.chargen-dialog__field input,
+.chargen-dialog__field textarea,
+.chargen-dialog__field select {
+	width: 100%;
+	border: 1px solid rgba(222, 194, 138, 0.38);
+	border-radius: 12px;
+	background: linear-gradient(180deg, rgba(20, 24, 35, 0.96), rgba(10, 13, 22, 0.98));
+	color: #fff3d9;
+	padding: 0.72rem 0.82rem;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.chargen-dialog__field select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-weight: 700;
+	border-color: rgba(236, 206, 146, 0.48);
+	box-shadow:
+		inset 0 1px 0 rgba(255,255,255,0.06),
+		0 0 0 1px rgba(0,0,0,0.1);
+	color: #fff3d9 !important;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+	caret-color: #fff3d9;
+	background-image:
+		linear-gradient(45deg, transparent 50%, #f0dfb5 50%),
+		linear-gradient(135deg, #f0dfb5 50%, transparent 50%),
+		linear-gradient(180deg, rgba(20, 24, 35, 0.96), rgba(10, 13, 22, 0.98));
+	background-position:
+		calc(100% - 20px) calc(50% - 3px),
+		calc(100% - 12px) calc(50% - 3px),
+		0 0;
+	background-size:
+		8px 8px,
+		8px 8px,
+		100% 100%;
+	background-repeat: no-repeat;
+	padding-right: 2.6rem;
+}
+
+.chargen-dialog__field select:focus,
+.chargen-dialog__field input:focus,
+.chargen-dialog__field textarea:focus {
+	outline: none;
+	border-color: rgba(247, 215, 144, 0.82);
+	box-shadow:
+		inset 0 1px 0 rgba(255,255,255,0.08),
+		0 0 0 1px rgba(243, 205, 117, 0.24),
+		0 0 18px rgba(195, 128, 44, 0.18);
+}
+
+.chargen-dialog__field select option {
+	background: #f3e7c9;
+	color: #23180f;
+	font-weight: 700;
+}
+
+.chargen-dialog__field select option:checked,
+.chargen-dialog__field select option:hover,
+.chargen-dialog__field select option:focus {
+	background: linear-gradient(180deg, #82501f, #5d3715);
+	color: #fff4d6;
+}
+
+.chargen-dialog__field textarea {
+	min-height: 7.5rem;
+	resize: vertical;
+}
+
+.chargen-dialog__hint {
+	margin-top: 0.9rem;
+	padding: 0.85rem 0.95rem;
+	border: 1px solid rgba(214, 178, 106, 0.24);
+	border-radius: 14px;
+	background:
+		linear-gradient(180deg, rgba(64, 40, 23, 0.42), rgba(26, 18, 13, 0.5));
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+	color: #c9b48a;
+	font-size: 0.82rem;
+}
+
+.chargen-dialog__hint-title {
+	color: #f1ddb2;
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.chargen-dialog__hint-copy {
+	margin: 0.5rem 0 0;
+	color: #ead6b0;
+	line-height: 1.45;
+}
+
+.chargen-dialog__hint-list {
+	margin: 0.7rem 0 0;
+	padding-left: 1.1rem;
+	display: grid;
+	gap: 0.4rem;
+}
+
+.chargen-dialog__hint-example {
+	color: #cfbe9d;
+	font-style: italic;
+	line-height: 1.4;
+}
+
+.chargen-dialog__choice-list {
+	display: grid;
+	gap: 0.65rem;
+	margin-top: 0.8rem;
+}
+
+.chargen-dialog__choice {
+	position: relative;
+	display: block;
+	border: 1px solid rgba(222, 194, 138, 0.24);
+	border-radius: 14px;
+	background:
+		linear-gradient(180deg, rgba(39, 28, 20, 0.95), rgba(19, 14, 10, 0.96));
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+	transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.chargen-dialog__choice:hover {
+	transform: translateY(-1px);
+	border-color: rgba(228, 192, 112, 0.55);
+	box-shadow:
+		inset 0 1px 0 rgba(255,255,255,0.06),
+		0 10px 22px rgba(0,0,0,0.24);
+}
+
+.chargen-dialog__choice input {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.chargen-dialog__choice-body {
+	display: flex;
+	gap: 0.8rem;
+	align-items: flex-start;
+	padding: 0.9rem 1rem;
+}
+
+.chargen-dialog__choice-mark {
+	flex: 0 0 1rem;
+	width: 1rem;
+	height: 1rem;
+	margin-top: 0.2rem;
+	border-radius: 999px;
+	border: 2px solid rgba(236, 214, 167, 0.7);
+	box-shadow: inset 0 0 0 2px rgba(17, 13, 9, 0.95);
+}
+
+.chargen-dialog__choice-title {
+	color: #f5ead1;
+	font-weight: 800;
+	line-height: 1.25;
+}
+
+.chargen-dialog__choice-meta {
+	margin-top: 0.18rem;
+	color: #d8c59f;
+	font-size: 0.86rem;
+}
+
+.chargen-dialog__choice input:checked + .chargen-dialog__choice-body {
+	background:
+		linear-gradient(180deg, rgba(73, 45, 22, 0.88), rgba(35, 21, 11, 0.94));
+	border-radius: 14px;
+}
+
+.chargen-dialog__choice input:checked + .chargen-dialog__choice-body .chargen-dialog__choice-mark {
+	background: radial-gradient(circle, #f4d79b 0 45%, #8c5521 52% 100%);
+	border-color: #f6dfab;
+}
+
+.skilltree-chargen-dialog .dialog-buttons {
+	gap: 0.6rem;
+	padding: 0.8rem 0.1rem 0.1rem;
+}
+
+.skilltree-chargen-dialog .dialog-buttons button {
+	border-radius: 12px;
+	border: 1px solid rgba(220, 190, 130, 0.34);
+	background: linear-gradient(180deg, rgba(72, 45, 24, 0.96), rgba(37, 22, 11, 0.98));
+	color: #f5ead1;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	padding: 0.7rem 0.85rem;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.skilltree-chargen-dialog .dialog-buttons button.default,
+.skilltree-chargen-dialog .dialog-buttons button:focus {
+	border-color: rgba(247, 215, 144, 0.72);
+	box-shadow:
+		inset 0 1px 0 rgba(255,255,255,0.08),
+		0 0 0 1px rgba(243, 205, 117, 0.26),
+		0 0 18px rgba(195, 128, 44, 0.16);
+}
+		.skilltree-chargen .chargen-card.is-selected {
+			box-shadow: 0 0 0 1px rgba(212,175,55,0.45), 0 12px 24px rgba(0,0,0,0.16);
+		}
+		.skilltree-chargen .chargen-card.is-selected::after {
+			content: "Click to continue";
+			position: absolute;
+			top: 0.75rem;
+			right: 0.75rem;
+			padding: 0.28rem 0.55rem;
+			border-radius: 999px;
+			background: rgba(38, 32, 24, 0.82);
+			color: #f4e7c8;
+			font-size: 0.72rem;
+			font-weight: 800;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			pointer-events: none;
+			z-index: 4;
+		}
+		/* Flip when chosen */
+		.skilltree-chargen .chargen-card.is-flipped .card-flip {
+			transform: rotateY(180deg);
+		}
+		@media (prefers-reduced-motion: reduce) {
+		.skilltree-chargen .chargen-card .card-flip {
+			transition: none;
+		}
+}
+		/* Optional: tactile hover tilt (only if not picked) */
+		.skilltree-chargen .chargen-card:not(.is-flipped):hover .card-flip {
+			transform: rotateY(-8deg) rotateX(3deg);
+		}
+		/* Optional: disable your old hover translate while flipping (prevents weird combined transforms) */
+		.skilltree-chargen .chargen-card.is-flipped:hover {
+			transform: none;
+		}
+
+		@keyframes chargenVeiledPulse {
+			0%, 100% {
+				opacity: 0.48;
+			}
+			50% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes chargenVeiledGlow {
+			0%, 100% {
+				opacity: 0.45;
+			}
+			50% {
+				opacity: 1;
+			}
+		}
+
+		@keyframes chargenVeiledFrame {
+			0%, 100% {
+				opacity: 0.68;
+				box-shadow:
+					inset 0 0 0 3px rgba(247, 235, 198, 0.78),
+					inset 0 0 0 9px rgba(210, 170, 84, 0.18),
+					inset 0 0 14px rgba(255, 230, 162, 0.18);
+			}
+			50% {
+				opacity: 1;
+				box-shadow:
+					inset 0 0 0 3px rgba(255, 244, 214, 1),
+					inset 0 0 0 9px rgba(223, 187, 102, 0.46),
+					inset 0 0 28px rgba(255, 232, 171, 0.32),
+					0 0 22px rgba(247, 235, 198, 0.22);
+			}
+		}
+
+		@keyframes chargenVeiledSweep {
+			0% {
+				transform: translateX(-58%) translateY(-6%) rotate(12deg);
+			}
+			100% {
+				transform: translateX(58%) translateY(6%) rotate(12deg);
+			}
+		}
+		/* Text content */
+		.skilltree-chargen .chargen-card .card-header {
+			padding: 0.8rem 0.9rem 0.35rem;
+		}
+
+		.skilltree-chargen .chargen-card .card-title {
+			margin: 0;
+			font-size: 1.15rem;
+			font-weight: 900;
+			letter-spacing: 0.2px;
+			line-height: 1.2;
+		}
+
+		.skilltree-chargen .chargen-card .card-text {
+			margin: 0;
+			padding: 0 0.9rem 1rem;
+			opacity: 0.88;
+			line-height: 1.25rem;
+			min-height: 6.25rem;
+		}
+	/* --- Make entire card clickable --- */
+	.skilltree-chargen .chargen-card {
+		cursor: pointer;
+		position: relative;
+	}
+
+		/* Keyboard accessibility */
+		.skilltree-chargen .chargen-card:focus-within {
+			outline: 2px solid var(--color-border-highlight);
+			outline-offset: 2px;
+		}
+
+	.skilltree-chargen .chargen-table-intro {
+		margin: 0 0 1rem;
+		padding: 0.85rem 1rem;
+		border: 1px solid var(--color-border-light-primary);
+		border-radius: 12px;
+		background: rgba(255, 250, 240, 0.92);
+		box-shadow: 0 8px 18px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.36);
+	}
+
+	.skilltree-chargen .chargen-table-intro .table-description > *:first-child {
+		margin-top: 0;
+	}
+
+	.skilltree-chargen .chargen-table-intro .table-description > *:last-child {
+		margin-bottom: 0;
+	}
+
+	.skilltree-chargen .chargen-table-intro .table-description {
+		font-size: 1.15rem;
+		font-weight: 700;
+		line-height: 1.45;
+	}
+
+	.skilltree-chargen .chargen-reveal {
+		margin-top: 1rem;
+		padding: 0.9rem 1rem;
+		border: 1px solid var(--color-border-light-primary);
+		border-radius: 12px;
+		background: rgba(255, 248, 233, 0.92);
+		box-shadow: 0 8px 18px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.32);
+	}
+
+	.skilltree-chargen .chargen-reveal .reveal-title {
+		margin: 0 0 0.5rem;
+		font-size: 1.05rem;
+		font-weight: 800;
+	}
+
+	.skilltree-chargen .chargen-reveal .reveal-list {
+		margin: 0 0 0.5rem 1.1rem;
+		padding: 0;
+	}
+
+	.skilltree-chargen .chargen-reveal .reveal-next {
+		margin: 0;
+		font-weight: 700;
+	}
+
+	.skilltree-chargen .chargen-reveal::after {
+		content: "Click the chosen card to continue";
+		display: block;
+		margin-top: 0.6rem;
+		font-size: 0.85rem;
+		font-weight: 700;
+		opacity: 0.72;
+	}
+
+	.skilltree-chargen .chargen-reveal:has(.deferred-intertitle) {
+		margin-top: 1.2rem;
+	}
+
+	.skilltree-chargen .chargen-reveal:has(.deferred-intertitle) {
+		padding: 0;
+		border: none;
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.skilltree-chargen .chargen-reveal:has(.deferred-intertitle)::after {
+		display: none;
+	}
+
+	.skilltree-chargen .deferred-intertitle {
+		display: flex;
+		justify-content: center;
+		padding: 0.35rem 0 0.15rem;
+	}
+
+	.skilltree-chargen .deferred-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 200;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1.5rem;
+		background: rgba(5, 8, 14, 0.72);
+		backdrop-filter: blur(2px);
+		cursor: pointer;
+	}
+
+	.skilltree-chargen .deferred-overlay:focus {
+		outline: none;
+	}
+
+	.skilltree-chargen .deferred-overlay:focus-visible .deferred-intertitle__frame {
+		box-shadow:
+			inset 0 0 0 2px rgba(230, 214, 177, 0.24),
+			inset 0 0 0 10px rgba(0, 0, 0, 0.12),
+			0 18px 34px rgba(0, 0, 0, 0.34),
+			0 0 0 3px rgba(245, 234, 209, 0.52);
+	}
+
+	.skilltree-chargen .deferred-intertitle__frame {
+		width: min(100%, 42rem);
+		padding: 1.6rem 1.8rem 1.4rem;
+		background:
+			radial-gradient(circle at 50% 18%, rgba(255,255,255,0.06), transparent 28%),
+			linear-gradient(180deg, rgba(44, 35, 24, 0.96), rgba(13, 10, 7, 0.98));
+		border: 3px solid rgba(230, 214, 177, 0.86);
+		box-shadow:
+			inset 0 0 0 2px rgba(230, 214, 177, 0.24),
+			inset 0 0 0 10px rgba(0, 0, 0, 0.12),
+			0 18px 34px rgba(0, 0, 0, 0.34);
+		color: #f4e7c8;
+		text-align: center;
+		position: relative;
+	}
+
+	.skilltree-chargen .deferred-card-art {
+		display: flex;
+		justify-content: center;
+		margin: 0 0 1.1rem;
+		perspective: 1100px;
+	}
+
+	.skilltree-chargen .deferred-card-art img {
+		display: block;
+		width: min(100%, 16rem);
+		border-radius: 18px;
+		border: 3px solid rgba(230, 214, 177, 0.82);
+		padding: 0.32rem;
+		background:
+			linear-gradient(180deg, rgba(248, 239, 214, 0.96), rgba(225, 203, 154, 0.92));
+		box-shadow:
+			0 18px 34px rgba(0, 0, 0, 0.34),
+			0 4px 0 rgba(82, 58, 27, 0.24),
+			0 0 0 1px rgba(255,255,255,0.12) inset;
+		transform: rotateX(2deg);
+		transition: transform 160ms ease, box-shadow 160ms ease;
+	}
+
+	.skilltree-chargen .deferred-overlay:hover .deferred-card-art img {
+		transform: rotateX(0deg) translateY(-2px);
+		box-shadow:
+			0 22px 40px rgba(0, 0, 0, 0.38),
+			0 5px 0 rgba(82, 58, 27, 0.22),
+			0 0 0 1px rgba(255,255,255,0.14) inset;
+	}
+
+	.skilltree-chargen .deferred-intertitle__frame::before,
+	.skilltree-chargen .deferred-intertitle__frame::after {
+		content: "✦";
+		position: absolute;
+		top: 0.7rem;
+		color: rgba(230, 214, 177, 0.78);
+		font-size: 0.95rem;
+		letter-spacing: 0.1em;
+	}
+
+	.skilltree-chargen .deferred-intertitle__frame::before {
+		left: 1rem;
+	}
+
+	.skilltree-chargen .deferred-intertitle__frame::after {
+		right: 1rem;
+	}
+
+	.skilltree-chargen .deferred-title {
+		margin: 0.1rem 0 0;
+		color: #fbf3de;
+		font-size: 1.55rem;
+		font-weight: 900;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		font-family: Georgia, "Times New Roman", serif;
+	}
+
+	.skilltree-chargen .deferred-origin {
+		margin: 0.55rem 0 0;
+		color: rgba(240, 227, 196, 0.86);
+		font-size: 0.98rem;
+		font-style: italic;
+		letter-spacing: 0.03em;
+	}
+
+	.skilltree-chargen .deferred-text {
+		margin: 1rem auto 0;
+		max-width: 31rem;
+		color: #f6edd9;
+		font-size: 1.08rem;
+		line-height: 1.7;
+		font-family: Georgia, "Times New Roman", serif;
+	}
+
+	.skilltree-chargen .deferred-effects {
+		list-style: none;
+		margin: 1rem 0 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.45rem 1rem;
+		color: rgba(241, 230, 202, 0.92);
+		font-size: 0.88rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.skilltree-chargen .deferred-effects li {
+		padding: 0.18rem 0.45rem;
+		border-top: 1px solid rgba(230, 214, 177, 0.28);
+		border-bottom: 1px solid rgba(230, 214, 177, 0.28);
+	}
+
+	.skilltree-chargen .deferred-dismiss {
+		margin: 1rem 0 0;
+		color: rgba(240, 227, 196, 0.82);
+		font-size: 0.82rem;
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	@media (max-width: 760px) {
+		.skilltree-chargen .chargen-cards {
+			grid-template-columns: minmax(220px, 280px);
+		}
+
+		.skilltree-chargen .deferred-card-art img {
+			width: min(100%, 13rem);
+		}
+
+		.skilltree-chargen .deferred-intertitle__frame {
+			padding: 1.35rem 1rem 1.15rem;
+		}
+
+		.skilltree-chargen .deferred-title {
+			font-size: 1.28rem;
+		}
+
+		.skilltree-chargen .deferred-text {
+			font-size: 0.98rem;
+			line-height: 1.55;
+		}
+	}
+
+	/* --- Bio / footer (compatible with your current markup) --- */
+	.skilltree-chargen .chargen-bio details,
+	.skilltree-chargen .chargen-tables details {
+		padding: 0.85rem 1rem;
+		border: 1px solid rgba(234, 214, 176, 0.28);
+		border-radius: 12px;
+		background: rgba(19, 25, 37, 0.42);
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+	}
+
+	.skilltree-chargen .chargen-bio summary {
+		cursor: pointer;
+		color: #f0e1bb;
+		font-weight: 800;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	}
+	.skilltree-chargen .chargen-bio details[open] summary,
+	.skilltree-chargen .chargen-tables details[open] summary {
+		margin-bottom: 0.75rem;
+	}
+	.skilltree-chargen .chargen-bio ul {
+		margin: 0;
+		padding-left: 1.1rem;
+		color: rgba(246, 237, 217, 0.92);
+	}
+	.skilltree-chargen .chargen-tables summary {
+		cursor: pointer;
+		color: #f0e1bb;
+		font-weight: 800;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	}
+	.skilltree-chargen .chargen-tables .table-wrap {
+		max-height: 220px;
+		overflow: auto;
+	}
+	.skilltree-chargen .chargen-tables .cg-table-list {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.92rem;
+		color: rgba(246, 237, 217, 0.92);
+		background: rgba(8, 12, 20, 0.18);
+	}
+	.skilltree-chargen .chargen-tables .cg-table-list th,
+	.skilltree-chargen .chargen-tables .cg-table-list td {
+		padding: 0.35rem 0.45rem;
+		border-bottom: 1px solid var(--color-border-light-primary);
+		text-align: left;
+		vertical-align: top;
+	}
+	.skilltree-chargen .chargen-tables .cg-table-list th {
+		color: #f0e1bb;
+		font-weight: 800;
+	}
+
+	.skilltree-chargen .sheet-footer.chargen-footer,
+	.skilltree-chargen .sheet-footer {
+		display: flex;
+		gap: 0.5rem;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+	}
+
+	.skilltree-chargen .sheet-footer button {
+		background: rgba(255, 248, 233, 0.92);
+		color: #22170f;
+		font-weight: 800;
+	}
+	.skilltree-chargen .sheet-footer button.primary-action {
+		background: linear-gradient(180deg, #e3c980 0%, #b9903e 100%);
+		border: 1px solid rgba(90, 55, 8, 0.55);
+		color: #1e1309;
+		box-shadow: 0 6px 16px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.2);
+	}

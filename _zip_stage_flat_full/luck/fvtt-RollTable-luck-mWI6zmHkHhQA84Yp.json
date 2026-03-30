@@ -1,0 +1,224 @@
+{
+  "folder": null,
+  "name": "Luck",
+  "img": "icons/svg/book.svg",
+  "description": "<p>A 3d6 biography table of chance, providence, bad timing, and narrow escape.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "description": "Misfortune seems to arrive just before opportunity does.",
+      "_id": "LuCkRow00000001",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "description": "A stroke of bad luck ruined something that should have gone well.",
+      "_id": "LuCkRow00000002",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "description": "You were present when fortune favored everyone but you.",
+      "_id": "LuCkRow00000003",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "description": "Good things often seem to slip from your grasp at the last moment.",
+      "_id": "LuCkRow00000004",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "description": "You learned to expect little from chance.",
+      "_id": "LuCkRow00000005",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "description": "You have survived more by caution than by grace.",
+      "_id": "LuCkRow00000006",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "description": "Fortune has disappointed you, but never completely abandoned you.",
+      "_id": "LuCkRow00000007",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "description": "Chance has treated you much as it treats most people.",
+      "_id": "LuCkRow00000008",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "description": "Once or twice, events broke your way without explanation.",
+      "_id": "LuCkRow00000009",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "description": "You have a habit of being in the right place just late enough to survive.",
+      "_id": "LuCkRow00000010",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "description": "A fortunate accident spared you trouble you did not foresee.",
+      "_id": "LuCkRow00000011",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "description": "Opportunity has found you in unlikely moments.",
+      "_id": "LuCkRow00000012",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "description": "You escaped danger by means too narrow to trust twice.",
+      "_id": "LuCkRow00000013",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        16,
+        16
+      ],
+      "description": "Fortune has favored you often enough that others remark on it.",
+      "_id": "LuCkRow00000014",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        17,
+        17
+      ],
+      "description": "A remarkable stroke of luck altered the course of your life.",
+      "_id": "LuCkRow00000015",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        18,
+        18
+      ],
+      "description": "You survived or gained something by means no sensible person would have expected.",
+      "_id": "LuCkRow00000016",
+      "name": "luck",
+      "img": "icons/svg/d20-black.svg",
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "formula": "3d6",
+  "ownership": {
+    "default": 0
+  },
+  "_id": "mWI6zmHkHhQA84Yp"
+}

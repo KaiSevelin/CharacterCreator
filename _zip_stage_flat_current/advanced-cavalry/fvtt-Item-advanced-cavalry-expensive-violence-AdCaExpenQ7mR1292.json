@@ -1,0 +1,144 @@
+{
+    "folder":  "RUXVfLU7KC7rU4jQ",
+    "name":  "Expensive violence",
+    "type":  "equippableItem",
+    "img":  "icons/svg/item-bag.svg",
+    "system":  {
+                   "body":  {
+                                "key":  "custom_body",
+                                "contents":  [
+
+                                             ],
+                                "type":  "panel"
+                            },
+                   "display":  {
+                                   "pp_width":  64,
+                                   "pp_height":  64,
+                                   "fix_size":  false,
+                                   "width":  820,
+                                   "height":  980
+                               },
+                   "header":  {
+                                  "key":  "custom_header",
+                                  "contents":  [
+
+                                               ],
+                                  "type":  "panel"
+                              },
+                   "hidden":  [
+
+                              ],
+                   "modifiers":  [
+
+                                 ],
+                   "props":  {
+                                 "ChoiceTitle":  "Expensive violence",
+                                 "ChoiceText":  "Your service required horses, powder, and pride enough that every action felt costly before it felt glorious.",
+                                 "ChoiceTags":  "status",
+                                 "ChoiceBio":  "Expensive violence taught you that mounted war burns wealth almost as quickly as it burns men.",
+                                 "ChoiceCard":  "media/home/games/1547/Cards/General War.webp",
+                                 "Effects1":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Money",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "220",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.wAgGiKah42jPkc3A",
+                                                            "TransitionText":  "Because expensive violence taught you that mounted war burns wealth almost as quickly as it burns men, horseflesh, speed, and shock remained your proper element."
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Item",
+                                                            "TargetKey":  "RollTable.4Xbki12nYfJHAIdX",
+                                                            "Amount":  "1",
+                                                            "TargetText":  "",
+                                                            "NextTable":  "RollTable.ntwdFBjHDGPRbTGp",
+                                                            "TransitionText":  "Because expensive violence taught you that mounted war burns wealth almost as quickly as it burns men, high war gave way to lower but more immediate pay."
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Bio",
+                                                            "TargetKey":  "RollTable.kC0YeELeXOdwDeaJ",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              },
+                                 "Effects2":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Drive",
+                                                            "TargetKey":  "add",
+                                                            "Amount":  "Stature",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Esteem",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        }
+                                              },
+                                 "Effects3":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Suspicion",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  ""
+                                                        }
+                                              }
+                             },
+                   "unique":  false,
+                   "templateSystemUniqueVersion":  4241488775,
+                   "template":  "CGRwEfTpl9K2P7rQ",
+                   "uniqueId":  "AdCaExpenQ7mR1292",
+                   "flags":  {
+
+                             }
+               },
+    "flags":  {
+                  "custom-system-builder":  {
+                                                "version":  "5.2.0"
+                                            }
+              },
+    "_id":  "AdCaExpenQ7mR1292",
+    "items":  [
+
+              ],
+    "ownership":  {
+                      "default":  0
+                  }
+}

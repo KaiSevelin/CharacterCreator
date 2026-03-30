@@ -1,0 +1,2287 @@
+{
+  "_id": "BvPhlA2uAb4uo0Ni",
+  "folder": "dA5kRoToREvCP9hn",
+  "name": "Contact Roles",
+  "img": "icons/svg/mystery-man.svg",
+  "description": "<p>The social role or occupation of a contact.</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        1,
+        2
+      ],
+      "drawn": false,
+      "name": "Laborer",
+      "description": "Laborer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0e4e6d83093c4c5a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        3,
+        4
+      ],
+      "drawn": false,
+      "name": "Farmer",
+      "description": "Farmer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1df69268d5b341ad",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        5,
+        6
+      ],
+      "drawn": false,
+      "name": "Porter",
+      "description": "Porter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "903e0dab3bfd4389",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        7,
+        8
+      ],
+      "drawn": false,
+      "name": "Vendor",
+      "description": "Vendor",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4ab6e031ee6047a8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        9,
+        10
+      ],
+      "drawn": false,
+      "name": "Stablehand",
+      "description": "Stablehand",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "28d3354e9393493d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        11,
+        12
+      ],
+      "drawn": false,
+      "name": "Sailor",
+      "description": "Sailor",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1e129c353359495a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        13,
+        14
+      ],
+      "drawn": false,
+      "name": "Fisher",
+      "description": "Fisher",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8fff7d550921493e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        15,
+        16
+      ],
+      "drawn": false,
+      "name": "Gravedigger",
+      "description": "Gravedigger",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1fa6d100aa9448df",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        17,
+        18
+      ],
+      "drawn": false,
+      "name": "Messenger",
+      "description": "Messenger",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "52868354f9a84eb2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        19,
+        20
+      ],
+      "drawn": false,
+      "name": "Dockworker",
+      "description": "Dockworker",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e07e7965811b44ce",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        21,
+        22
+      ],
+      "drawn": false,
+      "name": "Guard",
+      "description": "Guard",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d2c4afb198d24551",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        23,
+        24
+      ],
+      "drawn": false,
+      "name": "Teamster",
+      "description": "Teamster",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "da8046d637d34c28",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        25,
+        26
+      ],
+      "drawn": false,
+      "name": "Carpenter",
+      "description": "Carpenter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7741afee6c374a2f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        27,
+        28
+      ],
+      "drawn": false,
+      "name": "Cook",
+      "description": "Cook",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2aa94ad4c63744cd",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        29,
+        30
+      ],
+      "drawn": false,
+      "name": "Brewer",
+      "description": "Brewer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cfd4422e24d947c1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        31,
+        32
+      ],
+      "drawn": false,
+      "name": "Innkeeper",
+      "description": "Innkeeper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "927941ee35c54739",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        33,
+        34
+      ],
+      "drawn": false,
+      "name": "Archer",
+      "description": "Archer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e1e67e1dadff4043",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        35,
+        36
+      ],
+      "drawn": false,
+      "name": "Hunter",
+      "description": "Hunter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f0a73edda4cc4ba1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        37,
+        38
+      ],
+      "drawn": false,
+      "name": "Watchman",
+      "description": "Watchman",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f00a12f6780d4665",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        39,
+        40
+      ],
+      "drawn": false,
+      "name": "Carter",
+      "description": "Carter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a1020ce668e145cf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        41,
+        42
+      ],
+      "drawn": false,
+      "name": "Miller",
+      "description": "Miller",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "a71d6c46987144a8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        43,
+        44
+      ],
+      "drawn": false,
+      "name": "Tanner",
+      "description": "Tanner",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2c62d02b36424d12",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        45,
+        46
+      ],
+      "drawn": false,
+      "name": "Smith",
+      "description": "Smith",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c9f3dbe45a6e4cac",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        47,
+        48
+      ],
+      "drawn": false,
+      "name": "Butcher",
+      "description": "Butcher",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ac5f08f8fd5140fb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        49,
+        50
+      ],
+      "drawn": false,
+      "name": "Chandler",
+      "description": "Chandler",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "3f47cb97124b41ca",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        51,
+        52
+      ],
+      "drawn": false,
+      "name": "Fletcher",
+      "description": "Fletcher",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "09aaa9f771ae44d6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        53,
+        54
+      ],
+      "drawn": false,
+      "name": "Roper",
+      "description": "Roper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "892c3d0c2d8f452e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        55,
+        56
+      ],
+      "drawn": false,
+      "name": "Saddler",
+      "description": "Saddler",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7d06ebe40ff54171",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        57,
+        58
+      ],
+      "drawn": false,
+      "name": "Herder",
+      "description": "Herder",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "863db8f005d446b5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        59,
+        60
+      ],
+      "drawn": false,
+      "name": "Smuggler",
+      "description": "Smuggler",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cdf9d76d1ce44af5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        61,
+        62
+      ],
+      "drawn": false,
+      "name": "Fence",
+      "description": "Fence",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f47f7b245ac7482b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        63,
+        64
+      ],
+      "drawn": false,
+      "name": "Guide",
+      "description": "Guide",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f06023cd4ce64f60",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        65,
+        66
+      ],
+      "drawn": false,
+      "name": "Scout",
+      "description": "Scout",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "45f843c2e12d40de",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        67,
+        68
+      ],
+      "drawn": false,
+      "name": "Healer",
+      "description": "Healer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ae474cb1d1e243d6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        69,
+        70
+      ],
+      "drawn": false,
+      "name": "Midwife",
+      "description": "Midwife",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f0b4a15f5702422c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        71,
+        72
+      ],
+      "drawn": false,
+      "name": "Scribe",
+      "description": "Scribe",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "935f9643820444ee",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        73,
+        74
+      ],
+      "drawn": false,
+      "name": "Herbalist",
+      "description": "Herbalist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9ee19ce0703a4c3f",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        75,
+        76
+      ],
+      "drawn": false,
+      "name": "Ratcatcher",
+      "description": "Ratcatcher",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1d41f11c95eb42f7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        77,
+        78
+      ],
+      "drawn": false,
+      "name": "Harlot",
+      "description": "Harlot",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aaea5fdae2b34b5d",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        79,
+        80
+      ],
+      "drawn": false,
+      "name": "Gravewarden",
+      "description": "Gravewarden",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "aa685bb5e7994b99",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        81,
+        82
+      ],
+      "drawn": false,
+      "name": "Apothecary",
+      "description": "Apothecary",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "330bc139a3534b4c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        83,
+        84
+      ],
+      "drawn": false,
+      "name": "Bowyer",
+      "description": "Bowyer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "92ddd8a688584bf2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        85,
+        86
+      ],
+      "drawn": false,
+      "name": "Trapper",
+      "description": "Trapper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "85d4c585232a47e0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        87,
+        88
+      ],
+      "drawn": false,
+      "name": "Alchemist",
+      "description": "Alchemist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2ad4a2a84a1d45e6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        89,
+        90
+      ],
+      "drawn": false,
+      "name": "Cunning Folk",
+      "description": "Cunning Folk",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ca8dad6db52043e0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        91,
+        92
+      ],
+      "drawn": false,
+      "name": "Mercenary",
+      "description": "Mercenary",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e10b7c329d7b4bf3",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        93,
+        94
+      ],
+      "drawn": false,
+      "name": "Priest",
+      "description": "Priest",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2343f043df9148cb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        95,
+        96
+      ],
+      "drawn": false,
+      "name": "Occultist",
+      "description": "Occultist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "e8946f8f4a264a16",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        97,
+        98
+      ],
+      "drawn": false,
+      "name": "Guildmaster",
+      "description": "Guildmaster",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d04b36a29eca4b8b",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        99,
+        100
+      ],
+      "drawn": false,
+      "name": "Noble",
+      "description": "Noble",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "500e6e4549374f2e",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        101,
+        102
+      ],
+      "drawn": false,
+      "name": "Magistrate",
+      "description": "Magistrate",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "c002255b3d034223",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        103,
+        104
+      ],
+      "drawn": false,
+      "name": "Astrologer",
+      "description": "Astrologer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1d6cb81300cd4830",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        105,
+        106
+      ],
+      "drawn": false,
+      "name": "Executioner",
+      "description": "Executioner",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d342aa3ff01c4053",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 4,
+      "range": [
+        107,
+        110
+      ],
+      "drawn": false,
+      "name": "Beggar",
+      "description": "Beggar",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f97b8c3326424205",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 4,
+      "range": [
+        111,
+        114
+      ],
+      "drawn": false,
+      "name": "Refugee",
+      "description": "Refugee",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0a40cab408fc4d8a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 4,
+      "range": [
+        115,
+        118
+      ],
+      "drawn": false,
+      "name": "Boatman",
+      "description": "Boatman",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "012c1896e79a42eb",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 4,
+      "range": [
+        119,
+        122
+      ],
+      "drawn": false,
+      "name": "Ferryman",
+      "description": "Ferryman",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "bbeef36315e64566",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        123,
+        125
+      ],
+      "drawn": false,
+      "name": "Roadwarden",
+      "description": "Roadwarden",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b240d13e6eb347b7",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        126,
+        128
+      ],
+      "drawn": false,
+      "name": "Tollkeeper",
+      "description": "Tollkeeper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "20f9e583b9924220",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        129,
+        131
+      ],
+      "drawn": false,
+      "name": "Lamp Lighter",
+      "description": "Lamp Lighter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "480d7a3d68ef4183",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        132,
+        134
+      ],
+      "drawn": false,
+      "name": "Bathhouse Attendant",
+      "description": "Bathhouse Attendant",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "d01e079f666a4326",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        135,
+        137
+      ],
+      "drawn": false,
+      "name": "Barber",
+      "description": "Barber",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6b7dd3da0b1d4468",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        138,
+        140
+      ],
+      "drawn": false,
+      "name": "Street Performer",
+      "description": "Street Performer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "282346631da7495a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        141,
+        143
+      ],
+      "drawn": false,
+      "name": "Minstrel",
+      "description": "Minstrel",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "5b218e5525b64f30",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        144,
+        146
+      ],
+      "drawn": false,
+      "name": "Juggler",
+      "description": "Juggler",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0698fc26b1bc4966",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        147,
+        149
+      ],
+      "drawn": false,
+      "name": "Storyteller",
+      "description": "Storyteller",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9cf84f1faa5c49f5",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        150,
+        151
+      ],
+      "drawn": false,
+      "name": "Pickpocket",
+      "description": "Pickpocket",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2e097401d3414d87",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        152,
+        152
+      ],
+      "drawn": false,
+      "name": "Cutpurse",
+      "description": "Cutpurse",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2bf9d9e113a644d8",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        153,
+        153
+      ],
+      "drawn": false,
+      "name": "Confidence Artist",
+      "description": "Confidence Artist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "09b412f4b5054fea",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        154,
+        154
+      ],
+      "drawn": false,
+      "name": "Forger",
+      "description": "Forger",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "53e0720a0aaa4fbf",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        155,
+        155
+      ],
+      "drawn": false,
+      "name": "Spy",
+      "description": "Spy",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "2331937016984b03",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        156,
+        156
+      ],
+      "drawn": false,
+      "name": "Informer",
+      "description": "Informer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "9c1770dc986a4bc2",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        157,
+        157
+      ],
+      "drawn": false,
+      "name": "Lookout",
+      "description": "Lookout",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f93b70875b8e4097",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        158,
+        160
+      ],
+      "drawn": false,
+      "name": "Courier",
+      "description": "Courier",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "10b719c7f8b046f6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        161,
+        161
+      ],
+      "drawn": false,
+      "name": "Archivist",
+      "description": "Archivist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6c24b929e9504ebc",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        162,
+        162
+      ],
+      "drawn": false,
+      "name": "Librarian",
+      "description": "Librarian",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "de9e64612b454828",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        163,
+        163
+      ],
+      "drawn": false,
+      "name": "Bookbinder",
+      "description": "Bookbinder",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "109dd888b8b04f94",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        164,
+        164
+      ],
+      "drawn": false,
+      "name": "Illuminator",
+      "description": "Illuminator",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4dae3cfe30f94643",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        165,
+        165
+      ],
+      "drawn": false,
+      "name": "Surveyor",
+      "description": "Surveyor",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "6039a7f3e2e647db",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        166,
+        166
+      ],
+      "drawn": false,
+      "name": "Cartographer",
+      "description": "Cartographer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "7225b4e9dcd5404c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        167,
+        167
+      ],
+      "drawn": false,
+      "name": "Navigator",
+      "description": "Navigator",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b51cfe1810a34797",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        168,
+        170
+      ],
+      "drawn": false,
+      "name": "Beekeeper",
+      "description": "Beekeeper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f1ded8d2864a4514",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        171,
+        171
+      ],
+      "drawn": false,
+      "name": "Apiarist",
+      "description": "Apiarist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "791de938019248b4",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        172,
+        174
+      ],
+      "drawn": false,
+      "name": "Vintner",
+      "description": "Vintner",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "67b52bd9ef6044a1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        175,
+        177
+      ],
+      "drawn": false,
+      "name": "Cooper",
+      "description": "Cooper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1ee7f737f7ab4005",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        178,
+        178
+      ],
+      "drawn": false,
+      "name": "Glassblower",
+      "description": "Glassblower",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "83208b7195b94979",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        179,
+        181
+      ],
+      "drawn": false,
+      "name": "Potter",
+      "description": "Potter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "0421e29b6f514c9c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        182,
+        184
+      ],
+      "drawn": false,
+      "name": "Stonecutter",
+      "description": "Stonecutter",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "43d1a6839fd94951",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 3,
+      "range": [
+        185,
+        187
+      ],
+      "drawn": false,
+      "name": "Mason",
+      "description": "Mason",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "8a8291f79eee4742",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        188,
+        188
+      ],
+      "drawn": false,
+      "name": "Clockmaker",
+      "description": "Clockmaker",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "fb354c0608484953",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        189,
+        189
+      ],
+      "drawn": false,
+      "name": "Engineer",
+      "description": "Engineer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "084849de76524bf0",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        190,
+        191
+      ],
+      "drawn": false,
+      "name": "Siege Engineer",
+      "description": "Siege Engineer",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ce67699de46e4c21",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        192,
+        192
+      ],
+      "drawn": false,
+      "name": "Physician",
+      "description": "Physician",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "b80c106dd569412a",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        193,
+        193
+      ],
+      "drawn": false,
+      "name": "Chirurgeon",
+      "description": "Chirurgeon",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "f600904aef13405c",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        194,
+        195
+      ],
+      "drawn": false,
+      "name": "Anatomist",
+      "description": "Anatomist",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "ceca3ab8309e4e64",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        196,
+        197
+      ],
+      "drawn": false,
+      "name": "Relic Keeper",
+      "description": "Relic Keeper",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "1b2d17d7e0fa4ba1",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 2,
+      "range": [
+        198,
+        199
+      ],
+      "drawn": false,
+      "name": "Astrologer Royal",
+      "description": "Astrologer Royal",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "cb6714b17bff4947",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        200,
+        200
+      ],
+      "drawn": false,
+      "name": "Courtier",
+      "description": "Courtier",
+      "img": "icons/svg/d20-black.svg",
+      "_id": "4b2ed78458e043d6",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "custom-system-builder",
+        "systemVersion": "5.1.0",
+        "lastModifiedBy": null
+      },
+      "flags": {}
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "RollTable.BvPhlA2uAb4uo0Ni",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.1.0",
+    "createdTime": 1771240611594,
+    "modifiedTime": 1771257786613,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "formula": "1d200",
+  "ownership": {
+    "default": 0
+  }
+}
