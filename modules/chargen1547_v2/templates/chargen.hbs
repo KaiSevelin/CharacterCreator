@@ -20,12 +20,6 @@
     </section>
     {{/if}}
 
-    {{#if currentTableDescription}}
-    <section class="chargen-table-intro">
-        <div class="table-description">{{{currentTableDescription}}}</div>
-    </section>
-    {{/if}}
-
     {{#if nextPackage}}
     <section class="chargen-next-package" aria-label="Career package gained on this roll">
         <div class="chargen-next-package-eyebrow">From this roll you'll gain</div>
@@ -74,6 +68,18 @@
         </div>
 
         <aside class="chargen-sidebar" aria-label="Biography so far">
+            {{#if currentTableDescription}}
+            <section class="chargen-sidebar-panel chargen-sidebar-panel--intro">
+                <header class="chargen-sidebar-panel__header">
+                    <i class="fas fa-star"></i>
+                    <span>{{currentTableName}}</span>
+                </header>
+                <div class="chargen-sidebar-panel__body">
+                    <div class="table-description">{{{currentTableDescription}}}</div>
+                </div>
+            </section>
+            {{/if}}
+
             <section class="chargen-bio-panel">
                 <header class="chargen-bio-panel__header">
                     <i class="fas fa-book-open"></i>

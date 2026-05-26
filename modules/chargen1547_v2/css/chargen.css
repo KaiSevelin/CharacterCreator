@@ -135,7 +135,7 @@
 
 	.skilltree-chargen .chargen-main {
 		display: grid;
-		grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+		grid-template-columns: minmax(0, 1.45fr) minmax(420px, 1fr);
 		gap: 1rem;
 		align-items: start;
 	}
@@ -149,6 +149,39 @@
 		position: sticky;
 		top: 0;
 		align-self: start;
+		display: grid;
+		gap: 0.85rem;
+	}
+
+	.skilltree-chargen .chargen-sidebar-panel {
+		border: 1px solid rgba(234, 214, 176, 0.28);
+		border-radius: 16px;
+		background: rgba(19, 25, 37, 0.56);
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 12px 28px rgba(0,0,0,0.18);
+		overflow: hidden;
+	}
+
+	.skilltree-chargen .chargen-sidebar-panel__header {
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+		padding: 0.8rem 1rem 0.72rem;
+		border-bottom: 1px solid rgba(234, 214, 176, 0.2);
+		color: #f0e1bb;
+		font-size: 0.98rem;
+		font-weight: 900;
+		text-shadow: 0 1px 0 rgba(0,0,0,0.45);
+	}
+
+	.skilltree-chargen .chargen-sidebar-panel__body {
+		padding: 0.9rem 1rem;
+	}
+
+	.skilltree-chargen .chargen-sidebar-panel .table-description {
+		color: rgba(246, 237, 217, 0.95);
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.55;
 	}
 
 	.skilltree-chargen .chargen-bio-panel {
@@ -163,10 +196,10 @@
 		display: flex;
 		align-items: center;
 		gap: 0.55rem;
-		padding: 0.95rem 1rem 0.85rem;
+		padding: 0.8rem 1rem 0.72rem;
 		border-bottom: 1px solid rgba(234, 214, 176, 0.2);
 		color: #f0e1bb;
-		font-size: 1.05rem;
+		font-size: 0.98rem;
 		font-weight: 900;
 		text-shadow: 0 1px 0 rgba(0,0,0,0.45);
 	}
