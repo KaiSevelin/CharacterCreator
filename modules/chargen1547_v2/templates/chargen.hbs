@@ -39,35 +39,71 @@
     </section>
     {{/if}}
 
-    <section class="chargen-cards">
-        {{#each cards}}
-        <article class="chargen-card {{this.cardClass}} {{#if this.masked}}is-veiled{{/if}}"
-                 data-index="{{@index}}"
-                 title="{{this.tooltip}}"
-                 style='--cg-cover: url("{{this.img}}"); --cg-back: url("{{../backImg}}");'>
-            <div class="card-cover" aria-label="{{this.title}}">
-                <div class="card-flip">
-                    <div class="card-face card-front" role="img" aria-label="{{this.title}}"></div>
-                    <div class="card-face card-back" role="img" aria-label="Card back"></div>
-                </div>
-            </div>
+    <section class="chargen-main">
+        <div class="chargen-main-cards">
+            <section class="chargen-cards">
+                {{#each cards}}
+                <article class="chargen-card {{this.cardClass}} {{#if this.masked}}is-veiled{{/if}}"
+                         data-index="{{@index}}"
+                         title="{{this.tooltip}}"
+                         style='--cg-cover: url("{{this.img}}"); --cg-back: url("{{../backImg}}");'>
+                    <div class="card-cover" aria-label="{{this.title}}">
+                        <div class="card-flip">
+                            <div class="card-face card-front" role="img" aria-label="{{this.title}}"></div>
+                            <div class="card-face card-back" role="img" aria-label="Card back"></div>
+                        </div>
+                    </div>
 
-            <header class="card-header">
-                <h3 class="card-title">{{this.title}}</h3>
-                {{#if this.badges.length}}
-                <div class="card-badges" aria-label="Card hints">
-                    {{#each this.badges}}
-                    <span class="card-badge is-{{this.tone}}" title="{{this.detail}}">{{this.label}}</span>
-                    {{/each}}
-                </div>
-                {{/if}}
-            </header>
+                    <header class="card-header">
+                        <h3 class="card-title">{{this.title}}</h3>
+                        {{#if this.badges.length}}
+                        <div class="card-badges" aria-label="Card hints">
+                            {{#each this.badges}}
+                            <span class="card-badge is-{{this.tone}}" title="{{this.detail}}">{{this.label}}</span>
+                            {{/each}}
+                        </div>
+                        {{/if}}
+                    </header>
 
-            {{#if this.text}}
-            <p class="card-text">{{this.text}}</p>
-            {{/if}}
-        </article>
-        {{/each}}
+                    {{#if this.text}}
+                    <p class="card-text">{{this.text}}</p>
+                    {{/if}}
+                </article>
+                {{/each}}
+            </section>
+        </div>
+
+        <aside class="chargen-sidebar" aria-label="Biography so far">
+            <section class="chargen-bio-panel">
+                <header class="chargen-bio-panel__header">
+                    <i class="fas fa-book-open"></i>
+                    <span>Biography so far</span>
+                </header>
+                <div class="chargen-bio-scroll" role="log" aria-live="polite">
+                    {{#if compiledBio.length}}
+                    <div class="chargen-bio-block">
+                        <div class="chargen-bio-block__title">Life Summary</div>
+                        {{#each compiledBio}}
+                        <p>{{this}}</p>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+
+                    {{#if bio.length}}
+                    <div class="chargen-bio-block">
+                        <div class="chargen-bio-block__title">Chronicle</div>
+                        <ul class="chargen-bio-list">
+                            {{#each bio}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    {{else}}
+                    <p class="chargen-bio-empty">This life has only just begun.</p>
+                    {{/if}}
+                </div>
+            </section>
+        </aside>
     </section>
 
     {{#if reveal}}
@@ -163,72 +199,9 @@
     </div>
     {{/if}}
 
-    <section class="chargen-bio">
-        {{#if compiledBio.length}}
-        <details open>
-            <summary>
-                <i class="fas fa-feather-pointed"></i>
-                Life Summary
-            </summary>
-            <div class="chargen-bio-summary">
-                {{#each compiledBio}}
-                <p>{{this}}</p>
-                {{/each}}
-            </div>
-        </details>
-        {{/if}}
-        <details>
-            <summary>
-                <i class="fas fa-book-open"></i>
-                Biography so far
-            </summary>
-            <ul>
-                {{#each bio}}
-                <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        </details>
-    </section>
-
-    <section class="chargen-tables">
-        <details>
-            <summary>
-                <i class="fas fa-table"></i>
-                Relevant tables and usage
-            </summary>
-            <div class="table-wrap">
-                <table class="cg-table-list">
-                    <thead>
-                        <tr>
-                            <th>Role</th>
-                            <th>Use</th>
-                            <th>Table</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each relevantTables}}
-                        <tr>
-                            <td>{{this.role}}</td>
-                            <td>{{this.use}}</td>
-                            <td title="{{this.ref}}">{{this.tableName}}</td>
-                            <td>
-                                {{#if this.ok}}OK{{else}}Missing{{/if}}
-                            </td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-        </details>
-    </section>
-
     <footer class="sheet-footer flexrow chargen-footer">
-        <button type="button" data-action="table-list">
-            <i class="fas fa-list-check"></i> Validation List
-        </button>
-        <button type="button" data-action="reroll">
-            <i class="fas fa-dice"></i> Reroll Options
+        <button type="button" data-action="settings">
+            <i class="fas fa-sliders"></i> Settings
         </button>
         <button type="button" data-action="finish" class="primary-action">
             <i class="fas fa-flag-checkered"></i> Finish

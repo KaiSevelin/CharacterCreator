@@ -98,8 +98,8 @@ export class SkillTreeChargenApp extends FormApplication {
             classes: ["skilltree-chargen-window"],
             title: "The Life",
             template: "modules/chargen1547_v2/templates/chargen.hbs",
-            width: 900,
-            height: Math.min(820, window.innerHeight - 80),
+            width: Math.min(1380, window.innerWidth - 48),
+            height: Math.min(940, window.innerHeight - 48),
             closeOnSubmit: false,
             resizable: true
         });
@@ -4826,7 +4826,6 @@ export class SkillTreeChargenApp extends FormApplication {
     async getData() {
         const state = this._getState();
         const run = state.run;
-        const relevantTables = await this._getRelevantTablesForView(state);
         const table = run?.tableUuid ? await this._getRollTable(run.tableUuid) : null;
         const rawTableDescription = String(
             table?.description ??
@@ -4895,8 +4894,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 };
             }),
             bio: run?.bio ?? [],
-            compiledBio: this._buildCompiledBiography(run?.bioEvents ?? []),
-            relevantTables
+            compiledBio: this._buildCompiledBiography(run?.bioEvents ?? [])
         };
     }
 
@@ -4970,9 +4968,17 @@ export class SkillTreeChargenApp extends FormApplication {
     activateListeners(html) {
         super.activateListeners(html);
 
-        html.find("[data-action='reroll']").on("click", () => this._onReroll());
+        const bioCount = Number(this._getState()?.run?.bio?.length ?? 0);
+        requestAnimationFrame(() => {
+            const bioScroller = html[0]?.querySelector(".chargen-bio-scroll");
+            if (bioScroller && this._lastBioScrollCount != null && bioCount > this._lastBioScrollCount) {
+                bioScroller.scrollTop = bioScroller.scrollHeight;
+            }
+            this._lastBioScrollCount = bioCount;
+        });
+
+        html.find("[data-action='settings']").on("click", () => this._onOpenSettings());
         html.find("[data-action='finish']").on("click", () => this._onFinish());
-        html.find("[data-action='table-list']").on("click", () => this._onShowTableList());
         html.find("[data-action='continue']").on("click", () => this._onContinue());
 
         html.on("keydown", ".deferred-overlay", (ev) => {
@@ -5013,6 +5019,38 @@ export class SkillTreeChargenApp extends FormApplication {
         }
     }
 
+    async _onOpenSettings() {
+        const content = `
+            <div class="chargen-dialog">
+              <div class="chargen-dialog__eyebrow">Table Tools</div>
+              <h2 class="chargen-dialog__title">Chargen Settings</h2>
+              <p class="chargen-dialog__copy">Recovery, validation, and diagnostic tools live here so the main life screen can stay focused on choosing cards and reading biography.</p>
+            </div>
+        `;
+
+        new Dialog({
+            title: "Chargen Settings",
+            content,
+            buttons: {
+                reroll: {
+                    label: '<i class="fas fa-dice"></i> Reroll Current Spread',
+                    callback: () => this._onReroll()
+                },
+                relevant: {
+                    label: '<i class="fas fa-table"></i> Relevant Tables',
+                    callback: () => this._onShowRelevantTables()
+                },
+                validation: {
+                    label: '<i class="fas fa-list-check"></i> Validation List',
+                    callback: () => this._onShowTableList()
+                },
+                close: {
+                    label: "Close"
+                }
+            }
+        }, { width: 620, classes: ["skilltree-chargen-dialog"] }).render(true);
+    }
+
     async _onShowTableList() {
         try {
             const state = this._getState();
@@ -5031,6 +5069,53 @@ export class SkillTreeChargenApp extends FormApplication {
             });
         } catch (e) {
             ui.notifications.error(e?.message ?? "Unable to open validation list.");
+            console.error(e);
+        }
+    }
+
+    async _onShowRelevantTables() {
+        try {
+            const state = this._getState();
+            const relevantTables = await this._getRelevantTablesForView(state);
+            const rows = relevantTables.map((entry) => `
+                <tr>
+                  <td>${foundry.utils.escapeHTML(String(entry.role ?? ""))}</td>
+                  <td>${foundry.utils.escapeHTML(String(entry.use ?? ""))}</td>
+                  <td title="${foundry.utils.escapeHTML(String(entry.ref ?? ""))}">${foundry.utils.escapeHTML(String(entry.tableName ?? ""))}</td>
+                  <td>${entry.ok ? "OK" : "Missing"}</td>
+                </tr>
+            `).join("");
+
+            const content = `
+                <div class="chargen-dialog">
+                  <div class="chargen-dialog__eyebrow">Diagnostics</div>
+                  <h2 class="chargen-dialog__title">Relevant Tables and Usage</h2>
+                  <p class="chargen-dialog__copy">This view is mainly useful for validation and troubleshooting.</p>
+                  <div style="max-height: 420px; overflow: auto;">
+                    <table class="table-striped" style="width:100%;">
+                      <thead>
+                        <tr>
+                          <th>Role</th>
+                          <th>Use</th>
+                          <th>Table</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>${rows}</tbody>
+                    </table>
+                  </div>
+                </div>
+            `;
+
+            new Dialog({
+                title: "Chargen Relevant Tables",
+                content,
+                buttons: {
+                    close: { label: "Close" }
+                }
+            }, { width: 960, height: "auto", classes: ["skilltree-chargen-dialog"] }).render(true);
+        } catch (e) {
+            ui.notifications.error(e?.message ?? "Unable to open relevant tables.");
             console.error(e);
         }
     }
@@ -5418,5 +5503,3 @@ export async function advanceStat(actor, characteristic, steps) {
 
     return { dice, mod };
 }
-
-
