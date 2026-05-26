@@ -4605,7 +4605,7 @@ export class SkillTreeChargenApp extends FormApplication {
         const luckTableUuid = "RollTable.mWI6zmHkHhQA84Yp";
         const rollResult = await this._rollOnce(luckTableUuid);
         const luckOutcome = SkillTreeChargenApp._resultRawJSON(rollResult.result).trim();
-        return `A lucky turn of events occurred: ${luckOutcome}`;
+        return `Fortune turned: ${luckOutcome}`;
     }
     /* ---------------- Flow ---------------- */
 

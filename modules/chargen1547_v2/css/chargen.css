@@ -2,6 +2,8 @@
 
 .skilltree-chargen {
 	gap: 0.75rem;
+	display: flex;
+	flex-direction: column;
 	background:
 		radial-gradient(circle at 15% 12%, rgba(218, 173, 93, 0.10), transparent 22%),
 		radial-gradient(circle at 84% 16%, rgba(95, 63, 36, 0.18), transparent 24%),
@@ -53,8 +55,8 @@
 		}
 
 	.skilltree-chargen .chargen-next-package {
-		margin: 0.1rem 0 0.35rem;
-		padding: 0.55rem 0.8rem 0.65rem;
+		margin: 0 0 0.2rem;
+		padding: 0.45rem 0.8rem 0.5rem;
 		border: 1px solid rgba(228, 193, 106, 0.45);
 		border-radius: 12px;
 		background:
@@ -107,13 +109,16 @@
 
 	.skilltree-chargen .chargen-main {
 		display: grid;
-		grid-template-columns: minmax(0, 1.45fr) minmax(420px, 1fr);
-		gap: 0.65rem;
+		grid-template-columns: minmax(0, 1.56fr) minmax(360px, 0.92fr);
+		gap: 0.4rem;
 		align-items: stretch;
+		flex: 1 1 auto;
+		min-height: 0;
 	}
 
 	.skilltree-chargen .chargen-main-cards {
 		min-width: 0;
+		min-height: 0;
 	}
 
 	.skilltree-chargen .chargen-sidebar {
@@ -124,7 +129,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.85rem;
-		min-height: 100%;
+		height: 100%;
+		min-height: 0;
+		max-height: 100%;
 	}
 
 	.skilltree-chargen .chargen-sidebar-panel {
@@ -166,7 +173,7 @@
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		flex: 1 1 auto;
+		flex: 1 1 0;
 		min-height: 0;
 	}
 
@@ -1324,7 +1331,7 @@
 	}
 
 	.skilltree-chargen .chargen-footer {
-		flex-direction: column;
+		flex-direction: row;
 		align-items: stretch;
 	}
 
@@ -1332,7 +1339,8 @@
 		background: rgba(255, 248, 233, 0.92);
 		color: #22170f;
 		font-weight: 800;
-		width: 100%;
+		width: auto;
+		flex: 1 1 0;
 	}
 	.skilltree-chargen .sheet-footer button[data-action="settings"] {
 		background: linear-gradient(180deg, rgba(245, 237, 219, 0.96), rgba(224, 212, 183, 0.96));
