@@ -9,6 +9,10 @@ function isRollTableImportFile(path) {
     return /\/fvtt-RollTable-.*\.json$/i.test(String(path ?? "").replace(/\\/g, "/"));
 }
 
+function isPackagesImportFile(path) {
+    return /\/packages\.json$/i.test(String(path ?? "").replace(/\\/g, "/"));
+}
+
 function normalizePath(path) {
     return String(path ?? "").replace(/\\/g, "/").replace(/\/+/g, "/").replace(/\/$/, "");
 }
@@ -252,6 +256,48 @@ async function importEntriesOfType({
     };
 }
 
+async function buildPackageRegistry(rootPath, files, refMap) {
+    const packageFiles = files
+        .filter(isPackagesImportFile)
+        .sort((a, b) => a.localeCompare(b));
+
+    const registry = {};
+    const warnings = [];
+
+    for (const file of packageFiles) {
+        const dirParts = relativeDirParts(rootPath, file);
+        const folderKey = dirParts[dirParts.length - 1] ?? "";
+
+        let data;
+        try {
+            data = await loadImportJSON(file);
+        } catch (err) {
+            warnings.push(`Failed to read ${file}: ${err.message}`);
+            continue;
+        }
+
+        const stageKey = String(data?.stageKey ?? "").trim() || folderKey;
+        if (!stageKey) {
+            warnings.push(`Skipping ${file}: missing stageKey and could not derive one from folder.`);
+            continue;
+        }
+
+        const packages = Array.isArray(data?.packages) ? data.packages : [];
+        const cleaned = [];
+        for (const [i, pkg] of packages.entries()) {
+            if (!pkg || typeof pkg !== "object" || !pkg.gain || typeof pkg.gain !== "object") {
+                warnings.push(`${file} packages[${i}]: must be an object with a "gain" object`);
+                continue;
+            }
+            cleaned.push(rewriteDataRefs(foundry.utils.deepClone(pkg), refMap, new Set(), file));
+        }
+
+        registry[stageKey] = cleaned;
+    }
+
+    return { registry, warnings, fileCount: packageFiles.length };
+}
+
 export async function importWorldContent(opts = {}) {
     const rootPath = normalizePath(opts.rootPath ?? "modules/chargen1547_v2");
     const rootFolderName = String(opts.rootFolderName ?? "chargen1547_v2").trim() || "chargen1547_v2";
@@ -285,7 +331,14 @@ export async function importWorldContent(opts = {}) {
         refMap
     });
 
+    const packageReport = await buildPackageRegistry(rootPath, files, refMap);
+
     await game.settings.set(MODULE_ID, "legacyIdMap", refMap);
+    await game.settings.set(MODULE_ID, "packageRegistry", packageReport.registry);
+
+    if (packageReport.warnings.length) {
+        for (const w of packageReport.warnings) console.warn(`[${MODULE_ID}] packages.json: ${w}`);
+    }
 
     return {
         ok: true,
@@ -294,10 +347,16 @@ export async function importWorldContent(opts = {}) {
         totals: {
             files: itemEntries.length + tableEntries.length,
             items: itemReport.fileCount,
-            rolltables: rollTableReport.fileCount
+            rolltables: rollTableReport.fileCount,
+            packages: packageReport.fileCount
         },
         idMapSize: Object.keys(refMap).length,
         items: itemReport,
-        rolltables: rollTableReport
+        rolltables: rollTableReport,
+        packages: {
+            fileCount: packageReport.fileCount,
+            stages: Object.keys(packageReport.registry).length,
+            warnings: packageReport.warnings
+        }
     };
 }

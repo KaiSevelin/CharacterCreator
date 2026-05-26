@@ -6,7 +6,7 @@ import {
     enqueueDeferred,
     extractDeferredFromChoice
 } from "./chargen-deferred.js";
-import { getChargenSettings, getLegacyMappedRef } from "./settings.js";
+import { getChargenSettings, getLegacyMappedRef, getPackagesForStage } from "./settings.js";
 import {
     applyRewardChanges,
     parseRewardResult,
@@ -754,7 +754,8 @@ export class SkillTreeChargenApp extends FormApplication {
             bodyTable,
             cards: [],
             deferredQueue: [],
-            deferredReady: []
+            deferredReady: [],
+            packageProgress: {}
         };
         if (!actor.getFlag("world", "baselineStatsApplied")) {
             for (const s of PRIMARY_STATS) {
@@ -1637,6 +1638,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const queue = [startDoc];
         const seen = new Set();
+        const visitedCareerStageKeys = new Set();
         const allowedRefs = Array.isArray(preflightOnlyTables)
             ? preflightOnlyTables.map(v => String(v ?? "").trim()).filter(Boolean)
             : [];
@@ -1654,6 +1656,14 @@ export class SkillTreeChargenApp extends FormApplication {
             if (!table || seen.has(table.uuid)) continue;
             if (allowedUuids.size && !allowedUuids.has(table.uuid)) continue;
             seen.add(table.uuid);
+
+            const folderName = String(table?.folder?.name ?? "").trim().toLowerCase();
+            if (folderName.startsWith("career-") || folderName.startsWith("advanced-")) {
+                const stageKey = String(
+                    foundry.utils.getProperty(table, "flags.chargen1547_v2.entryKey") ?? ""
+                ).trim() || folderName;
+                if (stageKey) visitedCareerStageKeys.add(stageKey);
+            }
 
             report.visited.push({ uuid: table.uuid, name: table.name });
 
@@ -1805,6 +1815,52 @@ export class SkillTreeChargenApp extends FormApplication {
                         }
                 }
             }
+        }
+
+        const packageRegistry = game.settings.get("chargen1547_v2", "packageRegistry") ?? {};
+        const KNOWN_PACKAGE_GAIN_TYPES = new Set(["stat", "skill", "maneuver", "money", "item", "luck", "contact", "body", "social", "drive", "bio", "language"]);
+        for (const stageKey of visitedCareerStageKeys) {
+            const packages = Array.isArray(packageRegistry[stageKey]) ? packageRegistry[stageKey] : [];
+            if (!packages.length) {
+                SkillTreeChargenApp._addIssue(
+                    report,
+                    "warning",
+                    "stage-missing-packages",
+                    `Career/advanced stage "${stageKey}" has no packages.json (deterministic gains will be skipped).`,
+                    { stageKey }
+                );
+                continue;
+            }
+            for (const [i, pkg] of packages.entries()) {
+                const gainType = String(pkg?.gain?.type ?? "").trim().toLowerCase();
+                if (!gainType) {
+                    SkillTreeChargenApp._addIssue(
+                        report,
+                        "error",
+                        "package-missing-gain-type",
+                        `Package ${i} for stage "${stageKey}" has no gain.type.`,
+                        { stageKey, packageIndex: i }
+                    );
+                } else if (!KNOWN_PACKAGE_GAIN_TYPES.has(gainType)) {
+                    SkillTreeChargenApp._addIssue(
+                        report,
+                        "warning",
+                        "package-unknown-gain-type",
+                        `Package ${i} for stage "${stageKey}" has unknown gain.type "${gainType}".`,
+                        { stageKey, packageIndex: i, gainType }
+                    );
+                }
+            }
+        }
+        for (const stageKey of Object.keys(packageRegistry)) {
+            if (visitedCareerStageKeys.has(stageKey)) continue;
+            SkillTreeChargenApp._addIssue(
+                report,
+                "warning",
+                "orphan-package-stage",
+                `packages.json declares stage "${stageKey}" but no reachable career/advanced table matches it.`,
+                { stageKey }
+            );
         }
 
         report.ok = report.errors.length === 0;
@@ -3311,6 +3367,26 @@ export class SkillTreeChargenApp extends FormApplication {
         return folderName.startsWith("career-") || folderName.startsWith("advanced-");
     }
 
+    _currentStageKey(table) {
+        if (!table) return "";
+        const flagKey = String(
+            foundry.utils.getProperty(table, "flags.chargen1547_v2.entryKey") ?? ""
+        ).trim();
+        if (flagKey) return flagKey;
+        return String(table?.folder?.name ?? "").trim().toLowerCase();
+    }
+
+    _getNextPackageInfo(run, table) {
+        if (!run || !this._isCareerAdvancementTable(table)) return null;
+        const stageKey = this._currentStageKey(table);
+        if (!stageKey) return null;
+        const packages = getPackagesForStage(stageKey);
+        if (!packages.length) return null;
+        const claimed = Number(run?.packageProgress?.[stageKey] ?? 0);
+        if (claimed >= packages.length) return null;
+        return { stageKey, index: claimed, package: packages[claimed], total: packages.length };
+    }
+
     async _getSkillTreeGraphData() {
         const st = globalThis.SkillTree;
         if (!st) return null;
@@ -4774,6 +4850,18 @@ export class SkillTreeChargenApp extends FormApplication {
             ? String(reveal?.transitionText ?? "").trim()
             : "";
 
+        const nextPackageInfo = this._getNextPackageInfo(run, table);
+        const nextPackage = nextPackageInfo
+            ? {
+                label: String(nextPackageInfo.package?.label ?? "").trim()
+                    || summarizeRewardChange(nextPackageInfo.package?.gain)
+                    || "Career package",
+                summary: summarizeRewardChange(nextPackageInfo.package?.gain) ?? "",
+                indexHuman: nextPackageInfo.index + 1,
+                total: nextPackageInfo.total
+            }
+            : null;
+
         return {
             revealDeferredLines,
             revealDeferredHtml,
@@ -4782,6 +4870,7 @@ export class SkillTreeChargenApp extends FormApplication {
             actorName: this.actor?.name ?? "",
             currentTableName: table?.name ?? "",
             currentTableDescription: tableDescription,
+            nextPackage,
             backImg,
             reveal,
             cards: (run?.cards ?? []).map((c, idx) => {
@@ -4989,6 +5078,25 @@ export class SkillTreeChargenApp extends FormApplication {
             if (!reward) throw new Error("No valid reward could be selected.");
 
             await this._applyChanges(run, reward.changes ?? []);
+
+            const packageInfo = this._getNextPackageInfo(run, currentTable);
+            if (packageInfo) {
+                await this._applyChanges(run, [packageInfo.package.gain]);
+                if (!run.packageProgress || typeof run.packageProgress !== "object") {
+                    run.packageProgress = {};
+                }
+                run.packageProgress[packageInfo.stageKey] =
+                    Number(run.packageProgress[packageInfo.stageKey] ?? 0) + 1;
+
+                const packageLabel = String(packageInfo.package.label ?? "").trim()
+                    || summarizeRewardChange(packageInfo.package.gain)
+                    || "Career package";
+                await this._addBio(run, `Career package: ${packageLabel}`, {
+                    kind: "package",
+                    stageKey: packageInfo.stageKey,
+                    packageIndex: packageInfo.index
+                });
+            }
 
             const fromUuid = run.tableUuid;
             const fromName = await this._getTableName(fromUuid);

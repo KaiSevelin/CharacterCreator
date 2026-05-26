@@ -9,6 +9,7 @@ const SETTING_KEYS = {
     startingTable: "startingTable",
     contentFolderName: "contentFolderName",
     legacyIdMap: "legacyIdMap",
+    packageRegistry: "packageRegistry",
     maxRolls: "maxRolls",
     careerStatPicks: "careerStatPicks",
     careerSkillPicks: "careerSkillPicks",
@@ -214,6 +215,13 @@ export function registerChargenSettings() {
         default: {}
     });
 
+    game.settings.register(CHARGEN_MODULE_ID, SETTING_KEYS.packageRegistry, {
+        scope: "world",
+        config: false,
+        type: Object,
+        default: {}
+    });
+
     game.settings.registerMenu(CHARGEN_MODULE_ID, "setupData", {
         name: "Setup Data",
         label: "Setup Data",
@@ -233,6 +241,14 @@ export function getLegacyMappedRef(ref) {
     if (!value) return value;
     const map = getChargenSetting(SETTING_KEYS.legacyIdMap) ?? {};
     return String(STATIC_LEGACY_REF_MAP[value] ?? map[value] ?? value).trim();
+}
+
+export function getPackagesForStage(stageKey) {
+    const key = String(stageKey ?? "").trim();
+    if (!key) return [];
+    const registry = getChargenSetting(SETTING_KEYS.packageRegistry) ?? {};
+    const list = registry[key];
+    return Array.isArray(list) ? list : [];
 }
 
 export function getChargenSettings() {

@@ -26,6 +26,19 @@
     </section>
     {{/if}}
 
+    {{#if nextPackage}}
+    <section class="chargen-next-package" aria-label="Career package gained on this roll">
+        <div class="chargen-next-package-eyebrow">From this roll you'll gain</div>
+        <div class="chargen-next-package-chip">
+            <span class="chargen-next-package-label">{{nextPackage.label}}</span>
+            {{#if nextPackage.summary}}
+            <span class="chargen-next-package-summary">{{nextPackage.summary}}</span>
+            {{/if}}
+            <span class="chargen-next-package-meta">Package {{nextPackage.indexHuman}} of {{nextPackage.total}}</span>
+        </div>
+    </section>
+    {{/if}}
+
     <section class="chargen-cards">
         {{#each cards}}
         <article class="chargen-card {{this.cardClass}} {{#if this.masked}}is-veiled{{/if}}"

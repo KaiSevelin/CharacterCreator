@@ -1,0 +1,21 @@
+{
+    "stageKey": "career-archer",
+    "packages": [
+        {
+            "label": "Soldier's body",
+            "gain": { "type": "stat", "characteristic": "Body", "steps": 1 }
+        },
+        {
+            "label": "Bow training",
+            "gain": { "type": "skill", "targetKey": "Item.HnJ6EllrZl41RPLQ", "fallback": true }
+        },
+        {
+            "label": "Patrol pay",
+            "gain": { "type": "money", "formula": "2d6" }
+        },
+        {
+            "label": "Veteran's eye",
+            "gain": { "type": "skill", "targetKey": "Item.zXuCnw9eUnBOb1Vp", "fallback": true }
+        }
+    ]
+}
