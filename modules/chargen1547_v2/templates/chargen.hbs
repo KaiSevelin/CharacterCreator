@@ -14,12 +14,6 @@
         </div>
     </header>
 
-    {{#if currentTableName}}
-    <section class="chargen-stage">
-        <h3 class="chargen-stage-title">{{currentTableName}}</h3>
-    </section>
-    {{/if}}
-
     {{#if nextPackage}}
     <section class="chargen-next-package" aria-label="Career package gained on this roll">
         <div class="chargen-next-package-eyebrow">From this roll you'll gain</div>
@@ -109,6 +103,15 @@
                     {{/if}}
                 </div>
             </section>
+
+            <footer class="sheet-footer flexcol chargen-footer">
+                <button type="button" data-action="settings">
+                    <i class="fas fa-sliders"></i> Settings
+                </button>
+                <button type="button" data-action="finish" class="primary-action">
+                    <i class="fas fa-flag-checkered"></i> Finish
+                </button>
+            </footer>
         </aside>
     </section>
 
@@ -204,14 +207,5 @@
         </div>
     </div>
     {{/if}}
-
-    <footer class="sheet-footer flexrow chargen-footer">
-        <button type="button" data-action="settings">
-            <i class="fas fa-sliders"></i> Settings
-        </button>
-        <button type="button" data-action="finish" class="primary-action">
-            <i class="fas fa-flag-checkered"></i> Finish
-        </button>
-    </footer>
 
 </form>
