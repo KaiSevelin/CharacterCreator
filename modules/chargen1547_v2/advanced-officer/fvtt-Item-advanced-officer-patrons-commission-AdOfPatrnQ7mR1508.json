@@ -1,151 +1,141 @@
 {
-    "folder":  "RUXVfLU7KC7rU4jQ",
-    "name":  "Patron\u0027s commission",
-    "type":  "equippableItem",
-    "img":  "icons/svg/item-bag.svg",
-    "system":  {
-                   "body":  {
-                                "key":  "custom_body",
-                                "contents":  [
-
-                                             ],
-                                "type":  "panel"
-                            },
-                   "display":  {
-                                   "pp_width":  64,
-                                   "pp_height":  64,
-                                   "fix_size":  false,
-                                   "width":  820,
-                                   "height":  980
-                               },
-                   "header":  {
-                                  "key":  "custom_header",
-                                  "contents":  [
-
-                                               ],
-                                  "type":  "panel"
-                              },
-                   "hidden":  [
-
-                              ],
-                   "modifiers":  [
-
-                                 ],
-                   "props":  {
-                                 "ChoiceTitle":  "Patron\u0027s commission",
-                                 "ChoiceText":  "Someone important helped your advancement, which improved your prospects and complicated every future success.",
-                                 "ChoiceTags":  "",
-                                 "ChoiceBio":  "",
-                                 "ChoiceCard":  "media/home/games/1547/Cards/General Public life.webp",
-                                 "Effects1":  {
-                                                  "0":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "1",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "1":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "3",
-                                                            "Type":  "Money",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  "RollTable.RollTablep5odc00",
-                                                            "TransitionText":  "Because a patron\u0027s commission advanced you by influence as much as merit, your future became entangled with higher command.",
-                                                            "TransitionMode":  "optional",
-                                                            "TransitionPrompt":  "A patron\u0027s commission could entangle your future with higher command, but you may remain on your current path instead."
-                                                        },
-                                                  "2":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Social",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "1",
-                                                            "TargetText":  "",
-                                                            "NextTable":  "RollTable.RollTabl1w5dtto0",
-                                                            "TransitionText":  "Because a patron\u0027s commission advanced you by influence as much as merit, noble favor began to make knighthood plausible.",
-                                                            "TransitionMode":  "optional",
-                                                            "TransitionPrompt":  "A patron\u0027s commission could make knighthood plausible, but you may remain on your current path instead."
-                                                        }
-                                              },
-                                 "Effects2":  {
-                                                  "0":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Drive",
-                                                            "TargetKey":  "add",
-                                                            "Amount":  "Calculation",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "1":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Stat",
-                                                            "TargetKey":  "Charisma",
-                                                            "Amount":  "1",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "2":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        }
-                                              },
-                                 "Effects3":  {
-                                                  "0":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "1":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "2":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        }
-                                              }
-                             },
-                   "unique":  false,
-                   "templateSystemUniqueVersion":  4241488775,
-                   "template":  "CGRwEfTpl9K2P7rQ",
-                   "uniqueId":  "ItemAdOf8as2ye00"
-               },
-    "flags":  {
-                  "custom-system-builder":  {
-                                                "version":  "5.2.0"
-                                            }
-              },
-    "items":  [
-
-              ],
-    "ownership":  {
-                      "default":  0
-                  },
-    "_id":  "ItemAdOf8as2ye00"
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "name": "Patron's commission",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "key": "custom_body",
+            "contents": [],
+            "type": "panel"
+        },
+        "display": {
+            "pp_width": 64,
+            "pp_height": 64,
+            "fix_size": false,
+            "width": 820,
+            "height": 980
+        },
+        "header": {
+            "key": "custom_header",
+            "contents": [],
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Patron's commission",
+            "ChoiceText": "Someone important helped your advancement, which improved your prospects and complicated every future success.",
+            "ChoiceTags": "",
+            "ChoiceBio": "A patron's commission taught you that advancement by favor stains every later success with gratitude, debt, and doubt.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Public life.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "1",
+                    "Type": "Suspicion",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "3",
+                    "Type": "Money",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": "RollTable.RollTablep5odc00",
+                    "TransitionText": "Because a patron's commission advanced you by influence as much as merit, your future became entangled with higher command.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "A patron's commission could entangle your future with higher command, but you may remain on your current path instead."
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Social",
+                    "TargetKey": "",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": "RollTable.RollTabl1w5dtto0",
+                    "TransitionText": "Because a patron's commission advanced you by influence as much as merit, noble favor began to make knighthood plausible.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "A patron's commission could make knighthood plausible, but you may remain on your current path instead."
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Drive",
+                    "TargetKey": "add",
+                    "Amount": "Calculation",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Stat",
+                    "TargetKey": "Charisma",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Bio",
+                    "TargetKey": "RollTable.kC0YeELeXOdwDeaJ",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Esteem",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "ItemAdOf8as2ye00"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "_id": "ItemAdOf8as2ye00"
 }

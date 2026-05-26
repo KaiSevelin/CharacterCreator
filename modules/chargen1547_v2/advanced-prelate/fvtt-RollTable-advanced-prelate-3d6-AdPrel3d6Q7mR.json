@@ -1,0 +1,245 @@
+{
+    "folder": "dA5kRoToREvCP9hn",
+    "name": "Prelate",
+    "img": "icons/svg/daze.svg",
+    "description": "A path of senior church office, patronage, doctrine, relic custody, discipline, and sacred administration. This advanced career is shaped by chapters, benefices, decrees, noble devotion, and the dangerous closeness of sanctity to power.",
+    "results": [
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                3,
+                3
+            ],
+            "_id": "AdPrRsA1q2W3e4C",
+            "name": "Disputed benefice",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrBeneQ7mR1621"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                4,
+                4
+            ],
+            "_id": "AdPrRsB1q2W3e4C",
+            "name": "Relic under guard",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrRelicQ7mR1622"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                5,
+                5
+            ],
+            "_id": "AdPrRsC1q2W3e4C",
+            "name": "Chapter faction",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrChptrQ7mR1623"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                6,
+                6
+            ],
+            "_id": "AdPrRsD1q2W3e4C",
+            "name": "Doctrine questioned",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrHeresQ7mR1624"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                7,
+                7
+            ],
+            "_id": "AdPrRsE1q2W3e4C",
+            "name": "Appointment made",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrAppntQ7mR1625"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                8,
+                8
+            ],
+            "_id": "AdPrRsF1q2W3e4C",
+            "name": "Visitation tour",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrVisitQ7mR1626"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                9,
+                9
+            ],
+            "_id": "AdPrRsG1q2W3e4C",
+            "name": "Synod session",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrSynodQ7mR1627"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                10,
+                10
+            ],
+            "_id": "AdPrRsH1q2W3e4C",
+            "name": "Protected a sinner",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrMercyQ7mR1628"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                11,
+                11
+            ],
+            "_id": "AdPrRsI1q2W3e4C",
+            "name": "Treasury audited",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrTreasQ7mR1629"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                12,
+                12
+            ],
+            "_id": "AdPrRsJ1q2W3e4C",
+            "name": "Great procession",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrProcessQ7mR1630"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                13,
+                13
+            ],
+            "_id": "AdPrRsK1q2W3e4C",
+            "name": "Rule enforced harshly",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrRuleQ7mR1631"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                14,
+                14
+            ],
+            "_id": "AdPrRsL1q2W3e4C",
+            "name": "Great house favor",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrFavorQ7mR1632"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                15,
+                15
+            ],
+            "_id": "AdPrRsM1q2W3e4C",
+            "name": "Issued a decree",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrDecreQ7mR1633"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                16,
+                16
+            ],
+            "_id": "AdPrRsN1q2W3e4C",
+            "name": "Ordained-the-worthy",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrOrdinQ7mR1634"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                17,
+                17
+            ],
+            "_id": "AdPrRsO1q2W3e4C",
+            "name": "Your voice carried doctrine",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrVoiceQ7mR1635"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                18,
+                18
+            ],
+            "_id": "AdPrRsP1q2W3e4C",
+            "name": "Sanctity and office became one",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrSancQ7mR1636"
+        }
+    ],
+    "replacement": true,
+    "displayRoll": true,
+    "flags": {
+        "chargen1547_v2": {
+            "stageType": "advanced",
+            "entryKey": "advanced-prelate"
+        }
+    },
+    "formula": "3d6",
+    "ownership": {
+        "default": 0
+    },
+    "_id": "RollTabl1prelat0"
+}

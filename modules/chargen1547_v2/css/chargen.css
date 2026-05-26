@@ -1,4 +1,4 @@
-﻿/* styles/chargen.css - DROP-IN (image card version) */
+/* styles/chargen.css - DROP-IN (image card version) */
 
 .skilltree-chargen {
 	gap: 0.75rem;
@@ -212,7 +212,7 @@
 		.skilltree-chargen .chargen-card .card-cover {
 			aspect-ratio: 2 / 3;
 			width: 100%;
-			max-height: 420px;
+			max-height: 320px;
 			flex: 0 0 auto;
 			border-bottom: 1px solid rgba(0,0,0,0.12);
 			position: relative;
@@ -260,13 +260,39 @@
 			opacity: 0.92;
 		}
 
-.skilltree-chargen-dialog .window-content {
+.skilltree-chargen-dialog .window-content,
+.skilltree-chargen-window .window-content {
 	background:
 		radial-gradient(circle at 14% 12%, rgba(218, 173, 93, 0.12), transparent 24%),
 		radial-gradient(circle at 82% 16%, rgba(95, 63, 36, 0.22), transparent 26%),
 		linear-gradient(180deg, rgba(20, 16, 11, 0.98), rgba(10, 9, 8, 0.98));
 	color: #f3e6c9;
 	padding: 0.9rem;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	max-height: calc(100vh - 7rem);
+}
+
+.skilltree-chargen-window .window-content > form.skilltree-chargen {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	padding-right: 0.2rem;
+}
+
+.skilltree-chargen-dialog form {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+}
+
+.skilltree-chargen-dialog .dialog-content {
+	flex: 1 1 auto;
+	min-height: 0;
+	overflow-y: auto;
+	padding-right: 0.2rem;
 }
 
 .skilltree-chargen-dialog .window-header {
@@ -516,11 +542,22 @@
 }
 
 .skilltree-chargen-dialog .dialog-buttons {
+	position: sticky;
+	bottom: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
 	gap: 0.6rem;
 	padding: 0.8rem 0.1rem 0.1rem;
+	margin-top: auto;
+	background: linear-gradient(180deg, rgba(20, 16, 11, 0), rgba(20, 16, 11, 0.96) 28%);
+	z-index: 2;
 }
 
 .skilltree-chargen-dialog .dialog-buttons button {
+	flex: 1 1 0;
+	width: auto;
+	min-width: 0;
 	border-radius: 12px;
 	border: 1px solid rgba(220, 190, 130, 0.34);
 	background: linear-gradient(180deg, rgba(72, 45, 24, 0.96), rgba(37, 22, 11, 0.98));
@@ -797,6 +834,12 @@
 		font-weight: 700;
 	}
 
+	.skilltree-chargen .chargen-reveal .chargen-reveal-actions {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 0.9rem;
+	}
+
 	.skilltree-chargen .chargen-reveal::after {
 		content: "Click the chosen card to continue";
 		display: block;
@@ -840,11 +883,38 @@
 		cursor: pointer;
 	}
 
+	.skilltree-chargen .transition-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 190;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1.5rem;
+		background:
+			radial-gradient(circle at 50% 18%, rgba(218, 187, 120, 0.08), transparent 26%),
+			rgba(8, 10, 16, 0.74);
+		backdrop-filter: blur(2px);
+		cursor: pointer;
+	}
+
 	.skilltree-chargen .deferred-overlay:focus {
 		outline: none;
 	}
 
+	.skilltree-chargen .transition-overlay:focus {
+		outline: none;
+	}
+
 	.skilltree-chargen .deferred-overlay:focus-visible .deferred-intertitle__frame {
+		box-shadow:
+			inset 0 0 0 2px rgba(230, 214, 177, 0.24),
+			inset 0 0 0 10px rgba(0, 0, 0, 0.12),
+			0 18px 34px rgba(0, 0, 0, 0.34),
+			0 0 0 3px rgba(245, 234, 209, 0.52);
+	}
+
+	.skilltree-chargen .transition-overlay:focus-visible .transition-intertitle__frame {
 		box-shadow:
 			inset 0 0 0 2px rgba(230, 214, 177, 0.24),
 			inset 0 0 0 10px rgba(0, 0, 0, 0.12),
@@ -925,6 +995,27 @@
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		font-family: Georgia, "Times New Roman", serif;
+	}
+
+	.skilltree-chargen .transition-kind {
+		margin: 0 0 0.35rem;
+		font-size: 0.8rem;
+		font-weight: 800;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: rgba(241, 225, 189, 0.82);
+	}
+
+	.skilltree-chargen .transition-path {
+		margin: 0.6rem 0 0;
+		color: #fbf3de;
+		font-size: 1.16rem;
+		font-weight: 800;
+		letter-spacing: 0.03em;
+	}
+
+	.skilltree-chargen .transition-text {
+		max-width: 35rem;
 	}
 
 	.skilltree-chargen .deferred-origin {

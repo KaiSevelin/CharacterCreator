@@ -1,0 +1,245 @@
+{
+    "folder": "dA5kRoToREvCP9hn",
+    "name": "Revolutionary",
+    "img": "icons/svg/daze.svg",
+    "description": "A path of pamphlets, cells, strikes, riot planning, smuggled ideas, failed uprisings, and underground survival. This advanced career is shaped by turning grievance into movement and movement into a threat the city must finally acknowledge.",
+    "results": [
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                3,
+                3
+            ],
+            "_id": "AdRvRsA1q2W3e4C",
+            "name": "Pamphlets seized",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvPamphQ7mR1801"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                4,
+                4
+            ],
+            "_id": "AdRvRsB1q2W3e4C",
+            "name": "Meeting broken by the watch",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvWatchQ7mR1802"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                5,
+                5
+            ],
+            "_id": "AdRvRsC1q2W3e4C",
+            "name": "Strike fund thin",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvFundQ7mR1803"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                6,
+                6
+            ],
+            "_id": "AdRvRsD1q2W3e4C",
+            "name": "Secret printer",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvPrintQ7mR1804"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                7,
+                7
+            ],
+            "_id": "AdRvRsE1q2W3e4C",
+            "name": "Bread and speech",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvBreadQ7mR1805"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                8,
+                8
+            ],
+            "_id": "AdRvRsF1q2W3e4C",
+            "name": "Cell formed",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvCellQ7mR1806"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                9,
+                9
+            ],
+            "_id": "AdRvRsG1q2W3e4C",
+            "name": "Smuggled tracts",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvTractQ7mR1807"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                10,
+                10
+            ],
+            "_id": "AdRvRsH1q2W3e4C",
+            "name": "Riot given purpose",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvRiotQ7mR1808"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                11,
+                11
+            ],
+            "_id": "AdRvRsI1q2W3e4C",
+            "name": "Speech after the killings",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvSpeecQ7mR1809"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                12,
+                12
+            ],
+            "_id": "AdRvRsJ1q2W3e4C",
+            "name": "Safe houses and routes",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvRouteQ7mR1810"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                13,
+                13
+            ],
+            "_id": "AdRvRsK1q2W3e4C",
+            "name": "Magistrate forced to negotiate",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvMagisQ7mR1811"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                14,
+                14
+            ],
+            "_id": "AdRvRsL1q2W3e4C",
+            "name": "Failed uprising survived",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvFailQ7mR1812"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                15,
+                15
+            ],
+            "_id": "AdRvRsM1q2W3e4C",
+            "name": "Pamphlet everywhere",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvEveryQ7mR1813"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                16,
+                16
+            ],
+            "_id": "AdRvRsN1q2W3e4C",
+            "name": "Workers stopped the city",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvStopQ7mR1814"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                17,
+                17
+            ],
+            "_id": "AdRvRsO1q2W3e4C",
+            "name": "Cause outlived its leaders",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvCauseQ7mR1815"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                18,
+                18
+            ],
+            "_id": "AdRvRsP1q2W3e4C",
+            "name": "City feared the crowd",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdRvCityQ7mR1816"
+        }
+    ],
+    "replacement": true,
+    "displayRoll": true,
+    "flags": {
+        "chargen1547_v2": {
+            "stageType": "advanced",
+            "entryKey": "advanced-revolutionary"
+        }
+    },
+    "formula": "3d6",
+    "ownership": {
+        "default": 0
+    },
+    "_id": "RollTabl1revolu0"
+}

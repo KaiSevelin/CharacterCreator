@@ -1,148 +1,144 @@
 {
-    "folder":  "RUXVfLU7KC7rU4jQ",
-    "name":  "Seized papers",
-    "type":  "equippableItem",
-    "img":  "icons/svg/item-bag.svg",
-    "system":  {
-                   "body":  {
-                                "key":  "custom_body",
-                                "contents":  [
-
-                                             ],
-                                "type":  "panel"
-                            },
-                   "display":  {
-                                   "pp_width":  64,
-                                   "pp_height":  64,
-                                   "fix_size":  false,
-                                   "width":  820,
-                                   "height":  980
-                               },
-                   "header":  {
-                                  "key":  "custom_header",
-                                  "contents":  [
-
-                                               ],
-                                  "type":  "panel"
-                              },
-                   "hidden":  [
-
-                              ],
-                   "modifiers":  [
-
-                                 ],
-                   "props":  {
-                                 "ChoiceTitle":  "Seized papers",
-                                 "ChoiceText":  "You searched a room for proof and found enough written danger to change more than one life.",
-                                 "ChoiceTags":  "",
-                                 "ChoiceBio":  "Seized papers taught you that ink can travel farther than any witness.",
-                                 "ChoiceCard":  "media/home/games/1547/Cards/General Secrets.webp",
-                                 "Effects1":  {
-                                                  "0":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Skill",
-                                                            "TargetKey":  "Item.CUiBkYMSGbFRUVoK",
-                                                            "Amount":  "1",
-                                                            "TargetText":  "",
-                                                            "NextTable":  "RollTable.RollTabl4wbyzm00",
-                                                            "TransitionText":  "Because seized papers taught you that ink can travel farther than any witness, you remained in the work of seizure, reading, and judgment."
-                                                        },
-                                                  "1":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Secrets",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  "RollTable.RollTabln2ef6p00",
-                                                            "TransitionText":  "Because seized papers taught you that ink can travel farther than any witness, written danger drove you back toward texts, interpretation, and learned caution."
-                                                        },
-                                                  "2":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Skill",
-                                                            "TargetKey":  "Item.00wKdoVpnYkW0LUk",
-                                                            "Amount":  "1",
-                                                            "TargetText":  "",
-                                                            "NextTable":  "RollTable.RollTabl154wo5k0",
-                                                            "TransitionText":  "Because seized papers taught you that ink can travel farther than any witness, those pages hinted at hidden worlds behind the written one, and you followed them."
-                                                        }
-                                              },
-                                 "Effects2":  {
-                                                  "0":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Drive",
-                                                            "TargetKey":  "add",
-                                                            "Amount":  "Rigor",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "1":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Item",
-                                                            "TargetKey":  "RollTable.rTFMoilY2MVJcsiE",
-                                                            "Amount":  "1",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "2":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Secrets",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        }
-                                              },
-                                 "Effects3":  {
-                                                  "0":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Suspicion",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "1":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        },
-                                                  "2":  {
-                                                            "$deleted":  false,
-                                                            "Weight":  "2",
-                                                            "Type":  "Nothing",
-                                                            "TargetKey":  "",
-                                                            "Amount":  "",
-                                                            "TargetText":  "",
-                                                            "NextTable":  ""
-                                                        }
-                                              }
-                             },
-                   "unique":  false,
-                   "templateSystemUniqueVersion":  4241488775,
-                   "template":  "CGRwEfTpl9K2P7rQ",
-                   "uniqueId":  "ItemAdIq1nl0tan0"
-               },
-    "flags":  {
-                  "custom-system-builder":  {
-                                                "version":  "5.2.0"
-                                            }
-              },
-    "items":  [
-
-              ],
-    "ownership":  {
-                      "default":  0
-                  },
-    "_id":  "ItemAdIq1nl0tan0"
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "name": "Seized papers",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "key": "custom_body",
+            "contents": [],
+            "type": "panel"
+        },
+        "display": {
+            "pp_width": 64,
+            "pp_height": 64,
+            "fix_size": false,
+            "width": 820,
+            "height": 980
+        },
+        "header": {
+            "key": "custom_header",
+            "contents": [],
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Seized papers",
+            "ChoiceText": "You searched a room for proof and found enough written danger to change more than one life.",
+            "ChoiceTags": "",
+            "ChoiceBio": "Seized papers taught you that ink can travel farther than any witness.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Forbidden Knowledge.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Skill",
+                    "TargetKey": "Item.CUiBkYMSGbFRUVoK",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": "RollTable.RollTabl4wbyzm00",
+                    "TransitionText": "Because seized papers taught you that ink can travel farther than any witness, you remained in the work of seizure, reading, and judgment.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Inquisitioner, but you may remain on your current path instead."
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": "RollTable.RollTabln2ef6p00",
+                    "TransitionText": "Because seized papers taught you that ink can travel farther than any witness, written danger drove you back toward texts, interpretation, and learned caution.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Scholar, but you may remain on your current path instead."
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Skill",
+                    "TargetKey": "Item.00wKdoVpnYkW0LUk",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": "RollTable.RollTabl154wo5k0",
+                    "TransitionText": "Because seized papers taught you that ink can travel farther than any witness, those pages hinted at hidden worlds behind the written one, and you followed them.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Occultist, but you may remain on your current path instead."
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Drive",
+                    "TargetKey": "add",
+                    "Amount": "Rigor",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Item",
+                    "TargetKey": "RollTable.rTFMoilY2MVJcsiE",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Suspicion",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "ItemAdIq1nl0tan0"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "_id": "ItemAdIq1nl0tan0"
 }

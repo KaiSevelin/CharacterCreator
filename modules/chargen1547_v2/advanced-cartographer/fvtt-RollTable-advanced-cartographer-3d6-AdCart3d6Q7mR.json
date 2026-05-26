@@ -1,0 +1,245 @@
+{
+    "folder": "dA5kRoToREvCP9hn",
+    "name": "Cartographer",
+    "img": "icons/svg/daze.svg",
+    "description": "A path of charts, disputed coasts, fixed passes, copied atlases, border lines, and routes turned into authority. This advanced career is shaped by representing space so convincingly that trade, law, and war begin to move by your abstractions.",
+    "results": [
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                3,
+                3
+            ],
+            "_id": "AdCgRsA1q2W3e4C",
+            "name": "Copy from a bad original",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaCopyQ7mR1841"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                4,
+                4
+            ],
+            "_id": "AdCgRsB1q2W3e4C",
+            "name": "Coastline argued over",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaCoastQ7mR1842"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                5,
+                5
+            ],
+            "_id": "AdCgRsC1q2W3e4C",
+            "name": "Patron wanted route, not truth",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaPatrnQ7mR1843"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                6,
+                6
+            ],
+            "_id": "AdCgRsD1q2W3e4C",
+            "name": "Stars used for measurement",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaStarsQ7mR1844"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                7,
+                7
+            ],
+            "_id": "AdCgRsE1q2W3e4C",
+            "name": "River branch corrected",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaRiverQ7mR1845"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                8,
+                8
+            ],
+            "_id": "AdCgRsF1q2W3e4C",
+            "name": "Mountain pass fixed on page",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaPassQ7mR1846"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                9,
+                9
+            ],
+            "_id": "AdCgRsG1q2W3e4C",
+            "name": "Map borrowed by merchants",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaMerchQ7mR1847"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                10,
+                10
+            ],
+            "_id": "AdCgRsH1q2W3e4C",
+            "name": "Boundary on paper made real",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaBoundQ7mR1848"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                11,
+                11
+            ],
+            "_id": "AdCgRsI1q2W3e4C",
+            "name": "Foreign chart acquired",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaChartQ7mR1849"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                12,
+                12
+            ],
+            "_id": "AdCgRsJ1q2W3e4C",
+            "name": "Patrol route redrawn",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaPatrlQ7mR1850"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                13,
+                13
+            ],
+            "_id": "AdCgRsK1q2W3e4C",
+            "name": "Atlas page copied abroad",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaAtlasQ7mR1851"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                14,
+                14
+            ],
+            "_id": "AdCgRsL1q2W3e4C",
+            "name": "Charted what was denied",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaDenyQ7mR1852"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                15,
+                15
+            ],
+            "_id": "AdCgRsM1q2W3e4C",
+            "name": "Route that reshaped trade",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaTradeQ7mR1853"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                16,
+                16
+            ],
+            "_id": "AdCgRsN1q2W3e4C",
+            "name": "Name in the border books",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaBooksQ7mR1854"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                17,
+                17
+            ],
+            "_id": "AdCgRsO1q2W3e4C",
+            "name": "Map before the army",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaArmyQ7mR1855"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                18,
+                18
+            ],
+            "_id": "AdCgRsP1q2W3e4C",
+            "name": "World made portable",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdCaWorldQ7mR1856"
+        }
+    ],
+    "replacement": true,
+    "displayRoll": true,
+    "flags": {
+        "chargen1547_v2": {
+            "stageType": "advanced",
+            "entryKey": "advanced-cartographer"
+        }
+    },
+    "formula": "3d6",
+    "ownership": {
+        "default": 0
+    },
+    "_id": "RollTabl1cartog0"
+}

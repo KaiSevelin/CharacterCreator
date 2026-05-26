@@ -1,4 +1,4 @@
-﻿export const CARD_IMAGES = [
+export const CARD_IMAGES = [
     {
         "name":  "Blighted quarter",
         "path":  "media/home/games/1547/Cards/Culture Blighted Quarter.webp",
@@ -85,6 +85,16 @@
         "category":  "General"
     },
     {
+        "name":  "Accusation",
+        "path":  "media/home/games/1547/Cards/General Accusation.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Assembly",
+        "path":  "media/home/games/1547/Cards/General Assembly.webp",
+        "category":  "General"
+    },
+    {
         "name":  "Authority",
         "path":  "media/home/games/1547/Cards/General Authority.webp",
         "category":  "General"
@@ -107,6 +117,21 @@
     {
         "name":  "Compromise",
         "path":  "media/home/games/1547/Cards/General Compromise.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Command",
+        "path":  "media/home/games/1547/Cards/General Command.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Commerce",
+        "path":  "media/home/games/1547/Cards/General Commerce.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Confrontation",
+        "path":  "media/home/games/1547/Cards/General Confrontation.webp",
         "category":  "General"
     },
     {
@@ -155,6 +180,11 @@
         "category":  "General"
     },
     {
+        "name":  "Forbidden Knowledge",
+        "path":  "media/home/games/1547/Cards/General Forbidden Knowledge.webp",
+        "category":  "General"
+    },
+    {
         "name":  "Fate",
         "path":  "media/home/games/1547/Cards/General Fate.webp",
         "category":  "General"
@@ -175,6 +205,16 @@
         "category":  "General"
     },
     {
+        "name":  "Intrigue",
+        "path":  "media/home/games/1547/Cards/General Intrigue.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Influence",
+        "path":  "media/home/games/1547/Cards/General Influence.webp",
+        "category":  "General"
+    },
+    {
         "name":  "Judgment",
         "path":  "media/home/games/1547/Cards/General Judgment.webp",
         "category":  "General"
@@ -190,8 +230,18 @@
         "category":  "General"
     },
     {
+        "name":  "Meeting",
+        "path":  "media/home/games/1547/Cards/General Meeting.webp",
+        "category":  "General"
+    },
+    {
         "name":  "Miracle",
         "path":  "media/home/games/1547/Cards/General Miracle.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Office",
+        "path":  "media/home/games/1547/Cards/General Office.webp",
         "category":  "General"
     },
     {
@@ -220,8 +270,23 @@
         "category":  "General"
     },
     {
+        "name":  "Patronage",
+        "path":  "media/home/games/1547/Cards/General Patronage.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Power",
+        "path":  "media/home/games/1547/Cards/General Power.webp",
+        "category":  "General"
+    },
+    {
         "name":  "Public life",
         "path":  "media/home/games/1547/Cards/General Public life.webp",
+        "category":  "General"
+    },
+    {
+        "name":  "Renown",
+        "path":  "media/home/games/1547/Cards/General Renown.webp",
         "category":  "General"
     },
     {
@@ -478,6 +543,96 @@
         "name":  "Coastal",
         "path":  "media/home/games/1547/Cards/Culture Coastal.webp",
         "category":  "Culture"
+    },
+    {
+        "name":  "Banned book",
+        "path":  "media/home/games/1547/Cards/Rare/BannedBook.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Barricade",
+        "path":  "media/home/games/1547/Cards/Rare/Barricade.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Black sails",
+        "path":  "media/home/games/1547/Cards/Rare/BlackSails.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Border meeting",
+        "path":  "media/home/games/1547/Cards/Rare/BorderMeeting.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Coded papers",
+        "path":  "media/home/games/1547/Cards/Rare/CodedPapers.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Distant city",
+        "path":  "media/home/games/1547/Cards/Rare/DistantCity.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Harbor guns",
+        "path":  "media/home/games/1547/Cards/Rare/HarborGuns.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Hidden cove",
+        "path":  "media/home/games/1547/Cards/Rare/HiddenCove.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Impossible shot",
+        "path":  "media/home/games/1547/Cards/Rare/ImpossibleShot.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Keys and cellar",
+        "path":  "media/home/games/1547/Cards/Rare/KeysAndCellar.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Map table",
+        "path":  "media/home/games/1547/Cards/Rare/MapTable.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Masks",
+        "path":  "media/home/games/1547/Cards/Rare/Masks.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Master work",
+        "path":  "media/home/games/1547/Cards/Rare/MasterWork.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Prize ship",
+        "path":  "media/home/games/1547/Cards/Rare/PrizeShip.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Relic",
+        "path":  "media/home/games/1547/Cards/Rare/Relic.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Roof of stars",
+        "path":  "media/home/games/1547/Cards/Rare/RoofOfStars.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Stage lights",
+        "path":  "media/home/games/1547/Cards/Rare/StageLights.webp",
+        "category":  "Rare"
+    },
+    {
+        "name":  "Wax seal",
+        "path":  "media/home/games/1547/Cards/Rare/WaxSeal.webp",
+        "category":  "Rare"
     }
 ]
 

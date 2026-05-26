@@ -1,0 +1,164 @@
+{
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "contents": [],
+            "key": "custom_body",
+            "type": "panel"
+        },
+        "display": {
+            "width": 820,
+            "height": 980,
+            "fix_size": false,
+            "pp_width": 64,
+            "pp_height": 64
+        },
+        "header": {
+            "contents": [],
+            "key": "custom_header",
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Name traveled ahead of you",
+            "ChoiceText": "There were places where the crowd already expected something from you before you arrived, and that expectation became a kind of power.",
+            "ChoiceTags": "",
+            "ChoiceBio": "When your name traveled ahead of you, performance became a reputation you had to keep feeding.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Renown.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Esteem",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Social",
+                    "TargetKey": "",
+                    "Amount": "2",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A distant patron or audience now knows your name without knowing your life.",
+                    "NextTable": ""
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Money",
+                    "TargetKey": "",
+                    "Amount": "45",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Stat",
+                    "TargetKey": "Charisma",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects4": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Esteem",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "Someone in another town claims to have made your fame possible and expects to profit from it.",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "AdPeNameQ7mR1695"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "name": "Name traveled ahead of you",
+    "_id": "AdPeNameQ7mR1695"
+}

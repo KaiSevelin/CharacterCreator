@@ -1,0 +1,144 @@
+{
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "name": "Great house favor",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "key": "custom_body",
+            "contents": [],
+            "type": "panel"
+        },
+        "display": {
+            "pp_width": 64,
+            "pp_height": 64,
+            "fix_size": false,
+            "width": 820,
+            "height": 980
+        },
+        "header": {
+            "key": "custom_header",
+            "contents": [],
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Great house favor",
+            "ChoiceText": "A great house found your piety politically useful, which meant support arrived tied to expectations no prayer had written.",
+            "ChoiceTags": "",
+            "ChoiceBio": "Great-house favor taught you that noble devotion often expects to be repaid in office.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Patronage.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A noble household now includes you in plans that wear the face of piety.",
+                    "NextTable": "RollTablfpa34g00",
+                    "TransitionText": "Because great-house favor taught you that noble devotion often expects to be repaid in office, patronage and ceremony could widen into courtly influence.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This noble favor could draw you into courtly influence, but you may remain a prelate instead."
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Money",
+                    "TargetKey": "",
+                    "Amount": "120",
+                    "TargetText": "",
+                    "NextTable": "RollTabl1prelat0",
+                    "TransitionText": "Because great-house favor taught you that noble devotion often expects to be repaid in office, church office remained your daily craft.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Prelate, but you may remain on your current path instead."
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Esteem",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": "RollTabl1prelat0",
+                    "TransitionText": "Because great-house favor taught you that noble devotion often expects to be repaid in office, church office remained your daily craft.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Prelate, but you may remain on your current path instead."
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Stat",
+                    "TargetKey": "Charisma",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Social",
+                    "TargetKey": "",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "Someone in a great house still thinks you belong partly to their interest.",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "AdPrFavorQ7mR1632"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "_id": "AdPrFavorQ7mR1632"
+}

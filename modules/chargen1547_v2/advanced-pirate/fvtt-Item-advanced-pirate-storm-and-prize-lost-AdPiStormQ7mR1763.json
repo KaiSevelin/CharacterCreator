@@ -1,0 +1,135 @@
+{
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "contents": [],
+            "key": "custom_body",
+            "type": "panel"
+        },
+        "display": {
+            "width": 820,
+            "height": 980,
+            "fix_size": false,
+            "pp_width": 64,
+            "pp_height": 64
+        },
+        "header": {
+            "contents": [],
+            "key": "custom_header",
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Storm and prize lost",
+            "ChoiceText": "You took the vessel, but the sea took the profit, and what remained was a harder crew with less patience for fairness.",
+            "ChoiceTags": "",
+            "ChoiceBio": "A prize lost to storm taught you that piracy makes enemies of both law and weather.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Fate.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Body",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Bio",
+                    "TargetKey": "RollTable.kC0YeELeXOdwDeaJ",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A survivor from that storm still measures your luck against the drowned.",
+                    "NextTable": ""
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Money",
+                    "TargetKey": "",
+                    "Amount": "35",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A sailor from that wreck still remembers what was saved, what was hidden, and who reached shore first.",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "AdPiStormQ7mR1763"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "name": "Storm and prize lost",
+    "_id": "AdPiStormQ7mR1763"
+}

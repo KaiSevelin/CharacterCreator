@@ -1,0 +1,245 @@
+{
+    "folder": "dA5kRoToREvCP9hn",
+    "name": "Privateer",
+    "img": "icons/svg/daze.svg",
+    "description": "A path of letters of marque, prize law, harbor bargains, sanctioned violence at sea, and profit sharpened by war. This advanced career is shaped by captures, divided spoils, brokers, storms, legality, and the uneasy line between patriot and pirate.",
+    "results": [
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                3,
+                3
+            ],
+            "_id": "AdPvRsA1q2W3e4C",
+            "name": "Letter questioned in port",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvPortQ7mR1701"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                4,
+                4
+            ],
+            "_id": "AdPvRsB1q2W3e4C",
+            "name": "Spoils divided badly",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvSpoilQ7mR1702"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                5,
+                5
+            ],
+            "_id": "AdPvRsC1q2W3e4C",
+            "name": "Pursuit through bad weather",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvPursuQ7mR1703"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                6,
+                6
+            ],
+            "_id": "AdPvRsD1q2W3e4C",
+            "name": "Captured coastal prize",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvPrizeQ7mR1704"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                7,
+                7
+            ],
+            "_id": "AdPvRsE1q2W3e4C",
+            "name": "Cargo that should not have been there",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvCargoQ7mR1705"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                8,
+                8
+            ],
+            "_id": "AdPvRsF1q2W3e4C",
+            "name": "Harbor official looked away",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvHarbrQ7mR1706"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                9,
+                9
+            ],
+            "_id": "AdPvRsG1q2W3e4C",
+            "name": "Crew from three nations",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvCrewQ7mR1707"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                10,
+                10
+            ],
+            "_id": "AdPvRsH1q2W3e4C",
+            "name": "Merchant became prize",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvMerchQ7mR1708"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                11,
+                11
+            ],
+            "_id": "AdPvRsI1q2W3e4C",
+            "name": "Shore leave spent too fast",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvShoreQ7mR1709"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                12,
+                12
+            ],
+            "_id": "AdPvRsJ1q2W3e4C",
+            "name": "Gun deck bravery",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvGundeQ7mR1710"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                13,
+                13
+            ],
+            "_id": "AdPvRsK1q2W3e4C",
+            "name": "Enemy colors struck",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvColorQ7mR1711"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                14,
+                14
+            ],
+            "_id": "AdPvRsL1q2W3e4C",
+            "name": "Admiralty broker",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvBrokeQ7mR1712"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                15,
+                15
+            ],
+            "_id": "AdPvRsM1q2W3e4C",
+            "name": "Letter renewed after success",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvRenewQ7mR1713"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                16,
+                16
+            ],
+            "_id": "AdPvRsN1q2W3e4C",
+            "name": "Port sang of you",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvSongQ7mR1714"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                17,
+                17
+            ],
+            "_id": "AdPvRsO1q2W3e4C",
+            "name": "Captain with papers and appetite",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvCaptnQ7mR1715"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                18,
+                18
+            ],
+            "_id": "AdPvRsP1q2W3e4C",
+            "name": "Sea war paid your name",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPrvNameQ7mR1716"
+        }
+    ],
+    "replacement": true,
+    "displayRoll": true,
+    "flags": {
+        "chargen1547_v2": {
+            "stageType": "advanced",
+            "entryKey": "advanced-privateer"
+        }
+    },
+    "formula": "3d6",
+    "ownership": {
+        "default": 0
+    },
+    "_id": "RollTabl1privat0"
+}

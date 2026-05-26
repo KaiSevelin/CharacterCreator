@@ -1,0 +1,245 @@
+{
+    "folder": "dA5kRoToREvCP9hn",
+    "name": "Performer",
+    "img": "icons/svg/daze.svg",
+    "description": "A path of stages, squares, touring companies, dangerous patrons, applause, scandal, disguise, and precarious fame. This advanced career is shaped by audiences, memory, improvisation, and the ability to rule a room for a moment.",
+    "results": [
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                3,
+                3
+            ],
+            "_id": "AdPeRsA1q2W3e4C",
+            "name": "Booed from the square",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeBooedQ7mR1681"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                4,
+                4
+            ],
+            "_id": "AdPeRsB1q2W3e4C",
+            "name": "Patron with wandering hands",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPePatrnQ7mR1682"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                5,
+                5
+            ],
+            "_id": "AdPeRsC1q2W3e4C",
+            "name": "Cheap stage, clever mouth",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeCheapQ7mR1683"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                6,
+                6
+            ],
+            "_id": "AdPeRsD1q2W3e4C",
+            "name": "Festival turn",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeFestvQ7mR1684"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                7,
+                7
+            ],
+            "_id": "AdPeRsE1q2W3e4C",
+            "name": "Song banned by the priest",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPePriestQ7mR1685"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                8,
+                8
+            ],
+            "_id": "AdPeRsF1q2W3e4C",
+            "name": "Rival troupe",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeRivalQ7mR1686"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                9,
+                9
+            ],
+            "_id": "AdPeRsG1q2W3e4C",
+            "name": "Mask fit too well",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeMaskQ7mR1687"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                10,
+                10
+            ],
+            "_id": "AdPeRsH1q2W3e4C",
+            "name": "Touring company",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeTourQ7mR1688"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                11,
+                11
+            ],
+            "_id": "AdPeRsI1q2W3e4C",
+            "name": "Mocked a great man safely",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeMockQ7mR1689"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                12,
+                12
+            ],
+            "_id": "AdPeRsJ1q2W3e4C",
+            "name": "Mourning song",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeMournQ7mR1690"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                13,
+                13
+            ],
+            "_id": "AdPeRsK1q2W3e4C",
+            "name": "Noble household amusement",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeHouseQ7mR1691"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                14,
+                14
+            ],
+            "_id": "AdPeRsL1q2W3e4C",
+            "name": "Part everyone remembered",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPePartQ7mR1692"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                15,
+                15
+            ],
+            "_id": "AdPeRsM1q2W3e4C",
+            "name": "Performance as cover",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeCoverQ7mR1693"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                16,
+                16
+            ],
+            "_id": "AdPeRsN1q2W3e4C",
+            "name": "Voice filled the hall",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeHallQ7mR1694"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                17,
+                17
+            ],
+            "_id": "AdPeRsO1q2W3e4C",
+            "name": "Name traveled ahead of you",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeNameQ7mR1695"
+        },
+        {
+            "type": "document",
+            "weight": 1,
+            "range": [
+                18,
+                18
+            ],
+            "_id": "AdPeRsP1q2W3e4C",
+            "name": "Could command a room",
+            "img": "icons/svg/item-bag.svg",
+            "drawn": false,
+            "flags": {},
+            "documentUuid": "Item.AdPeRoomQ7mR1696"
+        }
+    ],
+    "replacement": true,
+    "displayRoll": true,
+    "flags": {
+        "chargen1547_v2": {
+            "stageType": "advanced",
+            "entryKey": "advanced-performer"
+        }
+    },
+    "formula": "3d6",
+    "ownership": {
+        "default": 0
+    },
+    "_id": "RollTabl1perfrm0"
+}

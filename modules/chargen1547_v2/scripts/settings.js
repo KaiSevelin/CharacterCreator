@@ -1,4 +1,4 @@
-﻿import { importWorldContent } from "./import-world-content.js";
+import { importWorldContent } from "./import-world-content.js";
 
 import { STATIC_LEGACY_REF_MAP } from "./legacy-rolltable-map.js";
 
@@ -94,6 +94,11 @@ export class ChargenSetupDataMenu extends FormApplication {
         });
     }
 
+    constructor(...args) {
+        super(...args);
+        this._setupInFlight = false;
+    }
+
     getData() {
         const folderName = getChargenSetting(SETTING_KEYS.contentFolderName);
         const itemStats = managedFolderStats(folderName, "Item", game.items);
@@ -101,23 +106,49 @@ export class ChargenSetupDataMenu extends FormApplication {
         return {
             folderName,
             itemStats,
-            tableStats
+            tableStats,
+            setupInFlight: this._setupInFlight
         };
     }
 
-    async _updateObject() {
-        const folderName = getChargenSetting(SETTING_KEYS.contentFolderName);
-        const confirmed = await confirmDataSetup(folderName);
-        if (!confirmed) return;
+    activateListeners(html) {
+        super.activateListeners(html);
+        const button = html[0]?.querySelector("button[type='submit']");
+        if (button) {
+            button.disabled = this._setupInFlight;
+        }
+    }
 
-        const report = await importWorldContent({ rootFolderName: folderName });
-        const { SkillTreeChargenApp } = await import("./chargen.js");
-        const installValidation = await SkillTreeChargenApp.validateInstallInterfaces({
-            rootFolderName: folderName
-        });
-        ui.notifications[installValidation.ok ? "info" : "warn"](
-            `Setup complete: ${report.items.created + report.items.updated} items, ${report.rolltables.created + report.rolltables.updated} rolltables. Install validation found ${installValidation.errors.length} error(s) and ${installValidation.warnings.length} warning(s).`
-        );
+    async _updateObject() {
+        if (this._setupInFlight) return;
+        this._setupInFlight = true;
+        this.render(false);
+
+        const setBusy = (busy) => {
+            const button = this.element?.[0]?.querySelector("button[type='submit']");
+            if (button) button.disabled = busy;
+        };
+
+        const folderName = getChargenSetting(SETTING_KEYS.contentFolderName);
+        setBusy(true);
+
+        try {
+            const confirmed = await confirmDataSetup(folderName);
+            if (!confirmed) return;
+
+            const report = await importWorldContent({ rootFolderName: folderName });
+            const { SkillTreeChargenApp } = await import("./chargen.js");
+            const installValidation = await SkillTreeChargenApp.validateInstallInterfaces({
+                rootFolderName: folderName
+            });
+            ui.notifications[installValidation.ok ? "info" : "warn"](
+                `Setup complete: ${report.items.created + report.items.updated} items, ${report.rolltables.created + report.rolltables.updated} rolltables. Install validation found ${installValidation.errors.length} error(s) and ${installValidation.warnings.length} warning(s).`
+            );
+        } finally {
+            this._setupInFlight = false;
+            setBusy(false);
+            if (this.rendered) this.render(false);
+        }
     }
 }
 

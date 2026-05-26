@@ -33,29 +33,7 @@ const UNKNOWN_EXTREME_EXCLUDED_TABLE_REFS = new Set([
     "birth-humors"
 ]);
 
-const STARTING_MANEUVER_REFS = [
-    "Item.RAwHPMwVPZ8vbhfw",
-    "Item.4DkWGQOP1z9hLWHb",
-    "Item.SBIsohvIxk1hMePv",
-    "Item.Qtc3sNJL5kABXzDJ",
-    "Item.UkOecPq8lfF2jnWG",
-    "Item.lURv2PmrFg0xnqbr",
-    "Item.Uvq41w9Ik1EKy7gM",
-    "Item.C9AOwpsyX2fLn3St",
-    "Item.vvUVUoFs3tzr8Xk7",
-    "Item.fIF4KGkCpk6TqrB5",
-    "Item.d2cbZAP5J9MvtFwk",
-    "Item.PCMSwxICLz2Swnbg",
-    "Item.EzBwgx66m1efLL1D",
-    "Item.AYxAdcJLNiqt3Kz0"
-];
-
-const CAREER_LITERACY_TABLES = new Map([
-    ["career - scholar", "Scholarship taught you to read and write in your native tongue."],
-    ["career - religious", "Religious instruction taught you to read and write in your native tongue."],
-    ["career - physician", "Medical study taught you to read and write in your native tongue."],
-    ["career - merchant", "Trade and account-keeping taught you to read and write in your native tongue."]
-]);
+const DEFAULT_MANEUVERS_PATH = "modules/chargen1547_v2/default-maneuvers.json";
 
 // -------- Optional helpers (safe even if you skip images) --------
 function isPlaceholderImg(p) {
@@ -77,6 +55,39 @@ function normalizeTableKey(name) {
 }
 
 let BASELINE_MIN_ZERO_SKILLS_CACHE = null;
+let DEFAULT_MANEUVER_REFS_CACHE = null;
+
+async function loadDefaultManeuverRefs() {
+    if (Array.isArray(DEFAULT_MANEUVER_REFS_CACHE)) return DEFAULT_MANEUVER_REFS_CACHE;
+
+    const route = foundry.utils.getRoute(DEFAULT_MANEUVERS_PATH);
+    const response = await fetch(route, { cache: "no-store" });
+    if (!response.ok) {
+        throw new Error(`Failed to load default maneuvers from ${DEFAULT_MANEUVERS_PATH}`);
+    }
+
+    const entries = await response.json();
+    if (!Array.isArray(entries)) {
+        throw new Error(`Default maneuvers file must contain an array: ${DEFAULT_MANEUVERS_PATH}`);
+    }
+
+    DEFAULT_MANEUVER_REFS_CACHE = entries
+        .map(entry => String(entry?.uuid ?? "").trim())
+        .filter(Boolean);
+    return DEFAULT_MANEUVER_REFS_CACHE;
+}
+
+async function preloadImages(urls = []) {
+    const uniqueUrls = [...new Set(urls.map(url => String(url ?? "").trim()).filter(Boolean))];
+    if (!uniqueUrls.length) return;
+
+    await Promise.all(uniqueUrls.map(src => new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve();
+        img.onerror = () => resolve();
+        img.src = src;
+    })));
+}
 
 
 // ===================== APP =====================
@@ -84,10 +95,11 @@ export class SkillTreeChargenApp extends FormApplication {
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
             id: "skilltree-chargen",
+            classes: ["skilltree-chargen-window"],
             title: "The Life",
             template: "modules/chargen1547_v2/templates/chargen.hbs",
             width: 900,
-            height: "auto",
+            height: Math.min(820, window.innerHeight - 80),
             closeOnSubmit: false,
             resizable: true
         });
@@ -613,6 +625,11 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             for (const result of table.results.contents) {
+                const raw = SkillTreeChargenApp._resultRawJSON(result);
+                const linkedItem = await SkillTreeChargenApp._resolveItemFromRollResult(result);
+                if (!linkedItem && !SkillTreeChargenApp._looksLikeRewardJsonResult(raw)) {
+                    continue;
+                }
                 try {
                     const parsed = await SkillTreeChargenApp.parseRollTableResult(result, table.name);
                     await SkillTreeChargenApp._validateParsedInstallInterfaces(
@@ -730,6 +747,7 @@ export class SkillTreeChargenApp extends FormApplication {
             choices,
             remainingGlobal: maxRolls,
             bio: [],
+            bioEvents: [],
             history: [],
             luckyStreak: false,
             contactTables,
@@ -747,11 +765,20 @@ export class SkillTreeChargenApp extends FormApplication {
         }
         if (!actor.getFlag("world", "baselineMinZeroSkillsApplied")) {
             const baselineSkills = await app._getBaselineMinZeroSkills();
+            const baselineGrantResults = [];
             for (const skillUuid of baselineSkills) {
-                await app._grantSkillToward(run, skillUuid, 0, null, { silent: true });
+                baselineGrantResults.push(
+                    await app._grantBaselineSkill(skillUuid)
+                );
             }
 
-            await actor.setFlag("world", "baselineMinZeroSkillsApplied", true);
+            const baselineValidation = await app._validateBaselineMinZeroSkillsProvisioning(baselineGrantResults);
+            if (baselineValidation.ok) {
+                await actor.setFlag("world", "baselineMinZeroSkillsApplied", true);
+            } else {
+                console.warn("Chargen: baseline min-zero skills were not fully provisioned at level 0.", baselineValidation);
+                ui.notifications?.warn?.("Some default skills were not provisioned at level 0. See console for details.");
+            }
         }
         if (!actor.getFlag("world", "baselineStartingManeuversApplied")) {
             await app._grantStartingManeuvers();
@@ -1518,6 +1545,15 @@ export class SkillTreeChargenApp extends FormApplication {
                     id: r.id,
                     range: r.range,
                     reason: "Empty or non-text result",
+                });
+                continue;
+            }
+
+            if (!linkedItem && !SkillTreeChargenApp._looksLikeRewardJsonResult(raw)) {
+                skipped.push({
+                    id: r.id,
+                    range: r.range,
+                    reason: "Plain-text support result",
                 });
                 continue;
             }
@@ -2775,15 +2811,23 @@ export class SkillTreeChargenApp extends FormApplication {
         return parsed;
     }
 
-    static _tableFamilyLabel(tableName = "") {
-        const text = String(tableName ?? "").trim().toLowerCase();
-        if (text.startsWith("career -")) return "career";
-        if (text.startsWith("advanced -")) return "advanced";
-        return "";
+    static _tableStageType(table = null) {
+        return String(
+            foundry.utils.getProperty(table, "flags.chargen1547_v2.stageType") ?? ""
+        ).trim().toLowerCase();
     }
 
     static _cardHintBadge(label, tone, detail) {
         return { label, tone, detail };
+    }
+
+    static _looksLikeRewardJsonResult(rawText = "") {
+        const raw = String(rawText ?? "").trim();
+        if (!raw) return false;
+        if (raw.startsWith("{")) return true;
+        const start = raw.indexOf("{");
+        const end = raw.lastIndexOf("}");
+        return start !== -1 && end !== -1 && end > start;
     }
 
     _inferChoiceHintBadges(choiceData, currentTable = null) {
@@ -2810,8 +2854,8 @@ export class SkillTreeChargenApp extends FormApplication {
         const tableName = String(currentTable?.name ?? "").trim();
         const currentTableUuid = String(currentTable?.uuid ?? "").trim();
         const loweredTableName = tableName.toLowerCase();
-        const tableFamily = SkillTreeChargenApp._tableFamilyLabel(tableName);
-        const isCareerStage = tableFamily === "career" || tableFamily === "advanced";
+        const tableStageType = SkillTreeChargenApp._tableStageType(currentTable);
+        const isCareerStage = tableStageType === "career" || tableStageType === "advanced";
         const nextRefs = rows
             .map(row => String(row?.next?.tableUuid ?? "").trim())
             .filter(Boolean);
@@ -2834,14 +2878,17 @@ export class SkillTreeChargenApp extends FormApplication {
             && String(change?.action ?? "add").trim().toLowerCase() === "add"
         );
         if (hasDriveChance) {
-            addBadge("Drive Chance", "growth", "May define or deepen a personal drive.");
+            addBadge("Emotional", "growth", "May define or deepen a personal drive.");
         }
 
         const hasStatusSignal = tags.includes("status")
             || hasChangeType("social");
         if (hasStatusSignal) {
-            addBadge("Status", "status", "Often affects reputation, standing, or social position.");
+            addBadge("Privileged", "status", "Often affects reputation, standing, or social position.");
         }
+
+        const hasCareerDeadEnd = isCareerStage
+            && rows.some(row => !String(row?.next?.tableUuid ?? "").trim());
 
         const hasRiskSignal = tags.includes("risk")
             || changes.some(change => {
@@ -2859,57 +2906,50 @@ export class SkillTreeChargenApp extends FormApplication {
             || nextRefs.some(ref => {
                 const lowered = ref.toLowerCase();
                 return lowered.includes("suspicion") || lowered.includes("secrets");
-            });
+            })
+            || hasCareerDeadEnd;
         if (hasRiskSignal) {
             addBadge("Risky", "risk", "The outcome can bring fallout, loss, or lasting trouble.");
         }
 
-        if (isCareerStage && rows.some(row => !String(row?.next?.tableUuid ?? "").trim())) {
-            addBadge("May End Career", "warning", "One outcome can bring this career chapter to an early close.");
-        }
-
         const shiftsAwayFromCurrent = isCareerStage && uniqueNextRefs.some(ref => ref !== currentTableUuid);
         if (shiftsAwayFromCurrent || (isCareerStage && uniqueNextRefs.length > 1)) {
-            addBadge("Career Shift", "shift", "May redirect you into a different career path.");
-        }
-
-        if (deferred) {
-            addBadge("Deferred Trouble", "warning", "What happens here may return later in the story.");
+            addBadge("Possibilities", "shift", "May redirect you into a different career path.");
         }
 
         if (hasChangeType("skill")) {
-            addBadge("Skill Growth", "growth", "Often leads to practical training or increased competence.");
+            addBadge("Training", "growth", "Often leads to practical training or increased competence.");
         }
 
         if (hasChangeType("maneuver")) {
-            addBadge("Maneuver", "growth", "May unlock a combat technique or special move.");
+            addBadge("Combat Training", "growth", "May unlock a combat technique or special move.");
         }
 
         if (hasChangeType("item")) {
-            addBadge("Item Reward", "reward", "May yield gear, loot, or an equipment roll.");
+            addBadge("Provision", "reward", "May yield gear, loot, or an equipment roll.");
         }
 
         if (hasChangeType("money")) {
-            addBadge("Money", "reward", "Can improve your finances or material footing.");
+            addBadge("Lucrative", "reward", "Can improve your finances or material footing.");
         }
 
-        if (hasChangeType("luck")) {
-            addBadge("Luck", "reward", "May alter your fortune beyond the immediate reward.");
+        if (hasChangeType("stat")) {
+            addBadge("Character", "growth", "Changes your core character or natural strengths.");
         }
 
         if (hasChangeType("body")) {
-            addBadge("Body Change", "risk", "May leave a physical mark or bodily consequence.");
+            addBadge("Rough", "risk", "May leave a physical mark or bodily consequence.");
         }
 
         if (hasChangeType("bio")) {
-            addBadge("Biography Twist", "story", "This can add a narrative turn to your life story.");
+            addBadge("Memorable", "story", "This can add a narrative turn to your life story.");
         }
 
         if (changes.some(change =>
             String(change?.type ?? "").trim().toLowerCase() === "social"
             && Number(change?.amount ?? 0) < 0
         )) {
-            addBadge("Harsh Social Cost", "warning", "One outcome can damage your standing or reputation.");
+            addBadge("Unconventional", "warning", "One outcome can damage your standing or reputation.");
         }
 
         const likelyOpportunity = !hasRiskSignal
@@ -3068,6 +3108,116 @@ export class SkillTreeChargenApp extends FormApplication {
         return `<p class="cg-bio-entry">${html}</p>`;
     }
 
+    _getStageLabelFromContext(context = {}) {
+        const raw = String(context.stage ?? "").trim().toLowerCase();
+        if (raw === "birth" || raw === "origin") return "Birth and Upbringing";
+        if (raw === "childhood") return "Childhood";
+        if (raw === "adolescence") return "Adolescence";
+        if (raw === "career") return "Career";
+        if (raw === "advanced") return "Later Life";
+        if (raw === "deferred") return "What Returned";
+        return "Life";
+    }
+
+    _getBioStageFromTable(table = null) {
+        const flagged = SkillTreeChargenApp._tableStageType(table);
+        if (flagged) return flagged;
+
+        const folderName = String(table?.folder?.name ?? "").trim().toLowerCase();
+        if (folderName.startsWith("birth-")) return "birth";
+        if (folderName.startsWith("childhood-")) return "childhood";
+        if (folderName.startsWith("adolescence-")) return "adolescence";
+        if (folderName.startsWith("career-")) return "career";
+        if (folderName.startsWith("advanced-")) return "advanced";
+        return "";
+    }
+
+    _buildBioContext(run, table = null, card = null, extra = {}) {
+        const choiceTitle = String(card?.data?.choice?.title ?? extra.choiceTitle ?? "").trim();
+        const score = Array.isArray(card?.range) ? Number(card.range[0]) : Number(extra.score ?? NaN);
+        const stage = this._getBioStageFromTable(table);
+        return {
+            stage,
+            stageLabel: this._getStageLabelFromContext({ stage }),
+            tableUuid: String(table?.uuid ?? run?.tableUuid ?? extra.tableUuid ?? "").trim(),
+            tableName: String(table?.name ?? extra.tableName ?? "").trim(),
+            choiceTitle,
+            score: Number.isFinite(score) ? score : null,
+            rare: Number.isFinite(score) ? (score <= 4 || score >= 17) : false,
+            ...extra
+        };
+    }
+
+    _normalizeBioSentence(text) {
+        const value = String(text ?? "").trim();
+        if (!value) return "";
+        return /[.!?]$/.test(value) ? value : `${value}.`;
+    }
+
+    _isMemorableBioEvent(event = {}) {
+        if (event.memorable) return true;
+        if (event.rare) return true;
+
+        const kind = String(event.kind ?? "").trim().toLowerCase();
+        if (["body", "drive", "bio", "deferred", "rare-career", "transition"].includes(kind)) return true;
+
+        if (kind === "money" && Math.abs(Number(event.amount ?? 0)) >= 50) return true;
+        if (kind === "social" && Math.abs(Number(event.amount ?? 0)) >= 2) return true;
+        if (kind === "transition" && String(event.toStage ?? "").trim().toLowerCase() === "advanced") return true;
+
+        return false;
+    }
+
+    _buildCompiledBiography(events = []) {
+        const memorable = (Array.isArray(events) ? events : [])
+            .filter(event => this._isMemorableBioEvent(event));
+        if (!memorable.length) return [];
+
+        const grouped = new Map();
+        for (const event of memorable) {
+            const label = this._getStageLabelFromContext(event);
+            if (!grouped.has(label)) grouped.set(label, []);
+            grouped.get(label).push(event);
+        }
+
+        const intros = {
+            "Birth and Upbringing": "Your earliest life was marked by",
+            Childhood: "In youth,",
+            Adolescence: "As you came of age,",
+            Career: "Your working life was shaped by",
+            "Later Life": "Later, your path was defined by",
+            "What Returned": "What refused to stay buried was"
+        };
+
+        const paragraphs = [];
+        for (const [label, items] of grouped.entries()) {
+            const chosen = items
+                .slice()
+                .sort((a, b) => Number(b.priority ?? 0) - Number(a.priority ?? 0))
+                .slice(0, 3);
+            const intro = intros[label] ?? "In time,";
+            const lines = chosen
+                .map(event => this._normalizeBioSentence(event.summaryText || event.text))
+                .filter(Boolean);
+            if (!lines.length) continue;
+
+            if (lines.length === 1) {
+                paragraphs.push(`${intro} ${lines[0].charAt(0).toLowerCase()}${lines[0].slice(1)}`);
+            } else {
+                const [first, ...rest] = lines;
+                paragraphs.push(`${intro} ${first.charAt(0).toLowerCase()}${first.slice(1)} ${rest.join(" ")}`);
+            }
+        }
+
+        return paragraphs;
+    }
+
+    _renderCompiledBiographyHtml(events = []) {
+        return this._buildCompiledBiography(events)
+            .map(text => `<p class="cg-bio-entry">${foundry.utils.escapeHTML(String(text))}</p>`)
+            .join("\n");
+    }
+
     _formatDeferredBiographyText(text, sourceTitle = "") {
         const plain = String(text ?? "").trim();
         if (!plain) return "";
@@ -3119,13 +3269,33 @@ export class SkillTreeChargenApp extends FormApplication {
         await this.actor.update({ "system.props.Biography": nextHtml });
     }
 
-    async _addBio(run, text) {
+    async _addBio(run, text, meta = {}) {
         if (!text) return;
         const line = String(text);
-        const block = this._renderBiographyBlock(line);
-        if (!block) return;
         run.bio.push(line);
-        await this._appendBiography(line);
+        const context = run?._bioContext && typeof run._bioContext === "object" ? run._bioContext : {};
+        const event = {
+            text: line,
+            summaryText: String(meta.summaryText ?? "").trim() || line,
+            kind: String(meta.kind ?? context.kind ?? "").trim(),
+            stage: String(meta.stage ?? context.stage ?? "").trim(),
+            stageLabel: this._getStageLabelFromContext({ stage: meta.stage ?? context.stage }),
+            tableUuid: String(meta.tableUuid ?? context.tableUuid ?? "").trim(),
+            tableName: String(meta.tableName ?? context.tableName ?? "").trim(),
+            choiceTitle: String(meta.choiceTitle ?? context.choiceTitle ?? "").trim(),
+            score: Number.isFinite(Number(meta.score ?? context.score)) ? Number(meta.score ?? context.score) : null,
+            rare: Boolean(meta.rare ?? context.rare),
+            memorable: Boolean(meta.memorable),
+            priority: Number(meta.priority ?? 0),
+            amount: Number.isFinite(Number(meta.amount)) ? Number(meta.amount) : null,
+            toStage: String(meta.toStage ?? "").trim(),
+            toTableName: String(meta.toTableName ?? "").trim()
+        };
+        if (Array.isArray(run.bioEvents)) run.bioEvents.push(event);
+        const block = this._renderBiographyBlock(line);
+        if (block) {
+            await this._appendBiography(line);
+        }
     }
 
     /* ---------------- SkillTree hook ---------------- */
@@ -3482,7 +3652,7 @@ export class SkillTreeChargenApp extends FormApplication {
         return true;
     }
 
-    async _ensureVisibleActorItemForNode(nodeId, graphData = null) {
+    async _ensureVisibleActorItemForNode(nodeId, graphData = null, opts = {}) {
         const ref = String(nodeId ?? "").trim();
         if (!ref.startsWith("Item.")) return false;
 
@@ -3497,19 +3667,31 @@ export class SkillTreeChargenApp extends FormApplication {
         if (!embedded) {
             const data = sourceDoc.toObject();
             foundry.utils.setProperty(data, "flags.chargen1547_v2.skilltreeNodeRef", ref);
+            if (Number.isFinite(Number(opts.level))) {
+                foundry.utils.setProperty(data, "system.props.CurrentLevel", String(Number(opts.level)));
+            }
             const created = await this.actor.createEmbeddedDocuments("Item", [data]);
             embedded = Array.isArray(created) ? created[0] ?? null : null;
+        }
+
+        if (embedded && Number.isFinite(Number(opts.level))) {
+            const currentLevel = Number(foundry.utils.getProperty(embedded, "system.props.CurrentLevel"));
+            const targetLevel = Number(opts.level);
+            if (!Number.isFinite(currentLevel) || currentLevel !== targetLevel) {
+                await embedded.update({ "system.props.CurrentLevel": String(targetLevel) });
+            }
         }
 
         if (embedded && typeof globalThis.SkillTree?.ensureActorItemNodeRef === "function" && graphData) {
             await globalThis.SkillTree.ensureActorItemNodeRef(embedded, graphData);
         }
 
-        return Boolean(embedded);
+        return embedded;
     }
 
     async _grantStartingManeuvers() {
-        for (const ref of STARTING_MANEUVER_REFS) {
+        const refs = await loadDefaultManeuverRefs();
+        for (const ref of refs) {
             const doc = await this._getItemDocFromSpec(ref);
             if (!doc) continue;
 
@@ -3525,13 +3707,48 @@ export class SkillTreeChargenApp extends FormApplication {
         }
     }
 
+    async _grantBaselineSkill(targetKey) {
+        const st = globalThis.SkillTree;
+        const graphData = await this._getSkillTreeGraphData();
+        await this._ensureSkillTreeActorRefs(graphData);
+
+        const embedded = await this._ensureVisibleActorItemForNode(targetKey, graphData, { level: 0 });
+        if (!embedded) {
+            return { ok: false, targetKey, reason: "missing-item" };
+        }
+
+        if (typeof st?.setSkillLevel === "function") {
+            await st.setSkillLevel(this.actor, targetKey, 0);
+        } else if (typeof st?.setNodeLevel === "function") {
+            await st.setNodeLevel(this.actor, targetKey, 0);
+        }
+
+        await embedded.update({ "system.props.CurrentLevel": "0" });
+        await this._ensureSkillTreeActorRefs(graphData);
+
+        const nodeRef = String(
+            embedded.flags?.chargen1547_v2?.skilltreeNodeRef
+            ?? globalThis.SkillTree?.resolveNodeIdForItem?.(embedded, graphData)
+            ?? targetKey
+        ).trim();
+
+        return {
+            ok: true,
+            targetKey,
+            nodeName: nodeRef,
+            level: 0,
+            itemId: embedded.id,
+            itemName: embedded.name
+        };
+    }
+
     async _grantSkillToward(run, targetKey, targetLevel, fallback, { silent = false } = {}) {
         const st = globalThis.SkillTree;
         if ((!st?.grantFirstAvailableNode && !st?.nextStepToward) || (!st?.grantFirstAvailableNode && !st?.NODES)) {
             if (fallback?.type === "stat") {
                 await advanceStat(this.actor, fallback.characteristic, Number(fallback.steps ?? 1));
             }
-            return;
+            return { ok: false, targetKey, targetLevel, reason: "skilltree-unavailable" };
         }
 
         const graphData = await this._getSkillTreeGraphData();
@@ -3545,7 +3762,15 @@ export class SkillTreeChargenApp extends FormApplication {
                 if (existing == null || String(existing).trim() === "") {
                     await this.actor.update({ [`system.props.${baselineStep.nodeName}`]: "0" });
                 }
-                return;
+                await this._ensureVisibleActorItemForNode(targetKey, graphData);
+                await this._ensureSkillTreeActorRefs(graphData);
+                return {
+                    ok: true,
+                    targetKey,
+                    targetLevel: numericTargetLevel,
+                    nodeName: String(baselineStep.nodeName),
+                    level: 0
+                };
             }
         }
 
@@ -3558,35 +3783,67 @@ export class SkillTreeChargenApp extends FormApplication {
                 if (fallback?.type === "stat") {
                     await advanceStat(this.actor, fallback.characteristic, Number(fallback.steps ?? 1));
                 }
-                return;
+                return { ok: false, targetKey, targetLevel, reason: "grant-failed", result };
+            }
+
+            const grantedType = String(result.next?.type ?? "").toLowerCase();
+            const grantedLevel = Number(result.granted.level);
+            if (Number.isFinite(grantedLevel)) {
+                if (grantedType === "skill" && typeof st.setSkillLevel === "function") {
+                    await st.setSkillLevel(this.actor, targetKey, grantedLevel);
+                } else if (typeof st.setNodeLevel === "function") {
+                    await st.setNodeLevel(this.actor, targetKey, grantedLevel);
+                }
+                await this._ensureVisibleActorItemForNode(targetKey, graphData);
+                await this._ensureSkillTreeActorRefs(graphData);
             }
 
             const grantedName = await this._resolveLearnedLabel(
                 result.granted?.nodeId ?? targetKey,
                 result.next?.name ?? result.granted?.nodeId ?? targetKey
             );
-            const grantedType = String(result.next?.type ?? "").toLowerCase();
-            const grantedLevel = Number(result.granted.level);
             const showLevel = grantedType !== "maneuver" && Number.isFinite(grantedLevel);
             if (!silent) {
                 await this._addBio(run, showLevel ? `Learned ${grantedName} ${grantedLevel}` : `Learned ${grantedName}`);
             }
-            return;
+            return {
+                ok: true,
+                targetKey,
+                targetLevel: Number.isFinite(numericTargetLevel) ? numericTargetLevel : null,
+                nodeName: String(result.granted?.nodeName ?? result.granted?.nodeId ?? targetKey),
+                level: grantedLevel,
+                grantedType
+            };
         }
 
         const step = st.nextStepToward(this.actor, targetKey, targetLevel, graphData, null);
-        if (step === true) return;
-        if (!step?.nodeName) return;
-        if (String(step.nodeName).startsWith("Traits_")) return;
+        if (step === true) {
+            return { ok: true, targetKey, targetLevel, reason: "already-satisfied" };
+        }
+        if (!step?.nodeName) {
+            return { ok: false, targetKey, targetLevel, reason: "missing-node" };
+        }
+        if (String(step.nodeName).startsWith("Traits_")) {
+            return { ok: false, targetKey, targetLevel, reason: "trait-node" };
+        }
 
         const cur = this._getPropNumber(step.nodeName);
         const next = Math.max(cur, Number(step.nodeLevel ?? 0));
 
         await this.actor.update({ [`system.props.${step.nodeName}`]: String(next) });
+        await this._ensureVisibleActorItemForNode(targetKey, graphData);
+        await this._ensureSkillTreeActorRefs(graphData);
         if (!silent) {
             const learnedName = await this._resolveLearnedLabel(targetKey, step.nodeName);
             await this._addBio(run, `Learned ${learnedName} ${next}`);
         }
+        return {
+            ok: true,
+            targetKey,
+            targetLevel: Number.isFinite(numericTargetLevel) ? numericTargetLevel : null,
+            nodeName: String(step.nodeName),
+            level: next
+        };
     }
 
     async _getBaselineMinZeroSkills() {
@@ -3597,6 +3854,72 @@ export class SkillTreeChargenApp extends FormApplication {
             .filter(entry => Number(entry?.minLevel) === 0 && String(entry?.uuid ?? "").trim() !== "")
             .map(entry => String(entry.uuid).trim());
         return BASELINE_MIN_ZERO_SKILLS_CACHE;
+    }
+
+    async _validateBaselineMinZeroSkillsProvisioning(grantResults = null) {
+        const results = Array.isArray(grantResults)
+            ? grantResults
+            : (await this._getBaselineMinZeroSkills()).map(uuid => ({ targetKey: uuid }));
+        const report = {
+            ok: true,
+            checked: [],
+            missing: [],
+            invalid: []
+        };
+
+        for (const entry of results) {
+            const skillUuid = String(entry?.targetKey ?? entry?.uuid ?? "").trim();
+            const nodeName = String(entry?.nodeName ?? "").trim();
+            const itemId = String(entry?.itemId ?? "").trim();
+
+            if (!entry?.ok || !nodeName) {
+                report.ok = false;
+                report.missing.push({
+                    uuid: skillUuid,
+                    nodeName: nodeName || null,
+                    reason: entry?.reason ?? "missing-node"
+                });
+                continue;
+            }
+
+            const embedded = itemId
+                ? (this.actor.items.get(itemId) ?? null)
+                : (this.actor.items.find(item =>
+                    String(item.flags?.chargen1547_v2?.skilltreeNodeRef ?? "").trim() === skillUuid
+                ) ?? null);
+
+            if (!embedded) {
+                report.ok = false;
+                report.missing.push({
+                    uuid: skillUuid,
+                    nodeName,
+                    reason: "missing-embedded-item"
+                });
+                continue;
+            }
+
+            const value = foundry.utils.getProperty(embedded, "system.props.CurrentLevel");
+            report.checked.push({
+                uuid: skillUuid,
+                nodeName,
+                itemId: embedded.id,
+                itemName: embedded.name,
+                value: value ?? null
+            });
+
+            if (String(value ?? "").trim() !== "0") {
+                report.ok = false;
+                report.invalid.push({
+                    uuid: skillUuid,
+                    nodeName,
+                    itemId: embedded.id,
+                    itemName: embedded.name,
+                    value: value ?? null
+                });
+            }
+        }
+
+        return report;
     }
 
     async _grantManeuverToward(run, targetKey, targetLevel, fallback) {
@@ -3871,11 +4194,18 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const table = await this._getRollTable(ref);
         const tableName = String(table?.name ?? "").trim();
-        const key = tableName.toLowerCase();
-        const bioLine = CAREER_LITERACY_TABLES.get(key);
-        if (!bioLine) return false;
+        const grantsNativeLiteracy = Boolean(
+            foundry.utils.getProperty(table, "flags.chargen1547_v2.onEntry.nativeLiteracy")
+        );
+        if (!grantsNativeLiteracy) return false;
 
-        const flagKey = `careerLiteracyGranted.${normalizeTableKey(tableName)}`;
+        const bioLine = String(
+            foundry.utils.getProperty(table, "flags.chargen1547_v2.onEntry.nativeLiteracyBio") ?? ""
+        ).trim();
+        const tableKey = String(
+            foundry.utils.getProperty(table, "flags.chargen1547_v2.entryKey") ?? normalizeTableKey(tableName)
+        ).trim();
+        const flagKey = `careerLiteracyGranted.${tableKey}`;
         if (this.actor.getFlag("world", flagKey)) return false;
 
         const nativeLanguage = this._getNativeLanguageName();
@@ -3883,7 +4213,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const granted = await this._ensureLanguage(nativeLanguage, { readWrite: true });
         await this.actor.setFlag("world", flagKey, true);
-        if (granted) {
+        if (granted && bioLine) {
             await this._addBio(run, bioLine);
         }
         return granted;
@@ -4284,11 +4614,12 @@ export class SkillTreeChargenApp extends FormApplication {
             const chosen =
                 (!isPlaceholderImg(data?.choice?.icon) ? data.choice.icon : "") ||
                 (!isPlaceholderImg(r.img) ? r.img : "") ||
-                table.img;
-            const img = resolveImgPath(chosen);
+                (!isPlaceholderImg(table.img) ? table.img : "");
+            const img = resolveImgPath(chosen) || resolveImgPath(UNKNOWN_CARD_IMAGE);
 
             out.push({
                 resultId: r.id,
+                range: Array.isArray(r.range) ? [...r.range] : [],
                 rawText: SkillTreeChargenApp._resultRawJSON(r),
                 img,
                 data,
@@ -4296,6 +4627,11 @@ export class SkillTreeChargenApp extends FormApplication {
                 masked: useUnknownExtremeReveal && SkillTreeChargenApp._resultHasExtremeUnknownReveal(r)
             });
         }
+
+        await preloadImages([
+            resolveImgPath("media/home/games/1547/Cards/backside.webp"),
+            ...out.map(card => card.img)
+        ]);
 
         return out;
     }
@@ -4361,7 +4697,7 @@ export class SkillTreeChargenApp extends FormApplication {
         return summarizeRewardChange(ch);
     }
 
-    async _buildRevealSummary(run, reward, nextUuid, transitionState = "") {
+    async _buildRevealSummary(run, reward, nextUuid, transitionState = "", fromName = "") {
         const lines = [];
         for (const ch of reward?.changes ?? []) {
             const line = await this._summarizeChange(ch);
@@ -4370,11 +4706,22 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const nextName = nextUuid ? await this._getTableName(nextUuid) : "";
         const transitionKind = String(transitionState ?? "").trim().toLowerCase();
+        const fromTableName = String(fromName ?? "").trim();
+        const hasPathChange = Boolean(nextUuid && nextUuid !== run?.tableUuid);
+        const fromTable = run?.tableUuid ? await this._getRollTable(run.tableUuid) : null;
+        const nextTable = nextUuid ? await this._getRollTable(nextUuid) : null;
+        const isCareerPathTurn = Boolean(
+            hasPathChange &&
+            transitionKind === "forced" &&
+            this._isCareerAdvancementTable(fromTable) &&
+            this._isCareerAdvancementTable(nextTable)
+        );
+        const isTransitionInterstitial = isCareerPathTurn;
         let nextDetail = nextName;
         if (nextName && transitionKind === "chosen") {
             nextDetail = `You chose a new path: ${nextName}`;
         } else if (nextName && transitionKind === "forced") {
-            nextDetail = `Your path were forced to ${nextName}`;
+            nextDetail = `Your path was forced toward ${nextName}`;
         }
         return {
             lines,
@@ -4382,6 +4729,15 @@ export class SkillTreeChargenApp extends FormApplication {
             nextName,
             nextDetail,
             transitionKind,
+            isTransitionInterstitial,
+            fromTableName,
+            transitionText: String(reward?.transitionText ?? "").trim(),
+            transitionModeLabel:
+                transitionKind === "chosen"
+                    ? "Chosen Path"
+                    : transitionKind === "forced"
+                        ? (isCareerPathTurn ? "Forced Turn" : "")
+                        : "",
             terminal: !nextUuid,
             exhausted: Number(run?.remainingGlobal ?? 0) <= 0
         };
@@ -4414,10 +4770,14 @@ export class SkillTreeChargenApp extends FormApplication {
         const revealDeferredHtml = reveal?.isDeferred && reveal?.text
             ? this._formatDeferredBiographyText(reveal.text, reveal.sourceTitle)
             : "";
+        const revealTransitionText = reveal?.isTransitionInterstitial
+            ? String(reveal?.transitionText ?? "").trim()
+            : "";
 
         return {
             revealDeferredLines,
             revealDeferredHtml,
+            revealTransitionText,
             state: run ?? { remainingGlobal: 0 },
             actorName: this.actor?.name ?? "",
             currentTableName: table?.name ?? "",
@@ -4446,6 +4806,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 };
             }),
             bio: run?.bio ?? [],
+            compiledBio: this._buildCompiledBiography(run?.bioEvents ?? []),
             relevantTables
         };
     }
@@ -4618,6 +4979,8 @@ export class SkillTreeChargenApp extends FormApplication {
             }
 
             const data = picked.data;
+            const currentTable = await this._getRollTable(run.tableUuid);
+            run._bioContext = this._buildBioContext(run, currentTable, picked);
             if (data.bio) await this._addBio(run, String(data.bio));
 
             const reward = Array.isArray(data.effectTables) && data.effectTables.length
@@ -4629,7 +4992,7 @@ export class SkillTreeChargenApp extends FormApplication {
 
             const fromUuid = run.tableUuid;
             const fromName = await this._getTableName(fromUuid);
-            const fromTable = await this._getRollTable(fromUuid);
+            const fromTable = currentTable;
             if (this._isCareerAdvancementTable(fromTable)) {
                 run.careerAdvancementEligible = true;
                 run.careerAdvancementSource = fromName;
@@ -4661,7 +5024,12 @@ export class SkillTreeChargenApp extends FormApplication {
                         run,
                         declinedTargetName
                             ? `You chose to remain on ${fromName} instead of moving to ${declinedTargetName}.`
-                            : `You chose to remain on ${fromName}.`
+                            : `You chose to remain on ${fromName}.`,
+                        {
+                            kind: "transition",
+                            toTableName: declinedTargetName,
+                            memorable: false
+                        }
                     );
                 } else {
                     transitionState = "chosen";
@@ -4682,7 +5050,15 @@ export class SkillTreeChargenApp extends FormApplication {
             });
             if (nextUuid && nextUuid !== fromUuid) {
                 if (reward.transitionText) {
-                    await this._addBio(run, String(reward.transitionText));
+                    const toTable = await this._getRollTable(nextUuid);
+                    const toStage = this._getBioStageFromTable(toTable);
+                    await this._addBio(run, String(reward.transitionText), {
+                        kind: "transition",
+                        memorable: toStage === "advanced",
+                        priority: toStage === "advanced" ? 3 : 1,
+                        toStage,
+                        toTableName: String(toTable?.name ?? "").trim()
+                    });
                 }
             } else if (!nextUuid) {
                 const choiceTitle = String(data.choice?.title ?? "").trim();
@@ -4692,7 +5068,11 @@ export class SkillTreeChargenApp extends FormApplication {
                         ? `${choiceTitle} brought this chapter of your life to an end.`
                         : `${fromName} came to an end here.`);
                 if (terminalReason) {
-                    await this._addBio(run, terminalReason);
+                    await this._addBio(run, terminalReason, {
+                        kind: "transition",
+                        memorable: true,
+                        priority: 2
+                    });
                 }
             }
 
@@ -4701,6 +5081,7 @@ export class SkillTreeChargenApp extends FormApplication {
                 chosenIndex: index,
                 fromUuid,
                 fromName,
+                image: String(data?.choice?.icon ?? "").trim(),
                 ...(await this._buildRevealSummary(run, reward, nextUuid, transitionState))
             };
 
@@ -4712,6 +5093,7 @@ export class SkillTreeChargenApp extends FormApplication {
             ui.notifications.error(e.message);
             console.error(e);
         } finally {
+            delete run._bioContext;
             this._actionInFlight = false;
         }
     }
@@ -4735,10 +5117,12 @@ export class SkillTreeChargenApp extends FormApplication {
                 }
                 if (reveal.text) {
                     const line = `The past returns: ${reveal.text}`;
-                    run.bio.push(line);
-                    await this._appendBiographyHtmlBlock(
-                        this._formatDeferredBiographyText(line, reveal.sourceTitle)
-                    );
+                    await this._addBio(run, line, {
+                        kind: "deferred",
+                        memorable: true,
+                        priority: 3,
+                        summaryText: line
+                    });
                 }
                 if (Array.isArray(payload.enqueue)) {
                     for (const entry of payload.enqueue) {
@@ -4849,12 +5233,21 @@ export class SkillTreeChargenApp extends FormApplication {
 
         const actor = this.actor;
         const bioHtml = (run.bio ?? []).map(s => `<li>${foundry.utils.escapeHTML(String(s))}</li>`).join("");
+        const compiledBioHtml = this._renderCompiledBiographyHtml(run.bioEvents ?? []);
+        const finalBiographyHtml = compiledBioHtml || this._getBiographyHtml();
+
+        await actor.update({
+            "system.props.Biography": finalBiographyHtml,
+            "system.props.BiographyCompiled": compiledBioHtml,
+            "system.props.BiographyDetailed": bioHtml ? `<ul>${bioHtml}</ul>` : ""
+        });
 
         if (!this._simulationOption("suppressChat", false)) {
             await ChatMessage.create({
                 speaker: ChatMessage.getSpeaker({ actor }),
                 content: `
         <h3>Character Generation Finished</h3>
+        ${compiledBioHtml ? `<p><b>Life summary</b></p>${compiledBioHtml}` : ""}
         <p><b>${foundry.utils.escapeHTML(actor.name)}</b> biography:</p>
         <ul>${bioHtml}</ul>
       `

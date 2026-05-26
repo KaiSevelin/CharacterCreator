@@ -1,0 +1,135 @@
+{
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "contents": [],
+            "key": "custom_body",
+            "type": "panel"
+        },
+        "display": {
+            "width": 820,
+            "height": 980,
+            "fix_size": false,
+            "pp_width": 64,
+            "pp_height": 64
+        },
+        "header": {
+            "contents": [],
+            "key": "custom_header",
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Clerk turned source",
+            "ChoiceText": "The easiest way into an office was often through the person bored enough to copy its papers without believing they mattered.",
+            "ChoiceTags": "",
+            "ChoiceBio": "A clerk turned source taught you that administration leaks most through those treated as furniture.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Office.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A clerk, scribe, or registrar quietly feeds you what their betters overlook.",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Skill",
+                    "TargetKey": "Item.00wKdoVpnYkW0LUk",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "AdSpClerkQ7mR1749"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "name": "Clerk turned source",
+    "_id": "AdSpClerkQ7mR1749"
+}

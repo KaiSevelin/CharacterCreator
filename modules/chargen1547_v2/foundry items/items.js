@@ -1,4 +1,4 @@
-﻿export const FOUNDRY_ITEMS = [
+export const FOUNDRY_ITEMS = [
     {
         "name":  "Cat",
         "uuid":  "Item.jeaEyMZWFkU6k0No",

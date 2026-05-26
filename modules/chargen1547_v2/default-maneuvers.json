@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Act Of Heroism",
+        "uuid": "Item.PCMSwxICLz2Swnbg",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Act Of Inspiration",
+        "uuid": "Item.d2cbZAP5J9MvtFwk",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Act Of Precision",
+        "uuid": "Item.C9AOwpsyX2fLn3St",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Act Of Speed",
+        "uuid": "Item.fIF4KGkCpk6TqrB5",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Act Of Strength",
+        "uuid": "Item.Uvq41w9Ik1EKy7gM",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Act Of Toughness",
+        "uuid": "Item.vvUVUoFs3tzr8Xk7",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Aim",
+        "uuid": "Item.SBIsohvIxk1hMePv",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "All-in",
+        "uuid": "Item.qKblR61N6NE1DHZf",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Brace Firearm",
+        "uuid": "Item.Qtc3sNJL5kABXzDJ",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Catch Breath",
+        "uuid": "Item.EzBwgx66m1efLL1D",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Desperate Defense",
+        "uuid": "Item.AYxAdcJLNiqt3Kz0",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Disengage",
+        "uuid": "Item.UkOecPq8lfF2jnWG",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Draw",
+        "uuid": "Item.M1kRRk9awWsvOTo0",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Evade",
+        "uuid": "Item.lURv2PmrFg0xnqbr",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Opportunity Strike",
+        "uuid": "Item.RAwHPMwVPZ8vbhfw",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    },
+    {
+        "name": "Reload",
+        "uuid": "Item.4DkWGQOP1z9hLWHb",
+        "folder": "Maneuvers",
+        "skillRequirement": ""
+    }
+]

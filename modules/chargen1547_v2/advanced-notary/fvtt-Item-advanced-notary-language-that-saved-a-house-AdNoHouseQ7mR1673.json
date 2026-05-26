@@ -1,0 +1,135 @@
+{
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "name": "Language that saved a house",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "key": "custom_body",
+            "contents": [],
+            "type": "panel"
+        },
+        "display": {
+            "pp_width": 64,
+            "pp_height": 64,
+            "fix_size": false,
+            "width": 820,
+            "height": 980
+        },
+        "header": {
+            "key": "custom_header",
+            "contents": [],
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Language that saved a house",
+            "ChoiceText": "A clause you placed with care preserved a family from ruin, and afterward people began to listen when you spoke about consequence.",
+            "ChoiceTags": "",
+            "ChoiceBio": "Language that saved a house taught you that exact wording can protect where steel cannot.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Influence.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A grateful household speaks your name with unusual seriousness.",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Esteem",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Social",
+                    "TargetKey": "",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Stat",
+                    "TargetKey": "Charisma",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Money",
+                    "TargetKey": "",
+                    "Amount": "30",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "AdNoHouseQ7mR1673"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "_id": "AdNoHouseQ7mR1673"
+}

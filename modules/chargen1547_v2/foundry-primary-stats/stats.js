@@ -1,4 +1,4 @@
-﻿export const PRIMARY_STATS = [
+export const PRIMARY_STATS = [
     "Strength",
     "Dexterity",
     "Stamina",

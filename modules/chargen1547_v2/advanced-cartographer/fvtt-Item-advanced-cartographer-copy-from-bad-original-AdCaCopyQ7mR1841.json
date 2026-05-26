@@ -1,0 +1,135 @@
+{
+  "folder": "RUXVfLU7KC7rU4jQ",
+  "type": "equippableItem",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "body": {
+      "contents": [],
+      "key": "custom_body",
+      "type": "panel"
+    },
+    "display": {
+      "width": 820,
+      "height": 980,
+      "fix_size": false,
+      "pp_width": 64,
+      "pp_height": 64
+    },
+    "header": {
+      "contents": [],
+      "key": "custom_header",
+      "type": "panel"
+    },
+    "hidden": [],
+    "modifiers": [],
+    "props": {
+      "ChoiceTitle": "Chart copied from a false coast",
+      "ChoiceText": "You learned early that a coastline can be drawn wrongly with perfect confidence, and that copying a false shore spreads error farther than ignorance ever could alone.",
+      "ChoiceTags": "",
+      "ChoiceBio": "A false coast taught you that cartography begins in doubt, not confidence.",
+      "ChoiceCard": "media/home/games/1547/Cards/General Planning.webp",
+      "Effects1": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Skill",
+          "TargetKey": "Item.00wKdoVpnYkW0LUk",
+          "Amount": "1",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Suspicion",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Bio",
+          "TargetKey": "RollTable.kC0YeELeXOdwDeaJ",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        }
+      },
+      "Effects2": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Contact",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "A pilot or clerk remembers who first doubted the copied shoreline and why that doubt mattered.",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Language",
+          "TargetKey": "",
+          "Amount": "1",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Money",
+          "TargetKey": "",
+          "Amount": "30",
+          "TargetText": "",
+          "NextTable": ""
+        }
+      },
+      "Effects3": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Nothing",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Nothing",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Nothing",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        }
+      }
+    },
+    "unique": false,
+    "templateSystemUniqueVersion": 4241488775,
+    "template": "CGRwEfTpl9K2P7rQ",
+    "uniqueId": "AdCaCopyQ7mR1841"
+  },
+  "flags": {
+    "custom-system-builder": {
+      "version": "5.2.0"
+    }
+  },
+  "items": [],
+  "ownership": {
+    "default": 0
+  },
+  "name": "Chart copied from a false coast",
+  "_id": "AdCaCopyQ7mR1841"
+}

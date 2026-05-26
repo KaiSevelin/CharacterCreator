@@ -1,0 +1,145 @@
+{
+    "folder":  "RUXVfLU7KC7rU4jQ",
+    "name":  "Night in the registry",
+    "type":  "equippableItem",
+    "img":  "icons/svg/item-bag.svg",
+    "system":  {
+                   "body":  {
+                                "key":  "custom_body",
+                                "contents":  [
+
+                                             ],
+                                "type":  "panel"
+                            },
+                   "display":  {
+                                   "pp_width":  64,
+                                   "pp_height":  64,
+                                   "fix_size":  false,
+                                   "width":  820,
+                                   "height":  980
+                               },
+                   "header":  {
+                                  "key":  "custom_header",
+                                  "contents":  [
+
+                                               ],
+                                  "type":  "panel"
+                              },
+                   "hidden":  [
+
+                              ],
+                   "modifiers":  [
+
+                                 ],
+                   "props":  {
+                                 "ChoiceTitle":  "Night in the registry",
+                                 "ChoiceText":  "By lamplight you learned how a city remembers itself: not in speeches, but in bundles of paper no fire should ever reach.",
+                                 "ChoiceTags":  "",
+                                 "ChoiceBio":  "A night in the registry taught you that power survives by being filed.",
+                                 "ChoiceCard":  "media/home/games/1547/Cards/General Planning.webp",
+                                 "Effects1":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Skill",
+                                                            "TargetKey":  "Item.00wKdoVpnYkW0LUk",
+                                                            "Amount":  "1",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Secrets",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Bio",
+                                                            "TargetKey":  "RollTable.kC0YeELeXOdwDeaJ",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              },
+                                 "Effects2":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Stat",
+                                                            "TargetKey":  "Intelligence",
+                                                            "Amount":  "1",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Contact",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "A registrar or clerk began trusting you with work not shown to everyone.",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              },
+                                 "Effects3":  {
+                                                  "0":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "1":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        },
+                                                  "2":  {
+                                                            "$deleted":  false,
+                                                            "Weight":  "2",
+                                                            "Type":  "Nothing",
+                                                            "TargetKey":  "",
+                                                            "Amount":  "",
+                                                            "TargetText":  "",
+                                                            "NextTable":  ""
+                                                        }
+                                              }
+                             },
+                   "unique":  false,
+                   "templateSystemUniqueVersion":  4241488775,
+                   "template":  "CGRwEfTpl9K2P7rQ",
+                   "uniqueId":  "AdNoRegisQ7mR1667"
+               },
+    "flags":  {
+                  "custom-system-builder":  {
+                                                "version":  "5.2.0"
+                                            }
+              },
+    "items":  [
+
+              ],
+    "ownership":  {
+                      "default":  0
+                  },
+    "_id":  "AdNoRegisQ7mR1667"
+}

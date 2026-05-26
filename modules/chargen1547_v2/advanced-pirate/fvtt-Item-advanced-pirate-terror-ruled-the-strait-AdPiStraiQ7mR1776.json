@@ -1,0 +1,164 @@
+{
+  "folder": "RUXVfLU7KC7rU4jQ",
+  "type": "equippableItem",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "body": {
+      "contents": [],
+      "key": "custom_body",
+      "type": "panel"
+    },
+    "display": {
+      "width": 820,
+      "height": 980,
+      "fix_size": false,
+      "pp_width": 64,
+      "pp_height": 64
+    },
+    "header": {
+      "contents": [],
+      "key": "custom_header",
+      "type": "panel"
+    },
+    "hidden": [],
+    "modifiers": [],
+    "props": {
+      "ChoiceTitle": "Terror ruled the strait",
+      "ChoiceText": "Lookouts named your sails before dawn, merchants hugged the shore, and pilots asked first whether your boats had been seen that week before discussing cargo, price, or weather.",
+      "ChoiceTags": "",
+      "ChoiceBio": "When the strait learned to ask after your sails first, piracy ceased to be mere outlawry and became a temporary government by fear.",
+      "ChoiceCard": "media/home/games/1547/Cards/Rare/BlackSails.webp",
+      "Effects1": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Esteem",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Money",
+          "TargetKey": "",
+          "Amount": "80",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Contact",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "Powerful merchants, captains, and officials still remember when their plans had to account for your hunger first.",
+          "NextTable": ""
+        }
+      },
+      "Effects2": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Social",
+          "TargetKey": "",
+          "Amount": "2",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Stat",
+          "TargetKey": "Charisma",
+          "Amount": "1",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Nothing",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        }
+      },
+      "Effects3": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Secrets",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Contact",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "Someone still profits from a route, port, or bargain first shaped by the terror you imposed.",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Nothing",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        }
+      },
+      "Effects4": {
+        "0": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Esteem",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        },
+        "1": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Contact",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "A whole coast once learned your name as a condition of trade, and someone there has never forgotten it.",
+          "NextTable": ""
+        },
+        "2": {
+          "$deleted": false,
+          "Weight": "2",
+          "Type": "Nothing",
+          "TargetKey": "",
+          "Amount": "",
+          "TargetText": "",
+          "NextTable": ""
+        }
+      }
+    },
+    "unique": false,
+    "templateSystemUniqueVersion": 4241488775,
+    "template": "CGRwEfTpl9K2P7rQ",
+    "uniqueId": "AdPiStraiQ7mR1776"
+  },
+  "flags": {
+    "custom-system-builder": {
+      "version": "5.2.0"
+    }
+  },
+  "items": [],
+  "ownership": {
+    "default": 0
+  },
+  "name": "Terror ruled the strait",
+  "_id": "AdPiStraiQ7mR1776"
+}

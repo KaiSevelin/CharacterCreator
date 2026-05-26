@@ -3,12 +3,10 @@ import { SkillTreeChargenApp } from "./chargen.js";
 import { importWorldContent } from "./import-world-content.js";
 import { getChargenSettings, registerChargenSettings } from "./settings.js";
 
-Hooks.once("init", () => {
-    registerChargenSettings();
-});
+const MODULE_ID = "chargen1547_v2";
 
-Hooks.once("ready", () => {
-    globalThis.SkillTreeChargen = {
+function buildSkillTreeChargenApi() {
+    return {
         open: async (opts = {}) => {
             try {
                 const settings = getChargenSettings();
@@ -156,6 +154,38 @@ Hooks.once("ready", () => {
             }
         }
     };
+}
+
+function registerSkillTreeChargenApi() {
+    const api = buildSkillTreeChargenApi();
+    globalThis.SkillTreeChargen = api;
+    globalThis.chargen1547_v2 = api;
+    if (typeof window !== "undefined") {
+        window.SkillTreeChargen = api;
+        window.chargen1547_v2 = api;
+    }
+    const module = game.modules?.get(MODULE_ID);
+    if (module) {
+        module.api = api;
+    }
+    try {
+        // Foundry macro eval can fail to resolve bare global properties.
+        // Create a real global binding so legacy macros using `SkillTreeChargen.*`
+        // continue to work.
+        (0, eval)("var SkillTreeChargen = globalThis.SkillTreeChargen;");
+    } catch (err) {
+        console.warn("Unable to create global SkillTreeChargen binding:", err);
+    }
+    return api;
+}
+
+Hooks.once("init", () => {
+    registerChargenSettings();
+    registerSkillTreeChargenApi();
+});
+
+Hooks.once("ready", () => {
+    registerSkillTreeChargenApi();
 
     console.log("SkillTreeChargen registered:", globalThis.SkillTreeChargen);
 });

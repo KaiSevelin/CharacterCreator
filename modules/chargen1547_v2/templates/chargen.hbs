@@ -60,6 +60,7 @@
     {{#if reveal}}
     <section class="chargen-reveal">
         {{#unless reveal.isDeferred}}
+        {{#unless reveal.isTransitionInterstitial}}
         <h3 class="reveal-title">Rolled Effects</h3>
         <ul class="reveal-list">
             {{#each reveal.lines}}
@@ -71,8 +72,53 @@
         {{else}}
         <p class="reveal-next">This path ends here.</p>
         {{/if}}
+        <div class="chargen-reveal-actions">
+            <button type="button" data-action="continue" class="primary-action">
+                <i class="fas fa-forward"></i> Continue
+            </button>
+        </div>
+        {{/unless}}
         {{/unless}}
     </section>
+    {{/if}}
+
+    {{#if reveal.isTransitionInterstitial}}
+    <div class="transition-overlay" data-action="continue" role="button" tabindex="0" aria-label="Continue to the next chapter">
+        <div class="deferred-intertitle transition-intertitle">
+            <div class="deferred-intertitle__frame transition-intertitle__frame">
+                {{#if reveal.image}}
+                <div class="deferred-card-art transition-card-art">
+                    <img src="{{reveal.image}}" alt="{{reveal.title}}">
+                </div>
+                {{/if}}
+                {{#if reveal.transitionModeLabel}}
+                <p class="transition-kind">{{reveal.transitionModeLabel}}</p>
+                {{/if}}
+                <h3 class="reveal-title deferred-title transition-title">Your Life Turns</h3>
+                {{#if reveal.fromTableName}}
+                <p class="transition-path">{{reveal.fromTableName}} &rarr; {{reveal.nextName}}</p>
+                {{/if}}
+                {{#if reveal.title}}
+                <p class="deferred-origin transition-origin">After {{reveal.title}}</p>
+                {{/if}}
+                {{#if revealTransitionText}}
+                <p class="reveal-text deferred-text transition-text">{{revealTransitionText}}</p>
+                {{else}}
+                {{#if reveal.nextDetail}}
+                <p class="reveal-text deferred-text transition-text">{{reveal.nextDetail}}</p>
+                {{/if}}
+                {{/if}}
+                {{#if reveal.lines}}
+                <ul class="deferred-effects transition-effects">
+                    {{#each reveal.lines}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+                <p class="deferred-dismiss">Click to continue</p>
+            </div>
+        </div>
+    </div>
     {{/if}}
 
     {{#if reveal.isDeferred}}
@@ -105,6 +151,19 @@
     {{/if}}
 
     <section class="chargen-bio">
+        {{#if compiledBio.length}}
+        <details open>
+            <summary>
+                <i class="fas fa-feather-pointed"></i>
+                Life Summary
+            </summary>
+            <div class="chargen-bio-summary">
+                {{#each compiledBio}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+        </details>
+        {{/if}}
         <details>
             <summary>
                 <i class="fas fa-book-open"></i>

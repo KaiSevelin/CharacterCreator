@@ -16,6 +16,15 @@ export async function parseRewardResult({
     return parseRewardJSONText(raw, tableName, validateParsedResultSchema);
 }
 
+function looksLikeRewardJson(text = "") {
+    const raw = String(text ?? "").trim();
+    if (!raw) return false;
+    if (raw.startsWith("{")) return true;
+    const start = raw.indexOf("{");
+    const end = raw.lastIndexOf("}");
+    return start !== -1 && end !== -1 && end > start;
+}
+
 export function parseRewardJSONText(text, tableName = "RollTable", validateParsedResultSchema) {
     const rawIn = String(text ?? "").trim();
     let raw = rawIn;
@@ -27,6 +36,10 @@ export function parseRewardJSONText(text, tableName = "RollTable", validateParse
     }
 
     raw = foundry.utils.unescapeHTML(raw).trim();
+
+    if (!looksLikeRewardJson(raw)) {
+        throw new Error(`Plain-text support result in ${tableName}.`);
+    }
 
     if (!raw.startsWith("{")) {
         const start = raw.indexOf("{");
@@ -40,7 +53,9 @@ export function parseRewardJSONText(text, tableName = "RollTable", validateParse
     try {
         obj = JSON.parse(raw);
     } catch (e) {
-        console.error("PARSE JSON ERROR", e, { tableName, rawIn, rawAfter: raw });
+        if (looksLikeRewardJson(rawIn)) {
+            console.error("PARSE JSON ERROR", e, { tableName, rawIn, rawAfter: raw });
+        }
         throw new Error(
             `Invalid JSON in ${tableName} result:\n${e.message}\n\nText was:\n${rawIn.slice(0, 500)}`
         );
@@ -255,7 +270,12 @@ export async function applyRewardChanges(app, run, changes = [], deps = {}) {
 
             if (amount !== 0) {
                 await app._addMoney(amount);
-                await app._addBio(run, `Received ${amount} reales`);
+                await app._addBio(run, `Received ${amount} reales`, {
+                    kind: "money",
+                    amount,
+                    memorable: Math.abs(amount) >= 50,
+                    priority: Math.abs(amount) >= 100 ? 3 : (Math.abs(amount) >= 50 ? 2 : 0)
+                });
             }
 
             continue;
@@ -305,32 +325,32 @@ export async function applyRewardChanges(app, run, changes = [], deps = {}) {
                     hooks.push(hook);
                 }
 
-                const clean = (text) => String(text ?? "").trim().replace(/\s+/g, " ");
-                const isPlaceholder = (text) => /^(none|null|n\/a)\.?$/i.test(clean(text));
-                const sentence = (text) => {
-                    const value = clean(text);
-                    if (!value || isPlaceholder(value)) return "";
-                    return /[.!?]$/.test(value) ? value : `${value}.`;
-                };
+        const clean = (text) => String(text ?? "").trim().replace(/\s+/g, " ");
+        const isPlaceholder = (text) => /^(none|null|n\/a|nothing notable)\.?$/i.test(clean(text));
+        const sentence = (text) => {
+            const value = clean(text);
+            if (!value || isPlaceholder(value)) return "";
+            return /[.!?]$/.test(value) ? value : `${value}.`;
+        };
 
                 const parts = [];
                 if (role && !isPlaceholder(role)) parts.push(clean(role));
 
-                const flavorLine = sentence(flavor);
-                if (flavorLine) parts.push(flavorLine);
+        const flavorLine = sentence(flavor);
+        if (flavorLine) parts.push(flavorLine);
 
-                const toneLine = sentence(tone);
-                if (toneLine) parts.push(`Tone: ${toneLine}`);
+        const toneLine = sentence(tone);
+        if (toneLine) parts.push(toneLine);
 
-                const quirkLine = sentence(quirk);
-                if (quirkLine) parts.push(`Quirk: ${quirkLine}`);
+        const quirkLine = sentence(quirk);
+        if (quirkLine) parts.push(quirkLine);
 
-                const cleanHooks = hooks
-                    .map(h => clean(h))
-                    .filter(h => h && !isPlaceholder(h));
-                if (cleanHooks.length) {
-                    parts.push(`Hooks: ${cleanHooks.map(h => sentence(h)).join(" ")}`);
-                }
+        const cleanHooks = hooks
+            .map(h => clean(h))
+            .filter(h => h && !isPlaceholder(h));
+        if (cleanHooks.length) {
+            parts.push(cleanHooks.map(h => sentence(h)).join(" "));
+        }
 
                 contactLine = parts.join(" ").trim();
             }
@@ -343,7 +363,12 @@ export async function applyRewardChanges(app, run, changes = [], deps = {}) {
             const rr = await app._rollOnce(run.bodyTable);
             const txt = app.constructor._resultRawJSON(rr.result).trim() || "Unknown";
             await app._appendListProp("Appearance", txt);
-            await app._addBio(run, `Appearance: ${txt}`);
+            await app._addBio(run, `Appearance: ${txt}`, {
+                kind: "body",
+                memorable: true,
+                priority: 3,
+                summaryText: txt
+            });
             continue;
         }
 
@@ -359,16 +384,32 @@ export async function applyRewardChanges(app, run, changes = [], deps = {}) {
             await app.actor.update({ [`system.props.${key}`]: String(after) });
 
             const reason = ch.reason ? ` (${String(ch.reason)})` : "";
-            await app._addBio(run, `Social Status ${before} -> ${after}${reason}`);
+            await app._addBio(run, `Social Status ${before} -> ${after}${reason}`, {
+                kind: "social",
+                amount: amt,
+                memorable: Math.abs(amt) >= 2,
+                priority: Math.abs(amt) >= 2 ? 2 : 0
+            });
             continue;
         }
 
         if (ch.type === "drive") {
             if (ch.action === "add") {
                 await promptAddDrive(app.actor, ch.category);
+                await app._addBio(run, `A new drive took hold: ${ch.category}.`, {
+                    kind: "drive",
+                    memorable: true,
+                    priority: 3,
+                    summaryText: `A new drive took hold: ${ch.category}.`
+                });
             }
             if (ch.action === "remove") {
                 await promptRemoveDrive(app.actor);
+                await app._addBio(run, "One of your old drives fell away.", {
+                    kind: "drive",
+                    memorable: true,
+                    priority: 2
+                });
             }
             continue;
         }
@@ -393,17 +434,28 @@ export async function applyRewardChanges(app, run, changes = [], deps = {}) {
 
             const { dice, mod } = await advanceStat(app.actor, characteristic, steps);
             const verb = steps > 0 ? "Improved" : "Reduced";
-            await app._addBio(run, `${verb} ${characteristic} (${before} -> ${dice}d6+${mod})`);
+            await app._addBio(run, `${verb} ${characteristic} (${before} -> ${dice}d6+${mod})`, {
+                kind: "stat",
+                memorable: false
+            });
             continue;
         }
 
         if (ch.type === "bio") {
-            if (ch.text) await app._addBio(run, ch.text);
+            if (ch.text) await app._addBio(run, ch.text, {
+                kind: "bio",
+                memorable: true,
+                priority: 2
+            });
 
             if (ch.roll?.tableUuid) {
                 const rr = await app._rollOnce(ch.roll.tableUuid);
                 const txt = app.constructor._resultRawJSON(rr.result);
-                if (txt) await app._addBio(run, txt);
+                if (txt) await app._addBio(run, txt, {
+                    kind: "bio",
+                    memorable: true,
+                    priority: 2
+                });
             }
             continue;
         }

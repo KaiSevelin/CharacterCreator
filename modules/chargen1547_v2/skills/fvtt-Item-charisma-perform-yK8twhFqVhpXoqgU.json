@@ -1,0 +1,478 @@
+{
+  "folder": "i9yS67cs44cWscXQ",
+  "name": "Charisma Perform",
+  "type": "equippableItem",
+  "img": "media/home/games/1547/Skills/Charisma skill.webp",
+  "system": {
+    "body": {
+      "contents": [],
+      "key": "custom_body",
+      "type": "panel"
+    },
+    "display": {
+      "width": 600,
+      "height": 600,
+      "fix_size": false,
+      "pp_width": 64,
+      "pp_height": 64
+    },
+    "header": {
+      "contents": [
+        {
+          "key": "Description",
+          "colSpan": 1,
+          "rowSpan": 1,
+          "cssClass": "",
+          "role": 0,
+          "editRole": 0,
+          "permission": 0,
+          "tooltip": "",
+          "visibilityFormula": "",
+          "editableFormula": "",
+          "escapeHTML": false,
+          "type": "textArea",
+          "size": "full-size",
+          "label": "",
+          "defaultValue": "",
+          "style": "sheet"
+        },
+        {
+          "key": "SchoolPanel",
+          "colSpan": 1,
+          "rowSpan": 1,
+          "cssClass": "",
+          "role": 0,
+          "editRole": 0,
+          "permission": 0,
+          "tooltip": "",
+          "visibilityFormula": "",
+          "editableFormula": "",
+          "escapeHTML": false,
+          "type": "panel",
+          "contents": [
+            {
+              "key": "Group",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "select",
+              "size": "full-size",
+              "label": "Group:",
+              "defaultValue": "Art",
+              "selectedOptionType": "custom",
+              "options": [
+                {
+                  "key": "Art",
+                  "value": "Art"
+                },
+                {
+                  "key": "Charisma",
+                  "value": "Charisma"
+                },
+                {
+                  "key": "Combat",
+                  "value": "Combat"
+                },
+                {
+                  "key": "Faith",
+                  "value": "Faith"
+                },
+                {
+                  "key": "Intelligence",
+                  "value": "Intelligence"
+                },
+                {
+                  "key": "Learning",
+                  "value": "Learning"
+                },
+                {
+                  "key": "Manufacturing",
+                  "value": "Manufacturing"
+                },
+                {
+                  "key": "Outdoor",
+                  "value": "Outdoor"
+                },
+                {
+                  "key": "Pagan",
+                  "value": "Pagan"
+                },
+                {
+                  "key": "Services",
+                  "value": "Services"
+                },
+                {
+                  "key": "Strength",
+                  "value": "Strength"
+                },
+                {
+                  "key": "Subterfuge",
+                  "value": "Subterfuge"
+                }
+              ]
+            },
+            {
+              "key": "Stat",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "select",
+              "size": "full-size",
+              "label": "Check:",
+              "defaultValue": "Strength",
+              "selectedOptionType": "custom",
+              "options": [
+                {
+                  "key": "Strength",
+                  "value": "Strength"
+                },
+                {
+                  "key": "Dexterity",
+                  "value": "Dexterity"
+                },
+                {
+                  "key": "Stamina",
+                  "value": "Stamina"
+                },
+                {
+                  "key": "Intelligence",
+                  "value": "Intelligence"
+                },
+                {
+                  "key": "Faith",
+                  "value": "Faith"
+                },
+                {
+                  "key": "Charisma",
+                  "value": "Charisma"
+                },
+                {
+                  "key": "Power",
+                  "value": "Power"
+                },
+                {
+                  "key": "NA",
+                  "value": "NA"
+                }
+              ]
+            },
+            {
+              "key": "CanRoll",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "checkbox",
+              "size": "full-size",
+              "label": "Can roll:",
+              "defaultChecked": false
+            },
+            {
+              "key": "MinLevel",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "Min:",
+              "defaultValue": "1",
+              "allowDecimal": false,
+              "minVal": "0",
+              "maxVal": "1",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            },
+            {
+              "key": "MaxLevel",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "Max:",
+              "defaultValue": "2",
+              "allowDecimal": false,
+              "minVal": "1",
+              "maxVal": "3",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            },
+            {
+              "key": "CurrentLevel",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "Current:",
+              "defaultValue": "${MinLevel}$",
+              "allowDecimal": false,
+              "minVal": "${MinLevel}$",
+              "maxVal": "${MaxLevel}$",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            },
+            {
+              "key": "Roll",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "CanRoll",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "label",
+              "size": "full-size",
+              "icon": "dice",
+              "value": "Roll",
+              "prefix": "",
+              "suffix": "",
+              "rollMessage": "${stat:=Stat}$\n${baseDice:=fetchFromParent(concat(\"Stats_\", stat, \"Dice\"), {top:true})}$\n${baseMod:=fetchFromParent(concat(\"Stats_\", stat, \"Mod\"), {top:true})}$\n\n${finalDice:=baseDice + DiceShift}$\n${rollFormula:=concat(finalDice, \"d6+(\", baseMod, \")\")}$\n\n${[:rollFormula:]}$",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "label"
+            }
+          ],
+          "flow": "grid-3",
+          "align": "center",
+          "verticalAlign": "top",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        },
+        {
+          "key": "RollModificationPanel",
+          "colSpan": 1,
+          "rowSpan": 1,
+          "cssClass": "",
+          "role": 0,
+          "editRole": 0,
+          "permission": 0,
+          "tooltip": "",
+          "visibilityFormula": "",
+          "editableFormula": "",
+          "escapeHTML": false,
+          "type": "panel",
+          "contents": [
+            {
+              "key": "Level0DiceShift",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "MinLevel < 1",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "0:",
+              "defaultValue": "-1",
+              "allowDecimal": false,
+              "minVal": "-2",
+              "maxVal": "2",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            },
+            {
+              "key": "Level1DiceShift",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "1:",
+              "defaultValue": "0",
+              "allowDecimal": false,
+              "minVal": "-2",
+              "maxVal": "2",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            },
+            {
+              "key": "Level2DiceShift",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "MaxLevel > 1",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "2:",
+              "defaultValue": "1",
+              "allowDecimal": false,
+              "minVal": "-2",
+              "maxVal": "2",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            },
+            {
+              "key": "Level3DiceShift",
+              "colSpan": 1,
+              "rowSpan": 1,
+              "cssClass": "",
+              "role": 0,
+              "editRole": 0,
+              "permission": 0,
+              "tooltip": "",
+              "visibilityFormula": "MaxLevel > 2",
+              "editableFormula": "",
+              "escapeHTML": false,
+              "type": "numberField",
+              "size": "full-size",
+              "label": "3:",
+              "defaultValue": "1",
+              "allowDecimal": false,
+              "minVal": "-2",
+              "maxVal": "2",
+              "allowRelative": false,
+              "showControls": true,
+              "controlsStyle": "hover",
+              "controlsCustomIncrements": "",
+              "inputStyle": "text"
+            }
+          ],
+          "flow": "grid-4",
+          "align": "center",
+          "verticalAlign": "top",
+          "collapsible": true,
+          "defaultCollapsed": false,
+          "title": "Roll modifications",
+          "titleStyle": "default"
+        }
+      ],
+      "key": "custom_header",
+      "type": "panel"
+    },
+    "hidden": [
+      {
+        "name": "DiceShift",
+        "value": "${CurrentLevel==0?Level0DiceShift:\nCurrentLevel==1?Level1DiceShift:CurrentLevel==2?Level2DiceShift:CurrentLevel==3?Level3DiceShift:0}$"
+      }
+    ],
+    "modifiers": [],
+    "props": {
+      "Description": "",
+      "Group": "Charisma",
+      "Stat": "Charisma",
+      "CanRoll": true,
+      "MinLevel": "0",
+      "MaxLevel": "2",
+      "CurrentLevel": "1",
+      "Level0DiceShift": "-1",
+      "Level1DiceShift": "0",
+      "Level2DiceShift": "1",
+      "Level3DiceShift": "1"
+    },
+    "unique": false,
+    "templateSystemUniqueVersion": 2206011073,
+    "uniqueId": "yK8twhFqVhpXoqgU",
+    "template": "BbwVnEJobtCR5oOf"
+  },
+  "effects": [],
+  "flags": {
+    "custom-system-builder": {
+      "version": "5.2.0"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": "Item.lciQamwqcsqekGRF",
+    "exportSource": {
+      "worldId": "labgame-0940e6bc",
+      "uuid": "Item.yK8twhFqVhpXoqgU",
+      "coreVersion": "13.351",
+      "systemId": "custom-system-builder",
+      "systemVersion": "5.2.0"
+    },
+    "coreVersion": "13.351",
+    "systemId": "custom-system-builder",
+    "systemVersion": "5.2.0",
+    "createdTime": 1772894533163,
+    "modifiedTime": 1775377422950,
+    "lastModifiedBy": "HqdAsTDFzg3TzYAq"
+  },
+  "_id": "yK8twhFqVhpXoqgU",
+  "items": [],
+  "ownership": {
+    "default": 0
+  }
+}

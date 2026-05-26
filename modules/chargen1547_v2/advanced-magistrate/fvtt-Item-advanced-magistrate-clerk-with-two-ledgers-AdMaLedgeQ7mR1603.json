@@ -1,0 +1,144 @@
+{
+    "folder": "RUXVfLU7KC7rU4jQ",
+    "name": "Clerk with two ledgers",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "body": {
+            "key": "custom_body",
+            "contents": [],
+            "type": "panel"
+        },
+        "display": {
+            "pp_width": 64,
+            "pp_height": 64,
+            "fix_size": false,
+            "width": 820,
+            "height": 980
+        },
+        "header": {
+            "key": "custom_header",
+            "contents": [],
+            "type": "panel"
+        },
+        "hidden": [],
+        "modifiers": [],
+        "props": {
+            "ChoiceTitle": "Clerk with two ledgers",
+            "ChoiceText": "A clerk kept one ledger for inspection and another for truth, and discovering both taught you how office speaks two languages at once.",
+            "ChoiceTags": "",
+            "ChoiceBio": "Two ledgers taught you that civic honesty is often a matter of which book is shown.",
+            "ChoiceCard": "media/home/games/1547/Cards/General Intrigue.webp",
+            "Effects1": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": "RollTabl1magstr0",
+                    "TransitionText": "Because two ledgers taught you that civic honesty is often a matter of which book is shown, office remained your daily craft.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Magistrate, but you may remain on your current path instead."
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "A clerk who knows where the second ledger lies may still answer your knock.",
+                    "NextTable": "RollTabl1magstr0",
+                    "TransitionText": "Because two ledgers taught you that civic honesty is often a matter of which book is shown, office remained your daily craft.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Magistrate, but you may remain on your current path instead."
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Money",
+                    "TargetKey": "",
+                    "Amount": "80",
+                    "TargetText": "",
+                    "NextTable": "RollTabl1magstr0",
+                    "TransitionText": "Because two ledgers taught you that civic honesty is often a matter of which book is shown, office remained your daily craft.",
+                    "TransitionMode": "optional",
+                    "TransitionPrompt": "This could carry you into Magistrate, but you may remain on your current path instead."
+                }
+            },
+            "Effects2": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Stat",
+                    "TargetKey": "Intelligence",
+                    "Amount": "1",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Esteem",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            },
+            "Effects3": {
+                "0": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Contact",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "Someone in records still owes you for what you did with the second book.",
+                    "NextTable": ""
+                },
+                "1": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Secrets",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                },
+                "2": {
+                    "$deleted": false,
+                    "Weight": "2",
+                    "Type": "Nothing",
+                    "TargetKey": "",
+                    "Amount": "",
+                    "TargetText": "",
+                    "NextTable": ""
+                }
+            }
+        },
+        "unique": false,
+        "templateSystemUniqueVersion": 4241488775,
+        "template": "CGRwEfTpl9K2P7rQ",
+        "uniqueId": "AdMaLedgeQ7mR1603"
+    },
+    "flags": {
+        "custom-system-builder": {
+            "version": "5.2.0"
+        }
+    },
+    "items": [],
+    "ownership": {
+        "default": 0
+    },
+    "_id": "AdMaLedgeQ7mR1603"
+}

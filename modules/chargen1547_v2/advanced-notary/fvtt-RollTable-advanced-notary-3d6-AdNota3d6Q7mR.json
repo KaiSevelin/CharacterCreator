@@ -1,0 +1,277 @@
+{
+    "folder":  "dA5kRoToREvCP9hn",
+    "name":  "Notary",
+    "img":  "icons/svg/daze.svg",
+    "description":  "A path of contracts, seals, witnessed truth, archives, wills, and documentary authority. This advanced career is shaped by deeds, copies, ledgers, certified memory, forgery, and the power to make claims stand.",
+    "results":  [
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      3,
+                                      3
+                                  ],
+                        "_id":  "AdNoRsA1q2W3e4C",
+                        "name":  "Disputed signature",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoSignQ7mR1661"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      4,
+                                      4
+                                  ],
+                        "_id":  "AdNoRsB1q2W3e4C",
+                        "name":  "Will contested",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoWillQ7mR1662"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      5,
+                                      5
+                                  ],
+                        "_id":  "AdNoRsC1q2W3e4C",
+                        "name":  "Seal in doubt",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoSealQ7mR1663"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      6,
+                                      6
+                                  ],
+                        "_id":  "AdNoRsD1q2W3e4C",
+                        "name":  "Bad copy, good consequences",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoCopyQ7mR1664"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      7,
+                                      7
+                                  ],
+                        "_id":  "AdNoRsE1q2W3e4C",
+                        "name":  "Marriage contract drafted",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoMatchQ7mR1665"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      8,
+                                      8
+                                  ],
+                        "_id":  "AdNoRsF1q2W3e4C",
+                        "name":  "Forged charter discovered",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoForgeQ7mR1666"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      9,
+                                      9
+                                  ],
+                        "_id":  "AdNoRsG1q2W3e4C",
+                        "name":  "Night in the registry",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoRegisQ7mR1667"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      10,
+                                      10
+                                  ],
+                        "_id":  "AdNoRsH1q2W3e4C",
+                        "name":  "Inventory of the dead",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoDeadQ7mR1668"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      11,
+                                      11
+                                  ],
+                        "_id":  "AdNoRsI1q2W3e4C",
+                        "name":  "Merchant ledger certified",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoTradeQ7mR1669"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      12,
+                                      12
+                                  ],
+                        "_id":  "AdNoRsJ1q2W3e4C",
+                        "name":  "Witnessed the right oath",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoOathQ7mR1670"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      13,
+                                      13
+                                  ],
+                        "_id":  "AdNoRsK1q2W3e4C",
+                        "name":  "Archive fire averted",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoFireQ7mR1671"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      14,
+                                      14
+                                  ],
+                        "_id":  "AdNoRsL1q2W3e4C",
+                        "name":  "Deed that changed a boundary",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoBoundQ7mR1672"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      15,
+                                      15
+                                  ],
+                        "_id":  "AdNoRsM1q2W3e4C",
+                        "name":  "Language that saved a house",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoHouseQ7mR1673"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      16,
+                                      16
+                                  ],
+                        "_id":  "AdNoRsN1q2W3e4C",
+                        "name":  "Instrument everyone copies",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoInstrQ7mR1674"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      17,
+                                      17
+                                  ],
+                        "_id":  "AdNoRsO1q2W3e4C",
+                        "name":  "Seal trusted across three towns",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoTrustQ7mR1675"
+                    },
+                    {
+                        "type":  "document",
+                        "weight":  1,
+                        "range":  [
+                                      18,
+                                      18
+                                  ],
+                        "_id":  "AdNoRsP1q2W3e4C",
+                        "name":  "Your hand made claims real",
+                        "img":  "icons/svg/item-bag.svg",
+                        "drawn":  false,
+                        "flags":  {
+
+                                  },
+                        "documentUuid":  "Item.AdNoRealQ7mR1676"
+                    }
+                ],
+    "replacement":  true,
+    "displayRoll":  true,
+    "flags":  {
+                  "chargen1547_v2":  {
+                                         "stageType":  "advanced",
+                                         "entryKey":  "advanced-notary"
+                                     }
+              },
+    "formula":  "3d6",
+    "ownership":  {
+                      "default":  0
+                  },
+    "_id":  "RollTabl1notary0"
+}

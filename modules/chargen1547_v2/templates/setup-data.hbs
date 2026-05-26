@@ -17,8 +17,8 @@
     </section>
 
     <footer class="sheet-footer flexrow">
-        <button type="submit">
-            <i class="fas fa-database"></i> Setup Data
+        <button type="submit" {{#if setupInFlight}}disabled{{/if}}>
+            <i class="fas fa-database"></i> {{#if setupInFlight}}Setting Up...{{else}}Setup Data{{/if}}
         </button>
     </footer>
 </form>
