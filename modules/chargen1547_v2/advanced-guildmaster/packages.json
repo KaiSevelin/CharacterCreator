@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-guildmaster",
+    "packages": [
+        {
+            "label": "Master's judgment",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Trade authority",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.F0NfycHV3L1nXozL",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Guild stores",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.02C8vUNaIquqBEig"
+            }
+        },
+        {
+            "label": "Chartered privilege",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.00wKdoVpnYkW0LUk",
+                "fallback": true
+            }
+        }
+    ]
+}

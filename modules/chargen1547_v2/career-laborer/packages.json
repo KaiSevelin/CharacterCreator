@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-laborer",
+    "packages": [
+        {
+            "label": "Work-hardened",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Load-bearing strength",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.zXuCnw9eUnBOb1Vp",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Useful belongings",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.e6kRkeap9Cz1talC"
+            }
+        },
+        {
+            "label": "Hard-earned wages",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

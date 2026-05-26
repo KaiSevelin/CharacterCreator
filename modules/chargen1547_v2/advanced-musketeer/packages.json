@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-musketeer",
+    "packages": [
+        {
+            "label": "Drilled in powder",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.3rmcikTMMXLQyzfb",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Heavy musket",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.lOQICnVVIxcoTSGR"
+            }
+        },
+        {
+            "label": "Held under pressure",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Volley discipline",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "stageKey": "advanced-cavalry",
+    "packages": [
+        {
+            "label": "Saddle drill",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.X7zC0glgUPw5qOiU",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Riding horse",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.uFwcb8H84NLP8jxH"
+            }
+        },
+        {
+            "label": "Pistol practice",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Y0SfW0f3l5E5JHd5",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Wheellock pistol",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.UUsyWbTjnzyujrhy"
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-alchemist",
+    "packages": [
+        {
+            "label": "Laboratory mind",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Alchemical training",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.pQ1qZGqEvNCun2pc",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Alembic and glass",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.OtFM8vKryH4PQU88"
+            }
+        },
+        {
+            "label": "Dangerous theory",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WjngVZIgku8cBETw",
+                "fallback": true
+            }
+        }
+    ]
+}

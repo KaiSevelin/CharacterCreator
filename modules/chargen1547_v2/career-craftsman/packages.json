@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-craftsman",
+    "packages": [
+        {
+            "label": "Worker's hands",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Dexterity",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Craft training",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.l3euj72k8YDI7WFv",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Workshop tools",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.Ry35kEjiCIOdVbM7"
+            }
+        },
+        {
+            "label": "Commission pay",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

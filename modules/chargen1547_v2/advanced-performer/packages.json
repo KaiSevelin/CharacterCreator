@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-performer",
+    "packages": [
+        {
+            "label": "Stage presence",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Charisma",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Could command a room",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yK8twhFqVhpXoqgU",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Lute",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.CZ0cwuxqCNuao7te"
+            }
+        },
+        {
+            "label": "Song everyone remembered",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Ttqs89del0HbbZSR",
+                "fallback": true
+            }
+        }
+    ]
+}

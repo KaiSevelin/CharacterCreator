@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-diplomat",
+    "packages": [
+        {
+            "label": "Measured words",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Charisma",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Treaty learning",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.00wKdoVpnYkW0LUk",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Embassy finery",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.3rEWQziu0PS0OIQo"
+            }
+        },
+        {
+            "label": "Courtly protocol",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yRsiAyzSCh6v6wMm",
+                "fallback": true
+            }
+        }
+    ]
+}

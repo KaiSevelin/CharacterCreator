@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-assassin",
+    "packages": [
+        {
+            "label": "Killer's hands",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Dexterity",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Silent trade",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.PmNFvXH9Emt3hIMg",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Poisoner's access",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.rA14pwn4o08IusWY",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Blood money",
+            "gain": {
+                "type": "money",
+                "formula": "4d6"
+            }
+        }
+    ]
+}

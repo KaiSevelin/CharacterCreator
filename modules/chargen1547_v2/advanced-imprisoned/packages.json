@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-imprisoned",
+    "packages": [
+        {
+            "label": "Prison hardening",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Close-quarters instinct",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.PmNFvXH9Emt3hIMg",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Smuggled necessities",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.e6kRkeap9Cz1talC"
+            }
+        },
+        {
+            "label": "Walked out harder",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.zXuCnw9eUnBOb1Vp",
+                "fallback": true
+            }
+        }
+    ]
+}

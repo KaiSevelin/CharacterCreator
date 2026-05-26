@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-officer",
+    "packages": [
+        {
+            "label": "Command voice",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Charisma",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Field command",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Officer's stores",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.YPAgLzZ6GaqIATp4"
+            }
+        },
+        {
+            "label": "Supply judgment",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.CUiBkYMSGbFRUVoK",
+                "fallback": true
+            }
+        }
+    ]
+}

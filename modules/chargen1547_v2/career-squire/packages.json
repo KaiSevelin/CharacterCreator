@@ -1,0 +1,36 @@
+{
+    "stageKey": "career-squire",
+    "packages": [
+        {
+            "label": "Court polish",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yRsiAyzSCh6v6wMm",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Knightly drill",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Service gear",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.4Xbki12nYfJHAIdX"
+            }
+        },
+        {
+            "label": "Hardened by service",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        }
+    ]
+}

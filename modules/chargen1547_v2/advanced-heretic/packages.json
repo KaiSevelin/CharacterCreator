@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-heretic",
+    "packages": [
+        {
+            "label": "Forbidden conviction",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Faith",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Hidden doctrine",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.7VoeHrMi683vwBeS",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Banned pages",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.weXLb9rAqFMsHe6W"
+            }
+        },
+        {
+            "label": "Coded devotion",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WjngVZIgku8cBETw",
+                "fallback": true
+            }
+        }
+    ]
+}

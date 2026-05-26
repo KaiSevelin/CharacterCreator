@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-master-thief",
+    "packages": [
+        {
+            "label": "Light hands",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Dexterity",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Lock worth learning",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.RvWnsh13xndC3BDJ",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Break-in kit",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.tTWw80p9Bk6KoCko"
+            }
+        },
+        {
+            "label": "Master stroke",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.PmNFvXH9Emt3hIMg",
+                "fallback": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-revolutionary",
+    "packages": [
+        {
+            "label": "Agitator's voice",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Charisma",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Secret cell",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.PmNFvXH9Emt3hIMg",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Smuggled tracts",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.tTWw80p9Bk6KoCko"
+            }
+        },
+        {
+            "label": "Safe houses and routes",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Bta0YOZtc2Z7jjT3",
+                "fallback": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-privateer",
+    "packages": [
+        {
+            "label": "Letter of marque",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.00wKdoVpnYkW0LUk",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Gun-deck bravery",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.3rmcikTMMXLQyzfb",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Prize goods",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.02C8vUNaIquqBEig"
+            }
+        },
+        {
+            "label": "Pursuit through bad weather",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Bta0YOZtc2Z7jjT3",
+                "fallback": true
+            }
+        }
+    ]
+}

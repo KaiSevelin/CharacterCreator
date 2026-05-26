@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-mercenary",
+    "packages": [
+        {
+            "label": "Contract fighting",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Campaign body",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Soldier's kit",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.4Xbki12nYfJHAIdX"
+            }
+        },
+        {
+            "label": "Blood pay",
+            "gain": {
+                "type": "money",
+                "formula": "4d6"
+            }
+        }
+    ]
+}

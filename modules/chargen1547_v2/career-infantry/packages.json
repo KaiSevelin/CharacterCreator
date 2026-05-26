@@ -1,6 +1,14 @@
 {
-    "stageKey": "career-archer",
+    "stageKey": "career-infantry",
     "packages": [
+        {
+            "label": "Line drill",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
         {
             "label": "Soldier's body",
             "gain": {
@@ -10,25 +18,17 @@
             }
         },
         {
-            "label": "Bow from the armory",
+            "label": "Garrison kit",
             "gain": {
                 "type": "item",
-                "itemUuid": "Item.5StlED1EUFQ4pdp3"
+                "tableUuid": "RollTable.4Xbki12nYfJHAIdX"
             }
         },
         {
-            "label": "Bow training",
+            "label": "Campaign hardening",
             "gain": {
                 "type": "skill",
-                "targetKey": "Item.Y0SfW0f3l5E5JHd5",
-                "fallback": true
-            }
-        },
-        {
-            "label": "Veteran's eye",
-            "gain": {
-                "type": "skill",
-                "targetKey": "Item.Bta0YOZtc2Z7jjT3",
+                "targetKey": "Item.zXuCnw9eUnBOb1Vp",
                 "fallback": true
             }
         }

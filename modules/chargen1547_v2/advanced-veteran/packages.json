@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-veteran",
+    "packages": [
+        {
+            "label": "Battle-tested body",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Held the retreat",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Battlefield salvage",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.4Xbki12nYfJHAIdX"
+            }
+        },
+        {
+            "label": "Trained the recruits",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.zXuCnw9eUnBOb1Vp",
+                "fallback": true
+            }
+        }
+    ]
+}

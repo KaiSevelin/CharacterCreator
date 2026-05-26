@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-explorer",
+    "packages": [
+        {
+            "label": "Expedition stamina",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Surveyed horizons",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Bta0YOZtc2Z7jjT3",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Expedition kit",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.GMW7FKtzQpNC8SZq"
+            }
+        },
+        {
+            "label": "Bad-country hardening",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.HnJ6EllrZl41RPLQ",
+                "fallback": true
+            }
+        }
+    ]
+}

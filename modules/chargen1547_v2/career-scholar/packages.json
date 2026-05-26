@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-scholar",
+    "packages": [
+        {
+            "label": "Book learning",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Scholarly training",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WVdJOfiwZCSPrOHE",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Scholar's tools",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.rTFMoilY2MVJcsiE"
+            }
+        },
+        {
+            "label": "Commentary and fees",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

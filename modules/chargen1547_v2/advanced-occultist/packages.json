@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-occultist",
+    "packages": [
+        {
+            "label": "Forbidden curiosity",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Power",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Hidden diagram",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WjngVZIgku8cBETw",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Confiscated book",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.weXLb9rAqFMsHe6W"
+            }
+        },
+        {
+            "label": "Binding completed",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.jSmkCryle69Qvw6j",
+                "fallback": true
+            }
+        }
+    ]
+}

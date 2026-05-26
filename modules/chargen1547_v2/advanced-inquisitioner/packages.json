@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-inquisitioner",
+    "packages": [
+        {
+            "label": "Doctrinal certainty",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Faith",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Articles of judgment",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.00wKdoVpnYkW0LUk",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Seized papers",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.rTFMoilY2MVJcsiE"
+            }
+        },
+        {
+            "label": "Hunted the hidden rite",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WjngVZIgku8cBETw",
+                "fallback": true
+            }
+        }
+    ]
+}

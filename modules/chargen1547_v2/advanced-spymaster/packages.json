@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-spymaster",
+    "packages": [
+        {
+            "label": "Handler's patience",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Network across three wards",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.PmNFvXH9Emt3hIMg",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Servant on the payroll",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.tTWw80p9Bk6KoCko"
+            }
+        },
+        {
+            "label": "Cipher they could not break",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.CUiBkYMSGbFRUVoK",
+                "fallback": true
+            }
+        }
+    ]
+}

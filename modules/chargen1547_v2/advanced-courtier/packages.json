@@ -1,0 +1,35 @@
+{
+    "stageKey": "advanced-courtier",
+    "packages": [
+        {
+            "label": "Quick wit",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Court instruction",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yRsiAyzSCh6v6wMm",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Patron's finery",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.3rEWQziu0PS0OIQo"
+            }
+        },
+        {
+            "label": "Survived the turn",
+            "gain": {
+                "type": "money",
+                "formula": "4d6"
+            }
+        }
+    ]
+}

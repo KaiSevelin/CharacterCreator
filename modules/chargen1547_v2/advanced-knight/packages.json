@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-knight",
+    "packages": [
+        {
+            "label": "Knightly seat",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.X7zC0glgUPw5qOiU",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Riding horse",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.uFwcb8H84NLP8jxH"
+            }
+        },
+        {
+            "label": "Banner-field prowess",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Matter of honor",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yRsiAyzSCh6v6wMm",
+                "fallback": true
+            }
+        }
+    ]
+}

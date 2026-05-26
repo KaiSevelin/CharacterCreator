@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-steward",
+    "packages": [
+        {
+            "label": "Household judgment",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Household oversight",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.CUiBkYMSGbFRUVoK",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Keys and stores",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.e6kRkeap9Cz1talC"
+            }
+        },
+        {
+            "label": "Quietly indispensable",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yRsiAyzSCh6v6wMm",
+                "fallback": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-farmer",
+    "packages": [
+        {
+            "label": "Field strength",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Seasoned labor",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.HnJ6EllrZl41RPLQ",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Rural goods",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.OIqIsnUMlK9xmdts"
+            }
+        },
+        {
+            "label": "Good market season",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

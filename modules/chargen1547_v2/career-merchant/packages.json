@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-merchant",
+    "packages": [
+        {
+            "label": "Ledger mind",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Trade instincts",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.F0NfycHV3L1nXozL",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Profitable exchange",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        },
+        {
+            "label": "Pack horse",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.Hs7gaBcAqYBBrsrf"
+            }
+        }
+    ]
+}

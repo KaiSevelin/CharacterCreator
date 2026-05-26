@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-cartographer",
+    "packages": [
+        {
+            "label": "Measured judgment",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Surveyor's eye",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Bta0YOZtc2Z7jjT3",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Compass",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.rJ5OwLtXMCa4sgd5"
+            }
+        },
+        {
+            "label": "Atlas learning",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WVdJOfiwZCSPrOHE",
+                "fallback": true
+            }
+        }
+    ]
+}

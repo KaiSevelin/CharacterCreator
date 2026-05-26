@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-artist",
+    "packages": [
+        {
+            "label": "Practiced hand",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Dexterity",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Creative breakthrough",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.3ssOYdjj50y5HMlZ",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Patron's materials",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.3rEWQziu0PS0OIQo"
+            }
+        },
+        {
+            "label": "Cultivated taste",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.jFRLqzcUavG6hsUM",
+                "fallback": true
+            }
+        }
+    ]
+}

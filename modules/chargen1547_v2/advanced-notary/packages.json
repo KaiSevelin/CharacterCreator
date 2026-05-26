@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-notary",
+    "packages": [
+        {
+            "label": "Exacting memory",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Legal formulas",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.00wKdoVpnYkW0LUk",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Registry access",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.rTFMoilY2MVJcsiE"
+            }
+        },
+        {
+            "label": "Certified inquiry",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.CUiBkYMSGbFRUVoK",
+                "fallback": true
+            }
+        }
+    ]
+}

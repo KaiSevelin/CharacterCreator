@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-physician",
+    "packages": [
+        {
+            "label": "Scholarly grounding",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Physician's practice",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.rA14pwn4o08IusWY",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Medical instruments",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.rTFMoilY2MVJcsiE"
+            }
+        },
+        {
+            "label": "Paying patients",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

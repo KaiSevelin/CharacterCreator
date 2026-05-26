@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-sailor",
+    "packages": [
+        {
+            "label": "Sea legs",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Coastal sense",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.Bta0YOZtc2Z7jjT3",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Seafarer's goods",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.LldfCZKq168ymqIO"
+            }
+        },
+        {
+            "label": "Profitable crossing",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-poor",
+    "packages": [
+        {
+            "label": "Hard living",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Desperate habits",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.HnJ6EllrZl41RPLQ",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Scavenged belongings",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.e6kRkeap9Cz1talC"
+            }
+        },
+        {
+            "label": "Hidden coin",
+            "gain": {
+                "type": "money",
+                "formula": "2d6"
+            }
+        }
+    ]
+}

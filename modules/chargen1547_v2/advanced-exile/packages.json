@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-exile",
+    "packages": [
+        {
+            "label": "Hardened by distance",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Foreign roads",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.HnJ6EllrZl41RPLQ",
+                "fallback": true
+            }
+        },
+        {
+            "label": "What you carried away",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.02C8vUNaIquqBEig"
+            }
+        },
+        {
+            "label": "Memory of home",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.3rONx9nVxk10fyZ4",
+                "fallback": true
+            }
+        }
+    ]
+}

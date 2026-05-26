@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-astrologer",
+    "packages": [
+        {
+            "label": "Star reader's mind",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Celestial study",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.DGOKXfiahX4RZhJL",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Astrolabe",
+            "gain": {
+                "type": "item",
+                "itemUuid": "Item.m3UyKUyo6QxzcINC"
+            }
+        },
+        {
+            "label": "Hidden correspondences",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.WjngVZIgku8cBETw",
+                "fallback": true
+            }
+        }
+    ]
+}

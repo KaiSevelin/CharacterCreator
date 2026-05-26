@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-cunning-folk",
+    "packages": [
+        {
+            "label": "Village faith",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Faith",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Remedy lore",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.rA14pwn4o08IusWY",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Inherited old kit",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.weXLb9rAqFMsHe6W"
+            }
+        },
+        {
+            "label": "Charm craft",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.jSmkCryle69Qvw6j",
+                "fallback": true
+            }
+        }
+    ]
+}

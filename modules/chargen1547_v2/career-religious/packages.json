@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-religious",
+    "packages": [
+        {
+            "label": "Devotional grounding",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Faith",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Religious instruction",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.7VoeHrMi683vwBeS",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Sacral possession",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.8ikUzKO551glTfOg"
+            }
+        },
+        {
+            "label": "Temple offerings",
+            "gain": {
+                "type": "money",
+                "formula": "2d6"
+            }
+        }
+    ]
+}

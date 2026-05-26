@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-prelate",
+    "packages": [
+        {
+            "label": "Senior devotion",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Faith",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Doctrinal authority",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.7VoeHrMi683vwBeS",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Relic treasury",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.8ikUzKO551glTfOg"
+            }
+        },
+        {
+            "label": "Voice carried doctrine",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.yRsiAyzSCh6v6wMm",
+                "fallback": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "stageKey": "career-criminal",
+    "packages": [
+        {
+            "label": "Street instincts",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Dexterity",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Criminal trade",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.PmNFvXH9Emt3hIMg",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Illicit gear",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.tTWw80p9Bk6KoCko"
+            }
+        },
+        {
+            "label": "Dirty payout",
+            "gain": {
+                "type": "money",
+                "formula": "3d6"
+            }
+        }
+    ]
+}

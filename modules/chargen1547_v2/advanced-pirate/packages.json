@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-pirate",
+    "packages": [
+        {
+            "label": "Sea-raider's nerve",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Stamina",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Boarding violence",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.6W0w1AV1grz8V6Z7",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Black-market plunder",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.02C8vUNaIquqBEig"
+            }
+        },
+        {
+            "label": "Cove swimmer",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.qj5otlLucXNqnJkj",
+                "fallback": true
+            }
+        }
+    ]
+}

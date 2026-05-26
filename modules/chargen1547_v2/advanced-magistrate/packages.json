@@ -1,0 +1,36 @@
+{
+    "stageKey": "advanced-magistrate",
+    "packages": [
+        {
+            "label": "Judicial mind",
+            "gain": {
+                "type": "stat",
+                "characteristic": "Intelligence",
+                "steps": 1
+            }
+        },
+        {
+            "label": "Articles of law",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.00wKdoVpnYkW0LUk",
+                "fallback": true
+            }
+        },
+        {
+            "label": "Seized ledgers",
+            "gain": {
+                "type": "item",
+                "tableUuid": "RollTable.rTFMoilY2MVJcsiE"
+            }
+        },
+        {
+            "label": "Public inquiry",
+            "gain": {
+                "type": "skill",
+                "targetKey": "Item.CUiBkYMSGbFRUVoK",
+                "fallback": true
+            }
+        }
+    ]
+}
